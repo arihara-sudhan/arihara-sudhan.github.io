@@ -98,30 +98,6 @@
 		.day img:hover {
 			transform: scale(0.9);
 		}
-		#grass {
-			position: fixed;
-			bottom: -30%;
-			animation-name: getback;
-			animation-duration: 2s;
-			animation-delay: 3s;
-			transition: 5s;
-		}
-		#tig {
-			position: fixed;
-			top: 0%;
-			left:-150%;
-			animation-name: run;
-			animation-duration: 5s;
-		}
-		@keyframes getback {
-			100% {
-				transform: translateY(20%);
-			}
-		}
-		@keyframes run {
-			100% {
-				transform: translateX(300%);
-			}
 		}
 	</style>
 	<title>Ariharasudhan's 500 Days Coding Challenge</title>
@@ -131,8 +107,6 @@
 		setTimeout(function() {
 			  document.getElementById('grass').style.display='none'}, 5*1000);
 	</script>
-	<img src="statics/grass.png" alt="" id="grass">
-	<img src="statics/tiger.gif" alt="" id="tig">
 	<div class="heading">
 		<div class="heading1">
 			<img id="ari" src="statics/ari.jpg" width="80px" height="80px" style="border-radius: 50%">
