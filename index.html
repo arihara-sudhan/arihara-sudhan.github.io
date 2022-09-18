@@ -12,6 +12,20 @@
   		.embed-responsive {
   			margin: 8px;
   		}
+		#tig {
+			position: fixed;
+			bottom: 0%;
+			z-index: 22;
+			left:-100%;
+			animation-name: run;
+			animation-duration: 10s;
+		}
+		@keyframes run {
+			100% {
+				transform: translateX(300%);
+			}
+		}
+
 		a i:hover{
 			text-decoration: none;
 			color: white;
@@ -20,7 +34,7 @@
 		font-family: 'Poppins', sans-serif;
 		font-weight: bold;
 		}
-		#btnnres,#btnn500,#btnnp, #back {
+		#btnnres,#btnn500,#btnnp {
 			border-radius: 20px;
 			border: 2px solid #C3E4ED;
 		    box-shadow: 0 0 10px white,
@@ -151,21 +165,6 @@
 		}
 
 
- 		.accom img {
- 			margin-left: 10px;
- 			margin-right: 10px;
- 		}
-
- 		.accom {
- 			width: 100%;
- 			border-radius: 30px;
- 			background-color: rgba(0,0,0,0.4);
- 			margin-top: 20px;
- 			margin-bottom: 20px;
-			border: 2px solid white;
-			border-radius: 10px;
-            box-shadow: 0 0 50px #9CB4CC;
-		}
 		#contt1 {
 			display: flex;
 			flex-direction: column;
@@ -219,8 +218,8 @@
 			<button class="btn" style="width: 60%; height: 60px;" id="btnnres">RESUME</button>
 			<button class="btn" style="width: 60%; height: 60px;" id="btnnp">PROJECTS</button>
 			<button class="btn" style="width: 60%; height: 60px;" id="btnn500">500 DAYS CODING CHALLENGE</button>
+			<img src="statics/tiger.gif" alt="" id="tig">
 			<div class="contact1">
-				<hr>
 				<div class="contact">
 					<a href="https://www.linkedin.com/in/ariharasuthan/"><i class="bi-linkedin"></i></a>
 					<a href="https://github.com/arihara-sudhan/"><i class="bi bi-github"></i></a>
