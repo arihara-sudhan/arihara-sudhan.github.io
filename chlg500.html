@@ -6,7 +6,7 @@
 		@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 		* {
 			font-family: 'Comfortaa', cursive;
-			margin: 3px;
+			margin: 0px;
 		}
 		body {
 			background-color: #203239;
@@ -73,12 +73,12 @@
 			height: 22vw;
 			width: 25vw;
 			box-shadow: 3px 3px 3px #39FF14;
+			transition: 0.3s;
 		}
-
-
 		.day img {
 			width: 10vw;
 			height: auto;
+			transition: 1s;
 		}
 		.codings {
 			display: grid;
@@ -92,10 +92,47 @@
 			color: white;
 			font-size: 1vw;
 		}
+		.day:hover {
+			transform: scale(1.02);
+		}
+		.day img:hover {
+			transform: scale(0.9);
+		}
+		#grass {
+			position: fixed;
+			bottom: -30%;
+			animation-name: getback;
+			animation-duration: 2s;
+			animation-delay: 3s;
+			transition: 5s;
+		}
+		#tig {
+			position: fixed;
+			top: 0%;
+			left:-150%;
+			animation-name: run;
+			animation-duration: 5s;
+		}
+		@keyframes getback {
+			100% {
+				transform: translateY(20%);
+			}
+		}
+		@keyframes run {
+			100% {
+				transform: translateX(300%);
+			}
+		}
 	</style>
 	<title>Ariharasudhan's 500 Days Coding Challenge</title>
 </head>
 <body>
+	<script type="text/javascript">
+		setTimeout(function() {
+			  document.getElementById('grass').style.display='none'}, 5*1000);
+	</script>
+	<img src="statics/grass.png" alt="" id="grass">
+	<img src="statics/tiger.gif" alt="" id="tig">
 	<div class="heading">
 		<div class="heading1">
 			<img id="ari" src="statics/ari.jpg" width="80px" height="80px" style="border-radius: 50%">
