@@ -16,13 +16,13 @@
 			position: fixed;
 			bottom: 0%;
 			z-index: 22;
-			transform: translateX(-200%);
+			transform: translateX(-400%);
 			animation-name: run;
 			animation-duration: 27s;
 		}
 		@keyframes run {
 			100% {
-				transform: translateX(700%);
+				transform: translateX(500%);
 			}
 		}
 
@@ -54,8 +54,8 @@
 
 		body {
 			color: white !important;
-			background-image: url('statics/bg.gif');
-			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-image: url('statics/bg.jpg');
 			background-size: cover;		}
 		
 		#firstimg {
@@ -86,11 +86,9 @@
 		}
 		
 		.jumbotron {
+			background-color: rgba(255,255,255,.05) !important;
 			width: 100%;
-			height: auto;
-			background-repeat: no-repeat;
-			background-image: url('statics/bg.gif');
-			background-size: cover; }
+			height: auto; }
 
 		.text-responsive {
  			 font-size: calc(100% + 1vw + 1vh); }
@@ -174,7 +172,6 @@
 
 		.cont1 {
             box-shadow: 0 0 50px #9CB4CC;
-			background-color: rgba(0,0,0,0.4);
 			border-radius: 30px;
 			padding-bottom: 10vh;
 		}
@@ -212,11 +209,11 @@
 			  document.getElementById('tig').style.display='none'}, 8*1000);
 		</script>
 	<div class='jumbotron text-center jumbotron-fluid'>
-	<div id="contt1">
-		<img class="img-circle" id="firstimg" src="statics/ari.jpg" alt="Me1" width="200px" height="200px">
-		<h1 class="text-responsive" id="headi">ARIHARASUDHAN</h1>
-		<h6 class="text-responsive" id="codei">&ltCODED TO CODE/&gt</h6>
-	</div>
+		<div id="contt1">
+			<img class="img-circle" id="firstimg" src="statics/ari.jpg" alt="Me1" width="200px" height="200px">
+			<h1 class="text-responsive" id="headi">ARIHARASUDHAN</h1>
+			<h6 class="text-responsive" id="codei">&ltSKY IS MY LIMIT/&gt</h6>
+		</div>
 	</div>
 	<div class="container cont1">
 		<div class="row text-center">
