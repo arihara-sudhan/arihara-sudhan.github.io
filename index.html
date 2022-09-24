@@ -1,18 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto&display=swap');
-		@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@200&display=swap');
+	<title>Ariharasudhan</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+	    * {
+	      font-family: 'Comfortaa', cursive;
+	      
+	    }
 
-		* {
-		  margin: 0;
-		  padding: 0;
-		  box-sizing: border-box; } 
-  		.embed-responsive {
-  			margin: 8px;
-  		}
-		#tig {
+		i {
+			font-size: 2em;
+			color: white;
+		}
+		i:hover {
+			color: white;
+		}
+		.contact {
+			background-color: rgba(0,0,0,0.9);
+			display: flex;
+			padding: 0.5em;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+		body {
+			background-color: #333333;
+		}
+		#ari-img {
+			margin: 1em;
+			width: 20em;
+			height: 20em;
+			border-radius: 10px;
+			box-shadow: 0px 0px 20px rgba(255,255,255,0.5),0px 0px 40px rgba(255,255,255,0.2);
+		}
+		#ari-name {
+			color: white;
+			font-size: 5vw;
+			font-weight: bold;
+			text-align: center;
+		}
+		#ari-desigs {
+			color: white;
+			letter-spacing: 0.2vw;
+			font-size: 2vw;
+			font-weight: bold;
+			text-align: center;
+			transition: 0.5s;
+			letter-spacing: 1vw;
+		}
+		#iam {
+			font-size: 3vw;
+			font-weight: bold;
+			text-align: center;	
+			color: white;
+		}
+		#ari-desigs:hover {
+			letter-spacing: 1.2vw;
+		}
+		.sec11 {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-right: 10vw;
+		}
+		.sec1 {
+			display: flex;
+			justify-content: space-between;
+			margin: 1vw;
+			height: auto;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(255,255,255,0.2),0px 0px 20px rgba(255,255,255,0.2);
+			background-image: url("statics/bg.gif");
+			background-repeat: no-repeat;
+			background-size: cover;
+		 }
+
+
+	    .parentOfArticles {
+	    	display: flex;
+	    	flex-direction: column;
+	    	margin-bottom: 3em;
+	    }
+	    .article {
+	    	border-radius: 1em;	
+	    	padding: 1vw;
+	    	display: flex;
+	    	align-items: center;
+	    	background-color: rgba(255,255,255,0.199);
+		    margin: 1vw;
+		    color: white;
+		    font-size: 1.5vw;
+		    font-weight: bold;
+		    justify-content: space-between;
+		    transition: 0.2s;
+	    }
+	    .logo {
+	    	border-radius: 50%;
+	    	width: 6vw;
+	    	height: 6vw;
+	    }
+    .artic {
+    	padding-left: 3vw;
+    	display: flex;
+    	align-items: center;
+    }
+    .tit {
+    	font-size: 2.5vw;
+    	padding-left: 1.2vw;
+    }
+    button {
+    	background-color: white;
+    	color: #9400D3;
+    	border-radius: 1vw;
+    	padding: 0.7vw;
+    	margin-right: 2vw;
+    	width: 7vw;
+    	font-size: 1.6vw;
+    	font-weight: bold;
+	    border: 1px solid #C3E4ED;
+        box-shadow:
+                  0 0 10px white;
+    }
+    .article:hover {
+    	transform: scale(1.01);
+    	display: absolute;
+    }
+    .col {
+    	color: violet;
+    }
+    .star {
+    	font-size: 2em;
+    	color: yellow;
+    }
+    	#tig {
 			position: fixed;
 			bottom: 0%;
 			z-index: 22;
@@ -26,128 +153,15 @@
 			}
 		}
 
-		a i:hover{
-			text-decoration: none;
-			color: white;
-		}
-		.conn {
-		font-family: 'Poppins', sans-serif;
-		font-weight: bold;
-		}
-		#btnnres,#btnn500,#btnnart,#btnnp {
-			border-radius: 20px;
-			border: 2px solid white;
-		    box-shadow: 0 0 10px white,
-		              0 0 40px white,
-		              0 0 80px white;
-			font-family: 'Poppins', sans-serif;
-			font-size: 2.1vw;
-			font-weight: bolder;
-			background-color: rgba(255,255,255,1);
-			letter-spacing: 2px;
-            color:  black !important;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease;
-            transition: 2s;
-            animation-name: flick; 
-        	margin: 2em;
-        	}
-
-		body {
-			color: white !important;
-			background-repeat: no-repeat;
-			background-image: url('statics/bg.jpg');
-			background-size: cover;		}
-		
-		#firstimg {
-			border: 2px solid white;
-			color: #111;
-            box-shadow: 0 0 20px white;
-			width: 30vh;
-			height: auto;
-		}
-		#mail {
-			color: white;
-		}
-		#headi {
-			font-family: 'Poppins', sans-serif;
-			font-weight: bold;
-			letter-spacing: 4px; }
-		#codei {
-			color: white;
-			letter-spacing: 8px;
-			font-size: 20px;
-		}
-		h3,h4,.font1{
-			font-family: 'Dekko', cursive;	}
-		.img1 {
-			justify-content: center;
-			align-items: center;
-			display: flex;
-		}
-		
-		.jumbotron {
-			background-color: rgba(0,0,0,0.05) !important;
-			width: 100%;
-			height: auto; }
-
-		.img1 {
-			justify-content: center;
-			align-items: center;
-			display: flex;
-		}
-
-		.cont1 {
-            box-shadow: 0 0 45px white;
-			border-radius: 20px;
-			margin-bottom: 3em;
-		}
-
-		i {
-			font-size: 2.2em;
-		}
-		.contact {
-			background-color: rgba(0,0,0,0.9);
-			display: flex;
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			flex-direction: row;
-			justify-content: space-around;
-			align-items: center;
-		}
 	</style>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ariharasudhan</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-		<script type="text/javascript">
-		setTimeout(function() {
-			  document.getElementById('tig').style.display='none'}, 8*1000);
-		</script>
-	<div class='jumbotron text-center jumbotron-fluid'>
-		<div id="contt1">
-			<img class="img-circle" id="firstimg" src="statics/ari.jpg" alt="Me1" width="200px" height="200px">
-			<h1 class="text-responsive" id="headi">ARIHARASUDHAN</h1>
-			<h6 class="text-responsive" id="codei">&ltSKY IS MY LIMIT/&gt</h6>
-		</div>
-	</div>
-	<div class="container cont1">
-		<div class="row text-center">
-			<button class="btn" style="width: 60%; height: 60px;" id="btnnres">RESUME</button>
-			<button class="btn" style="width: 60%; height: 60px;" id="btnnp">PROJECTS</button>
-			<button class="btn" style="width: 60%; height: 60px;" id="btnnart">ARTICLES</button>
-			<button class="btn" style="width: 60%; height: 60px;" id="btnn500">500 DAYS CODING CHALLENGE</button>
+	<div class="sec1">
+		<img src="statics/ari.jpg" alt="ari" id="ari-img">
+		<div class="sec11">
+			<span id="iam">I am</span>
+			<span id="ari-name"><span class="col" id="scale">A</span>rih<span class="col">a</span>r<span class="col">a</span>sudh<span class="col">a</span>n</span>
+			<span id="ari-desigs">‍SKY IS MY LIMIT</b></span>
 			<img src="statics/tiger.gif" alt="" id="tig" defer>
 			<div class="contact1">
 				<div class="contact">
@@ -159,18 +173,37 @@
 					<a href="https://www.youtube.com/channel/UCSrtcWEDmpUAHZsjWvx6Apg/featured"><i class="bi bi-youtube"></i></a>
 				</div>
 			</div>
-			<script type="text/javascript">
-    			document.getElementById('btnnres').onclick = function() {
-					location. href = "resume.html"; };
-				document.getElementById('btnnp').onclick = function() {
-					location. href = "proj.html"; };
-				document.getElementById('btnnart').onclick = function() {
-					location. href = "articles.html"; };
-				document.getElementById('btnn500').onclick = function() {
-					location. href = "chlg500.html"; };
-			</script>
-			</div>
-
 		</div>
+	</div>
+	<div class="parentOfArticles">
+			<div class="article">
+				<div class="artic">
+					<span class="star">⭐</span>
+					<span class="tit">Resume</span>
+				</div>
+				<a href="resume.html"><button>VIEW</button></a>
+			</div>
+			<div class="article">
+				<div class="artic">
+					<span class="star">⭐</span>
+					<span class="tit">Projects</span>
+				</div>
+				<a href="proj.html"><button>VIEW</button></a>
+			</div>
+			<div class="article">
+				<div class="artic">
+					<span class="star">⭐</span>
+					<span class="tit">500 Days Coding Challenge</span>
+				</div>
+				<a href="chlg500.html"><button>VIEW</button></a>
+			</div>
+			<div class="article">
+				<div class="artic">
+					<span class="star">⭐</span>
+					<span class="tit">Articles</span>
+				</div>
+				<a href="articles.html"><button>VIEW</button></a>
+			</div>
+	</div>
 </body>
 </html>
