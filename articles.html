@@ -24,6 +24,15 @@
       align-items: center;
       justify-content: space-between;
     }
+    .heading select {
+    	margin-right: 1vw;
+    	font-size: 2rem;
+    	border-radius: 1em;
+    	text-align: center;
+    	color: white;
+    	padding: 0.4em;
+    	background-color: rgba(0,0,0,0.2);
+    }
     .heading1 {
       display: flex;
       align-items: center;
@@ -94,6 +103,15 @@
       <img id="ari" src="statics/ari.jpg" width="80px" height="80px" style="border-radius: 50%">
       <img src="statics/articles.png" alt="" >
     </div>
+    <!--
+      <select name="cars" id="cars">
+	    	<option value="java">Java</option>
+	    	<option value="react" onclick="#article">React</option>
+	    	<option value="cpp">C++</option>
+	    	<option value="sql">MySQL</option>
+	    	<option value="jquery">jQuery</option>
+	  </select>
+	-->
   </div>
 
 	<div class="parentOfArticles">
@@ -120,7 +138,7 @@
 				</div>
 				<a href="https://medium.com/@aravindariharan/java-basics-to-go-forward-article-3-ba2d1f73b7c4"><button>Read</button></a>
 			</div>
-			<div class="article">
+			<div class="article" id="article">
 				<div class="artic">
 					<img src="statics/jquery.png" class="logo" alt="logo">
 					<span class="tit">jQuery For All</span>
@@ -128,12 +146,20 @@
 				<a href="https://medium.com/@aravindariharan/jquery-write-less-do-more-20eef74e6b"><button>Read</button></a>
 			</div>
 
-		<div class="article">
+			<div class="article">
 				<div class="artic">
 					<img src="statics/cpp.png" class="logo" alt="logo">
 					<span class="tit">Hello C++</span>
 				</div>
 				<a href="https://medium.com/@aravindariharan/hello-c-5ecf2de124b4"><button>Read</button></a>
+			</div>
+
+			<div class="article">
+				<div class="artic">
+					<img src="statics/cpp.png" class="logo" alt="logo">
+					<span class="tit">Basics of C++</span>
+				</div>
+				<a href="https://medium.com/@aravindariharan/basics-of-c-ecefa2a527b2"><button>Read</button></a>
 			</div>
 
 			<div class="article">
@@ -267,6 +293,20 @@
 					<span class="tit">React JS : State Theory</span>
 				</div>
 				<a href="https://medium.com/@aravindariharan/react-the-legend-of-states-7f2072d550c4"><button>Read</button></a>
+			</div>
+			<div class="article">
+				<div class="artic">
+					<img src="statics/react.png" class="logo" alt="logo">
+					<span class="tit">React JS : State as Props</span>
+				</div>
+				<a href="https://medium.com/@aravindariharan/pass-state-as-props-fe3ca75d042f"><button>Read</button></a>
+			</div>
+			<div class="article">
+				<div class="artic">
+					<img src="statics/react.png" class="logo" alt="logo">
+					<span class="tit">React JS : Callback as Props</span>
+				</div>
+				<a href="https://medium.com/@aravindariharan/callback-as-props-2473ff744f1b"><button>Read</button></a>
 			</div>
 	</div>
 </body>
