@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    #logo {
+        width: 45%;
+    }
+    body {
+        background-color: #2b2a33;
+        margin: 3;
+    } 
+    .heading {
+      margin: 1vw;
+      background-color: #42414d;
+      border-radius: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+    #ari {
+      width: 9%;
+      height: auto;
+      margin: 1.3vw;
+      box-shadow: 0 0 8px white,
+            0 0 10px white,
+            0 0 20px white;
+    }
+    .row {
+        width: 100% !important;
+    }
+    .books {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 24% 24% 24% 24%;
+        justify-content: space-around;
+    }
+    .book {
+        width: 80%;
+        transition: 0.1s;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        background-color: #42414d;
+        padding: 1em;
+        margin: 3%;
+        border-radius: 1rem;
+    }
+    .book img {
+        width: 95%;
+        height: auto;
+        border-radius: 1em;
+    }
+    
+    .book:hover {
+        transform: scale(1.05);
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+        border-radius: 1rem;
+        background-color: hsl(158, 81%, 49%);
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        margin-top: 1em;
+        border: none;
+        padding: 0.51rem;
+        width: 80%;
+        height: 8%;
+        text-align: center;
+    }
+    @media only screen and (max-width: 800px) {
+        .books {
+            grid-template-columns: 33% 33% 33%;
+            width: 100%;
+        }
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books | Ariharasudhan</title>
+</head>
+<body>
+    <div class="heading">
+            <img id="ari" src="statics/ari.jpg" width="80px" height="80px" style="border-radius: 50%">
+            <img src="statics/books.png" id="logo" alt="" >
+    </div>    
+    <div class="books">
+            <div class="book">
+                <img src="statics/cherry.png" alt=""/>
+                <a href="https://github.com/arihara-sudhan/BOOKS/blob/caf515933d205ca73c9abe20fee3e6a3bb32faca/cherryPy.pdf">READ</a>
+            </div>
+            <div class="book">
+                <img src="statics/rest.png" alt=""/>
+                <a href="https://github.com/arihara-sudhan/BOOKS/blob/7aec8d4549dc340916bf14ca32d49559b7c5ed3a/restAPI.pdf">READ</a>
+            </div>    
+            <div class="book">
+                <img src="statics/fast.png" alt=""/>
+                <a href="https://github.com/arihara-sudhan/BOOKS/blob/4c842adc0e8126b070db16ea0863e8b17985c653/fastAPI.pdf">READ</a>
+            </div>
+            <div class="book">
+                    <img src="statics/fastad.png" alt=""/>
+                    <a href="https://github.com/arihara-sudhan/BOOKS/blob/4c842adc0e8126b070db16ea0863e8b17985c653/fastAPI_advanced.pdf">READ</a>
+            </div>
+            <div class="book">
+                <img src="statics/cv.png" alt=""/>
+                <a href="https://github.com/arihara-sudhan/BOOKS/blob/4c842adc0e8126b070db16ea0863e8b17985c653/openCV.pdf">READ</a>
+            </div>
+            <div class="book">
+                <img src="statics/hware.png" alt=""/>
+                <a href="https://github.com/arihara-sudhan/BOOKS/blob/4c842adc0e8126b070db16ea0863e8b17985c653/hardware.pdf">READ</a>
+            </div>
+            <div class="book">
+                <img src="statics/calc.png" alt=""/>
+                <a href="https://github.com/arihara-sudhan/BOOKS/blob/4c842adc0e8126b070db16ea0863e8b17985c653/calculus.pdf">READ</a>
+            </div>
+            <div class="book">
+                    <img src="statics/linalg.png" alt=""/>
+                    <a href="https://github.com/arihara-sudhan/BOOKS/blob/4c842adc0e8126b070db16ea0863e8b17985c653/fastAPI_advanced.pdf">READ</a>
+           </div>
+           <div class="book">
+            <img src="statics/gk.png" alt=""/>
+            <a href="https://github.com/arihara-sudhan/BOOKS/blob/4c842adc0e8126b070db16ea0863e8b17985c653/GK%203000.pdf">READ</a>
+   </div>
+</div>
+</body>
+</html>
