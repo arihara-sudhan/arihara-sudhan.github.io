@@ -32,23 +32,22 @@
     .books {
         width: 100%;
         display: grid;
-        grid-template-columns: 24% 24% 24% 24%;
+        grid-template-columns: 25% 25% 25% 25%;
         justify-content: space-around;
     }
     .book {
-        width: 80%;
         transition: 0.1s;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
         background-color: #42414d;
-        padding: 1em;
-        margin: 3%;
+        padding: 6%;
+        margin: 2%;
         border-radius: 1rem;
     }
     .book img {
-        width: 95%;
+        max-width: 98%;
         height: auto;
         border-radius: 1em;
     }
@@ -73,8 +72,12 @@
     }
     @media only screen and (max-width: 800px) {
         .books {
-            grid-template-columns: 33% 33% 33%;
-            width: 100%;
+            grid-template-columns: 31% 31% 31%;
+            justify-content: space-around;
+            margin: 0;
+        }
+        .book {
+            margin: 4%;
         }
     }
     </style>
