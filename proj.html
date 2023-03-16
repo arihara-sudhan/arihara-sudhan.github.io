@@ -151,9 +151,7 @@
   <div class="codings">
   </div>
   <script type="text/javascript">
-  	window.addEventListener("load",()=>{
-         document.getElementById('back').onclick = function() {
-         	location. href = "index.html"; };
+  	window.addEventListener('load',(e)=>{
 		 var codings = document.getElementsByClassName("codings");
 		 var myobj = [
 			[
@@ -341,8 +339,7 @@
 			day.appendChild(iframe);
 			day.appendChild(date);
 			codings[0].appendChild(day);
-		 } }
-	);
+		 }});
   </script>
 </body>
 </html>
