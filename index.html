@@ -138,6 +138,7 @@
 		<img src="statics/tiger.gif" id="tig">
 	</div>
 	<script type="text/javascript" defer>
+		window.addEventListener("load",(e)=>{
 				document.getElementById('books-but').onclick = function() {
 					location. href = "books.html"; };
 				document.getElementById('res-but').onclick = function() {
@@ -152,6 +153,7 @@
 
 				setTimeout(function() {
     				document.getElementById("tig").parentNode.removeChild(document.getElementById("tig"));}, 8500);
+		});
     </script>
 
 
