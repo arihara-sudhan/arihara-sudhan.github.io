@@ -149,14 +149,13 @@
 				document.getElementById('organ-but').onclick = function() {
 					location. href = "organ.html"; };		
 				
-				const tig = docuement.createElement("img");
+				const tig = document.createElement("img");
 				tig.src = "statics/tiger.gif";
 				tig.id = "tig";
 			        document.getElementsByTagName("body")[0].appendChild(tig);
 
 				setTimeout(function() {
-    				document.getElementById("tig").parentNode.removeChild(document.getElementById("tig"));}, 8500);	
-			}
+    				document.getElementById("tig").parentNode.removeChild(document.getElementById("tig"));}, 8500);
 		});
     </script>
 
