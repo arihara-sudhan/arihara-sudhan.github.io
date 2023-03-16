@@ -135,9 +135,9 @@
 			<button id="books-but">Books</button>
 			<!-- <button id="hack"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmDhL_OwpUjbBKhWzo8ChjAzW1Cx4HiA0GutOH81-Rl0U7NA/viewform?usp=sf_link">Java Hackathon</a></button>-->
 		</div>
+		<img src="statics/tig.gif" id="tig">
 	</div>
 	<script type="text/javascript" defer>
-		window.addEventListener("load",()=>{
 				document.getElementById('books-but').onclick = function() {
 					location. href = "books.html"; };
 				document.getElementById('res-but').onclick = function() {
@@ -149,14 +149,9 @@
 				document.getElementById('organ-but').onclick = function() {
 					location. href = "organ.html"; };		
 				
-				const tig = document.createElement("img");
-				tig.src = "statics/tiger.gif";
-				tig.id = "tig";
-			        document.getElementsByTagName("body")[0].appendChild(tig);
 
 				setTimeout(function() {
     				document.getElementById("tig").parentNode.removeChild(document.getElementById("tig"));}, 8500);
-		});
     </script>
 
 
