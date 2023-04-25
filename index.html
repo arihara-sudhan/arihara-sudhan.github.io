@@ -142,8 +142,8 @@
 			<button id="proj-but">Projects</button>
 			<button id="arts-but">Articles</button>
 			<button id="books-but">Books</button>
-			<button> <a href="https://southernboy.onrender.com/">Blog</a></button>-->
-			<button> <a href="https://tamizharivagam.blogspot.com/">TAMIZHARIVAGAM ( தமிழ் )</a></button>-->
+			<button id='blog-but'>>Blog</button>
+			<button id='ta-but'>Tamizharivagam ( தமிழ் )</button>
 		</div>
 	</div>
 	<img src="statics/tiger.gif" id="tig" width="65%">
@@ -159,7 +159,10 @@
 					location. href = "articles.html"; };
 				document.getElementById('organ-but').onclick = function() {
 					location. href = "organ.html"; };		
-				
+				document.getElementById('blog-but').onclick = function() {
+					window.open("https://southernboy.onrender.com", "_blank"); };		
+				document.getElementById('ta-but').onclick = function() {
+					window.open("https://tamizharivagam.com", "_blank"); };		
 
 				setTimeout(function() {
     				document.getElementById("tig").parentNode.removeChild(document.getElementById("tig"));}, 15000);
