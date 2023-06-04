@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memories Page</title>
+    <style>
+        /* CSS for round images */
+        .memory-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 10px;
+            cursor: pointer;
+            border: 2px solid lightgreen;
+        }
+
+        /* CSS for memories row */
+        .memories-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* CSS for YouTube video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CSS for YouTube video */
+        .video-embed {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* CSS for memory caption */
+        .memory-caption {
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            margin-top: 5px;
+        }
+
+        /* CSS for body */
+        body {
+            background-color: #2b2a33;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* CSS for memories container */
+        #memories-container {
+            background-color: #42414d;
+            margin: 20px;
+        }
+
+    #logo {
+        width: 65%;
+    }
+    .heading {
+      padding: 0.32rem;
+      height: 10%;
+      margin: 1vw;
+      background-color: #42414d;
+      border-radius: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+    #ari {
+      width: 7%;
+      height: auto;
+      margin: 1.3vw;
+      box-shadow: 0 0 8px white,
+            0 0 10px white,
+            0 0 20px white;
+    }
+  @media only screen and (max-width: 800px) {
+      #logo {
+            width: 65%;
+      }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <div class="heading1"></div>
+            <img id="ari" src="statics/ari.jpg" width="100px" style="border-radius: 50%">
+            <img src="statics/memories.png" id="logo" alt="" >
+        </div>
+    </div>    
+    <div id="memories-container"></div>
+    <div id="video-overlay" class="video-container" style="display: none;"></div>
+
+    <script>
+        // Array of memories (image URLs, YouTube video IDs, and titles)
+        var memories = [
+            {
+                image: "ari.jpg",
+                videoId: "t8MWH2EMrbo",
+                title: "Memory 1"
+            },
+            {
+                image: "ari.jpg",
+                videoId: "t8MWH2EMrbo",
+                title: "Memory 1"
+            },
+            {
+                image: "ari.jpg",
+                videoId: "t8MWH2EMrbo",
+                title: "Memory 1"
+            },
+            {
+                image: "ari.jpg",
+                videoId: "t8MWH2EMrbo",
+                title: "Memory 1"
+            },
+            {
+                image: "ari.jpg",
+                videoId: "t8MWH2EMrbo",
+                title: "Memory 1"
+            },
+            {
+                image: "ari.jpg",
+                videoId: "t8MWH2EMrbo",
+                title: "Memory 1"
+            },
+            {
+                image: "ari.jpg",
+                videoId: "t8MWH2EMrbo",
+                title: "Memory 1"
+            },
+        ];
+
+        // Function to create memory elements
+        function createMemoryElement(memory) {
+            var container = document.createElement("div");
+            container.style.textAlign = "center";
+
+            var imageElement = document.createElement("img");
+            imageElement.src = memory.image;
+            imageElement.classList.add("memory-image");
+            imageElement.addEventListener("click", function() {
+                playMemoryVideo(memory.videoId);
+            });
+
+            var captionElement = document.createElement("div");
+            captionElement.classList.add("memory-caption");
+            captionElement.textContent = memory.title;
+
+            container.appendChild(imageElement);
+            container.appendChild(captionElement);
+
+            return container;
+        }
+
+        // Function to play memory video
+        function playMemoryVideo(videoId) {
+            var videoOverlay = document.getElementById("video-overlay");
+            videoOverlay.style.display = "flex";
+            videoOverlay.innerHTML = '<iframe class="video-embed" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+        }
+
+        // Function to initialize the memories page
+        function initializeMemoriesPage() {
+            var memoriesContainer = document.getElementById("memories-container");
+
+            var currentRow = document.createElement("div");
+            currentRow.classList.add("memories-row");
+
+            memories.forEach(function(memory, index) {
+                var memoryElement = createMemoryElement(memory);
+                currentRow.appendChild(memoryElement);
+
+                // Check if the row is full or if it's the last memory
+                if ((index + 1) % 5 === 0 || (index + 1) === memories.length) {
+                    memoriesContainer.appendChild(currentRow);
+
+                    // Create a new row for the next memories
+                    currentRow = document.createElement("div");
+                    currentRow.classList.add("memories-row");
+                }
+            });
+        }
+
+        // Call the initializeMemoriesPage function when the page finishes loading
+        window.addEventListener("load", initializeMemoriesPage);
+    </script>
+</body>
+</html>
