@@ -138,26 +138,11 @@
 			<button id='mem-but'>Stories and Hobbies</button>
 			<button id='ta-but'>Tamizharivagam (தமிழ்)</button>
 		</div>
-		<div style="display: flex; justify-content: center; align-items: center; color: white; font-size: 2vw">
-			<i class="bi bi-eye" style="margin: 1%"></i>
-		    	<div class="website-counter">
-		    	</div>
-    		</div>
 
 	</div>
 	<img src="statics/tiger.gif" id="tig" width="65%">
 	<script type="text/javascript">
 		document.addEventListener("DOMContentLoaded", function() {
-				var counterContainer = document.querySelector(".website-counter");
-				var visitCount = localStorage.getItem("page_view");
-				if (visitCount) {
-				  visitCount = Number(visitCount) + 1;
-				  localStorage.setItem("page_view", visitCount);
-				} else {
-				  visitCount = 1;
-				  localStorage.setItem("page_view", 1);
-				}
-				counterContainer.innerHTML = visitCount;
 
 			var buttonsContainer = document.querySelector('.options');
 			buttonsContainer.addEventListener('click', function(event) {
