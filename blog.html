@@ -3,9 +3,9 @@
   <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
       * {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Work Sans', sans-serif;
         cursor: pointer;
       }
       body {
@@ -17,7 +17,7 @@
         align-items: center;
       }
       header {
-        padding: 0.5%;
+        padding: 0.95%;
         display: flex;
         background-color: #222229;
         color: white;
@@ -29,7 +29,7 @@
       header img {
         width: 13%;
         border-radius: 50%;
-        border: 5px solid white;
+        border: 3px solid white;
       }
       .texts {
         display: flex;
@@ -66,7 +66,7 @@
       }
       #posts {
         background-color: #222229;
-        width: 55%;
+        width: 58%;
         display: flex;
         flex-direction: column;
         padding: 1rem;
@@ -76,7 +76,7 @@
         flex-direction: column;
         color: white;
         width: 100%;
-        font-size: 1vw;
+        font-size: 1.56vw;
       }
       #post-content img {
         width: 100%;
@@ -162,6 +162,32 @@
       </div>
     </div>
     <script>
+function getNumParameter() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('num');
+}
+
+// Function to display the post based on the 'num' parameter
+function displayPostByNum(num) {
+  const postContent = document.getElementById('post-content');
+  const matchingRecord = data.find((record) => record.num === parseInt(num));
+  
+  if (matchingRecord) {
+    const date = matchingRecord.feeds[0];
+    const topic = matchingRecord.title;
+    const postHTML = matchingRecord.feeds[1];
+    postContent.innerHTML = `<span style="display: flex; justify-content: space-between; align-items: center;"><h1>${topic}</h1><span>${date}</span></span>` + postHTML;
+  } else {
+    postContent.innerHTML = 'Post not found.';
+  }
+}
+
+// Initial page load: Display post based on the 'num' parameter in the URL
+const numParameter = getNumParameter();
+if (numParameter) {
+  displayPostByNum(numParameter);
+}
+
 // Variable declarations
 let isShowingAllPosts = false;
 let data = null;
@@ -256,7 +282,7 @@ allPostsButton.addEventListener('click', () => {
 });
 
 // Fetch and initialize data
-fetch('./posts.json')
+fetch('https://arisblog.onrender.com/getPosts')
   .then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
