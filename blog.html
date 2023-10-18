@@ -282,7 +282,7 @@ allPostsButton.addEventListener('click', () => {
 });
 
 // Fetch and initialize data
-fetch('https://arisblog.onrender.com/getPosts')
+fetch('https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/master/posts.json')
   .then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
