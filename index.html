@@ -1,1048 +1,204 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Ariharasudhan</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	<link rel="icon" type="image/x-icon" href="statics/a.ico">
 	<style type="text/css">
-		@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 		* {
-			color: white;
+			font-family: 'Comfortaa', cursive;
 		}
-		.me1 {
-			display: flex;
-			flex-direction: row;
-			background-color: rgba(0,0,0,0.6);
-			padding: 20px;
-		}
-
-
-		.me1 img {
-			border-radius: 50%;
-			border: 5px solid white;
-			margin: 10px;
-
-		}
-
-		hr {
+		body {
 			margin: 0;
+			background-image: url("statics/bg.jpg");
+			background-size: cover;
+			background-attachment: fixed;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
 		}
-		.me1-det {
-			margin: 30px;
+		.cover {
+			width: 70vw;
+			display: flex;
+			border-radius: 20px;
+			flex-direction: column;
+			justify-content: space-around;
+			margin-top: 5vh;
+			height: auto;
+			background-color: rgba(255,255,255,0.22);
+			margin-bottom: 5vh;
+			box-shadow: 10px 10px 10px rgba(0,0,0,0.2), -10px -10px 10px rgba(0,0,0,0.2);
+		}
+		.cover img {
+			width: 25%;
+			border-radius: 50%;
+			border: 0.4vw solid rgba(255,255,255,0.5);
+		}
+		#name, #name1 {
+			font-size: 5vw;
+			font-weight: bold;
+			color: rgba(255,255,255,0.9);
+			text-align: center;
+			letter-spacing: 0.1vw;
+		}
+		#bio {
+			font-size: 2vw;
+			color: rgba(255,255,255,0.9);
+			text-align: center;
+			letter-spacing: 0.1vw;
+		}
+		.img1 {
+			display: flex;
+			justify-content: center;
+			margin-top: 8%;
+		}
+		.options {
+			margin-top: 5%;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
-			align-items: center;
 		}
-
-		#name {
-			font-family: 'Roboto', sans-serif;
-			margin: 0;
-			letter-spacing: 10px;
-			font-size: 60px;
-			margin-bottom: 0;
+		.options button {
+			margin: 1%;
+			background-color: rgba(0,0,0,0.2);
+			border: 0;
+			color: white;
+			font-size: 2.5vw;
+			padding: 2%;
+			transition: 0.3s;
+			margin-bottom: 3%;
 		}
-
-		#role {
-			font-family: 'Roboto', sans-serif;
-			letter-spacing: 9px;	
-			margin: 0;
-		}
-		i {
-			font-size: 1.5em;
+		.options button:hover {
+			background-color: rgba(0,0,0,0.4);
+			transform: scale(1.023);
 		}
 		.contact {
-			padding-top: 1.2em;
+			padding: 1%;
+			position: relative;
+			top: 0;
+			left: 0;
 			display: flex;
-			flex-direction: row;
 			justify-content: space-around;
-			width: 100%;
-		}
-
-		.me22 {
-			background-color: rgba(0,0,0,0.05); 
-		}
-		.me22 h1 {
-			text-align: center;
-			font-family: 'Roboto', sans-serif;
-			margin: 0;
-			font-size: 60px;
-			color: rgba(0,0,0,0.6);
-		}
-
-		.me2 h3{
-			font-size: 1.2vw;
-		}
-		.me2 h4 {
-			font-size: 1vw;
-		}
-		.me2 h5{
-			font-size: 1vw;
-		}
-
-		.me2 {
-		  font-family: 'Roboto', sans-serif; 
-		  text-align: center;
-		  display: grid;
-		  grid-template-columns: 33.33% 33.33% 33.33%;
-		}
-		.me2232 {
-		  font-family: 'Roboto', sans-serif; 
-		  text-align: center;
-		  display: grid;
-		  grid-template-columns: 16.6666666667% 16.6666666667% 16.6666666667% 16.6666666667% 16.6666666667% 16.6666666667% ;
-		}
-		.me2232 #school1 h3,.me2232 #school1 h4,.me2232 #school1 h5 {
-			color: black;
-		}
-		.me2232 .langs {
-			color: black;
-			border: 1px solid rgba(0,0,0,0.1);
-			background-color: white;
-		}
-		.me2232 .langs h3 {
-			color: black;	
-			font-size: 1vw;
-		}
-		.me2232 .langs img {
-			margin-top: 1.2vh;
-		}
-		.me2 #clg h3,.me2 #clg h4,.me2 #clg h5 {
-			color: black;
-		}
-		.me2 #school1 h3,.me2 #school1 h4,.me2 #school1 h5 {
-			color: black;
-		}
-		.me2 #school2 h3,.me2 #school2 h4,.me2 #school2 h5 {
-			color: black;
-		}
-		#school1,#clg,#school2 {
-			border: 1px solid rgba(0,0,0,0.1);
-			color: black;
-		}
-
-		#heading h1 {
-			padding: 5px;
-			font-size: 30px;
-			height: auto;
-		}
-
-		.h11 {
+			font-size: 3vw;
 			background-color: rgba(0,0,0,0.2);
 		}
-
-		.me33 h1 {
-			text-align: center;
-			font-family: 'Roboto', sans-serif;
-			margin: 0;
-			font-size: 1.5vw;
-			color: rgba(0,0,0,0.6);
-		}
-
-		.me2 h3 , .me2  h4, .me2 h5{
+		a {
 			color: white;
+			text-decoration: none;
 		}
-
-		.me3 h2 , .me3  h3, .me3 b{
-			color: black;
-		}
-
-		.me3 {
-		  background-color: rgba(0,0,0,0.6);
-		  font-family: 'Roboto', sans-serif;
-		  display: flex;
-		  flex-direction: column;
-		}
-
-		.a2 {
+		.first {
 			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-		.a1 {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-		.a1 {
-			background-color: white;
-		}
-		.desc {
-			padding-left: 2vw;
-		}
-		.me3 .a1 h2, .me3 .a1 h3, .me3 .a1 b {
-			color: rgba(0,0,0,0.8);
-		}
-
-		.me3 .a2 h2, .me3 .a2 h3, .me3 .a2 b {
-			color: white;
-		}
-
-		.year {
-			padding-right: 2vw;
-		}
-
-		.bi-trophy-fill {
-			padding-right: 5px;
-			color: yellow;
-		}
-
-		.aaa {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.imgg {
-			padding-right: 10px;
-		}
-
-		.a1 {
-			border: 1px solid rgba(0,0,0,0.1);
-		}
-
-		.desc1 {
-			width: 100%;
-			padding-left: 2vw;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-
-		.desc1212 {
-			width: 55%;
-			padding-left: 1vw;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-		.lang  {
-			padding-right: 3vw;
-		}
-
-		.desc4 {
-			width: 100%;
-			padding-left: 2vw;
-			padding-right: 2vw;
-			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			justify-content: space-around;
-			text-align: center;
 		}
-
-		.hob-draw {
-			color: violet;
-			padding-right: 1vw;
-			font-size: 30px;
+		#tig {
+			border: 0;
+			border-radius: 0;
+			animation-name: move;
+			animation-duration: 10s;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			transform: translateX(-150%);
 		}
-
-		.hob-poem {
-			color: indigo;
-			padding-right: 1vw;
-			font-size: 30px;
+		@keyframes move {
+			100% {
+				transform: translateX(250%);
+			}
 		}
-
-		.hob-clay {
-			color: blue;
-			padding-right: 1vw;
-			font-size: 30px;
-		}
-
-		.hob-tailor {
-			color: green;
-			padding-right: 1vw;
-			font-size: 30px;
-		}
-
-		.hob-3d {
-			color: yellow;
-			padding-right: 1vw;
-			font-size: 30px;
-		}
-
-		.hob-game {
-			color: orange;
-			padding-right: 1vw;
-			font-size: 30px;
-		}
-
-		.hob-learn {
-			color: red;
-			padding-right: 1vw;
-			font-size: 30px;
-		}
-
-		.aaa1 {
-			display: flex;
-			align-items: center;
-		}
-		.me3 .a1 .desc4 .aaa1 h2 b {
-			font-size: 1.2vw;
-		}
-
-		.aaa12 img {
-			padding-top: 2.5vh;
-		}
-
 	</style>
-	<title>Resume - Ariharasudhan</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css" href="styles1.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+	</style>
 </head>
-
 <body>
-	<div class="me1">
-		<img src="statics/ari.jpg" alt="ARI" width="200" height="200">
-		<div class="me1-det">
-			<h1 id="name">ARIHARASUDHAN</h1>
-			<h4 id="role">PROGRAMMER | WEB DEV | GAME DEV | AI</h4>
-			<div class="contact">
-				<a href="https://www.linkedin.com/in/arihara-sudhan/"><i class="bi bi-linkedin"></i></a>
-				<a href="https://github.com/arihara-sudhan/"><i class="bi bi-github"></i></a>
-				<a href="https://twitter.com/aravindariharan"><i class="bi bi-twitter"></i></a>
-				<a href="https://arihara-sudhan.github.io/"><i class="bi bi-person-circle"></i></a>
-				<a href="mailto: aravindariharan@gmail.com"><i class="bi-envelope"></i></a>
-				<a href="https://www.instagram.com/aravind_ariharasudhan_/"><i class="bi-instagram"></i></a>
-				<a href="https://www.youtube.com/channel/UCSrtcWEDmpUAHZsjWvx6Apg/featured"><i class="bi bi-youtube"></i></a>
-			</div>
+	<div class="cover">
+		<div class="contact">
+			<a href="https://www.linkedin.com/in/arihara-sudhan/"><i class="bi-linkedin"></i></a>
+			<a href="https://github.com/arihara-sudhan/"><i class="bi bi-github"></i></a>
+			<a href='https://twitter.com/aravindariharan'><i class='bi bi-twitter'></i></a>
+			<a href="mailto: aravindariharan@gmail.com"><i class="bi-envelope"></i></a>
+			<a href="https://www.instagram.com/aravind_ariharasudhan_/"><i class="bi-instagram"></i></a>
+			<a href="https://www.youtube.com/channel/UCSrtcWEDmpUAHZsjWvx6Apg/featured"><i class="bi bi-youtube"></i></a>
 		</div>
+		<div class="first">
+			<div class="img1">
+				<img src="statics/ari.jpg" alt="ari">
+			</div>
+			<span id="name">Ariharasudhan</span>
+			<span id="bio">Sky's The Limit</span>
+		</div>
+		<div class="options">
+			<button id="res-but">Résumé</button>
+			<button id="organ-but">Organizations</button>
+			<button id="proj-but">Projects</button>
+			<button id="arts-but">Articles</button>
+			<button id="books-but">Books</button>
+			<button id='blog-but'>Blog</button>
+			<button id='mem-but'>Stories and Hobbies</button>
+			<button id='ta-but'>Tamizharivagam (தமிழ்)</button>
+		</div>
+
 	</div>
-	<div class="me33">
-		<div id="heading">
-			<h1 class="h11">LANGUAGES</h1>
-		</div>
-	<div class="me3">
-			<div class="a1">
-				<div class="desc4">
-					<div class="aaa12">
-						<img src="statics/tamil.png" alt="">
-						<h2><b>Tamizh</b></h2>
-					</div>
-					<div class="aaa12">
-						<img id="malay" src="statics/malayalam.png" alt="">
-						<h2><b>Malayalam ( Written )</b></h2>
-					</div>
-					<div class="aaa12">
-						<img src="statics/eng.png" alt="">
-						<h2><b>English</b></h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="me22">
-		<div id="heading">
-			<h1 class="h11">ACADEMICS</h1>
-		</div>
-	<div class="me2">
-		<div id="school1">
-			<h3>Government High School</h3>
-			<h4>Ayothiyapuripattanam</h4>
-			<img src="statics/tr.png" alt="" width="150px" height="200px">
-			<h5>Class Leader , SPL and JRC Member</h5>
-			<h5>Secured I Rank in School with 95.2%</h5>
-		</div>
-		<div id="school2">
-			<h3>Government Higher Secondary School</h3>
-			<h4>Poolangulam</h4>
-			<img src="statics/tr.png" alt="" width="150px" height="200px">
-			<h5>Class Leader and SPL</h5>
-			<h5>Studied Maths Biology and Secured II Rank in School with 87%</h5>
-		</div>
-		<div id="clg">
-			<h3>Einstein College of Engineering</h3>
-			<h4>Tirunelveli</h4>
-			<img src="statics/tr.png" alt="" width="150px" height="200px">
-			<h5>Vice President (2021-22), President (2023) of CSE and Class REP</h5>
-			<h5>Studying Computer Science and Engineering with 97% of CGPA</h5>
-		</div>
-	</div>
-	</div>
+	<img src="statics/tiger.gif" id="tig" width="65%">
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function() {
 
-	<div class="me22">
-		<div id="heading">
-			<h1 class="h11">SKILL SET</h1>
-		</div>
-	<div class="me2232">
-		<div class="langs">
-			<img src="statics/python.jpg" alt="" width="100px" height="100px">
-			<h3>Python Core</h3>
-		</div>
-		<div class="langs">
-			<img src="https://support.trustsource.io/hc/article_attachments/360010362119/c-logo.png" alt="" width="100px" height="100px">
-			<h3>C Programming</h3>
-		</div>
-		<div class="langs">
-			<img src="statics/java.jpg" alt="" width="100px" height="100px">
-			<h3>Core Java</h3>
-		</div>
-		<div class="langs">
-			<img src="statics/ruby.gif" alt="" width="100px" height="100px">
-			<h3>Ruby</h3>
-		</div>
-		<div class="langs">
-			<img src="statics/js.png" alt="" width="100px" height="100px">
-			<h3>Vanilla JavaScript</h3>
-		</div>
-		<div class="langs">
-			<img src="statics/react.png" alt="" width="100px" height="100px">
-			<h3>ReactJS</h3>
-		</div>
-	</div>		
-	<div class="me2232">
-		<div class="langs">
-			<img src="https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg" alt="" width="100px" height="100px">
-			<h3>Bootstrap</h3>
-		</div>
-		<div class="langs">
-			<img src="statics/blender.png" alt="" width="100px" height="100px">
-			<h3>Blender</h3>
-		</div>
-		<div class="langs">
-			<img src="https://git-scm.com/images/logos/logomark-orange@2x.png" alt="" width="100px" height="100px">
-			<h3>Git</h3>
-		</div>
-		<div class="langs">
-			<img src="statics/sql.png" alt="" width="100px" height="100px">
-			<h3>MySQL</h3>
-		</div>
-		<div class="langs">
-			<img src="statics/figma.png" alt="" width="100px" height="100px">
-			<h3>Figma</h3>
-		</div>
-		<div class="langs">
-			<img src="statics/sass.png" alt="" width="100px" height="100px">
-			<h3>Sass</h3>
-		</div>
-	</div>
-	<div class="me2232">
-		<div class="langs">
-			<img src="./statics/tailwind.png" alt="" width="100px" height="100px">
-			<h3>TailWind CSS</h3>
-		</div>
-		<div class="langs">
-			<img src="./statics/mongo.png" alt="" width="100px" height="100px">
-			<h3>MongoDB</h3>
-		</div>
-		<div class="langs">
-			<img src="./statics/express.png" alt="" width="100px" height="100px">
-			<h3>ExpressJS</h3>
-		</div>
-		<div class="langs">
-			<img src="./statics/node.png" alt="" width="100px" height="100px">
-			<h3>NodeJS</h3>
-		</div>
-		<div class="langs">
-			<img src="https://www.freepnglogos.com/uploads/photoshop-png-logo/photoshop-logo-the-use-adobe-photoshop-photography-and-music-11.png" alt="" width="100px" height="100px">
-			<h3>PhotoShop</h3>
-		</div>
-		<div class="langs">
-			<img src="./statics/jquery.png" alt="" width="100px" height="100px">
-			<h3>jQuery</h3>
-		</div>
-	</div>
-	<div class="me2232">
-		<div class="langs">
-			<img src="https://img.stackshare.io/service/994/4aGjtNQv.png" alt="" width="100px" height="100px">
-			<h3>Django</h3>
-		</div>
-		<div class="langs">
-			<img src="./statics/cherrypy.jpg" alt="" width="100px" height="100px">
-			<h3>CherryPy</h3>
-		</div>
-		
-		<div class="langs">
-			<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg1.daumcdn.net%2Fthumb%2FR1280x0%2F%3Fscode%3Dmtistory2%26fname%3Dhttps%3A%252F%252Fblog.kakaocdn.net%252Fdn%252FxGdIa%252FbtqZ9Dj5Gve%252FM7krs7TwpfHWvEHCnFxUi0%252Fimg.png&f=1&nofb=1&ipt=78f7cde15221dab84b778baef7ce66ebbb5f7edbbb35fb364842fad5a7480b43&ipo=images" alt="" width="100px" height="100px">
-			<h3>NumPy</h3>
-		</div>
-		<div class="langs">
-			<img src="https://opencv.org/wp-content/uploads/2020/07/OpenCV_logo_no_text_.png" alt="" width="100px" height="100px">
-			<h3>OpenCV</h3>
-		</div>
-		<div class="langs">
-			<img src="https://cdn.worldvectorlogo.com/logos/fastapi-1.svg" alt="" width="100px" height="100px">
-			<h3>FastAPI</h3>
-		</div>
-		<div class="langs">
-			<img src="https://download.zone/wp-content/uploads/2020/08/GDevelop-Game-Engine-Download-For-PC.png" alt="" width="100px" height="100px">
-			<h3>GDevelop</h3>
-		</div>
-	</div>
-	<div class="me2232">
-		<div class="langs">
-			<img src="https://ih1.redbubble.net/image.576101068.2529/st,small,507x507-pad,600x600,f8f8f8.u10.jpg" alt="" width="100px" height="100px">
-			<h3>PyTorch</h3>
-		</div>
-		<div class="langs">
-			<img src="https://d2ohlsp9gwqc7h.cloudfront.net/images/logos/logo-page/cbuilder-logo-1024.png" alt="" width="100px" height="100px">
-			<h3>C++</h3>
-		</div>
-	</div>
-		
-	</div>
+			var buttonsContainer = document.querySelector('.options');
+			buttonsContainer.addEventListener('click', function(event) {
+				var target = event.target;
+				if (target.nodeName === 'BUTTON') {
+					var buttonId = target.id;
+					switch (buttonId) {
+						case 'res-but':
+							location.href = 'resume.html';
+							break;
+						case 'organ-but':
+							location.href = 'organ.html';
+							break;
+						case 'proj-but':
+							location.href = 'proj.html';
+							break;
+						case 'arts-but':
+							location.href = 'articles.html';
+							break;
+						case 'books-but':
+							location.href = 'books.html';
+							break;
+						case 'blog-but':
+							location.href = 'blog.html';
+							break;
+						case 'mem-but':
+							location.href = 'mem.html';
+							break;
+						case 'ta-but':
+							window.open('https://tamizharivagam.blogspot.com', '_blank');
+							break;
+					}
+				}
+			});
 
-	<div class="me33">
-		<div id="heading">
-			<h1 class="h11">ACHIEVEMENTS</h1>
-		</div>
-	<div class="me3">
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/win.png" alt="" width="50px" height="50px">
-						<h2><b>Talent Search Examination, JP College of Engineering, Tenkasi.</b></h2>
-					</div>
-					<h3>Secured <b>I Prize</b> for exposing skills in <b>Maths</b> and <b>Science</b></h3>
-				</div>
-				<h3 class="year">FEB 2017</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/win.png" alt="" width="50px" height="50px">
-						<h2><b>Yuva Shri Kala Bharathi Award, Bharathi Yuva Kenthra, Madurai.</b></h2>
-					</div>
-					<h3>Appreciated with Award for good performance in <b>Proficiency</b> and <b>Arts</b></h3>
-				</div>
-				<h3 class="year">JAN 2018</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/win.png" alt="" width="50px" height="50px">
-					<h2><b>Aladi Aruna Merit Scholarship, Einstein College of Engineering, Tirunelveli.</b></h2>
-					</div>
+			setTimeout(function() {
+				var tigElement = document.getElementById('tig');
+				tigElement.parentNode.removeChild(tigElement);
+			}, 15000);
+		});
+	</script>
+	<script>
+		(function() {
+			var css = "@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');",
+				head = document.head || document.getElementsByTagName('head')[0],
+				style = document.createElement('style');
 
-					<h3>Recognized by my college with Scholarship for being a <b>Rank holder</b></h3>
-				</div>
-				<h3 class="year">FEB 2017</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/win.png" alt="" width="50px" height="50px">
-					<h2><b>I Prizes in Paper Presentation , Web Designing, Code Debugging</b></h2>
-					</div>
-					<h3>Rohini College of Engineering, Kanyakumari,<b>National Level Technical Symposium</b></h3>
-				</div>
-				<h3 class="year">MAR 2022</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-					<img src="statics/win.png" alt="" width="50px" height="50px">
-					<h2><b>I Prizes in Paper Presentation and Web Designing Competitions</b></h2>
-					</div>
-					<h3>PSN College of Engineering, Tirunelveli,<b>National Level Technical Symposium</b></h3>
-				</div>
-				<h3 class="year">APR 2022</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-					<img src="statics/win.png" alt="" width="50px" height="50px">
-					<h2><b>I Prizes in Paper Presentation , Web Designing, Technical Quiz</b></h2>
-					</div>
-					<h3>Thamirabarani Engineering College, Tirunelveli,<b>National Level Technical Symposium</b></h3>
-				</div>
-				<h3 class="year">MAY 2022</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/win.png" alt="" width="50px" height="50px">
-					<h2><b>Best Project Presentation in Mini Project Expo for III years</b></h2>
-					</div>
-					<h3>Created <b>AI BASED STUDENT SERVICE SYSTEM, Einstein College of Engineering</b></h3>
-				</div>
-				<h3 class="year">MAY 2022</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/win.png" alt="" width="50px" height="50px">
-					<h2><b>Finalised to ATHENEUM, A National Level Hackathon at New Delhi</b></h2>
-					</div>
-					<h3>Proposed <b>SMART EDUCATION SYSTEM</b></h3>
-				</div>
-				<h3 class="year">AUG 2022</h3>
-			</div>
-		</div>
+			style.type = 'text/css';
+			if (style.styleSheet) {
+				style.styleSheet.cssText = css;
+			} else {
+				style.appendChild(document.createTextNode(css));
+			}
 
-	<div class="me33">
-		<div id="heading">
-			<h1 class="h11">ORGANIZATIONS</h1>
-		</div>
-		<div class="me3">
-			<div class="a1">
-				<div class="desc1212">
-					<div class="aaa">
-						<img src="statics/zoho.png" alt="" width="125px" height="43px" class="imgg">
-						<h2><b>Project Trainee</b></h2>
-					</div>
-						<h2 id="date" style="font-size: 1.3vw; color:black">JAN 23 To JUN 07 (2023)</h2>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-		</div>
-		<div class="me3">
-			<div class="a1">
-				<div class="desc1212">
-					<div class="aaa">
-						<img src="statics/zoho.png" alt="" width="125px" height="43px" class="imgg">
-						<h2><b>Machine Learning Engineer</b></h2>
-					</div>
-						<h2 id="date" style="font-size: 1.3vw; color:black">JUN 07 (2023) To NOW</h2>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-		</div>
-	</div>
-
-
-
-	<div class="me33">
-		<div id="heading">
-			<h1 class="h11">COURSES And CERTIFICATIONS</h1>
-		</div>
-		<div class="me3">
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>CherryPy - Python Web Framework</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/solo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Completed around 10 Courses</b></h2>
-					</div>
-				</div>
-				<h3 class="year">SoloLearn</h3>
-			</div>
-
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>FastAPI - Python Web Framework</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-		
-			
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/fcc.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Scientific Computing with Python</b></h2>
-					</div>
-				</div>
-				<h3 class="year">FreeCodeCamp</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>OpenCV</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/fcc.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>JavaScript Algorithms and Data Structures</b></h2>
-					</div>
-				</div>
-				<h3 class="year">FreeCodeCamp</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Deep Learning</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/hr.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Problem Solving with Python</b></h2>
-					</div>
-				</div>
-				<h3 class="year">HackerRank</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Convolutional Neural Network</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/sr.jpg" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Competitive Programming</b></h2>
-					</div>
-				</div>
-				<h3 class="year">SkillRack</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>The Multi-Layer Perceptron</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/hr.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Problem Solving with JavaScript</b></h2>
-					</div>
-				</div>
-				<h3 class="year">HackerRank</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>The Linear Algebra Course</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/hr.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Problem Solving with Java</b></h2>
-					</div>
-				</div>
-				<h3 class="year">HackerRank</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>The Calculus Course</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Introduction to PyTorch</b></h2>
-					</div>
-				</div>
-				<h3 class="year">Microsoft</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>REST API</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Introduction to Computer Vision with PyTorch</b></h2>
-					</div>
-				</div>
-				<h3 class="year">Microsoft</h3>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/zlogo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>NumPy</b></h2>
-					</div>
-				</div>
-				<h3 class="year">ZOHO Corporation</h3>
-			</div>
-		</div>
-	</div>
-
-	<div class="me33">
-		<div id="heading">
-			<h1 class="h11">PROJECTS</h1>
-		</div>
-	<div class="me3">
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/keyb.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Virtual Keyboard</b></h2>
-					</div>
-						<h2 class="lang"><b>Python</b></h2>
-				</div>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/mic.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Voice Recognition for WEB Development</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/quiz.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Virtual Quiz and Virtual Pen</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/edu.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Smart Education System</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/write.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>OCR Based Test Evaluator</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="https://machinelearningmastery.com/wp-content/uploads/2019/02/sample_image.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Digit Recogntion - MNIST</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="https://i.pinimg.com/564x/e9/c2/c5/e9c2c5c10beda12fe489ae2a783e36b8.jpg" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Sentiment Analysis</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="https://e7.pngegg.com/pngimages/824/370/png-clipart-four-leaf-clover-symbol-good-luck-charm-clover-leaf-heart.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>My Own Blog (<a href="http://southernboy.onrender.com" style="color: black; text-decoration: none;">CLICK HERE</a>)</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>MERN</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/lock.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Virtual Pattern Lock</b></h2>
-					</div>
-						<h2 class="lang"><b>Python</b></h2>
-				</div>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/math.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>MathMCQ - Speech Recognition</b></h2>
-					</div>
-						<h2 class="lang"><b>TailWind CSS, JS</b></h2>
-				</div>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/attendance.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>AI Based Attendance System</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/mic.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Voice Recognition Based Calculator</b></h2>
-					</div>
-						<h2 class="lang"><b>Python</b></h2>
-				</div>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="https://static.vecteezy.com/system/resources/previews/005/538/459/non_2x/animal-insect-mantis-head-abstract-logo-design-icon-symbol-illustration-vector.jpg" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Insects' Website (FullStack)</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Django</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="https://cdn.redmondpie.com/wp-content/uploads/2013/04/iOS-Notes-app-logo.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>ToDo App (FullStack)</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>MERN</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/game.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Games</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/game.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Games</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Ruby</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/insta.jpg" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Instagram Profile Clone</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>ReactJS</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/fruit.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Fruit Selling Website</b></h2>
-					</div>
-						<h2 class="lang"><b>Bootstrap</b></h2>
-				</div>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/tube.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>YouTube Clone</b></h2>
-					</div>
-						<h2 class="lang"><b>ReactJS</b></h2>
-				</div>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/gui.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>GUI Applications</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/tom.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>Talking TOM for DeskTop</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Python</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc">
-					<div class="aaa">
-						<img src="statics/whatsapp.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>WhatsApp Clone</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>ReactJS</b></h2>
-			</div>
-			<div class="a1">
-				<div class="desc1">
-					<div class="aaa">
-						<img src="statics/3d.png" alt="" width="50px" height="50px" class="imgg">
-						<h2><b>3D Models</b></h2>
-					</div>
-				</div>
-						<h2 class="lang"><b>Blender</b></h2>
-			</div>
-
-		</div>
-		</div>
-
-	<div class="me33">
-		<div id="heading">
-			<h1 class="h11">HOBBIES</h1>
-		</div>
-	<div class="me3">
-			<div class="a1">
-				<div class="desc4">
-					<div class="aaa1">
-						<i class="hob-draw bi bi-circle-fill"></i>
-						<h2><b>Drawing</b></h2>
-					</div>
-					<div class="aaa1">
-						<i class="hob-poem bi bi-circle-fill"></i>
-						<h2><b>Poem Writing</b></h2>
-					</div>
-					<div class="aaa1">
-						<i class="hob-clay bi bi-circle-fill"></i>
-						<h2><b>Clay Art</b></h2>
-					</div>
-					<div class="aaa1">
-						<i class="hob-tailor bi bi-circle-fill"></i>
-						<h2><b>Tailoring</b></h2>
-					</div>
-					<div class="aaa1">
-						<i class="hob-3d bi bi-circle-fill"></i>
-						<h2><b>3D Modelling</b></h2>
-					</div>
-					<div class="aaa1">
-						<i class="hob-game bi bi-circle-fill"></i>
-						<h2><b>Game Simulating</b></h2>
-					</div>
-					<div class="aaa1">
-						<i class="hob-learn bi bi-circle-fill"></i>
-						<h2><b>Learning</b></h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-</body>
-
+			head.appendChild(style);
+		})();
+	</script>
 </body>
 </html>
