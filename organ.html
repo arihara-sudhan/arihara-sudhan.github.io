@@ -5,67 +5,49 @@
 	<link rel="icon" type="image/x-icon" href="statics/a.ico">
 	<style type="text/css">
 	@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-    * {
+	* {
       font-family: 'Comfortaa', cursive;
       margin: 3px;
     }
+	.organ {
+		display: flex;
+		flex-wrap: wrap;
+	    background-color: rgba(255,255,255,0.199);
+    	border-radius: 1em;
+		color: white;
+	}
     body {
     	background-color: #212E52;
     }
-    .organ {
-    	margin: 0.1vw;
-	    background-color: rgba(255,255,255,0.199);
-    	display: flex;
-    	padding: 0.2em;
-    	height: auto;
-    	align-items: center;
-    	justify-content: space-around;
-    	border-radius: 1em;
-    }
-    .img-org {
-	    margin: 1.3rem;
-    	box-shadow: 0 0 5px white,
-            0 0 7px white,
-            0 0 9px white;
-    	width: 25rem;
-    	height: 30rem;
-    	border-radius: 1em;
-    }
-    fieldset {
-    	padding: 1em;
-    	margin: 0;
-    	margin-bottom: 0.23rem;
-    	border: 0.2em solid blue;
-    	border-radius: 1em;
-    }
-    legend img {
-    	margin: 0;
-    }
-    .organ h3 {
-    	font-size: 2.5vw;
-    	margin: 1rem;
-    	margin-top: 0;
-    }
-    .organ span {
-    	font-size: calc(1rem + 1vw);
-    }
-    .company-text {
-    	text-align: justify;
-    	margin: 1.2em;
-    }
-    .company-text h3 {
-    	color: white;
-    }
-    .company-text span {
-    	color: white;
-    }
-    .start {
-    	display: flex;
-    	justify-content: center;
-    	align-items: center;
-    	flex-direction: column;
-    }
- 	</style>
+	.img-org {
+		max-width: 100%;
+		height: auto;
+		width: 13rem; /* Set a fixed width for the image on larger screens */
+	}
+
+	.company-text {
+		flex: 1;
+		padding: 10px;
+	}
+
+	.start h3 {
+		margin-top: 0; /* Remove default margin for h3 */
+	}
+
+	@media (max-width: 767px) {
+		.img-org {
+			width: 100%; /* Allow the image to take 100% width on smaller screens */
+		}
+	}
+	.company-text {
+		flex: 1;
+		padding: 10px;
+		text-align: justify; /* Add this line */
+	}
+	.img-org {
+		border-radius: 1em;
+	}
+</style>
 </head>
 <body>
   	<center>
@@ -77,7 +59,7 @@
 				<div class="start">
 					<h3>Designation : Project Trainee</h3>
 				</div>
-				<span>SRK, the individual who unearthed a potential in me that aligned perfectly with a role at Zoho. I extend my heartfelt appreciation to Einstein College of Engineering and its dedicated staffs, especially my HOD, for nurturing and guiding me. Starting my professional journey as a Project Trainee at Zoho Corporation in Coimbatore (From South🥹) has been an enriching experience, adding significant value to my career.
+				<span class="txt">SRK, the individual who unearthed a potential in me that aligned perfectly with a role at Zoho. I extend my heartfelt appreciation to Einstein College of Engineering and its dedicated staffs, especially my HOD, for nurturing and guiding me. Starting my professional journey as a Project Trainee at Zoho Corporation in Coimbatore (From South🥹) has been an enriching experience, adding significant value to my career.
 					Becoming the first software engineer from my village fills me with a sense of pride, and I am eager to explore the promising path that lies ahead. As I step into this esteemed Indian MNC, my aspiration is to shine brightly and make a meaningful impact in my role.</span>
 			</div>
 		</fieldset>
@@ -90,7 +72,7 @@
 				<div class="start">
 					<h3>Designation : Machine Learning Engineer</h3>
 				</div>
-				<span>On the second day, the revelation dawned upon me regarding the role I was assigned: that of a Machine Learning Engineer specializing in computer vision. What? 😳 Yes, indeed! Despite my initial lack of experience in the realm of Machine Learning, a tremendous learning journey awaited. Thanks to the guidance of my team leader, the seasoned SRK, whose mentoring style and extensive expertise in Machine Learning became the catalyst for my growth.
+				<span class="txt">On the second day, the revelation dawned upon me regarding the role I was assigned: that of a Machine Learning Engineer specializing in computer vision. What? 😳 Yes, indeed! Despite my initial lack of experience in the realm of Machine Learning, a tremendous learning journey awaited. Thanks to the guidance of my team leader, the seasoned SRK, whose mentoring style and extensive expertise in Machine Learning became the catalyst for my growth.
 					Fast forward to June 7, 2023, the day I officially assumed the role. Within the innovative domain of ZLabs (R&D), I transformed into a fledgling bird finding its place to nestle. Gratitude is owed not only to Mr. SRK, a beacon of experience 😳❤️, but also to my own determination to surpass limitations and venture into uncharted territories.
 				</span>
 			</div>
@@ -106,7 +88,7 @@
 				<div class="start">
 					<h3>Celebrating ONE Year! 🎉</h3>
 				</div>
-				<span>A year has flown by at Zoho, and it feels like I've just started this remarkable journey. Balancing between exploration and exploitation in the realm of computer vision has been both challenging and rewarding. This experience has shaped me into a more research-oriented individual, drawing inspiration from the likes of Mr. SRK and Mr. Fasil.
+				<span class="txt">A year has flown by at Zoho, and it feels like I've just started this remarkable journey. Balancing between exploration and exploitation in the realm of computer vision has been both challenging and rewarding. This experience has shaped me into a more research-oriented individual, drawing inspiration from the likes of Mr. SRK and Mr. Fasil.
 
 Throughout this one-year adventure, the guidance and support from both Mr. SRK and Mr. Fasil have been instrumental. Mr. Fasil's knack for navigating through challenging situations, especially those pesky saddle points, has been truly transformative. My heartfelt thanks go to Mr. SRK for his unique approach in respecting and empowering employees, regardless of age differences – a quality that has left a lasting impression on me.
 
