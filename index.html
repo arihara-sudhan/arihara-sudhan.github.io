@@ -142,7 +142,22 @@
 	<img src="statics/tiger.gif" id="tig" width="65%">
 	<script type="text/javascript">
 		document.addEventListener("DOMContentLoaded", function() {
-
+		        var imagePaths = [
+		            "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvZnJwYW50aGVyYV90aWdyaXNfYWx0YWljYV90aWdlcl8wLWltYWdlLWt6eGx2YzYyLmpwZw.jpg",
+		            "https://www.chesterzoo.org/app/uploads/2019/09/Sumatran-tiger-square.jpg",
+		            "https://www.chesterzoo.org/app/uploads/sites/5/2016/06/Sumatran-tiger-in-the-zoo-square.jpg"
+		        ];
+		
+		        var currentIndex = 0;
+		        var ariPic = document.getElementById('ari-pic');
+		
+		        function changeImage() {
+		            currentIndex = (currentIndex + 1) % imagePaths.length;
+		            ariPic.src = imagePaths[currentIndex];
+		        }
+		
+		        setTimeout(changeImage, 3000); // Change image after 3 seconds
+	    
 			var buttonsContainer = document.querySelector('.options');
 			buttonsContainer.addEventListener('click', function(event) {
 				var target = event.target;
