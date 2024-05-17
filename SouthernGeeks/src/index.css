@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&family=PT+Mono&display=swap');
+
+* {
+  font-family: "Hubballi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+body {
+  margin: 0;
+  background-image: url(https://www.wallpapersifu.com/wp-content/uploads/2021/06/SM-Floral-024-Mural.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

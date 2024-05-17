@@ -1,0 +1,75 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0,0,0,0.6);
+  width: 40%;
+  border-radius: 1vw;
+  margin: 2vw;
+  padding: 1vw;
+  border: 0.1vw solid greenyellow;
+}
+.TASK {
+  border: 1px solid white;
+  padding: 1vw;
+  margin: 0.5vw;
+  border-radius: 1vw;
+  background-color: rgba(0,0,0,0.7);
+}
+
+#logo {
+  width: 10vw;
+}
+
+h1 {
+  font-size: 3rem;
+}
+@media only screen and (max-width: 900px) {
+  .App {
+    width: 100%;
+    margin: 0;
+    border-radius: 0%;
+    font-size: 5vw;
+    border: 0;
+  }
+  h1 {
+    font-size: 8vw;
+  }
+  #logo {
+    width: 25vw;
+  }
+  .completed, .refer {
+    color: black;
+    border-radius: 1rem;
+    padding: 0.1rem;
+    font-size: 4vw;
+  }
+  .TASK {
+    margin: 0.51rem;
+  }
+}
+
+.CHRONA span {
+  font-size: 2vw;
+}
+
+
+.TASKS {
+  text-align: left;
+}
+
+.completed {
+  background-color: lightgreen;
+  color: black;
+  border-radius: 1rem;
+  padding: 0.1rem;
+  font-size: 1vw;
+}
+.refer {
+  background-color: yellow;
+  color: black;
+  border-radius: 1rem;
+  padding: 0.091rem;
+  font-size: 1vw;
+}
