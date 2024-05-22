@@ -47,6 +47,8 @@ h1 {
   }
   .TASK {
     margin: 0.51rem;
+    width: 80%;
+    border: 0.51px solid white;
   }
 }
 
