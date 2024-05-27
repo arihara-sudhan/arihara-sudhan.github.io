@@ -11,7 +11,7 @@ function App() {
       {JSONDATA.map(task => (
         <div className='TASK'>
           <div className='CHRONA'>
-            <span>(WEEK {task.week})-----|||||||||||----({task.date})</span>
+            <span>(DAY {task.week})-----|||||||||||----({task.date})</span>
           </div>
           <div className='TASKS'>
             {task.topics.map((topic, idx) => (
