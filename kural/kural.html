@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>திருக்குறள் விளக்க உரை</title>
+        <style>
+            * {
+                margin: 0;
+            }
+            body {
+                background-color: #2b2a33;
+            }
+            header {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                background-color: #42414d;
+                padding: 1rem;
+                color: white;
+                margin: 1rem;
+                border-radius: 1rem;
+            }
+            header img {
+                border-radius: 50%;
+                width: 10%;
+                border: 3px solid white;
+            }
+            header h1 {
+                margin-left: 1rem;
+            }
+            #contents {
+
+            }
+        </style>
+    </head>
+    <body>
+        
+        <header>
+            <img src="../statics/ss7.png" alt="">
+            <h1>திருக்குறள் விளக்க உரை</h1>
+        </header>
+        
+        <div id="contents">
+
+        </div>
+
+        <script>
+            const div = document.getElementById("contents");
+            fetch("./meta.json")
+                .then(resp => resp.json())
+                .then(data=>{
+                    data.kural_records.forEach(rec=>{
+                        console.log(rec)
+                    })
+                })
+        </script>
+
+    </body>
+</html>

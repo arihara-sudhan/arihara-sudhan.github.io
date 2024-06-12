@@ -1,0 +1,25 @@
+{
+    "kural_records": [
+      {
+        "kural_name": "Kural 1",
+        "link": "linktokural1",
+        "kural_img": "img_link_of_kural1"
+      },
+      {
+        "kural_name": "Kural 2",
+        "link": "linktokural2",
+        "kural_img": "img_link_of_kural2"
+      },
+      {
+        "kural_name": "Kural 3",
+        "link": "linktokural3",
+        "kural_img": "img_link_of_kural3"
+      },
+      {
+        "kural_name": "Kural 4",
+        "link": "linktokural4",
+        "kural_img": "img_link_of_kural4"
+      }
+    ]
+  }
+  
