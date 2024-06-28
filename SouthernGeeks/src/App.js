@@ -15,7 +15,8 @@ function App() {
           </div>
           <div className='TASKS'>
             {task.topics.map((topic, idx) => (
-              <p>{idx+1}. {topic}<a href={task.reference[idx]}><span className='refer'>REFERENCE</span></a></p>
+              <p>{idx+1}. {topic}<a href={task.reference[idx]}>
+                 <span className='refer'>REFERENCE</span></a></p>
             ))}
           </div>
           </div>
