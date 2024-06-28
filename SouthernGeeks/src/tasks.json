@@ -1,7 +1,7 @@
 [
     {
         "day": 1,
-        "date": "28-06-2023",
+        "date": "28/06/2023",
         "topics": ["onClick = {someFunction} vs onClick = {()=>{someFunction()}}",
                     "Number() vs parseInt()","Set Methods in JS"],
         "reference": ["https://dev.to/itric/onclicksomefunction-vs-onclicksomefunction-5d1i",
