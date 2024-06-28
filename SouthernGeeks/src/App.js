@@ -5,7 +5,6 @@ import JSONDATA from "./tasks.json";
 function App() {
   return (
     <div className="App">
-      
       <img src="https://arihara-sudhan.github.io/blog/img/logo.png" alt="" id="logo"/>
       <h1>ARI LEARNS</h1>
       {JSONDATA.map(task => (
