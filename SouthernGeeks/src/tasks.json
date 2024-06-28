@@ -2,7 +2,10 @@
     {
         "week": 1,
         "date": "27-05-2023",
-        "topics": ["Container Queries","Style Queries","CSS Layers","Subgrid", "Native Selector Nesting", "Anchor Positioning",":has, :is, :where","Logical Properties","Scroll-Linked Animations","View Transitions"],
-        "reference": ""
+        "topics": ["onClick = {someFunction} vs onClick = {()=>{someFunction()}}",
+                    "Number() vs parseInt()","Set Methods in JS"],
+        "reference": ["https://dev.to/itric/onclicksomefunction-vs-onclicksomefunction-5d1i",
+                      "https://dev.to/yns666/difference-between-parseint-and-number-in-converting-strings-1fh5",
+                      "https://developer.mozilla.org/en-US/blog/javascript-set-methods/"]
     }
 ]
