@@ -61,6 +61,11 @@ h1 {
   text-align: left;
 }
 
+.TASKS p {
+  display: flex;
+  justify-content: space-between;
+}
+
 .refer {
   background-color: lightgreen;
   color: black;
