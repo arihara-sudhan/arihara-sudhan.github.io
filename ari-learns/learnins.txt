@@ -1,0 +1,380 @@
+1. rString vs bString vs uString vs fString
+2. bString alias Bytes Literal
+3. Code Point
+4. re: findall, search, match
+5. Metacharacters (., ^, $, [])
+6. Escape Characters (\d, \D, \w, \W, \s, \S, \n, \0, \t)
+7. Word Character (a-Z, A-Z, 0-9, _): \w
+8. Quantifiers (+, *, ?, {n,m})
+9. Grouping and Capturing ((), Back References \1: (\w+)\s+\1)
+10. Literal Characters / Concatenation
+11. Pattern & Corpus
+12. [] and | specifies Disjunction
+13. [ab]i means ai or bi
+14. Kleen *, Kleen +, Wildcard \.
+15. Boundary: \b, \B
+16. Anchors: ^, $, \b, \B
+17. Precedence: Gupp(y|ies)
+18. Greedy Matchers: *, +, {n,m}
+19. Lazy Matchers: *?, +?, {n,m}? 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+20. Substitution: s/REGEX/PATTERN
+21. Numbered Register: Back Reference: (.*)(.+)\1\2
+22. Non Capturing Group: (?:pattern)
+23. Positive Look-ahead PATTERN1(?=PATTERN2)
+24. Negative Look-ahead PATTERN1(?!PATTERN2)
+25. Corpora vs Utterance
+26. Utterances: Two types of Disfluencies
+27. Disfluencies: Fillers (Filled Pauses) - Fragments
+28. Speech Transcription System avoids Disfluencies
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+31. Word Types @ Vocabulary Size |V|
+32. Word Instances | Total Words used (N)
+33. Herdan’s Law: Word Types slowly increases but instances increase fast
+34. Heap's Law: ∣V∣=kN^β
+35. Lemma: canonical form of a word (A type of Text Normalization)
+36. Word Forms: eat, ate, eaten
+37. Code Switching: Naan enna solrenaa, I am a good boy
+38. Data sheet / Data statement
+39. SOME UNIX COMMANDS: tr -sc ’A-Za-z’ ’\n’ < sh.txt
+40. tr -sc A-Za-z '\t' < sh.txt | tr a-z A-Z
+41. tr -sc 'A-Za-z' '\n' < 'sh.txt' | sort | uniq -c
+42. tr -sc 'A-Za-z' '\n' < sh.txt | tr A-Z a-z | sort | uniq -c | sort -n -r
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+43. Tokenization: Segmentation of corpus
+44. Rogerian Psychotherapist
+45. Subword Tokenization (进入 = 进 + 入)
+46. Tokenization rely on Named Entity Recognition
+47. Penn Treebank Tokenization: Clitics and Punctuations as Tokens [doesn’t: does + n’t]
+48. Morpheme: Meaningful Segment of Word
+49. Hanzi forms Morpheme (姚 明 进 人 入 总 决 赛)
+50. Extended/Verbose Mode : (?x)
+51. nltk.regexp_tokenize(text, pattern)
+52. Token Learner and Token Segmenter
+53. Top-down Tokenization
+54. Bottom-up Tokenization
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+55. Bottom-up Approach: LARGE COPUS ---> MODEL ---> [TOKENS]
+56. Bottom-up Approaches: Unigram Language Model, Byte Pair Encoding
+57. SentencePiece: Library to perform Unigram Language Model, Byte Pair Encoding
+58. Byte Pair Encoding (BPE) - Anto Bro's Marriage Edition 🎉💍
+59. BPE: (1) Splitting into Individual Characters | Making a Vocabulary
+56. BPE: (2) Grouping the adjacent pairs
+57. BPE: (3) Merging the most occuring pairs | Enlist in Vocabulary
+58. BPE: (4) Repeat (1), (2), (3) until VOCAB_LIMIT | TOKEN_LIMIT
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+59. Normalization (Eg: Case Folding)
+60. Morphologically Different Words (Duck, Ducks | Come, Came | Went, Go)
+61. Surfacially Different but Same Root/Stem
+62. Lemma of (go, went, gone) = go
+63. Lemma of (He is reading detective stories) = He be read detective story.
+64. Two Broad Classes of Morphemes: Stem + Affix (cat = cat + s)
+65. Morpholigical Parser: splits into Stem + Affix
+66. Porter Stemmer Stemming: Rewrite Rules | Heuristic Rules
+67. ATIONAL → ATE (e.g., relational →relate) | ING → ϵ if the stem contains a vowel (e.g., motoring →motor) | SSES → SS (e.g., grasses →grass)
+68. Porter Stemmer Over-Generalizing: Policy→Police
+69. Porter Stemmer Under-Generalizing: Not European→Europe doesn't happen
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+70. Sentence Segmentation: Delimeters-Punctuations: Period, Question Mark, Exclamation
+71. Unambiguous Delimeters: !, ?
+72. Ambiguous Delimeter: . (Mr., U.S.A.,)
+73. Coreference : [Stanford Arizona Cactus Garden, Stanford University Arizona Cactus Garden]
+74. Minimum Edit Distance measures Similarity of Two Strings
+75. Minimum Edit Distance @ Levenshtein Distance 
+76. Minimum Edit Distance: We perform Insertion, Deletion, Substitution to change INTENTION to EXECUTION
+77. Levenshtein Distance
+		Inserting a character costs 1
+		Deleting a character costs 1
+		Substituting one character for another costs 2 (unless the characters are the same, in which case it costs 0).
+78. D[i, j]: Edit distance b/w the first i chars of the SRC and the first j chars of TARGET
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+79. Minimum Edit Distance: Table Intuition
+80. Minimum Edit Distance: (↖←↑)
+81. Optimal Distance: Minimum Operations and Minimum Cost
+82. Viterbi Algorithm: Probabilistic Extension of Minimum Edit Distance
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+83. LMs : Language Models
+84. Language Models: Prediction of next Word or Sentence
+85. LMs can be used in Grammar Correction
+86. AAC: Augmented & Alternative Communication: Computer Vision + LLM
+87. Large Language Models are built on Probability/Next Word Prediction
+88. Gram: Single Word | n-gram is a sequence of n words | Bi-Gram is two words
+89. n-gram: Probabilistic Model estimating the probability of a word GIVEN the n-1 previous words
+90. I am in love with a ____
+[PERSON: 0.7, GHOST: 0.1, APPLE: 0.2]
+91. Joint Probability: P(Two Events Occuring Together)
+92. Mutually Exclusive Events: Both Events can't occur at a time
+93. Example: P(RAINY ∩ SUNNY)
+94. Joint Probability: P(A∩B)=P(B∣A)P(A)
+95. Conditional Probability: P(It is RAINY∣It is SUNNY)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+96. P(w|h) where, h is history, w is the word to predicted
+97. Language is creative
+98. P(w|h): Out of the times we saw the history h, how many times was it followed by the word w
+99. w1:n−1 (or) w<n: w1,w2,...,wn−1
+100. P(w1,w2,...,wn) (or) P(X1 = w1, X2 = w2, X3 = w3,..., Xn = wn): Xi is random variable
+101. Joint Probability: P(X1=Ari, X2=good)
+102. P(X1...Xn) = P(X1)P(X2|X1)P(X3|X1:2)...P(Xn|X1:n−1)
+103. P("I","love","math")=P("love"∣"I")P("math"∣"I love")P("I")
+104. P(Jingle, Bells, Jingle, Bells, Jingle) = 60% [n-gram]
+P(Jingle, Bells, Jingle) = 58% [Markov Assumption]
+105. Unigram: P(wi∣w1:wi−1)=P(wi) | P("I love math") = P("I")×P("love")×P("math")
+106. Bigram: P(wi∣w1:wi−1)=P(wi∣wi−1):P("I love math")=P("I")×P("love"∣"I")×P("math"∣"love")
+107. P(wn|w1:n−1) ≈ P(wn|wm:n−1)
+108. A bigram is a 1st-order Markov model (depends on 1 previous word) | A trigram is a 2nd-order Markov model (depends on 2 previous words)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+109. Estimation
+110. Relative Frequency: P(wn|wn−N+1:n−1) = C(wn−N+1:n−1 wn)/C(wn−N+1:n−1)
+111. Unigram Count (Actual Count of Word in Corpus)
+112. Logarithm Property: Product: log(a⋅b) = loga+logb
+113. Logarithm Property: Quotient: log(a/b) = loga-logb
+114. Logarithm Property: Power: log(a^b) = b.loga
+115. Numerical Underflow
+116. Numerical Stability with Logarithm: p1×p2×p3×p4 = exp(logp1 + logp2 + logp3 + logp4)
+117. Infinigram: Any length can be used as history: Suffix Arrays
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+118. Extrinsic Evaluation: End to End Evaluation: Embedding in an application and measuring how much the application improves
+119. Intrinsic Evaluation
+120. Training Set, Test Set (Held-out set of data)
+121. Test Set Sentences should be assigned higher probability is likely, lower probability if non-likely
+122. Training on The Test Set: Existences of a sentence of Training Set in Test Set
+123. DevSet: All our testing on this until the very end, and then we test on the test set once to see how good our model is.
+124. Less Surprised: Assigns High Probability 
+125. P(sentence): Longer The Sentence: Lower The Probability 
+126. Raw Probability: Favors Shorter Sentences (Fair Comparison Needed for Evaluation: Perplexity)
+127. Perplexity: Inverse Probability of The Test Set, Normalized by The Number of Words
+128. Lower The Peplexity; Better The Model
+129. Branching Factor: Number of possible next words that can follow any given word
+130. In Deterministic Language Model: Branching factor is simply the size of the vocabulary.
+131. In Probabilistic Language Model: Weighted branching factor because the likelihood of certain words "branches" more heavily than others
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+132. Sampling Sentences from Language Models
+133. Visualizing: Unigram, Bigram | We plot the frequency as a band with appropriate width
+134. More the value of N; More the performance of N-gram
+135. The longer the context, the more coherent the sentences
+136. Without Domain-Specific Training, "Dogs are juicy and sweet"
+137. Unseen sequences lead to underestimating probabilities, reducing model performance, and causing 0 probabilities that make perplexity computation impossible | JOINT PROBABILITY = 0 | Zero probabilities break our model!
+138. Smoothing or Discounting: To deal with zero probability n-grams
+139. Smoothing: Shaves off a bit of probability mass from some more frequent events and
+give it to unseen events
+140. Laplace Smoothing (Add-1 Smoothing): P(W) = 0+1/N+V
+141. Discounting: The ratio between smoothed and unsmoothed
+142. Add-k Smoothing: P(W) = 0+K/N+KV
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+143. To overcome Zero Frequency n-grams, we go for Smoothing, Interpolation, Stupid Back-Off
+144. Linear Interpolation
+145. P(wn|wn−2wn−1) = λ1P(wn) + λ2P(wn|wn−1) + λ3P(wn|wn−2wn−1)
+146. Interpolation of Trigram: weighting and adding unigram, bigram, and trigram probabilities | Interpolation Weight (λ)
+147. Interpolation uses Held-out Corpus to find optimal values for lambdas
+148. Back-Off: We step down to n-1 grams if ZERO Evidence found
+149. Back-Off: Higher Order to Lower Order: P(W1.W2.W3...WN) = P(W1.W2.W3...WN-1)
+150. Stupid Back-Off: P(W1.W2.W3...WN) = λP(W1.W2.W3...WN-1)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+151. Naive Bayes: Text Categorization
+152. Text Categorization Usecases: Spam Detection, Sentiment Analysis and so on
+153. Probabilistic Classifier: Predicts the probability of the observation being in the class
+154. Bag of Words: Unordered Words with Frequency (Like HashMap)
+155. Argmax: Selects the most likely class from multiple options [argmax P(c|d), c∈C]
+156. Baye's Rule: P(x|y) = P(y|x)P(x) / P(y) : Simply extra features
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+157. P(A∣B) = P(B∣A).P(B) / P(A)
+158. P(A∣B) is Posterior Probability
+     P(B∣A) is Likelihood
+     P(A) is Prior Probability
+     P(B) is the Marginal Probability
+159. Baye's Rule: More Evidence we have, More Accurate The Probability is
+160. P(RAINING/PEACOCK DANCES) = P(PEACOCK DANCES/RAINING)*P(RAINING) / P(PEACOCK DANCES)
+161. P(A=🦇|B=🙃) ∝ P(B=🙃|A=🦇).P(A=🦇)
+162. P(B=🙃|A=🦇) = P(F1, F2, F3, ..., FN / A=🦇); F1 = Folds it's wings
+163. Naive Bayes assumption: P(F1, F2, F3, ..., FN / A=🦇) = P(F1/A=🦇).P(F2/A=🦇).P(F3/A=🦇)....P(FN/A=🦇)
+164. Naive Bayes assumption: the presence of each FEATURE is independent of the others
+166. P(Spam∣"free","money","offer")∝P("free","money","offer"∣Spam)×P(Spam)
+167. For Independent Events: P(A∩B)=P(A)P(B)
+     For Dependent Events: P(A∩B)= P(A/B)P(B) (or) P(B/A)P(A)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+168. P(A/B) = C1/C2 : Frequentist Probability
+     P(A/B) = P(B/A).P(A)/P(B) : Bayesian Probability
+169. Document ---> Sentence
+170. Naive Baye's Assumption:
+    P(A=Bat|MAMMAL) = P(f1, f2|MAMMAL)
+                = P(Stimulate Milk, Eats fruits | MAMMAL)
+                = P(Stimulate Milk|MAMMAL).P(Eat fruits|MAMMAL)
+                = 0.8*0.5
+                = 0.4
+                = 40%
+171. P(D|C) = P(W1, W2, W3, W4|MEDICAL)
+       = P(HEART, KIDNEY, PULSE, FEVER | MEDICAL)
+       = 90%
+172. P(HEART|MEDICAL) = C(HEART IN MEDICAL CLASS)/C(WORDS IN MEDICAL CLASS)
+173. P(W1, W2, W3, W4|C) = P(W1|C).P(W2|C).P(W3|C).P(W4|C) : If any of these values is 0, just ignore
+174. Stop Words: a, is, at, the, and, or : Can be removed
+175. P(C=+|S) = P(+)P(S|+) ; P(C=-|S) = P(-)P(S|-)
+176. Binary Naive Bayes: Comparing the frequency, Presence of a word is important
+177. Sentiment Analysis Optimizations
+        1. Repeated Words should be clipped to 1 as they make the sentiment intensive
+        2. Dealing with messy negations (I don't like; Don't miss the movie, it nevers set you bored)
+178. Sentiment Lexicons: Positive and Negative Words Listed
+179. Gold Label: Target, Human defined Label
+180. If Predicted and Actual are same, prepend True
+        If predicted class is positive, It is True Positive
+        If predicted class is negative, It is True Negative
+     If Predicted and Actual are not same, prepend False
+        If predicted class is positive, It is False Positive
+        If predicted class is negative, It is False Negative
+181. ACCURACY: (TP+TN)/(TP+TN+FP+FN)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+182. Precision: Out of total datapoints classified as positive, how many are actually positive
+    Precision = TP / (TP+FP)
+183. Negative Predictive Value: Out of total datapoints classified as negative, how many are actually negative
+          NPV = TN / (TN+FN)
+184. Recall (Sensitivity): Out of the positive classes, how many are classified as positive
+        RECALL = TP / (TP+FN)
+185. High Recall → Reduce False Negatives (FN) → Important when missing a positive case is costly | High Precision → Reduce False Positives (FP) → Important when a false positive is costly
+186. The Fβ-score is a generalization of the F1-score, where the β parameter controls the trade-off between Precision (P) and Recall (R):
+               Fβ Score = (1+β^2)⋅P⋅R / (β^2.P+R)
+187. When β = 1, this reduces to the F1-score, which equally weights precision and recall.
+    When β > 1, recall is given more importance.
+    When β < 1, precision is given more importance.
+188. F1 Score = 2PR / (P + R)
+189. A Microaverage is dominated by the more frequent class (in
+this case spam), since the counts are pooled.
+            MicroPrecision=∑(TP+FP)/∑TP
+190. The  Macroaverage better reflects the statistics of the smaller classes, and so is more appropriate when performance on all the classes is equally important
+            MacroPrecision= (1/N)∑Pi
+191. In cross-validation, we split our data into k equal parts called folds. Pick one fold as the test set. Train the model on the remaining k-1 folds. Test the model on the chosen fold and record the error. Repeat this process k times, using a different fold as the test set each time.
+192. Statistical Significance Testing: When comparing two systems (like two classifiers), we need to determine if one is genuinely better or if the difference in performance is just due to chance
+193. Effect Size (δ): Performance between systems A and B on a test set (e.g., F1 score). If δ is large, A seems much better than B; if small, A is only slightly better.
+194. Statistical Hypothesis Testing
+    Null Hypothesis (H₀): A is not better than B (δ ≤ 0)
+    Alternative Hypothesis (H₁): A is better than B (δ > 0)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+195. Bootstrapping: Randomly samples with replacement from the original dataset to create multiple "pseudo-datasets" for estimating confidence intervals or variances
+196. Paired Bootstrap Test: If A consistently outperforms B in these resamples, we conclude A is truly better.
+197. Harms in Classification: Silencing, Representational Harm, 
+198. Model Card, documents a machine learning model with information like:
+• training algorithms and parameters • training data sources, motivation, and preprocessing
+• evaluation data sources, motivation, and preprocessing
+• intended use and users
+• model performance across different demographic or other groups and environmental situations
+199. Logit: Weighted Sum: z = w·x + b 
+200. Sigmoid Activation: σ(z)= 1/(1+e^−z)
+201. Sigmoid Property: 1−σ(x)=σ(−x)
+202. P(y=1)=σ(w⋅x+b) and P(y=0)=σ(−(w⋅x+b))
+203. Odds: How much more likely success is compared to failure,
+    Odds = Probability of Success/Probability of Failure = P/Q = P/1-P
+204. Odd speaks about: success is odd times more likely than failure
+205. Classification using Logistic Regression: Decision Boundary (Threshold: 0.5)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+206. defaultdict(datatype, {"drona": 23}): Datatype is a callable that returns 0 by default when a key is missing | print(a["ari"]) #0 | No KeyError
+207. Disadvantage in BOW: Doesn't know of context
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+208. Document --> Feature Extraction ---> Assigning values in a vector based on some attributes: [x1 x2 x3 x4 x5 x6 x7 ...... xn]
+209. Feature can be: Count(Positive Words), Count(Negative Words) and so on
+210. P(y= 1|x) = σ(w·x + b) and P(y= 0|x) = 1 - σ(w·x + b)
+211. Any Useful Property of The Input can be a feature
+212. Features can be DESIGNED, LEARNED
+213. Feature Interactions: We can consider (feature interactions), complex features that are combinations of more primitive features (Haversine Distance is a combo of Latitude, Longitude)
+214. Period Disambiguation: Whether a period (.) marks the end of a sentence (EOS) or not
+215. Feature Template: Example: Bigram Template
+216. Representation Learning: Ways to learn features automatically in an unsupervised way from the input
+217. Common Standardization: Zero Mean and One Standard Deviation
+218. Min-Max Normalization: x = i−min(xi)/max(xi)−min(xi)
+219. Logistic regression is more reliable than Naïve Bayes as it handles correlated features better by distributing weights instead of overestimating probabilities due to independence assumptions and multiplications
+220. Multinomial Logistic Regression: For more than two classes
+221. Other Names for Multinomial Logistic Regression: Softmax Regression, Maxent Classifier
+222. IMG --> NN --> [0 0 1]          : Hard Classification (single class with certainty)
+     IMG --> NN --> [0.1 0.1 0.8]    : Soft Classification (uncertainty allowed)
+223. Input of Softmax: Logits [Z1, Z2, Z3, ...., ZN]
+224. ŷk = e^(zk) / Σ(e^(zj)) for j = 1 to K
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+225. y= softmax(Wx + B)
+226. Each row wk as a Prototype of class k
+    r1 : w1 ..... w33         : Prototype of Class1
+    r2 : w34 ...... w66       : Prototype of Class2
+    r3 : w67 ....... w99      : Prototype of Class3
+227. Logistic regression is thus learning an EXEMPLAR representation for each class, such
+that incoming vectors are assigned the class k they are most similar to from the K
+classes
+228. f(x, y): Feature weights are dependent both on the input text and the output
+class
+229. Binary Logistic Regression
+        Input x → Weighted Sum (w^T x) → Sigmoid σ(w^T x) → Binary Output (0/1)
+    Multinomial Logistic Regression
+        Input x → Weighted Sum (W^T x) → Softmax → Probability Distribution (Positive, Neutral, Negative)
+230. Maximum Likelihood Estimation: Correct Class Probability should be MAXIMIZED
+    P(Class=Cat/ImageCat) = 0.9
+    P(Class=Dog/ImageCat) = 0.1
+231. Bernoulli distribution: Probability Distribution that models an event with only two possible outcomes: success (1) and failure (0)
+232. X ∼ Bernoulli(p), where P(X=1) = p, P(X=0) = 1−p
+233. Die Rolling: Success as rolling a 6
+        P(X=1) is 1/6
+        P(X=0) is 5/6
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+234. Expected Value: E[X]: Long-term average of possible outcomes, considering how often each outcome occurs
+235. E[X]= 1×P + 0×Q [P: P(Success), Q: P(Failure)]
+236. If E[X] is closer to 1, there is high likelihood for the success
+     If E[X] is closer to 0, there is low likelihood for the success
+237. Variance measures the spread of the distribution
+     Var(X) = E[X^2]−(E[X])^2
+     Var(X) = p(1−p) [Since 𝑋^2 = 𝑋 for a Bernoulli variable]
+238. Variance: how much the outcome values (0 and 1) deviate from the mean
+239. Likelihood: p(y∣x)= y🧢^y(1−y🧢)^(1−y) (or) P(Success)^y.P(Failure)^(1-y)
+    Log Likelihood: logp(y∣x) = ylogy🧢+(1−y)log(1−y🧢)
+240. Likelihood should be Increased
+    Negative Likelihood should decreased
+245. LBCE: -logp(y∣x) = - [ylogy🧢+(1−y)log(1−y🧢)]
+246. Optimization Algorithms
+    1. (Batch) Gradient Descent: Selects all datapoints and adjusts all the weights based on them
+    2. Stochastic Gradient Descent: Selects one random datapoint and adjusts all the weights
+    3. Mini-Batch Gradient Descent: Selects one random batch of datapoints and adjusts all the weights
+247. Parameter Update: wt+1 = wt − η∇wL(f(x;w),y)
+248. Regularization: Lasso and Ridge
+    Lasso: Adds abs(Weight) with Loss
+    Ridge: Adds square(Weight) with Loss
+249. Ridge Regularization: L2 Regularization
+    We use L2 norm, ||Parameter||2
+    L2 norm: Euclidean Distance from Origin
+250. Lasso Regularization: L1 Regularization
+    We use L1 norm, ||Parameter||1
+    L1 norm: Manhattan(City-Block) distance from Origin
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+251. Smilodon and Thylacosmilus: Parallel or Convergent Evolution which particular contexts or environments lead to the evolution of very similar structures in different species 🦆🦢🐸🐧
+252. Similar Context(Environment: Water) --> Similar Features(Interdigital Webbing)
+253. Distributional Hypothesis: Words in similar context tend to convey similar meaning
+    Sentence 1: "The cat is sleeping on the sofa."
+    Sentence 2: "The cat is sleeping on the couch."
+    Sofa and Couch convey nearly similar meaning as they appear in similar context.
+254. Distributional Hypothesis: Words in different context tend to convey different meaning
+    Sentence 1: "I ate an apple for breakfast." (Fruit)
+    Sentence 2: "I bought an Apple iPhone." (Company)
+    Apple (Fruit) and Apple (Company) convey different meanings as they appear in different contexts.
+255. Embeddings: Numerical representations of (The Meaning of) Words
+256. Types of Embeddings
+        1. Static Embeddings
+            Apple🍎 --> [1 2 3]
+            Apple📱 --> [1 2 3]
+            Examples: Word2Vec, GloVe
+        2. Dynamic (Contextualized) Embeddings
+            Apple🍎 --> [1 2 3]
+            Apple📱 --> [4 5 6]
+            Example: BERT
+257. Hypernym: General (Animal)
+     Hyponym: Specific (Tiger)
+     Co-Hyponyms: Hyponyms in same hierarchy (Tiger, Lion, Cheetah)
+258. Lemma: Basic Dictionary Form [sing is the lemma for sing, sang, sung]
+259. Word Sense: The different meanings a lemma can have [Mouse can mean a rodent or a computer device] | Word Sense Disambiguation
+260. Semantic Fields of The Topic, Theatre: Movie, Actor, IMDB Rating, Audience, Snacks
+267. Topic Modeling Model: TMM
+    TMM(Movie, Actor, IMDB Rating, Audience, Snacks) = Theatre
+    Example: Latent Dirichlet Allocation: LDA
+268. Lexical Relations in Linguistics
+    Hypernymy (General category) → Animal is a hypernym of dog, cat, and elephant.
+    Hyponymy (Specific type) → Dog is a hyponym of animal.
+    Meronymy (Part of something) → Wheel is a meronym of car (because a wheel is part of a car).
+    Holonymy (Whole of something) → Car is a holonym of wheel, engine, and door (because they are parts of a car).
+    Synonymy (Same meaning) → Happy and Joyful are synonyms.
+    Antonymy (Opposite meaning) → Hot and Cold are antonyms.
+    Troponymy (Specific way of doing an action) → Whisper is a troponym of speak (because whispering is a specific way of speaking).
+    Polysemy (Word with multiple related meanings) → Head can mean body part or leader of a team.
+    Homonymy (Word with multiple unrelated meanings) → Bat can mean a flying animal or a cricket bat.
+    Paronymy (Words that sound alike but differ in meaning) → Affect and Effect sound similar but have different meanings.
