@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Ariharasudhan</title>
-  <link rel="stylesheet" type="text/css" href="../setup/style.css">
-  <link rel="stylesheet" type="text/css" href="./styles.css">
-    <link rel="stylesheet" type="text/css" href="../setup/header.css">
-    <link rel="stylesheet" type="text/css" href="../setup/tags.css">
-    <link rel="stylesheet" type="text/css" href="../setup/contents.css">
-    <link rel="stylesheet" type="text/css" href="../setup/filterpage.css">
+  <link rel="stylesheet" href="../setup/header.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="../setup/style.css">
 </head>
 <body>
-    <header>
+    <center>
+      <header>
         <img src="../statics/ari-vio.jpeg">
         <h2>Ari's Projects</h2>
-    </header>
-    <div id="tags"></div>
-  <div id="contents"></div>
-  <script type="text/javascript" src="../setup/configlinks.js" defer></script>
-  <script type="text/javascript" src="./script.js" defer></script>
-  <script>
-      const page = "projects";
-      const tags = ["vision", "3d-modeling", "nlp", "game-dev", "drawing"];
-  </script>
-  <script src="../setup/filterpage.js" defer></script>
+      </header>
+    </center>
+    <div id="projects-container">
+    </div>
+    <div id="fullscreen-container" class="hidden">
+      <button class="close-btn">✖</button>
+      <iframe id="fullscreen-iframe" allowfullscreen></iframe>
+    </div>
+    <script src="./script.js" defer></script>
+    <script src="../setup/configlinks.js" defer></script>
 </body>
 </html>

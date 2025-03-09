@@ -1,164 +1,37 @@
 [
     {
-        "title": "Classify Anything Model",
-        "hash": "gMewrhJFBrk?si=HMsSiXyNDbUcRx4W",
-        "description": "Embedding Search",
-        "tag": "vision"
+        "title": "Dialect Classification",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128?compact=1",
+        "logo": "./statics/slang-classifier.webp"
     },
     {
-        "title": "CUBE into Monitor Lizard - 3D Model",
-        "hash": "uJdiDXQmMWo",
-        "description": "Blender - Low Poly Modelling",
-        "tag": "3d-modeling"
+        "title": "Dialect Classification 2",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128?compact=1",
+        "logo": "./statics/slang-classifier.webp"
     },
     {
-        "title": "TAMIZH HandWritten Vowels",
-        "hash": "9zwWLPQ4JVM",
-        "description": "Python - CNN & Triplet Loss",
-        "tag": "vision"
+        "title": "Dialect Classification",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128?compact=1",
+        "logo": "./statics/slang-classifier.webp"
     },
     {
-        "title": "Sentiment Analysis",
-        "hash": "nbK24ZEPz6U",
-        "description": "Python - HuggingFace Transformers",
-        "tag": "nlp"
+        "title": "Dialect Classification 2",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128?compact=1",
+        "logo": "./statics/slang-classifier.webp"
     },
     {
-        "title": "MNIST-HandWritten Digit Recognition",
-        "hash": "kO-2t13f3SA",
-        "description": "Python - CNN",
-        "tag": "vision"
+        "title": "Dialect Classification",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128?compact=1",
+        "logo": "./statics/slang-classifier.webp"
     },
     {
-        "title": "Fire Dino Game",
-        "hash": "XwC48mzk384",
-        "description": "Python - Pygame",
-        "tag": "game-dev"
+        "title": "Dialect Classification 2",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128?compact=1",
+        "logo": "./statics/slang-classifier.webp"
     },
     {
-        "title": "Desert Run",
-        "hash": "Ge1aILNF5Qs",
-        "description": "GDevelop Game Engine",
-        "tag": "game-dev"
-    },
-    {
-        "title": "Speech Recognition based Calculator",
-        "hash": "ptMLLKaTEm8",
-        "description": "Python - Google API",
-        "tag": "nlp"
-    },
-    {
-        "title": "Speech Recognition based WebDev",
-        "hash": "LN-BP5-yny0",
-        "description": "Python - Google API",
-        "tag": "nlp"
-    },
-    {
-        "title": "Space Shooter Game",
-        "hash": "69ww4z3AY5I",
-        "description": "Ruby - Gosu",
-        "tag": "game-dev"
-    },
-    {
-        "title": "Elephant - 3D Modeling",
-        "hash": "-H_F2d3kqyE",
-        "description": "Blender",
-        "tag": "3d-modeling"
-    },
-    {
-        "title": "Rodent - 3D Modelling",
-        "hash": "3QU-pV1xSPs",
-        "description": "Blender",
-        "tag": "3d-modeling"
-    },
-    {
-        "title": "Bateriophage - 3D Modelling",
-        "hash": "KqPV6D6FBFI",
-        "description": "Blender",
-        "tag": "3d-modeling"
-    },
-    {
-        "title": "Dinosaur - 3D Modelling",
-        "hash": "yg6W_j2ZVNE",
-        "description": "Blender",
-        "tag": "3d-modeling"
-    },
-    {
-        "title": "Pig - 3D Modelling",
-        "hash": "gavHWPWJV84",
-        "description": "Blender",
-        "tag": "3d-modeling"
-    },
-    {
-        "title": "2D Animated WindMill",
-        "hash": "JVZDJyqV_Pg",
-        "description": "Python - Turtle",
-        "tag": "drawing"
-    },
-    {
-        "title": "Virtual Quiz Application",
-        "hash": "2eeOpg8Yh7M",
-        "description": "Python - Mediapipe, OpenCV",
-        "tag": "vision"
-    },
-    {
-        "title": "Counting Tom",
-        "hash": "3bKUkOegiYY",
-        "description": "Python - Mediapipe, OpenCV",
-        "tag": "vision"
-    },
-    {
-        "title": "Virtual Pattern Lock",
-        "hash": "n790TFD36Kk",
-        "description": "Python - Mediapipe, OpenCV",
-        "tag": "vision"
-    },
-    {
-        "title": "Hand Controlled Car Game",
-        "hash": "ZxMbdxOkCfc",
-        "description": "Python - Mediapipe, Pygame, OpenCV",
-        "tag": "game-dev"
-    },
-    {
-        "title": "Car Game",
-        "hash": "ZjJKM_wrrcU",
-        "description": "Python - Pygame",
-        "tag": "game-dev"
-    },
-    {
-        "title": "Dinosaur Game",
-        "hash": "VmNrZFfxJKU",
-        "description": "Python - Pygame",
-        "tag": "game-dev"
-    },
-    {
-        "title": "Drawing Shinchan",
-        "hash": "EDg6Dt1cz0g",
-        "description": "Python - Turtle",
-        "tag": "drawing"
-    },
-    {
-        "title": "The Piano",
-        "hash": "X1P3kihA910",
-        "description": "Python - Misc",
-        "tag": "game-dev"
-    },
-    {
-        "title": "The Plane Game",
-        "hash": "jllgV1GX9lQ",
-        "description": "Python - Pygame",
-        "tag": "game-dev"
-    },
-    {
-        "title": "Face Detection",
-        "hash": "zY8jfTca90k",
-        "description": "Python - OpenCV, DL",
-        "tag": "vision"
-    },
-    {
-        "title": "MultiFace Detection",
-        "hash": "ds_8GRUP6Lc",
-        "description": "Python - OpenCV, DL",
-        "tag": "vision"
-    }
+        "title": "Dialect Classification",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128?compact=1",
+        "logo": "./statics/slang-classifier.webp"
+    }     
 ]
