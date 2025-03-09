@@ -15,7 +15,7 @@ async function loadLearnings() {
         sections.forEach((section, index) => {
             htmlContent += `
                 <div class="section">
-                    <h2>Section ${index + 1}</h2>
+                    <h2>Day: ${index + 1}</h2>
                     <pre>${section.trim()}</pre>
                 </div>
             `;

@@ -1,11 +1,22 @@
-body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; }
-.section { margin-bottom: 20px; padding: 10px; border-left: 4px solid #4CAF50; }
-h2 { color: #4CAF50; }
-pre {
-    background: #f4f4f4;
+body { 
+    font-family: consolas;
+    padding: 20px;
+    background-color: lawngreen;
+}
+.section { 
+    margin-bottom: 0.1rem;
     padding: 10px;
-    overflow-x: auto;
+}
+h2 { 
+    color: black;
+    font-family: consolas;
+}
+pre {
+    background: black;
+    padding: 1rem;
+    color: lawngreen;
     white-space: pre-wrap;
     word-wrap: break-word;
-    max-width: 100%;
+    font-size: 1rem;
+    border-radius: 1rem;
 }
