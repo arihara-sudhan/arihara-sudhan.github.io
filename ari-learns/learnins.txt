@@ -405,7 +405,6 @@ Semantic Field: Cup, Coffee, Restaurant, Tea
         Low dominance: Fear, sadness, helplessness (feeling powerless)
 284. VAD Table
                  Valence    Arousel Dominance
-    - - - - - - - - - - - - - - - - - - - - -              
     Joy 😊       Positive    High    High
     Fear 😨      Negative    High    Low
     Anger 😡     Negative    High    High
