@@ -53,5 +53,15 @@
         "title": "Puthu Words: ReactJs",
         "embedLink": "https://arihara-sudhan.github.io/puthu-words",
         "logo": "./statics/puthuwords.webp"
+    },
+    {
+        "title": "MNIST Image Generation",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7231973924685684736?collapsed=1",
+        "logo": "./statics/eight.webp"
+    },
+    {
+        "title": "MNIST Image Generation",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7231973924685684736?collapsed=1",
+        "logo": "./statics/eight.webp"
     }
 ]
