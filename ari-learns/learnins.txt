@@ -87,7 +87,6 @@
 		Deleting a character costs 1
 		Substituting one character for another costs 2 (unless the characters are the same, in which case it costs 0).
 78. D[i, j]: Edit distance b/w the first i chars of the SRC and the first j chars of TARGET
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 79. Minimum Edit Distance: Table Intuition
 80. Minimum Edit Distance: (↖←↑)
 81. Optimal Distance: Minimum Operations and Minimum Cost

@@ -26,3 +26,25 @@ pre {
 a {
     color: black;
 }
+
+@media (max-width: 600px) {
+    body { 
+        padding: 10px;
+    }
+
+    .section { 
+        padding: 0.1px;
+        margin: 0;
+    }
+
+    h2 { 
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    pre { 
+        font-size: 0.9rem; 
+    }
+}

@@ -16,7 +16,7 @@ async function loadLearnings() {
             htmlContent += `
                 <div class="section">
                     <h2 id="day">DAY: ${index + 1}</h2>
-                    <pre>${section.trim()}</pre>
+                    <pre>${section.replace(/-+\s*/g, "").trim()}</pre>
                 </div>
             `;
         });
