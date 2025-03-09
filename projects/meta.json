@@ -1,7 +1,7 @@
 [
     {
         "title": "Dialect Classification",
-        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128?collapsed=1",
         "logo": "./statics/slang-classifier.webp"
     },
     {
@@ -13,5 +13,10 @@
         "title": "Next Tamil Word Prediction",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7297217969393217537?collapsed=1",
         "logo": "./statics/next-tamil-word.webp"
+    },
+    {
+        "title": "RAG Application",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7283640086405988352?collapsed=1",
+        "logo": "./statics/rag.webp"
     }
 ]
