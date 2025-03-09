@@ -47,6 +47,11 @@
     {
         "title": "Puthu Words: ReactJs",
         "embedLink": "https://arihara-sudhan.github.io/puthu-words",
-        "logo": "./statics/denoise.webp"
+        "logo": "./statics/puthuwords.webp"
+    },
+    {
+        "title": "Puthu Words: ReactJs",
+        "embedLink": "https://arihara-sudhan.github.io/puthu-words",
+        "logo": "./statics/puthuwords.webp"
     }
 ]
