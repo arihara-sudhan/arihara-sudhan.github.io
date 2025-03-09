@@ -23,5 +23,10 @@
         "title": "Object Detection: YOLO",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7267402294789324800?collapsed=1",
         "logo": "./statics/detection.webp"
+    },
+    {
+        "title": "Denoising: AutoEncoder",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7253678224923086848?collapsed=1",
+        "logo": "./statics/detection.webp"
     }
 ]
