@@ -43,6 +43,10 @@
         "title": "Classify Anything: Swin Transformer",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7240085188939018242?collapsed=1",
         "logo": "./statics/denoise.webp"
+    },
+    {
+        "title": "Puthu Words: ReactJs",
+        "embedLink": "https://arihara-sudhan.github.io/puthu-words",
+        "logo": "./statics/denoise.webp"
     }
 ]
-
