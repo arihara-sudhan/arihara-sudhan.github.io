@@ -12,11 +12,17 @@ async function loadLearnings() {
         const sections = text.split(/(?:\n|\r)?-+\s*(?:\n|\r)/).filter(section => section.trim());
         const contentDiv = document.getElementById("content");
         let htmlContent = "";
-        sections.forEach((section, index) => {
+        
+        sections.forEach((section) => {
+            console.log(section)
+            const match = section.match(/\[(\d{2}\/\d{2}\/\d{4})\]/);
+            const date = match ? match[1] : "Unknown Date";
+            const cleanedSection = section.replace(/\[\d{2}\/\d{2}\/\d{4}\]/, "").trim();
+            
             htmlContent += `
                 <div class="section">
-                    <h2 id="day">DAY: ${index + 1}</h2>
-                    <pre>${section.replace(/-+\s*/g, "").trim()}</pre>
+                    <h2 id="date">Date: ${date}</h2>
+                    <pre>${cleanedSection}</pre>
                 </div>
             `;
         });

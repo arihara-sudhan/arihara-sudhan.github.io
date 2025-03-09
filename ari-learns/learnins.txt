@@ -1,3 +1,4 @@
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[15/02/2025]
 1. rString vs bString vs uString vs fString
 2. bString alias Bytes Literal
 3. Code Point
@@ -17,7 +18,7 @@
 17. Precedence: Gupp(y|ies)
 18. Greedy Matchers: *, +, {n,m}
 19. Lazy Matchers: *?, +?, {n,m}? 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[16/02/2025]
 20. Substitution: s/REGEX/PATTERN
 21. Numbered Register: Back Reference: (.*)(.+)\1\2
 22. Non Capturing Group: (?:pattern)
@@ -27,7 +28,7 @@
 26. Utterances: Two types of Disfluencies
 27. Disfluencies: Fillers (Filled Pauses) - Fragments
 28. Speech Transcription System avoids Disfluencies
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[17/02/2025]
 31. Word Types @ Vocabulary Size |V|
 32. Word Instances | Total Words used (N)
 33. Herdan’s Law: Word Types slowly increases but instances increase fast
@@ -40,7 +41,7 @@
 40. tr -sc A-Za-z '\t' < sh.txt | tr a-z A-Z
 41. tr -sc 'A-Za-z' '\n' < 'sh.txt' | sort | uniq -c
 42. tr -sc 'A-Za-z' '\n' < sh.txt | tr A-Z a-z | sort | uniq -c | sort -n -r
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[18/02/2025]
 43. Tokenization: Segmentation of corpus
 44. Rogerian Psychotherapist
 45. Subword Tokenization (进入 = 进 + 入)
@@ -53,7 +54,7 @@
 52. Token Learner and Token Segmenter
 53. Top-down Tokenization
 54. Bottom-up Tokenization
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[19/02/2025]
 55. Bottom-up Approach: LARGE COPUS ---> MODEL ---> [TOKENS]
 56. Bottom-up Approaches: Unigram Language Model, Byte Pair Encoding
 57. SentencePiece: Library to perform Unigram Language Model, Byte Pair Encoding
@@ -62,7 +63,7 @@
 56. BPE: (2) Grouping the adjacent pairs
 57. BPE: (3) Merging the most occuring pairs | Enlist in Vocabulary
 58. BPE: (4) Repeat (1), (2), (3) until VOCAB_LIMIT | TOKEN_LIMIT
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[20/02/2025]
 59. Normalization (Eg: Case Folding)
 60. Morphologically Different Words (Duck, Ducks | Come, Came | Went, Go)
 61. Surfacially Different but Same Root/Stem
@@ -74,7 +75,7 @@
 67. ATIONAL → ATE (e.g., relational →relate) | ING → ϵ if the stem contains a vowel (e.g., motoring →motor) | SSES → SS (e.g., grasses →grass)
 68. Porter Stemmer Over-Generalizing: Policy→Police
 69. Porter Stemmer Under-Generalizing: Not European→Europe doesn't happen
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[21/02/2025]
 70. Sentence Segmentation: Delimeters-Punctuations: Period, Question Mark, Exclamation
 71. Unambiguous Delimeters: !, ?
 72. Ambiguous Delimeter: . (Mr., U.S.A.,)
@@ -87,11 +88,11 @@
 		Deleting a character costs 1
 		Substituting one character for another costs 2 (unless the characters are the same, in which case it costs 0).
 78. D[i, j]: Edit distance b/w the first i chars of the SRC and the first j chars of TARGET
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[22/02/2025]
 79. Minimum Edit Distance: Table Intuition
 80. Minimum Edit Distance: (↖←↑)
 81. Optimal Distance: Minimum Operations and Minimum Cost
 82. Viterbi Algorithm: Probabilistic Extension of Minimum Edit Distance
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 83. LMs : Language Models
 84. Language Models: Prediction of next Word or Sentence
 85. LMs can be used in Grammar Correction
@@ -106,11 +107,11 @@
 93. Example: P(RAINY ∩ SUNNY)
 94. Joint Probability: P(A∩B)=P(B∣A)P(A)
 95. Conditional Probability: P(It is RAINY∣It is SUNNY)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[23/02/2025]
 96. P(w|h) where, h is history, w is the word to predicted
 97. Language is creative
 98. P(w|h): Out of the times we saw the history h, how many times was it followed by the word w
-99. w1:n-1 => the sequence of words from w1 to wn-1
+99. w1:n−1 (or) w<n: w1,w2,...,wn−1
 100. P(w1,w2,...,wn) (or) P(X1 = w1, X2 = w2, X3 = w3,..., Xn = wn): Xi is random variable
 101. Joint Probability: P(X1=Ari, X2=good)
 102. P(X1...Xn) = P(X1)P(X2|X1)P(X3|X1:2)...P(Xn|X1:n−1)
@@ -121,7 +122,7 @@ P(Jingle, Bells, Jingle) = 58% [Markov Assumption]
 106. Bigram: P(wi∣w1:wi−1)=P(wi∣wi−1):P("I love math")=P("I")×P("love"∣"I")×P("math"∣"love")
 107. P(wn|w1:n−1) ≈ P(wn|wm:n−1)
 108. A bigram is a 1st-order Markov model (depends on 1 previous word) | A trigram is a 2nd-order Markov model (depends on 2 previous words)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[24/02/2025]
 109. Estimation
 110. Relative Frequency: P(wn|wn−N+1:n−1) = C(wn−N+1:n−1 wn)/C(wn−N+1:n−1)
 111. Unigram Count (Actual Count of Word in Corpus)
@@ -131,7 +132,7 @@ P(Jingle, Bells, Jingle) = 58% [Markov Assumption]
 115. Numerical Underflow
 116. Numerical Stability with Logarithm: p1×p2×p3×p4 = exp(logp1 + logp2 + logp3 + logp4)
 117. Infinigram: Any length can be used as history: Suffix Arrays
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[25/02/2025]
 118. Extrinsic Evaluation: End to End Evaluation: Embedding in an application and measuring how much the application improves
 119. Intrinsic Evaluation
 120. Training Set, Test Set (Held-out set of data)
@@ -146,7 +147,7 @@ P(Jingle, Bells, Jingle) = 58% [Markov Assumption]
 129. Branching Factor: Number of possible next words that can follow any given word
 130. In Deterministic Language Model: Branching factor is simply the size of the vocabulary.
 131. In Probabilistic Language Model: Weighted branching factor because the likelihood of certain words "branches" more heavily than others
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[26/02/2025]
 132. Sampling Sentences from Language Models
 133. Visualizing: Unigram, Bigram | We plot the frequency as a band with appropriate width
 134. More the value of N; More the performance of N-gram
@@ -159,7 +160,7 @@ give it to unseen events
 140. Laplace Smoothing (Add-1 Smoothing): P(W) = 0+1/N+V
 141. Discounting: The ratio between smoothed and unsmoothed
 142. Add-k Smoothing: P(W) = 0+K/N+KV
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[27/02/2025]
 143. To overcome Zero Frequency n-grams, we go for Smoothing, Interpolation, Stupid Back-Off
 144. Linear Interpolation
 145. P(wn|wn−2wn−1) = λ1P(wn) + λ2P(wn|wn−1) + λ3P(wn|wn−2wn−1)
@@ -168,14 +169,13 @@ give it to unseen events
 148. Back-Off: We step down to n-1 grams if ZERO Evidence found
 149. Back-Off: Higher Order to Lower Order: P(W1.W2.W3...WN) = P(W1.W2.W3...WN-1)
 150. Stupid Back-Off: P(W1.W2.W3...WN) = λP(W1.W2.W3...WN-1)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 151. Naive Bayes: Text Categorization
 152. Text Categorization Usecases: Spam Detection, Sentiment Analysis and so on
 153. Probabilistic Classifier: Predicts the probability of the observation being in the class
 154. Bag of Words: Unordered Words with Frequency (Like HashMap)
 155. Argmax: Selects the most likely class from multiple options [argmax P(c|d), c∈C]
 156. Baye's Rule: P(x|y) = P(y|x)P(x) / P(y) : Simply extra features
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[28/03/2025]
 157. P(A∣B) = P(B∣A).P(B) / P(A)
 158. P(A∣B) is Posterior Probability
      P(B∣A) is Likelihood
@@ -190,7 +190,7 @@ give it to unseen events
 166. P(Spam∣"free","money","offer")∝P("free","money","offer"∣Spam)×P(Spam)
 167. For Independent Events: P(A∩B)=P(A)P(B)
      For Dependent Events: P(A∩B)= P(A/B)P(B) (or) P(B/A)P(A)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[01/03/2025]
 168. P(A/B) = C1/C2 : Frequentist Probability
      P(A/B) = P(B/A).P(A)/P(B) : Bayesian Probability
 169. Document ---> Sentence
@@ -221,7 +221,7 @@ give it to unseen events
         If predicted class is positive, It is False Positive
         If predicted class is negative, It is False Negative
 181. ACCURACY: (TP+TN)/(TP+TN+FP+FN)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[02/03/2025]
 182. Precision: Out of total datapoints classified as positive, how many are actually positive
     Precision = TP / (TP+FP)
 183. Negative Predictive Value: Out of total datapoints classified as negative, how many are actually negative
@@ -246,7 +246,7 @@ this case spam), since the counts are pooled.
 194. Statistical Hypothesis Testing
     Null Hypothesis (H₀): A is not better than B (δ ≤ 0)
     Alternative Hypothesis (H₁): A is better than B (δ > 0)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[03/03/2025]
 195. Bootstrapping: Randomly samples with replacement from the original dataset to create multiple "pseudo-datasets" for estimating confidence intervals or variances
 196. Paired Bootstrap Test: If A consistently outperforms B in these resamples, we conclude A is truly better.
 197. Harms in Classification: Silencing, Representational Harm, 
@@ -263,7 +263,7 @@ this case spam), since the counts are pooled.
     Odds = Probability of Success/Probability of Failure = P/Q = P/1-P
 204. Odd speaks about: success is odd times more likely than failure
 205. Classification using Logistic Regression: Decision Boundary (Threshold: 0.5)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[05/03/2025]
 206. defaultdict(datatype, {"drona": 23}): Datatype is a callable that returns 0 by default when a key is missing | print(a["ari"]) #0 | No KeyError
 207. Disadvantage in BOW: Doesn't know of context
 208. Document --> Feature Extraction ---> Assigning values in a vector based on some attributes: [x1 x2 x3 x4 x5 x6 x7 ...... xn]
@@ -284,7 +284,7 @@ this case spam), since the counts are pooled.
      IMG --> NN --> [0.1 0.1 0.8]    : Soft Classification (uncertainty allowed)
 223. Input of Softmax: Logits [Z1, Z2, Z3, ...., ZN]
 224. ŷk = e^(zk) / Σ(e^(zj)) for j = 1 to K
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[06/03/2025]
 225. y= softmax(Wx + B)
 226. Each row wk as a Prototype of class k
     r1 : w1 ..... w33         : Prototype of Class1
@@ -307,7 +307,7 @@ class
 233. Die Rolling: Success as rolling a 6
         P(X=1) is 1/6
         P(X=0) is 5/6
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[07/03/2025]
 234. Expected Value: E[X]: Long-term average of possible outcomes, considering how often each outcome occurs
 235. E[X]= 1×P + 0×Q [P: P(Success), Q: P(Failure)]
 236. If E[X] is closer to 1, there is high likelihood for the success
@@ -335,7 +335,7 @@ class
 250. Lasso Regularization: L1 Regularization
     We use L1 norm, ||Parameter||1
     L1 norm: Manhattan(City-Block) distance from Origin
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[08/03/2025]
 251. Smilodon and Thylacosmilus: Parallel or Convergent Evolution which particular contexts or environments lead to the evolution of very similar structures in different species 🦆🦢🐸🐧
 252. Similar Context(Environment: Water) --> Similar Features(Interdigital Webbing)
 253. Distributional Hypothesis: Words in similar context tend to convey similar meaning
