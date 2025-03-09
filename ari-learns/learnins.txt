@@ -111,7 +111,7 @@
 96. P(w|h) where, h is history, w is the word to predicted
 97. Language is creative
 98. P(w|h): Out of the times we saw the history h, how many times was it followed by the word w
-99. w1:n−1 (or) w<n: w1,w2,...,wn−1
+99. n-gram: w1:n−1 (or) w<n: w1,w2,...,wn−1
 100. P(w1,w2,...,wn) (or) P(X1 = w1, X2 = w2, X3 = w3,..., Xn = wn): Xi is random variable
 101. Joint Probability: P(X1=Ari, X2=good)
 102. P(X1...Xn) = P(X1)P(X2|X1)P(X3|X1:2)...P(Xn|X1:n−1)

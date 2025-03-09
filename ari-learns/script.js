@@ -9,23 +9,21 @@ async function loadLearnings() {
             throw new Error(`HTTP down! Status: ${response.status}`);
         }
         const text = await response.text();
-        const sections = text.split(/(?:\n|\r)?-+\s*(?:\n|\r)/).filter(section => section.trim());
+        const sections = text.split(/-+\s*\[(\d{2}\/\d{2}\/\d{4})\]/).filter(section => section.trim());
         const contentDiv = document.getElementById("content");
         let htmlContent = "";
         
-        sections.forEach((section) => {
-            console.log(section)
-            const match = section.match(/\[(\d{2}\/\d{2}\/\d{4})\]/);
-            const date = match ? match[1] : "Unknown Date";
-            const cleanedSection = section.replace(/\[\d{2}\/\d{2}\/\d{4}\]/, "").trim();
+        for (let i = 1; i < sections.length; i += 2) {
+            const date = sections[i];
+            const content = sections[i + 1] ? sections[i + 1].trim() : "";
             
             htmlContent += `
                 <div class="section">
                     <h2 id="date">Date: ${date}</h2>
-                    <pre>${cleanedSection}</pre>
+                    <pre>${content}</pre>
                 </div>
             `;
-        });
+        }
         
         contentDiv.innerHTML = htmlContent;
     } catch (error) {
