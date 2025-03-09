@@ -67,7 +67,7 @@
     {
         "title": "Image Segmentation: GMM",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:share:7116334256326406145?collapsed=1",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Trombidium.spec.1706.jpg"
+        "logo": "./statics/beetle.webp"
     },
     {
         "title": "CLIP: Text to Image",
