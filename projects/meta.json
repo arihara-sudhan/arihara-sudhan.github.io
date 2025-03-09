@@ -35,11 +35,6 @@
         "logo": "./statics/denoise.webp"
     },
     {
-        "title": "Noise Removal: AutoEncoder",
-        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7252203894187991040?collapsed=1",
-        "logo": "./statics/denoise.webp"
-    },
-    {
         "title": "Classify Anything: Swin Transformer",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7240085188939018242?collapsed=1",
         "logo": "./statics/denoise.webp"
@@ -50,18 +45,18 @@
         "logo": "./statics/puthuwords.webp"
     },
     {
-        "title": "Puthu Words: ReactJs",
-        "embedLink": "https://arihara-sudhan.github.io/puthu-words",
-        "logo": "./statics/puthuwords.webp"
-    },
-    {
         "title": "MNIST Image Generation",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7231973924685684736?collapsed=1",
         "logo": "./statics/eight.webp"
     },
     {
-        "title": "MNIST Image Generation",
-        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7231973924685684736?collapsed=1",
-        "logo": "./statics/eight.webp"
+        "title": "Modeling - Pterodactyl",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7144712946940526592?collapsed=1",
+        "logo": "./statics/pterodactyl.webp"
+    },
+    {
+        "title": "Modeling - Pterodactyl",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7144712946940526592?collapsed=1",
+        "logo": "./statics/pterodactyl.webp"
     }
 ]
