@@ -9,13 +9,9 @@ async function loadLearnings() {
             throw new Error(`HTTP down! Status: ${response.status}`);
         }
         const text = await response.text();
-        
-        // Split sections using dashes, ensuring proper newline handling
         const sections = text.split(/(?:\n|\r)?-+\s*(?:\n|\r)/).filter(section => section.trim());
-        
         const contentDiv = document.getElementById("content");
         let htmlContent = "";
-
         sections.forEach((section, index) => {
             htmlContent += `
                 <div class="section">
