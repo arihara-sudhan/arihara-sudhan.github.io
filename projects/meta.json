@@ -163,6 +163,155 @@
         "title": "Modeling - Dinosaur: Blender",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6962232401783660544?collapsed=1",
         "logo": "./statics/dino.webp"
+    },
+    {
+        "title": "Modeling - Bacteriophage: Blender",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7100351864499539968?collapsed=1",
+        "logo": "./statics/phage.webp"
+    },
+    {
+        "title": "Color Clustering - K Means",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:share:7096728837350178816?collapsed=1",
+        "logo": "./statics/color.webp"
+    },
+    {
+        "title": "Image Segmentation - K Means",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7087300803039805440?collapsed=1",
+        "logo": "./statics/tiger.webp"
+    },
+    {
+        "title": "Erectus Run: GDevelop",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7040349848188981248?collapsed=1",
+        "logo": "./statics/erectus.webp"
+    },
+    {
+        "title": "Kural.py",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6997978081890115584?collapsed=1",
+        "logo": "./statics/kural.webp"
+    },
+    {
+        "title": "Web Piano: HTML, CSS, JS",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6985172413353254913?collapsed=1",
+        "logo": "./statics/web-piano.webp"
+    },
+    {
+        "title": "Instagram Profile Clone: ReactJs",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6961959147537911808?collapsed=1",
+        "logo": "./statics/igui.webp"
+    },
+    {
+        "title": "Speech Recognition for Web Development",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6960289604079927296?collapsed=1",
+        "logo": "./statics/speech-web.webp"
+    },
+    {
+        "title": "Virtual Quiz: CVZone, MediaPipe",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6959338801026514944?collapsed=1",
+        "logo": "./statics/vquiz.webp"
+    },
+    {
+        "title": "Hand Recognition based Car Game",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6957638844187828224?collapsed=1",
+        "logo": "./statics/vcar.webp"
+    },
+    {
+        "title": "Virtual Screen Lock",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6956094364120989696?collapsed=1",
+        "logo": "./statics/vlock.webp"
+    },
+    {
+        "title": "Tom Counts Fingers",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6955013663149748224?collapsed=1",
+        "logo": "./statics/tom-finger.webp"
+    },
+    {
+        "title": "Speech Recognition based Calculator",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6954765334704791552?collapsed=1",
+        "logo": "./statics/speech-calc.webp"
+    },
+    {
+        "title": "Modeling - Elephant: Blender",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6953434203518640128?collapsed=1",
+        "logo": "./statics/elephant.webp"
+    },    
+    {
+        "title": "Piano: PyGame",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6952806705755815936?collapsed=1",
+        "logo": "./statics/py-piano.webp"
+    },
+    {
+        "title": "YouTube Video Downloader",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6952235596727603200?collapsed=1",
+        "logo": "./statics/yt-video.webp"
+    },
+    {
+        "title": "Animals Sounds: PyGame",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6951361462732746752?collapsed=1",
+        "logo": "./statics/animalsound.webp"
+    },
+    {
+        "title": "Reversing A Video: OpenCV",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6948339546610626560?collapsed=1",
+        "logo": "./statics/reverse-vid.webp"
+    },
+    {
+        "title": "Fruit selling Website: Bootstrap3",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6948179503940546560?collapsed=1",
+        "logo": "./statics/fruits.webp"
+    },
+    {
+        "title": "Modeling - Pig: Blender",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6946771382978367488?collapsed=1",
+        "logo": "./statics/pig.webp"
+    },
+    {
+        "title": "Hand Recognition: CVZone",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6946166114267598848?collapsed=1",
+        "logo": "./statics/hand-det.webp"
+    },
+    {
+        "title": "Fire Detector: OpenCV",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6945056173683281920?collapsed=1",
+        "logo": "./statics/fire.webp"
+    },
+    {
+        "title": "Modeling - Flag: Blender",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6916570462848233472?collapsed=1",
+        "logo": "./statics/flag.webp"
+    },
+    {
+        "title": "Modeling - Rodent: Blender",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6914165693408022528?collapsed=1",
+        "logo": "./statics/rodent.webp"
+    },
+    {
+        "title": "Talking Tom",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6911407758030331904?collapsed=1",
+        "logo": "./statics/talking-tom.webp"
+    },
+    {
+        "title": "Face Detection: OpenCV",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6909668773356580864?collapsed=1",
+        "logo": "./statics/face.webp"
+    },
+    {
+        "title": "Animated 2D WindMill - Turtle",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6905119277087559680?collapsed=1",
+        "logo": "./statics/windmill.webp"
+    },
+    {
+        "title": "Dino Run: PyGame",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6904343514822307840?collapsed=1",
+        "logo": "./statics/dinorun.webp"
+    },
+    {
+        "title": "ShinChan: Turtle",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6902946166963544064?collapsed=1",
+        "logo": "./statics/chan.webp"
+    },
+    {
+        "title": "Space Shooter: Ruby Gosu",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6902225806215438336?collapsed=1",
+        "logo": "./statics/space-ship.webp"
     }
 ]
-
