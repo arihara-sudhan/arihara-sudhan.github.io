@@ -37,7 +37,7 @@
     {
         "title": "Classify Anything: Swin Transformer",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7240085188939018242?collapsed=1",
-        "logo": "./statics/denoise.webp"
+        "logo": "./statics/classify.webp"
     },
     {
         "title": "Puthu Words: ReactJs",
@@ -55,8 +55,18 @@
         "logo": "./statics/pterodactyl.webp"
     },
     {
-        "title": "Modeling - Pterodactyl",
-        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7144712946940526592?collapsed=1",
-        "logo": "./statics/pterodactyl.webp"
-    }
+        "title": "Fewshot Object Detection",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:share:7140349143436173313?collapsed=1",
+        "logo": "./statics/fewshot-detection.webp"
+    },
+    {
+        "title": "Neural Style Transfer",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:share:7126364381965082624?collapsed=1",
+        "logo": "./statics/style.webp"
+    },
+    {
+        "title": "Image Segmentation: GMM",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:share:7116334256326406145?collapsed=1",
+        "logo": "./statics/style.webp"
+    },
 ]
