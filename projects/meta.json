@@ -47,7 +47,7 @@
     {
         "title": "Uyir Kural: ReactJs",
         "embedLink": "https://arihara-sudhan.github.io/uyir-kural",
-        "logo": "https://image.spreadshirtmedia.com/image-server/v1/compositions/T1007A702PA4243PT17X89Y15D1025914211W14175H24976/views/1,width=650,height=650,appearanceId=702/tamil-poet-thiruvalluvar.jpg"
+        "logo": "./statics/uyirkural.webp"
     },    
     {
         "title": "MNIST Image Generation",
@@ -77,7 +77,7 @@
     {
         "title": "CLIP: Text to Image",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7110589582114492416?collapsed=1",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Trombidium.spec.1706.jpg"
+        "logo": "clip.webp"
     },
     {
         "title": "Modeling - Kangaroo: Blender",
