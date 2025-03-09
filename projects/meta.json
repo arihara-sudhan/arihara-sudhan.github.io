@@ -27,6 +27,22 @@
     {
         "title": "Photo Enhancement: AutoEncoder",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7253678224923086848?collapsed=1",
-        "logo": "./statics/detection.webp"
+        "logo": "./statics/broken.webp"
+    },
+    {
+        "title": "Noise Removal: AutoEncoder",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7252203894187991040?collapsed=1",
+        "logo": "./statics/denoise.webp"
+    },
+    {
+        "title": "Noise Removal: AutoEncoder",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7252203894187991040?collapsed=1",
+        "logo": "./statics/denoise.webp"
+    },
+    {
+        "title": "Classify Anything: Swin Transformer",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7240085188939018242?collapsed=1",
+        "logo": "./statics/denoise.webp"
     }
 ]
+
