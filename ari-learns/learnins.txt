@@ -376,3 +376,49 @@ class
     Polysemy (Word with multiple related meanings) → Head can mean body part or leader of a team.
     Homonymy (Word with multiple unrelated meanings) → Bat can mean a flying animal or a cricket bat.
     Paronymy (Words that sound alike but differ in meaning) → Affect and Effect sound similar but have different meanings.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[09/03/2025]
+269. Semantic Frame: A set of words that denote perspectives
+    - Words can be Semantic Roles [Money Transaction --> Buyer, Seller, Money, Goods]
+270. Perspectives: Drono bought apples from Anto <-> Anto sold Apples to Drona
+    Semantic Frames --> Helps in Question Answering (Twisting)
+271. Connotation is the emotional or cultural meaning associated with a word, beyond its literal definition
+    Positive connotation: "Youthful" (suggests energy and vitality)
+    Negative connotation: "Childish" (suggests immaturity)
+    Neutral connotation: "Young" (just states age without extra meaning)
+278. Principle of Contrast: If two words have different forms, they must have different meanings
+    👨🏻‍🍳 "Chef" suggests a professional, highly trained person.
+    👨🏻‍🍳 "Cook" can refer to anyone who prepares food, professionally or at home.
+279. SimLex-999 Dataset: Hand-Labeled Similarity between Words
+280. Word Relatedeness: Cup, Coffee, Restaurant, Tea ☕️
+281. Similar Meaning Words: Eggplant, Aubergine, Brinjal 🍆
+282. One common kind of relatedness between words is if they belong to the same
+Semantic Field: Cup, Coffee, Restaurant, Tea
+283. VAD Model: Emotion Analysis
+    Valence – Measures how positive or negative an emotion is.
+        Positive valence: Happiness, love, excitement
+        Negative valence: Sadness, anger, fear
+    Arousal – Measures the intensity of the emotion (high or low energy).
+        High arousal: Anger, excitement, fear (strong emotions)
+        Low arousal: Calmness, sadness, boredom (weaker emotions)
+    Dominance – Measures the level of control or power a person feels in the situation.
+        High dominance: Confidence, pride, anger (sense of control)
+        Low dominance: Fear, sadness, helplessness (feeling powerless)
+284. VAD Table
+                 Valence    Arousel Dominance
+    - - - - - - - - - - - - - - - - - - - - -              
+    Joy 😊       Positive    High    High
+    Fear 😨      Negative    High    Low
+    Anger 😡     Negative    High    High
+    Sadness 😢   Negative    Low     Low
+    Relaxation😌 Positive    Low     High
+285. Vector Semantics: To represent a word as a point in a multidimensional semantic space that is derived from the distributions of embeddings word neighbors | Vectors for representing words are called embeddings
+286. Vector Types: Sparse (Mostly Zero Presence) and Dense (Mostly Non-Zero Presence)
+    Examples: Sparse: TF-IDF | Dense: Word2Vec
+287. Term Document Matrix: Represents how many times terms occur in documents
+    Document is represented as a count vector
+    For The Document: "Twelfth Night"
+        battle      0
+        good        80
+        fool        58
+        wit         15
+    Usecase: Document Information Retrieval
