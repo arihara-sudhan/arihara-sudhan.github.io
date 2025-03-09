@@ -1,4 +1,5 @@
-const LEARNINGS_API = "learnings.txt";
+const LEARNINGS_API = "https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/ari-learns/learnins.txt";
+
 document.addEventListener("DOMContentLoaded", loadLearnings);
 
 async function loadLearnings() {
@@ -8,10 +9,13 @@ async function loadLearnings() {
             throw new Error(`HTTP down! Status: ${response.status}`);
         }
         const text = await response.text();
-        const sections = text.split(/-+\n/).filter(section => section.trim());
+        
+        // Split sections using dashes, ensuring proper newline handling
+        const sections = text.split(/(?:\n|\r)?-+\s*(?:\n|\r)/).filter(section => section.trim());
+        
         const contentDiv = document.getElementById("content");
-
         let htmlContent = "";
+
         sections.forEach((section, index) => {
             htmlContent += `
                 <div class="section">
@@ -20,8 +24,10 @@ async function loadLearnings() {
                 </div>
             `;
         });
+        
         contentDiv.innerHTML = htmlContent;
     } catch (error) {
-        alert("Some Error Occured!");
+        console.error("Error loading learnings.txt:", error);
+        alert("Some Error Occurred!");
     }
 }
