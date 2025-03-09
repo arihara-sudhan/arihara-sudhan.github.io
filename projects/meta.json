@@ -10,7 +10,7 @@
         "logo": "./statics/next-word.webp"
     },
     {
-        "title": "Next Tamil Word Prediction",
+        "title": "Next Tamil Word Prediction: Bigram",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7297217969393217537?collapsed=1",
         "logo": "./statics/next-tamil-word.webp"
     },
@@ -25,7 +25,7 @@
         "logo": "./statics/detection.webp"
     },
     {
-        "title": "Denoising: AutoEncoder",
+        "title": "Photo Enhancement: AutoEncoder",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7253678224923086848?collapsed=1",
         "logo": "./statics/detection.webp"
     }
