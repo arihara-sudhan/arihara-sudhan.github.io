@@ -422,3 +422,40 @@ Semantic Field: Cup, Coffee, Restaurant, Tea
         fool        58
         wit         15
     Usecase: Document Information Retrieval
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[10/03/2025]
+288. Term Document Matrix
+    - Doc2Vec: Column Vector
+    - Word2Vec: Row Vector
+289. Word-Word Co-Occurence Matrix
+    Example: The cat sat on the mat. The dog sat on the rug
+    Window Size: 2
+    Dimensionality: |V|x|V|
+        the cat sat on  mat dog rug
+    the 0   1   1   1   0   1   0
+    cat 1   0   1   0   0   0   0
+    sat 1   1   0   1   0   0   0
+    on  1   0   1   0   1   0   1
+    mat 0   0   0   1   0   0   0
+    dog 1   0   1   0   0   0   1
+    rug 0   0   0   1   0   1   0
+290. Dot Product is also called Inner Product
+291. Dot Product(v, w) = v·w = v1w1 + v2w2 +... + vNwN
+    HIGH DP --> v and w are similar
+    LOW DP  --> v and w are dissimilar
+    DP: 1   --> v and w are same
+292. Orthogonal: Vectors that have zeros in different dimensions
+    Dot Product of Any Two Vectors is "ZERO"
+    A=(1,0,0)
+    B=(0,2,0)
+    C=(0,0,1)
+293. Dot Product Limitation: Favours Large Vectors with High Value
+294. Vector Length: ||v|| = sqrt(x1^2 + x2^2 + x3^2 + ... + xN^2) 
+295. Longer Vectors: More chance for more co-occurences although the words are not similar
+    Frequent Words co-occurs multiple times
+    So, we normalize as a·b/(|a||b|)
+    This normalized value is equal to COSINE of angle between two vectors
+    cosθ = a·b/(|a||b|)
+296. Raw frequency is very skewed and not very discriminative
+297. It's a paradox: words that often appear together (like 'pie' near 'cherry') are important, while rare words matter less. Yet, overly common words (like 'the' or 'good') are unimportant. How do we balance these? There are two common solutions
+298. TF-IDF Weighting: Dimensions are Documents
+     PPMI algorithm: Dimensions are Words
