@@ -459,3 +459,29 @@ Semantic Field: Cup, Coffee, Restaurant, Tea
 297. It's a paradox: words that often appear together (like 'pie' near 'cherry') are important, while rare words matter less. Yet, overly common words (like 'the' or 'good') are unimportant. How do we balance these? There are two common solutions
 298. TF-IDF Weighting: Dimensions are Documents
      PPMI algorithm: Dimensions are Words
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[11/03/2025]
+299. Term Frequency: Count of particular word in a document
+        Not raw count!
+        TF(t, d) = 1+ logCount(t,d) If Count(t,d)>0
+        TF(t, d) = 0 If Count(t,d)=0
+300. Terms that are limited to a few documents are useful for discriminating those documents from the rest of the collection; terms that occur frequently across the entire collection aren’t as helpful
+301. Document Frequency: Count of documents where a particular word is present
+302. Collection Frequency: Count of words in entire collection of documents
+303. COLLECTION
+    DOC1: DOG CAT DOG
+    DOC2: DOG BAT DOG
+    DOC3: BAT CAT BAT
+TERM FREQUENCY          : Count(T=DOG, D=DOC1)      = 2
+DOCUMENT FREQUENCY      : Count(T=BAT, COLLECTION)  = 2
+COLLECTION FREQUENCY    : Count(T=DOG, COLLECTION)  = 4
+304. Words that are specific to a document is helpful to discriminate it.
+                CFreq        DFreq
+Mitochondria    113            1        [CONTEXT SPECIFIC: Only in Biology Book]
+action          113            31       [CONTEXT FREE: Present in all books]
+305. Weightage
+    Lower Weight  ----> Words that occur in multiple documents
+    Higher Weight ----> Words that occur in specific, relevant documents
+306. We emphasize discriminative words like Romeo via the inverse document fre-
+quency or idf term weight
+    IDF = log(N/DF) 
+    ⭐️ The lowest weight of 1 is assigned to terms that occur in all the documents
