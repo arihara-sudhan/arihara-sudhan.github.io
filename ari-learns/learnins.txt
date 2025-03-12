@@ -484,3 +484,32 @@ action          113            31       [CONTEXT FREE: Present in all books]
 306. We emphasize discriminative words like Romeo via the inverse document frequency or idf term weight
     IDF = log(N/DF) 
     ⭐️ The lowest weight of 1 is assigned to terms that occur in all the documents
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[12/03/2025]
+307. TFID: Term Frequency x Inverse Document Frequency
+    TFID = TF x IDF
+308. Just using Term Frequency (Not log-space)
+*********************************
+        As You Like It  Twelfth Night
+battle      1               0
+good        114             80
+
+Using TFIDF
+*********************************
+        As You Like It  Twelfth Night
+battle      0.246           0
+good        0               0
+
+309. Words correspond to Documents: TF-IDF
+    Words correspond to Words:      PMI
+310. Mutual Information (MI): How much knowing one thing reduces uncertainty about another | Dependency b/w two random variables (X,Y)
+311. MI Helps in,
+    I(X,Y) = 0.27 ---> Where X=Sunny, Y=Carrying Umbrella
+    I(X,Y) = 0.87 ---> Where X=Rainy, Y=Carrying Umbrella
+Conclusion: MI helps in feature selection
+312. MI in Word Relatedness
+    ⭐️ PMI favors rare words
+        If two rare words co-occur even a few times, PMI gives a high value
+        If two frequent words co-occur often, PMI gives a low or even negative value
+313. PPMI(w, c) = max(log2(P(w, c) / (P(w) * P(c))), 0)
+    > PMI tends to inflate scores for rare words, even if they co-occur only a few times.
+    > PMI can be misleading for rare words, making them seem highly associated even with a few co-occurrences
