@@ -1,4 +1,4 @@
-const LEARNINGS_API = "https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/ari-learns/learnins.txt";
+const LEARNINGS_API = "https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/ari-learns/learnings.txt";
 
 document.addEventListener("DOMContentLoaded", loadLearnings);
 
