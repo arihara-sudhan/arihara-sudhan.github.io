@@ -12,10 +12,11 @@ async function loadLearnings() {
         const sections = text.split(/-+\s*\[(\d{2}\/\d{2}\/\d{4})\]/).filter(section => section.trim());
         const contentDiv = document.getElementById("content");
         let htmlContent = "";
+        console.log(sections);
         
         for (let i = 1; i < sections.length; i += 2) {
             const date = sections[i];
-            const content = sections[i + 1] ? sections[i + 1].replace(/-+/g, "").trim() : "";
+            const content = sections[i + 1] ? sections[i + 1].replace(/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -/g, "").trim() : "";
             
             htmlContent += `
                 <div class="section">
