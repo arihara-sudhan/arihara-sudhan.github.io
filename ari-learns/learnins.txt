@@ -481,7 +481,6 @@ action          113            31       [CONTEXT FREE: Present in all books]
 305. Weightage
     Lower Weight  ----> Words that occur in multiple documents
     Higher Weight ----> Words that occur in specific, relevant documents
-306. We emphasize discriminative words like Romeo via the inverse document fre-
-quency or idf term weight
+306. We emphasize discriminative words like Romeo via the inverse document frequency or idf term weight
     IDF = log(N/DF) 
     ⭐️ The lowest weight of 1 is assigned to terms that occur in all the documents
