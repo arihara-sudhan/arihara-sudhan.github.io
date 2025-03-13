@@ -15,7 +15,7 @@
     border-radius: 1rem;
     width: 30%;
     border-right: 3px solid lightgreen;
-    border-bottom: 3px solid lightgreen;    
+    border-bottom: 3px solid lightgreen;
 }
 
 .hobby img {
@@ -27,7 +27,8 @@
     background-color: lightgreen;
     color: black;
     border-right: 3px solid green;
-    border-bottom: 3px solid green;    
+    border-bottom: 3px solid green;
+    cursor: pointer;
 }
 
 .hobby h2 {
