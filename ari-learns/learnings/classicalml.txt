@@ -1,29 +1,29 @@
 SOURCE: Chapter 2 of The Book, "Machine Learning for Brain Disorders" by Johann Faouzi, Olivier Colliot
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[14/03/2025]
 1. Nearest Neighbor: Intuition
- ⭐️ Training Samples are converted into feature vectors
- ⭐️ Clusters Observed
- ⭐️ Class of a test sample is determined by checking the similarity extent with all the clusters
+ - Training Samples are converted into feature vectors
+ - Clusters Observed
+ - Class of a test sample is determined by checking the similarity extent with all the clusters
 2. With Nearest Neighbor
- ⭐️ Classification
- ⭐️ Regression
+ - Classification
+ - Regression
 3. Regression with Nearest Neighbor
- ⭐️ Considering the nearest datapoints
- ⭐️ And we take Weighted Average
- ⭐️ Weighti = 1/Di^2 [Di is the distance]
+ - Considering the nearest datapoints
+ - And we take Weighted Average
+ - Weighti = 1/Di^2 [Di is the distance]
 		wᵢ = (1 / d(x_i, x)) / Σ (1 / d(x_j, x))
 		ŷ = (Σwᵢyᵢ)/(Σwᵢ)
 4. Classification with Nearest Neighbor
- ⭐️ Picking the most common label among the neighbors with more importance to closer ones
- ⭐️ KNN with weighted voting is often better than simple majority voting
+ - Picking the most common label among the neighbors with more importance to closer ones
+ - KNN with weighted voting is often better than simple majority voting
 		ŷ = argmax_C (Σwᵢ1(yᵢ = Cₖ))
 5. Finding Neighbors
- ⭐️ Radius Neighbors: Points that are within the radius; possible to have 0 points
- ⭐️ K-Nearest Neighbors: Fixed number of neighbors, no matter how far they are; possible to have irrelevant points
+ - Radius Neighbors: Points that are within the radius; possible to have 0 points
+ - K-Nearest Neighbors: Fixed number of neighbors, no matter how far they are; possible to have irrelevant points
 6. KNN Classification: Types
- ⭐️ Unweighted (When distribution is uniform)
+ - Unweighted (When distribution is uniform)
 		Simple Majority Voting of Neighbors; We take the most common one
- ⭐️ Weighted (When distribution is random)
+ - Weighted (When distribution is random)
 		We weigh each points based on distance; We take the point with the highest value
 7. Data Distribution
 	Uniform: For any region, there will be roughly equal numbers of data-points
@@ -40,20 +40,20 @@ SOURCE: Chapter 2 of The Book, "Machine Learning for Brain Disorders" by Johann 
 			      ⬤  ⬤
 8. Halton and Hammersley Sequence: To generate evenly spread points for simulations
 9. A Distance Metric should satisfy these conditions to be used as similarity metric
- ⭐️ Non-negativity → Distance is never negative.
+ - Non-negativity → Distance is never negative.
 		d(A, B) ≥ 0
- ⭐️ Identity → Distance is 0 if and only if the points are identical.
+ - Identity → Distance is 0 if and only if the points are identical.
 		d(A, A) = 0, but d(A, B) > 0 if A ≠ B
- ⭐️ Symmetry → Distance from A to B is the same as from B to A.
+ - Symmetry → Distance from A to B is the same as from B to A.
 		d(A, B) = d(B, A)
- ⭐️ Triangle Inequality → The shortest path between two points is a straight line.
+ - Triangle Inequality → The shortest path between two points is a straight line.
 		d(A, B) + d(B, C) ≥ d(A, C)	[a+b≥c; a+c≥b; b+c≥a]
 10. Linear Regression
- ⭐️ A linear model is a model that linearly combines the features
+ - A linear model is a model that linearly combines the features
 		Y^ = x^⊤w + B
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[15/03/2025]
 11. To estimate w values,
- ⭐️ Ordinary Least Squares Regression
+ - Ordinary Least Squares Regression
 	||y - Xw||²₂
 12. One wants to find the optimal parameters w⋆ that minimize the cost function.
 	w* = arg min J(w)
@@ -65,17 +65,17 @@ SOURCE: Chapter 2 of The Book, "Machine Learning for Brain Disorders" by Johann 
 	⇒ XᵀXw⋆ = Xᵀy  
 	⇒ w⋆ = (XᵀX)⁻¹ Xᵀy
 15. A Closed Formula (or closed-form solution) :Provides Exact Solution to a problem using a finite number of standard operations like:
- ⭐️ Addition (+), subtraction (-)
- ⭐️ Multiplication (×), division (÷)
- ⭐️ Exponentiation (^), logarithms (log), trigonometric functions (sin, cos, etc.)
- ⭐️ No need iterative methods (like gradient descent)
+ - Addition (+), subtraction (-)
+ - Multiplication (×), division (÷)
+ - Exponentiation (^), logarithms (log), trigonometric functions (sin, cos, etc.)
+ - No need iterative methods (like gradient descent)
 16. Signed Distance
 	y = sign(f(x)) = +1 if f(x) > 0  
 	                 -1 if f(x) < 0
 17. Logistic regression converts a raw score into a probability between 0 and 1 using the sigmoid function
 	σ(u) = 1 / (1 + e^(-u))
 18. Classification with Logistic Regression
- ⭐️ Maximum Likelihood Estimation
+ - Maximum Likelihood Estimation
 19. Overfitting: When a model fits too well the training data and generalizes poorly to new data
 	Underfitting: When a model does not capture well enough the characteristics of the training data, thus also generalizes poorly to new data
 20. Bias: Error due to incorrect assumptions in the learning algorithm.
@@ -146,19 +146,19 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 34. Radial Basis Function (RBF) kernel: Maps inputs into an infinite-dimensional space
 35. Kernel Types
- ⭐️ Linear Kernel:  
+ - Linear Kernel:  
 	  K(x, x') = x⊤x'  
 	  Computes dot product; works for linearly separable data.  
 
- ⭐️ Polynomial Kernel:  
+ - Polynomial Kernel:  
 	  K(x, x') = (γ x⊤x' + c₀)ᵈ  
 	  Maps data to a higher-degree space; captures polynomial relationships.  
 
- ⭐️ Sigmoid Kernel:  
+ - Sigmoid Kernel:  
 	  K(x, x') = tanh(γ x⊤x' + c₀)  
 	  Inspired by neural networks; applies a nonlinear transformation.  
 
- ⭐️ Radial Basis Function (RBF) Kernel:  
+ - Radial Basis Function (RBF) Kernel:  
 	  K(x, x') = exp(-γ ∥x - x'∥²)  
 	  Uses Euclidean distance; maps data to infinite-dimensional space; captures complex patterns.  
 36. Soft Vector Regression: ε-Tube: ε-Sensitive Loss: L_ε(y, ŷ) = {
@@ -167,15 +167,15 @@ y_pred = model.predict(X_test)
 }
 In ε-insensitive loss, ε (epsilon) represents a tolerance margin within which prediction errors are ignored
 37. MAE (Mean Absolute Error) = (1/n) * Σ |yi - ŷi|
-  ⭐️ Treats all errors equally (linear)
-  ⭐️ Less sensitive to outliers
-  ⭐️ May lead to multiple minima during optimization
-  ⭐️ Preferred when all errors should be treated equally
+  - Treats all errors equally (linear)
+  - Less sensitive to outliers
+  - May lead to multiple minima during optimization
+  - Preferred when all errors should be treated equally
 38. MSE (Mean Squared Error) = (1/n) * Σ (yi - ŷi)^2
-  ⭐️ Squares errors, making larger errors more significant
-  ⭐️ More sensitive to outliers
-  ⭐️ Provides smoother gradients for optimization
-  ⭐️ Preferred when large errors should be penalized more
+  - Squares errors, making larger errors more significant
+  - More sensitive to outliers
+  - Provides smoother gradients for optimization
+  - Preferred when large errors should be penalized more
 39. Epsilon-Insensitive Loss: Ignores small errors (<ϵ) and Linear penalty for large errors
 40. Multinomial Logistic Regression
 	- In multiclass classification, the goal is to classify an input into one of multiple classes (e.g., classifying an animal as a dog, cat, or rabbit)
@@ -204,18 +204,18 @@ In ε-insensitive loss, ε (epsilon) represents a tolerance margin within which 
 45. Covariance: Cov(X1, X2): How X1 and X2 vary together
 	Say, X1 -> Number of Words in Mail
 		 X2 -> Number of Special Charaters
- ⭐️ Positive Covariance
+ - Positive Covariance
 	X1 and X2 tend to increase or decrease together
 	Example: As temperature increases, ice cream sales also increase.
- ⭐️ Negative Covariance
+ - Negative Covariance
 	When X1 increases, X2 decreases, and vice versa.
 	Example: As fuel efficiency (miles per gallon) increases, fuel consumption per mile decreases.
- ⭐️ Zero Covariance
+ - Zero Covariance
 	No linear relationship between X1 and X2
 	Example: The number of hours studied and the color of a student's shirt have no meaningful relationship
 46. Variance: Var(X1): How X1 varies from Mean: How much X1 deviates from its mean
- ⭐️ Low Variance (Small but Positive): The values of X1 are closely clustered around the mean
- ⭐️ High Variance (Large Positive): The values of X1 are widely spread from the mean
+ - Low Variance (Small but Positive): The values of X1 are closely clustered around the mean
+ - High Variance (Large Positive): The values of X1 are widely spread from the mean
 47. Gaussian/Normal Distribution: 🔔 Bell-shaped Curve
 	Example: Height of People against Age
 	Values are concentrated around MEAN
@@ -223,9 +223,9 @@ In ε-insensitive loss, ε (epsilon) represents a tolerance margin within which 
 	P(Length∣Banana) = N(μ,σ^2) 🍌
 	P(Length | Banana) = (1 / sqrt(2 * pi * σ^2)) * exp(- ((Length - μ)^2) / (2 * σ^2))
 49. Decision Tree
- ⭐️ Makes a statement
- ⭐️ Checks if True or False
- ⭐️ Branches accordingly
+ - Makes a statement
+ - Checks if True or False
+ - Branches accordingly
 50. Decision Tree
 	- The one that classifies: Classification Tree
 	- The one that predicts a numeric value: Regression Tree
@@ -248,19 +248,19 @@ In ε-insensitive loss, ε (epsilon) represents a tolerance margin within which 
 	S9	4	Fail (F)
 	S10	1	Fail (F)
 
- ⭐️ Gini_before = 1−(p^2 + F^2)
+ - Gini_before = 1−(p^2 + F^2)
   = 1−(0.6^2 +0.4^2)
   = 1−(0.36+0.16)
   = 0.48
- ⭐️ Group 1: "Study Hours < 5" (Lower Study Hours)
+ - Group 1: "Study Hours < 5" (Lower Study Hours)
 	 Gini_1 = 1−(0^2 + 1^2)
 	 = 1−1
 	 = 0
- ⭐️ Group 2: "Study Hours >= 5" (Higher Study Hours)
+ - Group 2: "Study Hours >= 5" (Higher Study Hours)
 	 Gini_2 = 1−(1^2 + 0^2)
 	 = 1−1
 	 = 0
- ⭐️ Gini_after = ( (4/10) * Gini_1 ) + ( (6/10) * Gini_2 )
+ - Gini_after = ( (4/10) * Gini_1 ) + ( (6/10) * Gini_2 )
 	Gini_after = 0 + 0 = 0
 	Gini_gain = Gini_before - Gini_after
 	Gini_gain = 0.48 - 0
@@ -268,16 +268,16 @@ In ε-insensitive loss, ε (epsilon) represents a tolerance margin within which 
 	✅ Perfect split! (Best possible case: Gini Impurity of 0 for both child nodes)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[17/03/2025]
 54. Random Forest
- ⭐️ Each tree is trained on a random subset of training samples
- ⭐️ Random sampling helps trees be less correlated with each other
- ⭐️ At each split, only a random subset of features is considered
- ⭐️ This prevents trees from relying on the same dominant features
- ⭐️ Final prediction is obtained by combining all trees' outputs
+ - Each tree is trained on a random subset of training samples
+ - Random sampling helps trees be less correlated with each other
+ - At each split, only a random subset of features is considered
+ - This prevents trees from relying on the same dominant features
+ - Final prediction is obtained by combining all trees' outputs
 	🔹 For Classification:
- ⭐️ Hard Voting → Most common class is chosen.
- ⭐️ Soft Voting → Class with the highest average probability is chosen.
+ - Hard Voting → Most common class is chosen.
+ - Soft Voting → Class with the highest average probability is chosen.
 	🔹 For Regression:
- ⭐️ The predicted value is the mean of all tree predictions.
+ - The predicted value is the mean of all tree predictions.
 	✅ This reduces overfitting and improves accuracy!
 55. Feature Correlation is a problem!
 	> Feature1: Some trees might split first on "Number of Rooms"
@@ -285,9 +285,9 @@ In ε-insensitive loss, ε (epsilon) represents a tolerance margin within which 
 	> Correlation: A bigger house usually has more rooms.
 	> If features convey similar information, the trees end up making similar decisions
 56. Extra Trees (Extremely Randomized Trees)
- ⭐️ Add more randomness to reduce tree correlation
- ⭐️ Instead of finding the best split for a feature, they pick a random threshold
- ⭐️ The best split is then chosen from these random thresholds.
+ - Add more randomness to reduce tree correlation
+ - Instead of finding the best split for a feature, they pick a random threshold
+ - The best split is then chosen from these random thresholds.
 57. Centroid in Cluster: Mean of the data samples in the cluster
 58. K Means Clustering
 	> Randomly select centroids
