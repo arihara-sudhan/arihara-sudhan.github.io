@@ -25,13 +25,10 @@ async function loadLearnings(fileName) {
                 </div>
             `;
         }
-
         contentDiv.innerHTML = htmlContent;
-
-        // Highlight the clicked button
         updateActiveButton(fileName);
     } catch (error) {
-        console.error("Error loading file:", error);
+        alert("AN ERROR OCCURED!")
     }
 }
 
