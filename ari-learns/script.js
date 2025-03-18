@@ -9,8 +9,9 @@ async function loadLearnings(fileName) {
         }
         const text = await response.text();
         const sections = text.split(/-+\s*\[(\d{2}\/\d{2}\/\d{4})\]/).filter(section => section.trim());
+        const source = sections[0].replace(/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -/g, "");
         const contentDiv = document.getElementById("content");
-        let htmlContent = "";
+        let htmlContent = `<h2 id="source">${source}</h2>`;
 
         for (let i = 1; i < sections.length; i += 2) {
             const date = sections[i];
