@@ -561,3 +561,76 @@ Conclusion: MI helps in feature selection
     Example: The word "bark" appears with "dog" (e.g., The dog barked loudly)
     ⭐️Two words have second order co-occurrence if they share similar neighboring words, even if they don't directly appear together often.
     Example: The word "wrote" and the word "said"
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[18/03/2025]
+329. Sentence Classification
+    - Each Word is converted into Embeddings
+    - And ALL the embeddings are averaged (element-wise)
+    - Fed to Neural Net
+330. Language is a Temporal Phenomenon
+331. Recurrent neural network (RNN): Any network with a cycle
+    - Value of some unit is directly, or indirectly, dependent on its own earlier outputs as an input
+332. Simple RNN is also called, Elman Network
+333. Window Based Approach -> Fixed Window of Sequence
+     As Input Layer Size is FIXED
+334. RNN Computation
+    hₜ = g(U.hₜ₋₁ + W.xₜ)
+    yₜ = f(V.hₜ) [f can be softmax]
+335. RNN has FEEDBACK Loops
+336. We recurrently process the input
+    - Risk of Vanishing/Exploding Gradient Problems
+335. RNN Training happens in, TWO PASSES
+1. Forward Pass (Inference)
+    We compute the hidden states and outputs for each time step.
+    Given:
+    Input sequence: x₁ = 1, x₂ = 2, x₃ = 3
+    Initial hidden state: h₀ = 0
+    Weights:
+    W = 0.5 (input weight)
+    U = 0.8 (recurrent weight)
+    V = 1.0 (output weight)
+    Activation function: g(x) = x (identity function for simplicity)
+    Loss function: Squared Error
+
+    Step 1 (t = 1)
+    h₁ = U h₀ + W x₁ = (0.8 × 0) + (0.5 × 1) = 0.5
+    y₁ = V h₁ = 1.0 × 0.5 = 0.5
+    Target: ŷ₁ = 2
+    Loss: L₁ = (2 - 0.5)² = 2.25
+
+    Step 2 (t = 2)
+    h₂ = U h₁ + W x₂ = (0.8 × 0.5) + (0.5 × 2) = 0.4 + 1 = 1.4
+    y₂ = V h₂ = 1.0 × 1.4 = 1.4
+    Target: ŷ₂ = 3
+    Loss: L₂ = (3 - 1.4)² = 2.56
+
+    Step 3 (t = 3)
+    h₃ = U h₂ + W x₃ = (0.8 × 1.4) + (0.5 × 3) = 1.12 + 1.5 = 2.62
+    y₃ = V h₃ = 1.0 × 2.62 = 2.62
+    Target: ŷ₃ = 4
+    Loss: L₃ = (4 - 2.62)² = 1.89
+
+    Total Loss:
+    L = L₁ + L₂ + L₃ = 2.25 + 2.56 + 1.89 = 6.7
+
+2. Backward Pass (Gradient Computation - BPTT)
+    Now, we propagate the loss backward through time.
+
+    Step 3 (t = 3)
+    Error:
+    e₃ = ∂L₃/∂y₃ = 2(y₃ - ŷ₃) = 2(2.62 - 4) = -2.76
+    Gradient for V:
+    ∂L₃/∂V = e₃ × h₃ = (-2.76) × (2.62) = -7.22
+    Backpropagate error to h₃:
+    eₕ₃ = e₃ × V = (-2.76) × 1.0 = -2.76
+
+    Step 2 (t = 2)
+    Error contribution from next step:
+    eₕ₂ = eₕ₃ × U = (-2.76) × 0.8 = -2.21
+    Compute gradient for U:
+    ∂L₂/∂U = eₕ₂ × h₁ = (-2.21) × (0.5) = -1.11
+
+    Step 1 (t = 1)
+    Error contribution from next step:
+    eₕ₁ = eₕ₂ × U = (-2.21) × 0.8 = -1.76
+    Compute gradient for W:
+    ∂L₁/∂W = eₕ₁ × x₁ = (-1.76) × 1 = -1.76
