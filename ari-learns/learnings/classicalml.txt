@@ -35,9 +35,10 @@ SOURCE: Chapter 2 of The Book, "Machine Learning for Brain Disorders" by Johann 
 	Random: For any region, the count of data-points will be random (spaces, clusters)
 		⬤   ⬤
 		⬤   ⬤
-		⬤   ⬤ ⬤  ⬤
-			      ⬤  ⬤
-			      ⬤  ⬤
+		⬤   ⬤		
+				⬤  ⬤
+				⬤  ⬤
+				⬤  ⬤
 8. Halton and Hammersley Sequence: To generate evenly spread points for simulations
 9. A Distance Metric should satisfy these conditions to be used as similarity metric
  - Non-negativity → Distance is never negative.
