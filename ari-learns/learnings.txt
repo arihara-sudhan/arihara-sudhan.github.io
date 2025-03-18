@@ -513,3 +513,50 @@ Conclusion: MI helps in feature selection
 313. PPMI(w, c) = max(log2(P(w, c) / (P(w) * P(c))), 0)
     > PMI tends to inflate scores for rare words, even if they co-occur only a few times.
     > PMI can be misleading for rare words, making them seem highly associated even with a few co-occurrences
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[17/03/2025]
+314. Embedding: "Short Dense Vector" representing The Meaning of The Word
+315. Representing words as 300-dimensional dense vectors requires our classifiers to learn far fewer weights than if we represented words as 50,000-dimensional vectors, and the smaller parameter space possibly helps with generalization and avoiding overfitting
+316. Embeddings: Helps in Synonymy
+    - Automobile and Car are nearer to eachother
+317. Word2Vec: It's a software package
+    - For Static Embeddings (Non-Contextual)
+318. Word2Vec is an example for Representation Learning
+319. Word2Vec in Action
+    Example: "An apricot is a small, orange-colored fruit that is sweet and juicy."
+    We Train!
+    (Target, Context pairs) → (Positive Samples)
+    - (apricot, small)
+    - (apricot, orange-colored)
+    - (apricot, fruit)
+    - (apricot, sweet)
+    - (apricot, juicy)
+    (Target, Context pairs) → (Negative Samples)
+    - (apricot, laptop)
+    - (apricot, concrete)
+    - (apricot, bicycle)
+    The model learns embeddings by adjusting weights such that:
+    - Positive pairs have HIGHER similarity  
+    - Negative pairs have LOWER similarity
+320. The Training,
+    - The model maximizes the probability of real context words.
+    - The model minimizes the probability of random noise words.
+    - Loss Function: Binary Cross Entropy
+321. Positive and Negative Classes
+    P(+ | w, c) = 1 / (1 + exp(-w ⋅ c))
+    P(- | w, c) = 1 - P(+ | w, c) = 1 / (1 + exp(w ⋅ c))
+322. Context Window: Range of words considered around a Target Word
+        For Example: ±2 words
+            "The cat sat on the mat"
+            Context(sat) = {The, cat, on, the}
+323. Skip Gram: The model skips between a target word and its surrounding context words, learning their relationships 🐸 (within a defined window 🐸-->😤)
+324. Skip Gram: Target Word   → Context Word
+     CBOW:      Context Words → Target Word
+325. CBOW  {CAT: 23, THE: 25, ON: 30, MAT: 31} → SAT
+326. Problem with Word2Vec: Unknown Words
+     FastText solves this by using Subword Tokenization
+327. GloVe combines count-based (PPMI) and predictive (Word2Vec) methods
+328.⭐️Two words have first order co-occurrence if they frequently
+    appear next to each other in sentences
+    Example: The word "bark" appears with "dog" (e.g., The dog barked loudly)
+    ⭐️Two words have second order co-occurrence if they share similar neighboring words, even if they don't directly appear together often.
+    Example: The word "wrote" and the word "said"
