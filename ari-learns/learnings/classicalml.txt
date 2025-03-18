@@ -266,7 +266,7 @@ In ε-insensitive loss, ε (epsilon) represents a tolerance margin within which 
 	Gini_gain = Gini_before - Gini_after
 	Gini_gain = 0.48 - 0
 	 = 0.48
-	✅ Perfect split! (Best possible case: Gini Impurity of 0 for both child nodes)
+	Perfect split! (Best possible case: Gini Impurity of 0 for both child nodes)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[17/03/2025]
 54. Random Forest
  - Each tree is trained on a random subset of training samples
@@ -274,12 +274,12 @@ In ε-insensitive loss, ε (epsilon) represents a tolerance margin within which 
  - At each split, only a random subset of features is considered
  - This prevents trees from relying on the same dominant features
  - Final prediction is obtained by combining all trees' outputs
-	🔹 For Classification:
- - Hard Voting → Most common class is chosen.
- - Soft Voting → Class with the highest average probability is chosen.
-	🔹 For Regression:
- - The predicted value is the mean of all tree predictions.
-	✅ This reduces overfitting and improves accuracy!
+For Classification:
+	Hard Voting → Most common class is chosen.
+	Soft Voting → Class with the highest average probability is chosen.
+For Regression:
+	The predicted value is the mean of all tree predictions.
+	This reduces overfitting and improves accuracy!
 55. Feature Correlation is a problem!
 	> Feature1: Some trees might split first on "Number of Rooms"
 	> Feature2: Others might split on "House Size."
