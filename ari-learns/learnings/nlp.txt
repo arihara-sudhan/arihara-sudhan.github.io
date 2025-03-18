@@ -1,3 +1,4 @@
+SOURCE: "Speech and Langauge Processing" by Daniel Jurafsky, James H. Martin
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[15/02/2025]
 1. rString vs bString vs uString vs fString
 2. bString alias Bytes Literal

@@ -20,6 +20,13 @@
             background-color: black;
             color: lightgreen;
         }
+        .tags h2:hover {
+            cursor: pointer;
+        }
+        .tags h2:active {
+            background-color: lawngreen;
+            color: black;
+        }
         @media (max-width: 600px) {
             .tags h2 {
                 font-size: 6vw;
@@ -37,7 +44,7 @@
     <center><h1>Ari's Learnings ⨳ <a href="https://arihara-sudhan.github.io">Home</a></h1></center>
     <div class="tags">
         <h2 onclick="loadLearnings('nlp')">NLP</h2>
-        <h2 onclick="loadLearnings('classicalml')">Classical ML</h2>
+        <h2 onclick="loadLearnings('classicalml')">CLASSICAL ML</h2>
     </div>
         
     <div id="content">
