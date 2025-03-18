@@ -2,7 +2,6 @@ const BASE_URL = "https://raw.githubusercontent.com/arihara-sudhan/arihara-sudha
 
 async function loadLearnings(fileName) {
     const fileUrl = `${BASE_URL}${fileName}.txt`;
-    alert("CLICKED");
     try {
         const response = await fetch(fileUrl);
         if (!response.ok) {
@@ -28,11 +27,9 @@ async function loadLearnings(fileName) {
         contentDiv.innerHTML = htmlContent;
     } catch (error) {
         console.error("Error loading file:", error);
-        alert("Failed to load content!");
     }
 }
 
-// Load first file on page load
 document.addEventListener("DOMContentLoaded", function () {
-    loadLearnings('learnings'); // Default to 'learnings.txt'
+    loadLearnings('nlp');
 });
