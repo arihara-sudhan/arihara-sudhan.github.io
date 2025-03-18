@@ -1,4 +1,5 @@
 const BASE_URL = "https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/ari-learns/learnings/";
+let activeButton = null;
 
 async function loadLearnings(fileName) {
     const fileUrl = `${BASE_URL}${fileName}.txt`;
@@ -26,8 +27,25 @@ async function loadLearnings(fileName) {
         }
 
         contentDiv.innerHTML = htmlContent;
+
+        // Highlight the clicked button
+        updateActiveButton(fileName);
     } catch (error) {
         console.error("Error loading file:", error);
+    }
+}
+
+function updateActiveButton(topic) {
+    if (activeButton) {
+        activeButton.style.backgroundColor = "black";
+        activeButton.style.color = "lightgreen";
+    }
+
+    const clickedButton = document.querySelector(`h2[onclick="loadLearnings('${topic}')"]`);
+    if (clickedButton) {
+        clickedButton.style.backgroundColor = "red";
+        clickedButton.style.color = "white";
+        activeButton = clickedButton;
     }
 }
 
