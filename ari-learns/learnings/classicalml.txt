@@ -1,4 +1,4 @@
-SOURCE: Chapter 6 of The Book, "Machine Learning for Brain Disorders" by Johann Faouzi, Olivier Colliot
+SOURCE: Chapter 2 of The Book, "Machine Learning for Brain Disorders" by Johann Faouzi, Olivier Colliot
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[14/03/2025]
 1. Nearest Neighbor: Intuition
  ⭐️ Training Samples are converted into feature vectors
@@ -27,17 +27,17 @@ SOURCE: Chapter 6 of The Book, "Machine Learning for Brain Disorders" by Johann 
 		We weigh each points based on distance; We take the point with the highest value
 7. Data Distribution
 	Uniform: For any region, there will be roughly equal numbers of data-points
-		⬤  ⬤  ⬤  ⬤  ⬤  
-		⬤  ⬤  ⬤  ⬤  ⬤  
-		⬤  ⬤  🔵  ⬤  ⬤  
-		⬤  ⬤  ⬤  ⬤  ⬤  
-		⬤  ⬤  ⬤  ⬤  ⬤  
+		⬤  ⬤  ⬤  ⬤
+		⬤  ⬤  ⬤  ⬤
+		⬤  ⬤  ⬤  ⬤
+		⬤  ⬤  ⬤  ⬤
+		⬤  ⬤  ⬤  ⬤
 	Random: For any region, the count of data-points will be random (spaces, clusters)
-		⬤  ⬤  ⬤        
-		⬤  ⬤  ⬤        
-		⬤  ⬤  🔵 ⬤  ⬤  ⬤  
-			       ⬤  ⬤  ⬤  
-			       ⬤  ⬤  ⬤  
+		⬤   ⬤
+		⬤   ⬤
+		⬤   ⬤ ⬤  ⬤
+			      ⬤  ⬤
+			      ⬤  ⬤
 8. Halton and Hammersley Sequence: To generate evenly spread points for simulations
 9. A Distance Metric should satisfy these conditions to be used as similarity metric
  ⭐️ Non-negativity → Distance is never negative.
@@ -249,22 +249,22 @@ In ε-insensitive loss, ε (epsilon) represents a tolerance margin within which 
 	S10	1	Fail (F)
 
  ⭐️ Gini_before = 1−(p^2 + F^2)
-				   = 1−(0.6^2 +0.4^2)
-				   = 1−(0.36+0.16)
-				   = 0.48
+  = 1−(0.6^2 +0.4^2)
+  = 1−(0.36+0.16)
+  = 0.48
  ⭐️ Group 1: "Study Hours < 5" (Lower Study Hours)
-	   Gini_1 	   = 1−(0^2 + 1^2)
-	   			   = 1−1
-	   			   = 0
+	 Gini_1 = 1−(0^2 + 1^2)
+	 = 1−1
+	 = 0
  ⭐️ Group 2: "Study Hours >= 5" (Higher Study Hours)
-	   Gini_2 	   = 1−(1^2 + 0^2)
-	   			   = 1−1
-	   			   = 0
+	 Gini_2 = 1−(1^2 + 0^2)
+	 = 1−1
+	 = 0
  ⭐️ Gini_after = ( (4/10) * Gini_1 ) + ( (6/10) * Gini_2 )
 	Gini_after = 0 + 0 = 0
 	Gini_gain = Gini_before - Gini_after
 	Gini_gain = 0.48 - 0
-			  = 0.48
+	 = 0.48
 	✅ Perfect split! (Best possible case: Gini Impurity of 0 for both child nodes)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[17/03/2025]
 54. Random Forest
