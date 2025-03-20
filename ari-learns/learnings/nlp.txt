@@ -634,3 +634,41 @@ Conclusion: MI helps in feature selection
     eₕ₁ = eₕ₂ × U = (-2.21) × 0.8 = -1.76
     Compute gradient for W:
     ∂L₁/∂W = eₕ₁ × x₁ = (-1.76) × 1 = -1.76
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[20/03/2025]
+336. In RNN, all the preceding words are considered
+337. At each position t, the model takes the correct word wt and the hidden state ht-1, which encodes past words w1:w(t-1). It then predicts the next word's probability distribution to compute the loss for w(t+1). Moving forward, the model ignores its own predictions and instead uses the correct word w(t+1) to estimate w(t+2).
+338. Teacher Forcing: Ignoring own predictions and instead using the correct word history
+    🧑🏻‍🏫 Teacher - Training Data
+339. Equation for Word Embedding Retrieval
+340. Forward Pass - Mathematically
+⭐️ We retrieve the word embedding by multiplying the one hot vector xₜ with the embedding matrix E.
+    > eₜ = E × xₜ
+    > E has shape (d × |V|)
+    > xₜ is a one-hot vector of shape (|V| × 1)
+    > The result eₜ is a dense vector of shape (d × 1)
+⭐️ Equation for Hidden State Update in RNN
+The hidden state at time step t is computed as:
+    > hₜ = g(U × hₜ₋₁ + W × eₜ)
+    > hₜ₋₁ is the previous hidden state (d × 1)
+    > eₜ is the embedding vector (d × 1)
+    > U is the hidden state weight matrix (d × d)
+    > W is the input weight matrix (d × d)
+    > g(⋅) is an activation function (like tanh or ReLU)
+⭐️ Equation for Next Word Prediction
+    > ŷₜ = softmax(Eᵀ × hₜ)
+    > Eᵀ has shape (|V| × d) (transposed embedding matrix)
+    > hₜ is the hidden state (d × 1)
+    > The result ŷₜ is a probability distribution over all words in the vocabulary (|V| × 1)
+341. Example Calculation=
+    ŷₜ = Eᵀ × hₜ =
+        ⎡ (0.2 × 0.1) + (0.8 × 0.4) ⎤
+        ⎢ (0.5 × 0.1) + (0.3 × 0.4) ⎥
+        ⎢ (0.4 × 0.1) + (0.7 × 0.4) ⎥
+        ⎣ (0.6 × 0.1) + (0.9 × 0.4) ⎦
+    =
+        ⎡ 0.34 ⎤
+        ⎢ 0.17 ⎥
+        ⎢ 0.32 ⎥
+        ⎣ 0.42 ⎦
+    > Softmax is applied
+342. Weight Tying: 🎀 Technique of reusing the embedding matrix E as the output projection matrix V (i.e., V = Eᵀ) to reduce model parameters.
