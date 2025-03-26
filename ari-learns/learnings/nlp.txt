@@ -672,3 +672,49 @@ The hidden state at time step t is computed as:
         ⎣ 0.42 ⎦
     > Softmax is applied
 342. Weight Tying: 🎀 Technique of reusing the embedding matrix E as the output projection matrix V (i.e., V = Eᵀ) to reduce model parameters.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[25/03/2025]
+343. Sequence Labeling: Assigning labels to each elements of a sequence
+    We go for RNN to capture the context
+Examples: I watch Ari - S V O
+          Ari plays cricket - S V O
+344. In Sequence labeling,
+        - Embedding is activated with some weights (h)
+        - Using h, Tag Vocabulary is weighed
+        - Softmax Applied
+345. Three sets of Weights in RNN:
+    U - To weigh the activated output
+    V - Vocabulary 
+    W - To weigh the input
+346. Sentence Classification
+    x1  ---> [ ] ---> [ ] ---> [ ] ---> [ ] ---> FFN ---> Softmax
+    Example: Sentiment Classification
+347. End-To-End Training
+       - The loss function is only on the last layer.
+       - No loss computed inbetween
+348. Pooling: Instead of using just last hidden state to represent the whole sequence, some sort of pooling function of all the hidden states hi for each word i in the sequence can be used.
+349. Autoregressive Generation/Causal LM Generation: Repeatedly sampling the next word conditioned on our previous choices
+    - "Regressive" refers to this backward-looking dependency: the model "regresses" to past data to predict the next step
+    - "Auto-Regressive" uses its own previous outputs as inputs for the next step
+349. Causal refers to Cause-and-Effect relationships
+    Past Words "Cause" the Future "Effects"
+Glory
+Glory Lily
+Glory Lily is
+Glory Lily is a
+Glory Lily is a beautiful
+Glory Lily is a beautiful flower.
+Glory Lily is a beautiful flower. It
+Glory Lily is a beautiful flower. It grows
+Glory Lily is a beautiful flower. It grows in
+Glory Lily is a beautiful flower. It grows in tropical
+Glory Lily is a beautiful flower. It grows in tropical regions.
+350. Stacked RNNs
+    Layer 1: Captures character/word-level features
+    Layer 2: Understands word relationships
+    Layer 3: Recognizes sentence structure and meaning
+355. Bidirectional RNNs: Capture both past and future context when processing a sequence
+356. Problems with RNNs
+    - RNNs focus more on recent words and struggle to remember distant ones
+    Example: In "The flights the airline was canceling were full," predicting "were" is hard because "flights" is far away.
+    - During training, errors are passed backward through many steps
+    - This leads to vanishing gradients, making it hard to learn long-term patterns
