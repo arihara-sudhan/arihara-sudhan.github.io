@@ -718,3 +718,30 @@ Glory Lily is a beautiful flower. It grows in tropical regions.
     Example: In "The flights the airline was canceling were full," predicting "were" is hard because "flights" is far away.
     - During training, errors are passed backward through many steps
     - This leads to vanishing gradients, making it hard to learn long-term patterns
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[26/03/2025]
+357. RNN favours Recent Information and Forgets Distant Information
+358. How Recent Information Dominates The Vector?
+    The apples the shop was selling were fresh 🍎
+    - Recent words have dominant features which are enough to distor the historical representation
+359. RNN does two tasks
+    - Providing information useful for the current decision
+    - Carrying forward information required for future decisions
+360. Gradient Problems with RNNs
+    - Vanishing Gradient
+    - Exploding Gradient
+361. LSTMS: Long Short Term Memory
+362. LSTM Working
+    Through Training,
+        - Forgets information irrelevant to the context
+        - Gains information needed for the context
+363. LSTM uses GATES for forgetting and gaining
+    - Forget Gate
+    - Gain Gate
+367. Binary Mask 😷
+    - Used to filter out filter out relevant information
+    - [1 2 3]x[1 0 1] = [1 0 3]
+368. Binary Mask in Gates
+    - Forget Gate: Uses Binary Mask to remove unwanted portions
+    - Gain Gate: Uses Binary Mask to gain needed portions
+> Forgetting irrelevant details → Prevents memory overload
+> Gaining relevant details → Ensures long-term retention
