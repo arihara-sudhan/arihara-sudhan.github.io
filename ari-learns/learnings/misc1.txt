@@ -48,14 +48,14 @@ SOURCE: NOT TO BE DISCLOSED FOR NOW
  	- YOLO: You Only Look Once
  		class_id x_center y_center width height: 0 0.5 0.5 0.2 0.3
  	- Pascal VOC
-	 	<annotation>
-	  		<object>
-	    	<name>cat</name>
-	    	<bndbox>
-	      	<xmin>50</xmin><ymin>80</ymin><xmax>200</xmax><ymax>300</ymax>
-	    	</bndbox>
-	  	</object>
-		</annotation>
+	    &lt;annotation&gt;  
+	      &lt;object&gt;  
+	        &lt;name&gt;cat&lt;/name&gt;  
+	        &lt;bndbox&gt;  
+	          &lt;xmin&gt;50&lt;/xmin&gt;&lt;ymin&gt;80&lt;/ymin&gt;&lt;xmax&gt;200&lt;/xmax&gt;&lt;ymax&gt;300&lt;/ymax&gt;  
+	        &lt;/bndbox&gt;  
+	      &lt;/object&gt;  
+	    &lt;/annotation&gt;
 11. Annotation Best Practices
 	- Class balancing
 	- Consistent labeling
