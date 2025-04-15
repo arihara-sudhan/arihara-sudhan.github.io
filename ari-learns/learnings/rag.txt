@@ -1,0 +1,55 @@
+SOURCE: "A Taxonomy of Retrieval Augmented Generation" by Abhinav Kimothi
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[14/04/2025]
+1. RAG - Introduced by Dr.Patrick Lewis
+2. LLM Limitation
+	- Knowledge Cut-Off
+	- Bound to Public Information
+	- Hallucination: Lying with Confidence
+	- Context Problems
+		CONTEXT WINDOW = 5 TOKENS
+		MY DOG IS SASI
+		MY ~DOG IS?~
+		Where, the model forgets ~TOKENS~
+3. Parametric Memory
+	- The knowledge is stored within a Model's Parameters
+	- Recall and generate information without accessing external storage
+4. Non-Parametric Memory
+	- RAG System generate information, accessing external storage (DB)
+	- Knowledge Base of RAG
+5. Basic Components/Actions in RAG
+   Query - User Queries something
+   Retrieval - Fetched from Database based on Query
+   Augmentation - Query + Retrieved Information + Prompt*
+   Generation - LLM responds based on prompt/query
+6. Source Citation
+	- Ability of RAG System to point out to the information from KB
+7. Unlimited Memory
+	- Any number of documents can be added
+8. Indexing Pipeline
+	- Set of Processes employed to create the KB
+	- Non Real Time, Periodic
+9. Metadata: Data about Data
+	- Timestamp, Author, Topic, Summarization
+	- Enhances Search Ability
+	- Child to Parent Indexing where Children have specific detail (Metadata) and Parents have Actual Data
+10. Data Masking
+	- Obfuscation of Sensitive Information (Such as PII)
+11. Chunking: Splitting the corpus into meaningful pieces of information for effective search and overcoming context window problems
+	- Decontextualization: Separating pieces out of surroundings (corpus)
+12. Lost in The Middle
+	- The Tendency of LLMs to overlook or forget information placed in the middle of long context inputs, focusing more on the beginning and end
+13. Chunking Types
+	- Fixed Chunking (Fixed Size with Overlaps)
+	- Structured Chunking (JSON/XML/HTML)
+	- Agentic Chunking (Applying Neural Networks)
+	- Small to Big Chunking (Compact Small Units Merged)
+	- Context Enriched Chunking: Make each chunk self-contained (Semantic Meaning): Hero/Subject instead of pronouns such as It,He,She and so on
+	- Semantic Chunking
+14. Chunk Size: Number of Tokens to be in a Chunk
+15. Embeddings: Meaningful Numerical Representation of Data
+	Examples: Word2Vec, FastText, Glove, BERT, ElMO
+16. Cosine Similarity= A⋅B / ∣∣A∣∣⋅∣∣B∣∣
+17. Vector Databases
+	- To handle HIGH Dimensional Vectors
+	- Stores & Indexes'em Efficiently
+	- Examples: FAISS, Weaviate, Pinecone
