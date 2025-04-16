@@ -53,3 +53,59 @@ SOURCE: "A Taxonomy of Retrieval Augmented Generation" by Abhinav Kimothi
 	- To handle HIGH Dimensional Vectors
 	- Stores & Indexes'em Efficiently
 	- Examples: FAISS, Weaviate, Pinecone
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[15/04/2025]
+18. Generation Pipeline
+	- Set of Processes employed to search, retrieve and generate
+	- Real Time
+19. Information Retrieval
+	- Retriever: Component using an algorithm to search
+20. Retrieval Methods
+	- Boolean Retrieval: AND, NOT, OR Logic in Query to search a document
+	- TFID: Term Frequency Inverse Document Frequency
+	- BM25: Best Match 25; Probabilistic Extension of TFIDF (Longer Documents don't unfairly get HIGH Scores)
+	- Static Word Embeddings (Non Contextual; Eg: Word2Vec, Glove)
+	- Contextual Embeddings (BERT, OpenAI's Embeddings)
+	- Learned Sparse Retrieval (Accuracy)
+	- Dense Retrieval (Efficiency) 
+	- Hybrid Retrieval (Accuracy + Efficiency)
+	- Cross Encoder Retrieval (Uses Transformers to compare Query and Document)
+21. Augmentation: Combining User Query and Retrieved Documents
+22. Prompt Engineering: Giving Instructions to LLMs
+23. Prompting Types
+	- Contextual Prompting (Answer from the context)
+	- Controlled Generation Prompting (Say I don't know if the question isn't based on the context)
+	- Fewshot Prompting (Giving Example)
+	- Chain of Thought Prompting (Encouraging Single-Step-by-Step Thinking)
+		Q: If John has 3 apples and he buys 4 more, how many apples does he have now?  
+		A: Let's think step-by-step. John starts with 3 apples. He buys 4 more. So, 3 + 4 = 7. Final Answer: 7
+		- - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - 
+		Q: Sarah has 12 candies. She eats 5 of them and then buys 3 more. How many candies does she have?  
+		A: Let's think step-by-step. She starts with 12 candies. She eats 5, so 12 - 5 = 7. Then she buys 3 more: 7 + 3 = 10. Final Answer: 10
+		NOTE: We can give multiple steps (Self Consistency)
+	- Generated Knowledge Prompting: A Support Knowledge is generated which helps in further generation
+	Q: Why do metal objects feel colder than wooden ones at the same temperature?
+		Step 1 (Generated Knowledge):
+		Metals are better conductors of heat than wood. They transfer heat away from your skin faster
+		Step 2 (Answer):
+		Since metal conducts heat away quickly, it draws heat from your hand faster than wood. That’s why it feels colder
+		Final Answer: Because metal conducts heat faster, making it feel colder to the touch
+	- Tree of Thoughts Prompting: Generates multiple possible "thoughts"
+		You have the numbers 4, 7, and 9. You can add or multiply them in any order. How can you get as close to 100 as possible?
+			Thought 1: (4 + 7) × 9 = 11 × 9 = 99 ✅
+			Thought 2: (4 × 7) + 9 = 28 + 9 = 37 ❌
+			Thought 3: (9 × 7) + 4 = 63 + 4 = 67 ❌
+			Thought 4: (7 + 9) × 4 = 16 × 4 = 64 ❌
+24. Automatic Prompt Engineer: An LLM to generate prompts based on demonstration
+25. Automatic Reasoning and Tool Use: Analyzing and Switch back and forth between thinking and using tools
+26. Active Prompting
+		1. The model tries a task
+		2. We analyze where it’s uncertain or confused
+		3. A human gives feedback or annotations
+		4. We use that to create better prompts for the model
+27. ReAct Prompting (Reason + Act)
+		Question: Who won the Nobel Peace Prize in 2022?
+		Thought: I need to find the latest information. Let me search for Nobel Peace Prize 2022
+		Action: Search("Nobel Peace Prize 2022")
+		Observation: Ales Bialiatski, Memorial, and Center for Civil Liberties won
+		Thought: Now I know who won. Let me answer clearly
+		Final Answer: Ales Bialiatski, Memorial, and the Center for Civil Liberties
