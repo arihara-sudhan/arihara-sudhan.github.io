@@ -109,3 +109,87 @@ SOURCE: "A Taxonomy of Retrieval Augmented Generation" by Abhinav Kimothi
 		Observation: Ales Bialiatski, Memorial, and Center for Civil Liberties won
 		Thought: Now I know who won. Let me answer clearly
 		Final Answer: Ales Bialiatski, Memorial, and the Center for Civil Liberties
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[16/04/2025]		
+28. Pretraining
+	- Training a large model on massive unlabeled data using self-supervised learning (like predicting the next word)
+	- To learn language, reasoning, and world knowledge, which makes it highly adaptable for many downstream tasks with minimal additional training
+29. Foundation models
+	- Large, pretrained neural networks trained on massive datasets
+	- To serve as a general-purpose base for a wide range of tasks
+	- Efficient fine-tuning and deployment across various applications
+30. Supervised FineTuning: Using Labeled Dataset
+31. Size Language Models
+	ModelSize		Parameters	Category
+	Tiny	  			  <100M		Micro / Edge models
+	Small				100M – 1B	SLM
+	Mid-size			1B – 10B		Still SLM or MSM
+	Large				10B – 100B	LLM
+	Very Large		>100B			Foundation Models (GPT-3, GPT-4)
+32. Evaluation Metrics: Accuracy, Precision, Recall, F1 Score
+	> Precision - Of all the documents that were retrieved, how many were actually relevant?
+	> Precision@k - Of all the top k documents that were retrieved, how many were actually relevant?
+	> Recall - Of all the relevant documents, how many were actually retrieved?
+	> Mean Reciprocal Rank - how high the first correct answer appears in a list of search results
+		Query 1: Right answer at position 1 → 1/1 = 1.0
+		Query 2: Right answer at position 3 → 1/3 = 0.33
+		MRR = (1.0 + 0.33) / 2 = 0.665
+	> Mean Average Precision - how well all the relevant answers are ranked, not just the first one
+		If many correct answers appear near the top, MAP is high
+		If correct answers are scattered lower down, MAP is low
+33. nDCG: Normalized Discounted Cumulative Gain
+	nDCG – Simple Example
+	You search: "Best programming languages"
+		The system returns 3 results with these relevance scores:
+			Rank 1: Python – relevance 3
+			Rank 2: Java – relevance 0
+			Rank 3: Rust – relevance 2
+	Step 1: DCG (Discounted Cumulative Gain)
+		DCG = rel₁ + rel₂ / log₂(2) + rel₃ / log₂(3)
+		DCG = 3 + 0 / 1 + 2 / 1.584 ≈ 3 + 0 + 1.26 = 4.26
+	Step 2: IDCG (Ideal DCG)
+		Best possible order: Python (3), Rust (2), Java (0)
+		IDCG = 3 + 2 / log₂(2) + 0 / log₂(3) = 3 + 2 / 1 + 0 = 5
+	Step 3: nDCG
+		nDCG = DCG / IDCG = 4.26 / 5 = 0.852
+	Conclusion:
+		nDCG = 0.852 → the ranking is pretty good, close to the ideal
+34. Context Relevance
+	- Percentage(Out of the retrieved sentences, how many are actually relevant)
+35. Answer Faithufulness
+	- Measures how much the model’s response stays factually true to the retrieved context
+	“What is the capital of France and who is the current president?”
+	Retrieved Context:
+		"Paris is the capital of France."
+		"As of 2025, the president of France is Emmanuel Macron."
+	Model Response:
+		"Paris is the capital of France, and Emmanuel Macron is the president."
+	Step-by-step Faithfulness Check:
+		Claims in the response:
+			Paris is the capital of France
+			Emmanuel Macron is the president of France
+		Are these claims in the context?
+			Claim 1: ✔️ Present
+			Claim 2: ✔️ Present
+		✅ Faithfulness = 2/2 = 100%
+36. Hallucination Rate
+	- Measures how many claims in the response are not found in the retrieved context
+	Context:
+		"Paris is the capital of France."
+		"The Eiffel Tower is a major tourist attraction."
+	Model Response:
+		"Paris is the capital of France and it hosted the 2024 Olympics."
+	Claims in Response:
+		Paris is the capital of France – ✔️ present
+		Paris hosted the 2024 Olympics – ❌ not in context
+	Hallucination Rate = 1 hallucinated / 2 total claims = 0.5 (50%)
+37. Coverage
+	- Measures how much relevant information from the context is included in the model’s response
+	Context (3 facts):
+		Python is used in AI and data science
+		Python has easy-to-read syntax
+		Python supports many libraries like NumPy and TensorFlow
+	Model Response:
+		"Python is used in AI and has easy syntax."
+	Relevant claims covered = 2 / 3 = 0.66 (66% coverage)
+38. Interesting: We can prepare, "QUERY-PROMPT-RESPONSE" for evaluating RAG
+
