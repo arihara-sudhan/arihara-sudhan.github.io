@@ -192,4 +192,29 @@ SOURCE: "A Taxonomy of Retrieval Augmented Generation" by Abhinav Kimothi
 		"Python is used in AI and has easy syntax."
 	Relevant claims covered = 2 / 3 = 0.66 (66% coverage)
 38. Interesting: We can prepare, "QUERY-PROMPT-RESPONSE" for evaluating RAG
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[22/04/2025]
+39. Noise Robustness: The ability of The RAG System to answer relevantly although there are noises [Noises: Documents which are mostly out of Context/Query being asked]
+40. Negative Rejection: The ability of the RAG system to not give an answer when there is no relevant information in the document retrieved
+41. Information Integration: The generation part takes care of it; When there are high relevance in the retrieved claims, they will be integrated with the help of LLMs
+42. Counterfactual Robustness: If there exists inaccuracy in KB (False Information), The RAG should be able to detect and correct
+43. Frameworks for Evaluation
+	- LLMs as Judge
+	- RAGAS: RAG Assessment, ARES: Automated RAG Evaluation System
+	- Assesses the Retrieval, Generation Components
+	- Also aids in Synthetic Data Generation
+44. Benchmarks: Standardised Datasets and Fixed Tasks used to evaluate
+	Examples: Benchmarking Information Retrieval (BEIR), RAG Benchmark (RGB)
+				MultiHop RAG (The context is distributed)
+45. Naive RAG: Usual One where we have the conventional RETRIEVAL, AUGMENTATION, GENERATION
+46. Context Problems
+	- Disjointed Context: When the context exists in different documents
+	- Over-reliance on Context: LLM becomes over reliant on the context retrieved, forgetting the parametric memory
+47. Advanced RAG: Pipeline with interventions at Pre-Retrieval, Retrieval and Post-Retrieval (To overcome the limitations with Naive RAG)
+48. Rewrite-Retrieve-Rerank-Read
+	- Rewriting: Query Expansion (Enriching The Query with the aim of retrieving the most relevant)
+	- Query Decomposition
+49. Hypothetical Document Embedding: HyDE
+	- We generate A Hypothetical Answer to the query
+	- The retrieved documents are checked for similarity with the Hypothetical Answer
+50. Query Routing
+	- Directing to The Query
