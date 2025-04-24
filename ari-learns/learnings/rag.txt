@@ -218,3 +218,27 @@ SOURCE: "A Taxonomy of Retrieval Augmented Generation" by Abhinav Kimothi
 	- The retrieved documents are checked for similarity with the Hypothetical Answer
 50. Query Routing
 	- Directing to The Query
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[23/04/2025]
+51. Hybrid Retrieval: Combining Multiple Types of Retrieval together to get the best
+52. Iterative Retrieval: The Retrieval happens for n times; The Generated Response is used for further retrievals
+53. Recursive Retrieval: The Retrieval Query is moderated based on the generation
+54. Adaptive Retrieval: An Intelligent Way of Retrieval where The LLM is employed to decide when to retrieve; where to retrieve
+55. Contextual Suppression: Removing irrelevant parts in the retrieved information
+56. Re-Ranking: Retrieved information from different sources and techniques can further be ranked to determine the most relevant documents
+57. Modular RAG: The Monolithic Architecture gets broken down into Interchangeable Architecture; Brings modularity to all the components (Retrievar, Generator and so on)
+58. Reciprocal Ranking Fusion
+	QUERY (BEST RESTAURANT)
+	Consider: ARI, ANANTH and ANTO to be the different RETRIEVERS and REST_A, REST_B, REST_C are different documents
+			  ARI      ANANTH       ANTO
+	REST_A     1         3           1
+	REST_B     3         2           3
+	REST_C     2         1           2
+
+	For REST_A
+		1/1 + 1/3 + 1/1 = 2.34
+	For REST_B
+		1/3 + 1/2 + 1/3 = 1.16
+	For REST_C
+		1/2 + 1/1 + 1/2 = 2
+	Descending Order: 2.34 -> 2 -> 1.16
+		REST_A -> REST_C -> REST_B
