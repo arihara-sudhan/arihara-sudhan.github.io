@@ -242,3 +242,65 @@ SOURCE: "A Taxonomy of Retrieval Augmented Generation" by Abhinav Kimothi
 		1/2 + 1/1 + 1/2 = 2
 	Descending Order: 2.34 -> 2 -> 1.16
 		REST_A -> REST_C -> REST_B
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[24/04/2025]
+59. Routing: Navigates through diverse data sources, selecting the optimal pathway for a query
+60. Knowledge Graph: Compact, Effective Representation of KB
+  ENTITY ---- RELATIONSHIP
+  John --(WORKS_IN)--> Engineering
+  John --(PART_OF_TEAM)--> Team Alpha
+  John --(WORKS_ON)--> Project B
+  Anna --(WORKS_IN)--> Engineering
+  Anna --(PART_OF_TEAM)--> Team Alpha
+  Anna --(WORKS_ON)--> Project A
+  Luca --(WORKS_IN)--> Sales
+  Luca --(PART_OF_TEAM)--> Team Beta
+  Luca --(WORKS_ON)--> Project C
+  Olivia --(WORKS_IN)--> Marketing
+  Olivia --(PART_OF_TEAM)--> Team Beta
+  Olivia --(WORKS_ON)--> Project A
+  Olivia --(WORKS_ON)--> Project D
+  Team Alpha --(PROJECT_OF_TEAM)--> Project A
+  Team Alpha --(CLIENT_OF_TEAM)--> Client X
+  Team Beta --(PROJECT_OF_TEAM)--> Project C
+  Team Beta --(CLIENT_OF_TEAM)--> Client Y
+  Team Beta --(PROJECT_OF_TEAM)--> Project D
+  Team Beta --(CLIENT_OF_TEAM)--> Client Z
+  Client X --(PROJECT_OF_CLIENT)--> Project A
+  Client X --(PROJECT_OF_CLIENT)--> Project B
+  Client Y --(PROJECT_OF_CLIENT)--> Project C
+  Client Z --(PROJECT_OF_CLIENT)--> Project D
+  Project A --(HAS_COMPONENT)--> Chunk
+  Project B --(HAS_COMPONENT)--> Chunk
+  Project C --(HAS_COMPONENT)--> Chunk
+  Project D --(HAS_COMPONENT)--> Chunk
+61. Baseline RAG vs Knowledge Graph
+ - Baseline RAG struggles to connect the dots
+ - Baseline RAG performs poorly when being asked to holistically understand summarized semantic concepts over large data collections or even singular large documents
+62. GraphRAG: A framework by Microsoft to create Knowledge Graphs of Communities
+63. Community: Partitioning entities & relationships into groups
+In a knowledge graph about birds, you might identify a community centered around raptors (birds of prey). This community could include various entities (nodes) and their relationships (edges) as follows:
+Entities (Nodes):
+    Bald Eagle
+    Peregrine Falcon
+    Red-tailed Hawk
+    Golden Eagle
+    Barn Owl
+    Osprey
+Relationships (Edges):
+    Predation
+    Habitat
+    Migration Patterns
+    Conservation Status
+64. Community Summaries: LLM generated summaries for communities, providing insights into topical structure and semantics
+65. Local Search: Identifying a set of entities from the knowledge graph that are related to the user input
+Global Search: Similarity based search on community summaries
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[25/04/2025]
+66. Multimodal RAG: Using other modalities like Vision, Audio, etc,. in addition to text in both retrieval and generation
+67. CLIP: Contrastive Language Image Pre-Training; For Cross-Modal Retrieval
+68. Agentic RAG: LLM based Agent + Tools
+69. Routing Agent: Reasons + Understands + Delegates to appropriate TOOL
+70. Query Planning Agent: Breaks the complex query into subqueries and delegates them to apt tools and orchestrates the pipeline
+71. Corrective RAG: Generates -> Checks with Gold
+72. RAG with Active Learning: Improvises over time
+73. Personalized RAG: Personalizes based on interaction
+74. RAG Limitations: Handling Large Scale of Data, Inefficient Routing, Data Silos, Context Loss in Long Queries, Adversarial Attacks, Incoherent Generation, Relevance Mismatch
