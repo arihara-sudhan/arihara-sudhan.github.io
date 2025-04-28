@@ -299,3 +299,32 @@ For Regression:
 	> min {µ₁, ..., µₖ} ∑(j=1 to k) ∑(x(i) ∈ Xⱼ) ||x(i) - µⱼ||²
 	There comes an Elbow Point, where the K value is changing the direction
 	This is the point where K represents the actual number of clusters
+60. We can also use Silhoutte Score instead of WCSSC
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[27/04/2025]
+61. GMM: Gaussian Mixture Model
+	Assumption: The data comes from multiple blobs; Each blob has a center (mean), spread (variance)
+62. Clusters can Overlap: GMM tells, "This image belongs 70% to blob A, 30% to blob B"
+63. Soft Assignments: Each image will have a probability of belonging to each animal group.
+	One lion image might be:
+	> 90% Lion Cluster
+	> 8% Dog Cluster
+	> 2% Cat Cluster
+64. Gaussian/Blob Parameters
+	μ (mu), Mean — center of the cluster
+	Σ (sigma), Covariance — spread and shape of cluster
+	π (pi), Mixing probability — size of cluster
+	It learns by finding the best values for these all above
+65. Two Steps in GMM
+	> Expectation Step: For each data point xi, We compute The Probability that xi came from Gaussian k
+		r_ik = (pi_k * N(xi | mu_k, Sigma_k)) / (sum over j=1 to K of (pi_j * N(xi | mu_j, Sigma_j)))
+	> Maximization Step: Update the parameters 𝜇𝑘, Σ𝑘, 𝜋𝑘 based on how much responsibility each point takes
+66. GMM Steps
+	1. Initialize K Gaussian components with random or KMeans-based means, covariances, and weights.
+	2. For each data point, compute the responsibility (probability) for each Gaussian using current parameters.
+	3. Update each Gaussian’s mean by taking the weighted average of data points based on responsibilities.
+	4. Update each Gaussian’s covariance matrix using the weighted scatter of data points around the new mean.
+	5. Update each Gaussian’s mixing weight by the average responsibility across all points.
+	6. Check for convergence by evaluating the change in log-likelihood or stop after a maximum number of iterations.
+	7. Once converged, output the final Gaussian parameters and the soft cluster assignments for each data point.
+67. Eigen Vector: A special vector that, when acted upon by a matrix, only gets stretched or compressed (scaled by a scalar called an eigenvalue) but does not change its direction
+	Av=λv
