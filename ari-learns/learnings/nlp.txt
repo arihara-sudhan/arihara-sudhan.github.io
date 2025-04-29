@@ -745,3 +745,25 @@ Glory Lily is a beautiful flower. It grows in tropical regions.
     - Gain Gate: Uses Binary Mask to gain needed portions
 > Forgetting irrelevant details → Prevents memory overload
 > Gaining relevant details → Ensures long-term retention
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[29/04/2025]
+369. A General GATE in LSTM
+    -> Feed Forward Neural Network
+    -> Sigmoid Activation
+    -> Pointwise Multiplication (Hadamard Product)
+370. Gate Function: SIGMOID(FFNN(HIDDEN_STATE)) ⊙ CONTEXT
+    ft = σ(Uf.ht−1 +Wf.xt)
+    kt = ct−1 ⊙ ft
+371. Forget Gate
+    Previous cell state vector, ct−1 =[0.8,0.2,0.6]
+    Forget gate vector (output of sigmoid): ft =[1.0,0.0,0.5]
+    Hadamard Product, ct−1⊙ft =[0.8,0.2,0.6]⊙[1.0,0.0,0.5]=[0.8,0.0,0.3]
+        First element: 0.8 × 1.0 = 0.8 → fully retained
+        Second: 0.2 × 0.0 = 0.0 → fully forgotten
+        Third: 0.6 × 0.5 = 0.3 → partially remembered
+372. Add Gate
+    Candidate memory vector (from tanh), gt = [0.7, -0.4, 0.6]
+    Add (input) gate vector (from sigmoid), it = [0.9, 0.1, 0.5]
+    Hadamard Product (new info to add), gt ⊙ it = [0.7, -0.4, 0.6] ⊙ [0.9, 0.1, 0.5] = [0.63, -0.04, 0.3]
+        First element: 0.7 × 0.9 = 0.63 → mostly added
+        Second element: -0.4 × 0.1 = -0.04 → very little added, even a bit negative
+        Third element: 0.6 × 0.5 = 0.3 → half added
