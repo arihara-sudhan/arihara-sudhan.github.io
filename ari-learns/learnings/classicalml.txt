@@ -328,3 +328,15 @@ For Regression:
 	7. Once converged, output the final Gaussian parameters and the soft cluster assignments for each data point.
 67. Eigen Vector: A special vector that, when acted upon by a matrix, only gets stretched or compressed (scaled by a scalar called an eigenvalue) but does not change its direction
 	Av=λv
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[28/04/2025]
+68. Curse of Dimensionality
+	- More Features -> Sparsity of Datapoints
+	- In HIGH Dimensions, the distance loses it's meaning
+	- Higher Dimensional Datapoints formulate Hyper Sphere -> Angle Metric makes sense
+	- The more sparse data makes models harder to train and more prone to overfitting capturing noise rather than the underlying patterns
+69. More Spread - More Information
+70. Principal Component Analysis: Aims to find a low-dimensional representation of a dataset while keeping a great share of the variance; It is unsupervised
+71. Eigen Vectors tell us the principal components
+	Eigen Values tell us how much variance (importance) each principal component explains
+72. We take The Eigen Vector of Covariance Matrix
+73. When we project a particular vector onto the eigen vector, the projected vector stretches (Spreads) | Any vector can have some spread (variance) when we project the data onto it. But, the spread is not maximum unless the vector is an eigenvector of the covariance matrix
