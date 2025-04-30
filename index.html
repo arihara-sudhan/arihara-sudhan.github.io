@@ -38,110 +38,118 @@
       <img src="statics/tiger.gif" id="tig" width="65%" ondragstart="return false;">
       <script type="text/javascript">
          document.addEventListener("DOMContentLoaded", () => {
-            const imagePaths = [
-                "./statics/ss1.png",
-                "./statics/ss2.png",
-                "./statics/ss7.png",
-                "./statics/ari8.png",
-                "./statics/ari_zea.jpg"
-            ];
-
-            let currentIndex = 0;
-            const ariPic = document.getElementById('ari-pic');
-            ariPic.style.pointerEvents = 'none';
-
-            const changeImage = () => {
-                currentIndex = (currentIndex + 1) % imagePaths.length;
-                ariPic.src = imagePaths[currentIndex];
-            };
-
-            setInterval(changeImage, 3000);
-
-            const buttonsContainer = document.querySelector('.options');
-            let resumeButton = document.getElementById('res-but');
-
-            const createSplitButtons = () => {
-                const splitContainer = document.createElement('div');
-                splitContainer.className = 'split-buttons';
-                splitContainer.style.opacity = '0';
-
-                const digitalButton = document.createElement('button');
-                digitalButton.textContent = 'Digital';
-                digitalButton.id = 'digital-but';
-
-                const pdfButton = document.createElement('button');
-                pdfButton.textContent = 'PDF';
-                pdfButton.id = 'pdf-but';
-
-                splitContainer.appendChild(digitalButton);
-                splitContainer.appendChild(pdfButton);
-
-                return splitContainer;
-            };
-
-            const attachHoverEvent = (button) => {
-                button.addEventListener('mouseenter', () => {
-                    if (!document.querySelector('.split-buttons')) {
-                        const splitButtons = createSplitButtons();
-                        button.style.animation = 'fadeOut 0.3s ease-out forwards';
-                        setTimeout(() => {
-                            button.replaceWith(splitButtons);
-                            splitButtons.style.animation = 'fadeIn 0.3s ease-in forwards';
-                        }, 300);
-
-                        splitButtons.addEventListener('mouseleave', () => {
-                            const newResumeButton = document.createElement('button');
-                            newResumeButton.id = 'res-but';
-                            newResumeButton.textContent = 'Résumé';
-                            newResumeButton.style.opacity = '0';
-                            splitButtons.style.animation = 'fadeOut 0.3s ease-out forwards';
-                            setTimeout(() => {
-                                splitButtons.replaceWith(newResumeButton);
-                                newResumeButton.style.animation = 'fadeIn 0.3s ease-in forwards';
-                                resumeButton = newResumeButton;
-                                attachHoverEvent(resumeButton);
-                            }, 300);
-                        });
-                    }
-                });
-            };
-
-            attachHoverEvent(resumeButton);
-
-            buttonsContainer.addEventListener('click', (event) => {
-                if (event.target.tagName === 'BUTTON') {
-                    const pageRoutes = {
-                        'res-but': './resume/',
-                        'digital-but': './resume/', 
-                        'pdf-but': './resume/resume.pdf',
-                        'books-but': './books/',
-                        'guest-lects': 'https://www.youtube.com/playlist?list=PLgVijm_0YBrJJACPxUMSUSauLsKLTxXfg',
-                        'proj-but': './projects/',
-                        'words-but': 'https://arihara-sudhan.github.io/puthu-words/',
-                        'blog-but': 'https://arihara-sudhan.github.io/blog/',
-                        'hobs-but': './hobbies/',
-                        'learn-but': './ari-learns/',
-                        'tam-but': './tamizh'
-                    };
-
-                    const targetId = event.target.id;
-                    const route = pageRoutes[targetId];
-
-                    if (route) {
-                        if (targetId === 'blog-but' || targetId === 'tam-but' || targetId === 'words-but' || targetId === 'pdf-but') {
-                            window.open(route, '_blank');
-                        } else {
-                            location.href = route;
-                        }
-                    }
-                }
-            });
-
-            setTimeout(() => {
-                const tigElement = document.getElementById('tig');
-                tigElement?.remove();
-            }, 7000);
+             const imagePaths = [
+                 "./statics/ss1.png",
+                 "./statics/ss2.png",
+                 "./statics/ss7.png",
+                 "./statics/ari8.png",
+                 "./statics/ari_zea.jpg"
+             ];
+         
+             let currentIndex = 0;
+             const ariPic = document.getElementById('ari-pic');
+             ariPic.style.pointerEvents = 'none';
+         
+             const changeImage = () => {
+                 currentIndex = (currentIndex + 1) % imagePaths.length;
+                 ariPic.src = imagePaths[currentIndex];
+             };
+         
+             setInterval(changeImage, 3000);
+         
+             const buttonsContainer = document.querySelector('.options');
+             let resumeButton = document.getElementById('res-but');
+             let isSplitVisible = false;
+         
+             const createSplitButtons = () => {
+                 const splitContainer = document.createElement('div');
+                 splitContainer.className = 'split-buttons';
+         
+                 const digitalButton = document.createElement('button');
+                 digitalButton.textContent = 'Digital';
+                 digitalButton.id = 'digital-but';
+         
+                 const pdfButton = document.createElement('button');
+                 pdfButton.textContent = 'PDF';
+                 pdfButton.id = 'pdf-but';
+         
+                 splitContainer.appendChild(digitalButton);
+                 splitContainer.appendChild(pdfButton);
+         
+                 // On mouse leave, revert back to resume button
+                 splitContainer.addEventListener('mouseleave', () => {
+                     if (isSplitVisible) {
+                         revertToResumeButton();
+                     }
+                 });
+         
+                 return splitContainer;
+             };
+         
+             const revertToResumeButton = () => {
+                 const newResumeButton = document.createElement('button');
+                 newResumeButton.id = 'res-but';
+                 newResumeButton.textContent = 'Résumé';
+                 isSplitVisible = false;
+         
+                 const oldSplit = document.querySelector('.split-buttons');
+                 if (oldSplit) {
+                     oldSplit.replaceWith(newResumeButton);
+                     resumeButton = newResumeButton;
+                     attachToggleEvent(resumeButton);
+                 }
+             };
+         
+             const attachToggleEvent = (button) => {
+                 button.addEventListener('click', () => {
+                     if (!isSplitVisible) {
+                         const splitButtons = createSplitButtons();
+                         button.replaceWith(splitButtons);
+                         isSplitVisible = true;
+                     } else {
+                         revertToResumeButton();
+                     }
+                 });
+             };
+         
+             attachToggleEvent(resumeButton);
+         
+             buttonsContainer.addEventListener('click', (event) => {
+                 if (event.target.tagName === 'BUTTON') {
+                     const pageRoutes = {
+                         'res-but': '',
+                         'digital-but': './resume/',
+                         'pdf-but': './resume/resume.pdf',
+                         'books-but': './books/',
+                         'guest-lects': 'https://www.youtube.com/playlist?list=PLgVijm_0YBrJJACPxUMSUSauLsKLTxXfg',
+                         'proj-but': './projects/',
+                         'words-but': 'https://arihara-sudhan.github.io/puthu-words/',
+                         'blog-but': 'https://arihara-sudhan.github.io/blog/',
+                         'hobs-but': './hobbies/',
+                         'learn-but': './ari-learns/',
+                         'tam-but': './tamizh'
+                     };
+         
+                     const targetId = event.target.id;
+                     const route = pageRoutes[targetId];
+         
+                     if (route) {
+                         if (targetId === 'blog-but' || targetId === 'tam-but' || targetId === 'words-but' || targetId === 'pdf-but') {
+                             window.open(route, '_blank');
+                         } else {
+                             location.href = route;
+                         }
+                     }
+                 }
+             });
+         
+             setTimeout(() => {
+                 const tigElement = document.getElementById('tig');
+                 tigElement?.remove();
+             }, 7000);
          });
+         
+               
       </script>
    </body>
 </html>
