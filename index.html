@@ -30,6 +30,7 @@
             <button id="guest-lects">Guest Lectures</button>
             <button id="proj-but">Mini Projects</button>
             <button id="learn-but">Learnings</button>
+            <button id="aiwaken-but">AIwaken</button>
             <button id="hobs-but">Hobbies</button>
             <button id="blog-but">Blog</button>
             <button id="tam-but">எம் தமிழ்</button>
@@ -77,7 +78,6 @@
                  splitContainer.appendChild(digitalButton);
                  splitContainer.appendChild(pdfButton);
          
-                 // On mouse leave, revert back to resume button
                  splitContainer.addEventListener('mouseleave', () => {
                      if (isSplitVisible) {
                          revertToResumeButton();
@@ -122,9 +122,10 @@
                          'digital-but': './resume/',
                          'pdf-but': './resume/resume.pdf',
                          'books-but': './books/',
+                         'aiwaken-but': 'https://www.linkedin.com/company/aiwaken',
                          'guest-lects': 'https://www.youtube.com/playlist?list=PLgVijm_0YBrJJACPxUMSUSauLsKLTxXfg',
                          'proj-but': './projects/',
-                         'words-but': 'https://arihara-sudhan.github.io/puthu-words/',
+                         'words-but': 'https://arihara-sudhan.github.io/puthu-words',
                          'blog-but': 'https://arihara-sudhan.github.io/blog/',
                          'hobs-but': './hobbies/',
                          'learn-but': './ari-learns/',
