@@ -767,3 +767,51 @@ Glory Lily is a beautiful flower. It grows in tropical regions.
         First element: 0.7 × 0.9 = 0.63 → mostly added
         Second element: -0.4 × 0.1 = -0.04 → very little added, even a bit negative
         Third element: 0.6 × 0.5 = 0.3 → half added
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[06/05/2025]
+373. RNN Architectures
+    - Many to Many (Eg: Sequence Labeling)
+    - Many to One (Eg: Sequence Classification)
+374. Encoder-Decoder Architecture
+    - Encoder (Accepts Input Sequence and Generates corresponding Contextualized Representation)
+    - Context Vector (Essence of Input Sequence)
+    - Decoder (Generates an arbitrary length sequence of hidden states)
+375. Encoder-Decoder Applications: Summarization, Machine Translation
+376. Translating a single sentence (inference time) in the basic RNN version of encoder-decoder approach to machine translation: Source and target sentences are concatenated with a separator token in between, and the decoder uses context information from the encoder’s last hidden state.
+377. A more formal version of translating a sentence at inference time in the basic RNN-based encoder-decoder architecture:  The final hidden state of the encoder RNN, serves as the context for the decoder in its role as in the decoder RNN, and is also made available to each decoder hidden state
+378. Teacher forcing is a training technique used in sequence models like RNNs, where the model is given the correct output from the previous time step as the next input instead of using its own prediction. This helps the model learn faster and more accurately by keeping it on the right path during training, especially in the early stages when its own predictions may be poor
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[08/05/2025]
+379. Bottleneck: The last hidden state of the last time step of the source text; Encoder Output
+380. RNN Time Steps: Impacted By Recent Token (Recency Bias)
+    Step 1:
+    h₁ = tanh(x₁ + 0.5 * h₀)
+       = tanh([1, 0, 0])
+       ≈ [0.76, 0, 0]
+
+    Step 2:
+    h₂ = tanh(x₂ + 0.5 * h₁)
+       = tanh([0, 1, 0] + 0.5 * [0.76, 0, 0])
+       = tanh([0.38, 1, 0])
+       ≈ [0.36, 0.76, 0]
+
+    Step 3:
+    h₃ = tanh(x₃ + 0.5 * h₂)
+       = tanh([0, 0, 1] + 0.5 * [0.36, 0.76, 0])
+       = tanh([0.18, 0.38, 1])
+       ≈ [0.18, 0.36, 0.76]
+
+    Step 4:
+    h₄ = tanh(x₄ + 0.5 * h₃)
+       = tanh([1, 1, 1] + 0.5 * [0.18, 0.36, 0.76])
+       = tanh([1.09, 1.18, 1.38])
+       ≈ [0.80, 0.83, 0.86]
+    Conclusion: Recent Token x₄ affects the output (Last Hidden State)
+381. Bottle-Neck Problem: Requiring the context c to be only the encoder’s final hidden state forces all the information from the entire source sentence to pass through this representational bottleneck
+382. Attention Mechanism: Allowing the decoder to get information from all the hidden states of the encoder, not just the last hidden state
+383. Attention Mechanism: It’s a weighted average of all the hidden states of the decoder
+384. Self Attention
+- - - - - - - - - -
+    I    live   in    TamilNadu
+   [1]    [2]   [3]      [4]
+DOT Product of I with all: [1 0.2 0.3 0.7]
+Softmax(Result): [0.6 0.1 0.1 0.2]
+Weighted Sum: 1(0.6) + 2(0.1) + 3(0.1) + 4(0.2) = [1.9]
