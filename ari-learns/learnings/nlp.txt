@@ -815,3 +815,50 @@ Glory Lily is a beautiful flower. It grows in tropical regions.
 DOT Product of I with all: [1 0.2 0.3 0.7]
 Softmax(Result): [0.6 0.1 0.1 0.2]
 Weighted Sum: 1(0.6) + 2(0.1) + 3(0.1) + 4(0.2) = [1.9]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[09/05/2025]
+385. “The true art of memory is the art of attention”
+386. Left to Right Language Modeling: Causal or Autoregressive Modeling
+387. We are given a sequence of input tokens and predict output tokens one by one by conditioning on the prior context
+388. Attention: To build contextual representations of a token’s meaning by attending to and integrating information from surrounding tokens; Helps the model learn how tokens relate to each other over large spans
+389. Need of Attention
+	1. The chicken didn’t cross the road because it was too tired.
+	2. The chicken didn’t cross the road because it was too wide.
+	In (1) it is the chicken, while in (2) it is the road; The word "it" should be context-sensitive
+390. We say that in the first example "it" corefers with the "chicken", and in the second "it" corefers with the road
+391. In Transformer, layer by layer, we build up richer and richer contextualized representations of the meanings of input tokens.
+392. At each layer, we compute the representation
+of a token i by combining information about i from the previous layer with information about the neighboring tokens
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[10/05/2025]
+393. Causal Modeling: The context is any of the prior words. i.e, when processing xi, the model has access to xi as well as the representations of all the prior tokens in the context window but no tokens after i
+x1 → attends to:        x1
+x2 → attends to:     x1  x2
+x3 → attends to:  x1  x2  x3
+x4 → attends to:  x1  x2  x3  x4
+x5 → attends to:  x1  x2  x3  x4  x5
+394. Attention Mask
+|    | x1 | x2 | x3 | x4 | x5 |
+| -- | -- | -- | -- | -- | -- |
+| x1 | 1  | 0  | 0  | 0  | 0  |
+| x2 | 1  | 1  | 0  | 0  | 0  |
+| x3 | 1  | 1  | 1  | 0  | 0  |
+| x4 | 1  | 1  | 1  | 1  | 0  |
+| x5 | 1  | 1  | 1  | 1  | 1  |
+This triangular attention mask ensures no information leakage from the future
+395. At its core, attention is a weighted sum of past and current input representations, where the output at position i is computed as aᵢ = Σⱼ≤ᵢ αᵢⱼ · xⱼ, with weights αᵢⱼ indicating how much each xⱼ contributes to aᵢ
+396. In attention, we weigh each prior embedding proportionally to how similar it is to the current token xᵢ
+397. The more similar the vectors xᵢ and xⱼ, the larger their score, which is computed as score(xᵢ, xⱼ) = xᵢ · xⱼ, and then normalized with a softmax over all j ≤ i to produce the attention weights αᵢⱼ = softmax(score(xᵢ, xⱼ))
+398. We compute a₃ by calculating three scores—x₃ · x₁, x₃ · x₂, and x₃ · x₃—then normalizing them with a softmax to produce weights that reflect the PROPORTIONAL RELEVANCE of each xⱼ (for j ≤ 3) to the current position i = 3
+399. Attention Head: Each Individual Attention Calculation
+400. Query-Key-Value Definitions
+	Query: The current element being compared to the preceding inputs to determine similarity. We refer to this role as the query
+	Key: A preceding input that is being compared to the current element (query) to determine a similarity weight. We refer to this role as the key
+	Value: The value of a preceding element that gets weighted and summed up to compute the output for the current element. We refer to this role as the value
+401. Query-Key-Value
+	qᵢ = xᵢ.Wq
+	kᵢ = xᵢ.Wᵏ
+	vᵢ = xᵢ.Wᵥ
+	Needs for these weigets: ROLE BASED TUNING
+402. ROLES OF Q,K,V
+In attention, we need to ask questions (“queries”), supply answers (“values”), and judge relevance (“keys”)
+403.  Variance normalization: Scaling by sqrt(dk) ensures the dot product has a controlled variance, making it easier to train
+	Scaled Dot Product Attention(Q, K, V) = softmax((QK^T) / √dk).V
