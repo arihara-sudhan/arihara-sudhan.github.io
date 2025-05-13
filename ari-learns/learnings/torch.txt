@@ -1,4 +1,4 @@
-SOURCE: ChatGPT powered Learning
+SOURCE: "pytorch-deep-learning" | GitHub Repository of Daniel Bourke | mrdbourke
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[13/05/2025]
 1. Importing Torch
  import torch
