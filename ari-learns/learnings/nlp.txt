@@ -862,3 +862,17 @@ This triangular attention mask ensures no information leakage from the future
 In attention, we need to ask questions (“queries”), supply answers (“values”), and judge relevance (“keys”)
 403.  Variance normalization: Scaling by sqrt(dk) ensures the dot product has a controlled variance, making it easier to train
 	Scaled Dot Product Attention(Q, K, V) = softmax((QK^T) / √dk).V
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[12/05/2025]
+404. Modular Architecture: Having everything be the same dimensionality makes the transformer very modular | The output hi of each transformer block, as well as the intermediate vectors inside the transformer block also have the same dimensionality [1×d]
+405. In a transformer, the input and output shapes are both [1 × d] 
+	Queries and keys are [1 × dk], and their dot product gives a scalar.
+	Values are [1 × dv].
+	The projection matrices have shapes:
+		WQ: [d × dk], WK: [d × dk], WV: [d × dv].
+	The head output is [1 × dv], and to get back to [1 × d], we use WO: [dv × d].
+406. Model Dimensionality: The input to attention xi and the output from attention ai both have the same dimensionality [1 × d]
+407. Wq, Wk, Wv, Wo helps in Projection to The Dimensions of Query, Key, Value and Output
+     Eg: Wq, [4 × 2] → projects from d=4 to dk=2
+408. Transformers use multiple attention heads. The intuition is that each head might be attending to the context for different purposes: heads might be specialized to represent different linguistic relationships between context elements and the current token, or to look for particular kinds of patterns in the context
+409. Multi-head attention: "A (Number of Heads per Layer)" Separate attention heads that reside in parallel layers at the same depth in a model, each with its "own set of parameters" that allows the head to model different aspects of the relationships among inputs
+410. Multi-head attention: The output of each head is the weighted sum of values, and the results from all heads are concatenated and passed through a linear layer. This process allows the model to capture diverse patterns and dependencies in the data.
