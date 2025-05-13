@@ -1,3 +1,5 @@
+SOURCE: "ChatGPT powered Learning"
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[13/05/2025]
 1. Tokenizing Text into Words and Sentences using NLTK's Punkt Tokenizer
 	This code uses the NLTK library to split a given text into words and sentences. It first imports the necessary tools from NLTK and downloads the "punkt" tokenizer model, which is used for both word and sentence tokenization. The text "I am Ari. I live in Tenkasi." 	 is stored in a variable called corpus. The word_tokenize function breaks the text into individual word tokens and punctuation, while sent_tokenize separates the text into complete sentences. The printed output shows the list of tokens and the list of sentences.
 import nltk
