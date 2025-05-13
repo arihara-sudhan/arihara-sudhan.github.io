@@ -1,3 +1,21 @@
 SOURCE: ChatGPT powered Learning
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[13/05/2025]
-1.
+1. Importing Torch
+ import torch
+ # For VERSION CHECK
+ torch.__version__
+2. Scalar
+ print(torch.tensor(23))
+3. Checking Dimensions
+ scalar = torch.tensor(7)
+ scalar.ndim #0
+4. Number within The Tensor
+ scalar.item()
+5. 1 Dimensional Tensors
+ td = torch.tensor([2,34])
+ td.ndim #1
+ td.shape #torch.Size([2]) :: It tells how the elements are arranged
+6. 2 Dimensional Tensors
+ td = torch.tensor([[2,34],[2,34]])
+ td.ndim #2
+ td.shape #torch.Size([2,2])
