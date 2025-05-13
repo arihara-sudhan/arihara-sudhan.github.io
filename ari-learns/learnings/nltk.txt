@@ -2,9 +2,10 @@ SOURCE: "ChatGPT powered Learning"
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[13/05/2025]
 1. Tokenizing Text into Words and Sentences
 """
-	Tokenizer Models: punkt (for words) & punkt_tab (for sentence)
-	Methods: word_tokenize, sent_tokenize
+    Tokenizer Models: punkt (for words) & punkt_tab (for sentence)
+    Methods: word_tokenize, sent_tokenize
 """
+
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 nltk.download("punkt")
@@ -12,6 +13,7 @@ nltk.download("punkt_tab")
 corpus = "I am Ari. I live in Tenkasi."
 print(word_tokenize(corpus))
 print(sent_tokenize(corpus))
+
 """
 OUTPUTS
     ['I', 'am', 'Ari', '.', 'I', 'live', 'in', 'Tenkasi', '.']
