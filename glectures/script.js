@@ -30,17 +30,21 @@ document.addEventListener("DOMContentLoaded", async function () {
         const contentDiv = document.createElement("div");
         contentDiv.classList.add("carousel-content");
 
-        const collegeName = document.createElement("h1");
-        collegeName.textContent = entry.college;
-
-        const title = document.createElement("h2");
+        const h1 = document.createElement("h1");
+        const title = document.createElement("span");
+        title.classList.add("carousel-title");
         title.textContent = `${entry.title}`;
+        
+        const collegeName = document.createElement("span");
+        collegeName.textContent = ` | ${entry.college}`;        
+
+        h1.appendChild(title);
+        h1.appendChild(collegeName);
 
         const about = document.createElement("p");
         about.textContent = entry.about;
         
-        contentDiv.appendChild(collegeName);
-        contentDiv.appendChild(title);
+        contentDiv.appendChild(h1);
         contentDiv.appendChild(about);
 
         if (entry["recorded-session"]) {
