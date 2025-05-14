@@ -876,3 +876,41 @@ In attention, we need to ask questions (“queries”), supply answers (“value
 408. Transformers use multiple attention heads. The intuition is that each head might be attending to the context for different purposes: heads might be specialized to represent different linguistic relationships between context elements and the current token, or to look for particular kinds of patterns in the context
 409. Multi-head attention: "A (Number of Heads per Layer)" Separate attention heads that reside in parallel layers at the same depth in a model, each with its "own set of parameters" that allows the head to model different aspects of the relationships among inputs
 410. Multi-head attention: The output of each head is the weighted sum of values, and the results from all heads are concatenated and passed through a linear layer. This process allows the model to capture diverse patterns and dependencies in the data.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[14/05/2025]
+411. Transformer Block = Self Attention Layer + Feed Forward Layer + Residual Connections + Normalizing Layers (LayerNorm)
+412. Attention and Feedforward Layers are preceded by LayerNorm
+413. Block 	
+	- Layers
+	   - LayerNorm
+	   - Attention Layer
+		 - Attention Heads
+	   - FeedForward Layer
+414. Flow: Initial Input Vector -> LayerNorm -> Attention Layer -> Result is added back to the Residual-Stream (ResidualStreamInformation + Result = Summed Vector) -> LayerNorm -> FeedForward Layer -> Result is added back to the Residual-Stream -> LayerNorm -> Attention Layer -> AND ON AND ON
+415. Residual Stream: In a transformer block, the residual stream represents a continuous flow of d-dimensional token representations, where each component processes and enhances the input while maintaining a direct connection to the original input vector
+416. FeedForward Layer: The feedforward layer in a transformer is a two-layer fully-connected network with shared weights across token positions, typically having a hidden layer dimensionality larger than the model dimensionality, as shown in the equation: FFN(xi) = ReLU(xiW1 + b1)W2 + b2
+417. LayerNorm: Layer normalization in a transformer block normalizes the embedding vector of a single token by adjusting its mean to zero and standard deviation to one, using learnable parameters for gain and offset, which enhances training performance in deep neural networks
+	1. Calculate the Mean (µ):
+		Mean (µ) is the average of the elements in the vector:
+		µ = (1/d) * sum(xi) for i from 1 to d
+	2. Calculate the Standard Deviation (σ):
+		Standard deviation (σ) measures the spread of the elements:
+		σ = sqrt((1/d) * sum((xi - µ)²)) for i from 1 to d
+	3. Normalize the Vector (x̂):
+		The normalized vector (x̂) is obtained by adjusting each element:
+		x̂ = (x - µ) / σ
+	4. Apply Gain (γ) and Offset (β):
+		LayerNorm(x) = γ * x̂ + β
+418. The Sequence of Operations in A Transformer Block
+	1. Layer Normalization:
+		t1_i = LayerNorm(x_i)
+	2. Multi-Head Attention:
+		t2_i = MultiHeadAttention(t1_i, t1_1, ..., t1_N)
+	3. Residual Connection:
+		t3_i = t2_i + x_i
+	4. Layer Normalization:
+		t4_i = LayerNorm(t3_i)
+	5. Feedforward Network:
+		t5_i = FFN(t4_i)
+	6. Residual Connection:
+		h_i = t5_i + t3_i
+419. In a Transformer layer, the input matrix X is multiplied by the query, key, and value matrices WQ, WK, and WV to produce Q = XWQ, K = XWK, and V = XWV, then the attention scores are computed as Attention = softmax(QK^T / sqrt(dk)) * V, and the final output is A = Attention * WO, all of which are computed in parallel
