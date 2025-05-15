@@ -19,6 +19,7 @@ OUTPUTS
     ['I', 'am', 'Ari', '.', 'I', 'live', 'in', 'Tenkasi', '.']
     ['I am Ari.', 'I live in Tenkasi.']
 """
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[15/05/2025]
 2. Stopwords Removal
 import nltk
 from nltk.corpus import stopwords
