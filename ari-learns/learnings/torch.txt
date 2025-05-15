@@ -76,3 +76,17 @@ SOURCE: "pytorch-deep-learning" | GitHub Repository of Daniel Bourke | mrdbourke
   tensor([-99, -97, -95, -93, -91])
   tensor([101, 309, 525, 749, 981])
   """
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[15/05/2025]
+15. Matrix Multiplication
+  import torch
+  tensor1 = torch.tensor([[1, 2], [3, 4]])
+  tensor2 = torch.tensor([[5, 6], [7, 8]])
+
+  result1 = tensor1 @ tensor2
+  result2 = torch.matmul(tensor1, tensor2)
+
+  print(result1)
+  """
+  tensor([[19, 22],
+          [43, 50]])
+  """
