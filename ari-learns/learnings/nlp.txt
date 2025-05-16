@@ -914,3 +914,30 @@ In attention, we need to ask questions (“queries”), supply answers (“value
 	6. Residual Connection:
 		h_i = t5_i + t3_i
 419. In a Transformer layer, the input matrix X is multiplied by the query, key, and value matrices WQ, WK, and WV to produce Q = XWQ, K = XWK, and V = XWV, then the attention scores are computed as Attention = softmax(QK^T / sqrt(dk)) * V, and the final output is A = Attention * WO, all of which are computed in parallel
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[16/05/2025]
+420. Need for Masking: The calculation of QK results in a score for each query value to every key value, "including those that follow the query". This is inappropriate in the setting of language modeling: "guessing the next word is pretty simple if you already know it!"
+421. In language modeling, a mask matrix M is added to the attention score matrix QKᵗ to prevent attention to future tokens by setting scores to -∞ for all positions where the key is ahead of the query (j > i), like this:
+	QKᵗ + M =
+		[ q1•k1    -∞      -∞      -∞     ]
+		[ q2•k1   q2•k2    -∞      -∞     ]
+		[ q3•k1   q3•k2   q3•k3    -∞     ]
+		[ q4•k1   q4•k2   q4•k3   q4•k4   ]
+	Mij = −∞ ∀ j > i (i.e. for the upper-triangular portion) and Mi j = 0
+422. Attention is quadratic in the length of the input, since at each layer we need to compute dot products between each pair of tokens in the input
+423. Transformer Block - Mathematically
+	O = X+MultiHeadAttention(LayerNorm(X)) (9.37)
+	H = O+FFN(LayerNorm(O))
+424. One-Hot Encoding for Multiplying one-hot token vectors with the embedding matrix simply selects the corresponding row embeddings for each token in the sequence
+425. Positional Embeddings
+X = E_tok + E_pos, where E_tok is the word embedding matrix and E_pos is the positional embedding matrix, both of shape [N × d]; this sum gives position-aware input representations for the transformer
+426. Types of Positional Embeddings
+	1. Absolute Positional Embeddings
+		Assign unique vectors to each position | Added to token embeddings | Can be learned or fixed (e.g., sinusoidal) | Simple and effective | May not generalize well to unseen sequence lengths
+	2. Relative Positional Embeddings
+		Represent distance between tokens | Integrated into attention mechanism | Capture local dependencies better | Generalize well to varying sequence lengths | Used in models like Transformer-XL and DeBERTa
+427. Language Modeling Head
+	Final hidden vector h is mapped to vocabulary scores using the transpose of the embedding matrix:
+	u = h × E^T
+	Then softmax is applied to get probabilities:
+	y = softmax(u)
+	Here, E has shape [|V| × d], so E^T is [d × |V|], and h is [1 × d], making u [1 × |V|]. The word at index k with highest y[k] is chosen as the next token.
