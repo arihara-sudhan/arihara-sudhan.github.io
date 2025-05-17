@@ -941,3 +941,30 @@ X = E_tok + E_pos, where E_tok is the word embedding matrix and E_pos is the pos
 	Then softmax is applied to get probabilities:
 	y = softmax(u)
 	Here, E has shape [|V| × d], so E^T is [d × |V|], and h is [1 × d], making u [1 × |V|]. The word at index k with highest y[k] is chosen as the next token.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[17/05/2025]
+428. Why Transformers in Language Modeling?
+	The ability to incorporate the entirety of the earlier context and generated outputs at each time step is the key to the power of large language models built from transformers
+429. Next Word Prediction: Many practical NLP tasks can be cast as word prediction
+430. Casting Sentiment Analyzis as Next Word Prediction
+	P(positive|The sentiment of the sentence ‘‘I like Jackie Chan" is:)
+	P(negative|The sentiment of the sentence ‘‘I like Jackie Chan" is:)
+431. Casting Question Answering as Next Word Prediction
+	If we ask a language model to compute the probability distribution over possible next words given this prefix:
+	  P(w|Q: Who wrote the book ‘‘The Origin of Species"? A:)
+	and look at which words w have high probabilities, we might expect to see that Charles is very likely, and then if we choose Charles and continue and ask
+	  P(w|Q: Who wrote the book ‘‘The Origin of Species"? A: Charles)
+	we might now see that Darwin is the most probable token, and select it
+432. Casting Summarization as Next Word Prediction
+	We use tl;dr delimeter to separate the summary from the original text. The language model is trained in such a way, it starts predicting words of summary one by one; autoregressive
+433. Greedy Decoding: We solely rely on the maximum probability; So deterministic; always end up with same predictions of words
+444. Random Sampling: Sampling from a model’s distribution over words means to choose random words according to their probability assigned by the model. Since we choose words randomly, it can lead to unlikely sentence generation.
+445. Top-K-Sampling: A simple generalization of greedy decoding. Instead of choosing the single most probable word to generate, we first truncate the distribution to the top k most likely words, renormalize to produce a legitimate probability distribution | We do random sampling
+Note: When k = 1, top-k sampling is identical to greedy decoding
+446. Top-P-Sampling: Nucleus Sampling: Given a probability distribution for the next word based on previous words, we sort all possible next words from most to least likely. Then we pick the smallest set of top words whose total probability adds up to at least p (like 0.9). This set is called the top-p vocabulary, and it's used to sample from only the most likely words while keeping some variation
+447. Softmax Smoothens/Flattens (No Peaks) when the value proportion is reduced
+	input = torch.Tensor([7, 3, 2])
+	softmax(input) # [0.9756, 0.0179, 0.0066]
+	input = torch.Tensor([3.5, 1.5, 1])
+	softmax(input) # [0.8214, 0.1112, 0.0674]
+448. Temperature Sampling: We leverage this property of Softmax to include rare words when τ>1 and include only the most probable words when τ≤1
+	y = softmax(u/τ)
