@@ -1,5 +1,10 @@
 [
     {
+        "title": "Modeling - Angel Fish: Blender",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7330121255318093824",
+        "logo": "./statics/angel-fish-3d.jpeg"
+    },
+    {
         "title": "Dialect Classification",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7302169576396464128?collapsed=1",
         "logo": "./statics/slang-classifier.webp"
