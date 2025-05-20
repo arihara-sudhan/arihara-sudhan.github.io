@@ -29,12 +29,25 @@ async function createProjects() {
 
         projectsContainer.innerHTML = htmlContent;
 
-        closeButton.addEventListener("click", function () {
+        // Function to close the fullscreen
+        function closeFullscreen() {
             fullscreenContainer.classList.remove("active");
             setTimeout(() => {
                 fullscreenContainer.classList.add("hidden");
                 fullscreenIframe.src = "";
             }, 300);
+        }
+
+        // Event listener for the close button
+        closeButton.addEventListener("click", closeFullscreen);
+
+        // Event listener for the Escape key
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape" || event.key === "Esc") { // Check for both "Escape" and "Esc" for broader compatibility
+                if (fullscreenContainer.classList.contains("active")) { // Only close if the fullscreen is active
+                    closeFullscreen();
+                }
+            }
         });
 
     } catch (error) {

@@ -76,8 +76,8 @@ body {
 }
 
 #fullscreen-iframe {
-    width: 90%;
-    height: 85vh;
+    width: 45%;
+    height: 90%;
     border: none;
     border-radius: 0.5rem;
     background: lawngreen;
@@ -115,4 +115,8 @@ body {
     .project {
         width: 90%;
     }
+    #fullscreen-iframe {
+        width: 90%;
+        height: 90%;    
+    }    
 }
