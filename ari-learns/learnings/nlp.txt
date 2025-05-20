@@ -968,3 +968,14 @@ Note: When k = 1, top-k sampling is identical to greedy decoding
 	softmax(input) # [0.8214, 0.1112, 0.0674]
 448. Temperature Sampling: We leverage this property of Softmax to include rare words when τ>1 and include only the most probable words when τ≤1
 	y = softmax(u/τ)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[20/05/2025]
+449. Pretraining and Finetuning: A pre-trained model can be finetuned to a particular domain, dataset, or task. There are many different ways to finetune, depending on exactly which parameters are updated from the finetuning data: 
+	1. All the parameters
+	2. Some of the parameters
+	3. Only the parameters of specific extra circuitry
+450. Continued Pre-training: We retrain all the parameters of the model on this new data, using the same method (Eg: word prediction) and loss function as for pretraining
+451. Parameter-Efficient Fine-Tuning (PEFT): We can freeze some of the parameters (i.e., leave them unchanged from their pretrained value) and train only a subset of parameters on the new data
+452. Supervised Finetuning (SFT): Often used for Instruction Finetuning, in which we want a pretrained language model to learn to follow text instructions, for example to answer questions or follow a command to write something. Here we create a dataset of prompts and desired responses (for example questions and their answers, or commands and their fulfillments), and we train the language model using the normal cross-entropy loss to
+predict each token in the instruction prompt iteratively, essentially training it to produce the desired response from the command in the prompt
+453. Post Training: Everything that happens after pretraining is lumped together as post-training
+454. Raw probability is not ideal for evaluating language models because it decreases with sequence length and is hard to interpret. Perplexity fixes this by normalizing over word count, measuring the model’s average uncertainty per word. Defined as exp(- (1/n) \* log P(w1, ..., wn)), perplexity offers a clear, length-independent score, lower values mean better predictions, making it the standard metric for language model evaluation
