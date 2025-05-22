@@ -979,3 +979,31 @@ Note: When k = 1, top-k sampling is identical to greedy decoding
 predict each token in the instruction prompt iteratively, essentially training it to produce the desired response from the command in the prompt
 453. Post Training: Everything that happens after pretraining is lumped together as post-training
 454. Raw probability is not ideal for evaluating language models because it decreases with sequence length and is hard to interpret. Perplexity fixes this by normalizing over word count, measuring the model’s average uncertainty per word. Defined as exp(- (1/n) \* log P(w1, ..., wn)), perplexity offers a clear, length-independent score, lower values mean better predictions, making it the standard metric for language model evaluation
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[22/05/2025]
+455. Scale of a Model: Transformer model scale is influenced by three key factors: Model Size | Dataset Size | Compute Used
+456. Parameters to Consider for Performance: Model Parameters (excluding embeddings): # of transformer layers × parameters per layer | Training Tokens: Number of unique tokens seen during training | FLOPs: Estimate using architecture-specific formulas
+457. Attention Parameter Count
+	3 projections: Q, K, V: 3𝑑×𝑑
+	1 final output projection: d×d
+	Total attention params: 4𝑑^2
+458. Full Self-Attention Mechanism (Per Layer)
+Three projection matrices:
+	W_Q (Query): shape d × d
+	W_K (Key): shape d × d
+	W_V (Value): shape d × d
+	One output projection matrix:
+	W_O: shape d × d
+	So the total number of parameters is:
+	3 × d × d (for Q, K, V) + d × d (for output) = 4 × d² parameters
+459. What Actually Happens in Real Transformers (Multi-Head Attention)
+In real implementations (like in PyTorch or TensorFlow):
+Q, K, and V share a single matrix each of shape d × d. There are no separate weight matrices per head. The attention heads only split the output vectors, not the weights.
+Example:
+	Model dimension d = 256
+	Number of heads h = 4
+	Per-head dimension d_attn = d / h = 64
+	Then:
+	Q, K, and V each use one matrix of shape 256 × 256
+	Output projection is also 256 × 256
+	Total parameters in self-attention block:
+	= 4 × 256² = 262,144 parameters
