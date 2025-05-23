@@ -1007,3 +1007,22 @@ Example:
 	Output projection is also 256 × 256
 	Total parameters in self-attention block:
 	= 4 × 256² = 262,144 parameters
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[23/05/2025]
+460. KV Cache: Used during inference to store the key and value vectors of previously generated tokens to reuse them instead of recomputing at each step  
+461. Parameter Efficient Fine Tuning (PEFT): We efficiently select a subset of parameters for fine tuning by freezing some parameters and only updating a particular subset  
+462. LoRA, Low-Rank Adaptation: Instead of updating dense layers like WQ, WK, WV, WO during finetuning, we freeze them and update a low-rank approximation with fewer parameters  
+463. LoRA Example: A matrix W of dimensionality [N×d] that needs to be updated is frozen, and instead a low-rank decomposition ∆W ≈ BA is updated where h = xW + xBA  
+464. Masked Language Modeling: Instead of predicting the next word, we mask a word in the middle and ask the model to guess it using surrounding context  
+465. Bidirectional Encoders Focus: Compute contextualized representations of input tokens and are not used for generation  
+466. How Bidirectional Transformer-based Language Models Differ:  
+     - Not causal (token i can attend to future tokens)  
+     - Predicts tokens in the middle rather than at the end  
+467. Cloze Task: A fill-in-the-blank prediction task where the model learns to infer missing tokens  
+468. During Training: The model predicts missing tokens from corrupted input using cross-entropy loss over the vocabulary  
+469. Denoising: Add noise to the input (e.g., masking, wrong word), and train the model to recover the original input  
+470. Masking in BERT Model – 15% Strategy:  
+     - 80%: Replace with [MASK]  
+     - 10%: Replace with random word  
+     - 10%: Keep original word  
+471. Training MLM: All input tokens participate in self-attention, but only masked tokens are predicted using cross-entropy loss to update model parameters  
+472. Gradient Calculation in MLM: Gradients are computed based on the average loss from the masked tokens, which are only 15% of the input samples in a sequence or batch
