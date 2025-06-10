@@ -1,5 +1,22 @@
 SOURCE: Chapter 2 of The Book, "Machine Learning for Brain Disorders" by Johann Faouzi, Olivier Colliot
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[14/03/2025]
+@mindmap
+1. Concurrency
+    <pt>Concurrency is the simultaneous execution of multiple tasks or processes</pt> 
+    <pt>It's crucial for efficiency in modern applications, enabling smoother user experiences and optimal resource utilization</pt>
+    <pt>It's crucial for efficiency in modern applications, enabling smoother user experiences and optimal resource utilization</pt>
+    <pt>In the realm of computing, it allows different parts of a program to run independently</pt>
+@mindmap
+1. Concurrency
+    <pt>Concurrency is the simultaneous execution of multiple tasks or processes</pt> 
+    <pt>It's crucial for efficiency in modern applications, enabling smoother user experiences and optimal resource utilization</pt>
+    <pt>It's crucial for efficiency in modern applications, enabling smoother user experiences and optimal resource utilization</pt>
+    <pt>In the realm of computing, it allows different parts of a program to run independently</pt>
+1. Nearest Neighbor: Intuition
+ - Training Samples are converted into feature vectors
+ - Clusters Observed
+ - Class of a test sample is determined by checking the similarity extent with all the clusters
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[14/03/2025]
 1. Nearest Neighbor: Intuition
  - Training Samples are converted into feature vectors
  - Clusters Observed
