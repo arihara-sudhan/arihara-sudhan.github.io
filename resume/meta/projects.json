@@ -6,6 +6,12 @@
     "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjE6hjlDtm_8E6773fhc--IcwoazPm1uyj8A&s"
   },
   {
+    "title": "Natural Language Clinical Trial Analytics for ADCs",
+    "dept": "Moative",
+    "description": "I engineered a graph-based clinical trial analysis platform focused on Antibody-Drug Conjugates (ADC), integrating Neo4j, FastAPI, and Google Gemini AI to enable natural language querying over pharmacokinetic and safety datasets. The system dynamically generates Cypher queries from plain-English questions, visualizes clinical parameters (AUC, Cmax, AE grades) via interactive dashboards, and provides AI-generated insights. I deployed it into AWS.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Star_of_life2.svg/800px-Star_of_life2.svg.png"
+  },
+  {
     "title": "FewShot Doc2Vec",
     "dept": "Intelligent Document Processing | Computer Vision | ZLABS | Zoho",
     "description": "The goal of this research was to develop a method for few-shot classification of documents with high intra-class variance. Initially, Triplet Loss was used for few-shot training, and experiments began with ResNet-50, whose convolution-based embeddings captured simple patterns, achieving 74% similarity search accuracy using FAISS. To enhance performance, I explored Google ViT's last hidden state for embeddings, but it performed poorly. Transitioning to DiT (Document Image Transformer), pretrained on the RVL-CDIP dataset with masking as the pretext task, yielded 96% accuracy. Interestingly, I observed classification models exhibiting few-shot behavior and vice versa. Hierarchical classification was introduced, where a superclass like 'Advertisement' included subclasses such as 'Toothpaste Advertisement' and 'Mobile Advertisement'. Through careful dataset annotation, we achieved 100% accuracy, though generalization remained limited. To address this, I extracted textual features via OCR using Tesseract and BERT, combined them with visual features from DiT, and performed multimodal training, significantly improving generalization capabilities.",
