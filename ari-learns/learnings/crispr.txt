@@ -1,3 +1,5 @@
+SOURCE: ChatGPT
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[12/07/2025]
 1. Zinc Finger Protein: Recognizer of DNA Bases: Adenine, Cytosine, Guanine, and Thymine
 2. Nuclease: Cutting Protein
 3. ZFNs: Zinc Finger Protein + Nuclease: Kandupidi + Cut Pannu
