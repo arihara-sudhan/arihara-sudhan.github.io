@@ -1,0 +1,27 @@
+1. Zinc Finger Protein: Recognizer of DNA Bases: Adenine, Cytosine, Guanine, and Thymine
+2. Nuclease: Cutting Protein
+3. ZFNs: Zinc Finger Protein + Nuclease: Kandupidi + Cut Pannu
+4. If a sequence is common say, ACG, cutting them all will lead to Cell Death, Cancer
+ - Zing Finger can bind only with a nucleotide of 3 bases
+ - CRISPR turn offs Genes which let us know to what property that particular Gene Combination contribute to
+ - We need to do Gene-Knockout using Technologies like CRISPR
+5. If a sequence is uncommon  say, ACGTTGCAACTGGTCTA, cutting this unique sequence is precise
+ - We target only the disease-causing gene
+ - Leave the rest of the genome untouched
+6. CRISPR: Pattern found in Bacterial DNA
+  Pattern: REPEAT-UNIQUE-REPEAT-UNIQUE-REPEAT
+  REPEAT: Short and Similar
+  UNIQUE: Comes from Viral Attack to Bacteria
+7. Bacteria recorded memories of past viral infections in its DNA using CRISPR. Like a “wanted” list for viruses
+8. Cas Protein: Cas proteins can cut DNA at very specific spots
+Cas9	Cuts double-stranded DNA: Gene editing (most common)
+Cas12	Also cuts DNA, but can do more types of cuts: Advanced editing
+Cas13	Cuts RNA instead of DNA	RNA editing and diagnostics
+9. PAM: PAM (Protospacer Adjacent Motif) is a short DNA sequence that is essential for CRISPR-Cas9 to recognize and cut a specific target in the genome. Cas9 doesn't search directly for the target sequence; instead, it scans the DNA for the PAM sequence (commonly "NGG"), and only when it finds PAM does it check the 20 bases just before it to see if they match the guide RNA. Without PAM, Cas9 won’t even stop to check the DNA — meaning no recognition, no binding, and no cutting. So, PAM acts like a “license” or “trigger” that tells Cas9 where it's allowed to cut.
+10. Double-Stranded Break: When Cas9 cuts the DNA, it breaks both strands of the DNA double helix at the target spot
+11. Cut will be HEALED: REPAIRED AUTOMATICALLY
+	NHEJ (Non-Homologous End Joining) is the cell’s quick and easy way of fixing broken DNA. When CRISPR cuts the DNA, the cell rushes to glue the ends back together. This method is fast and happens in most cells, but it’s not very careful — it often makes small mistakes by adding or removing a few letters (called insertions or deletions). These little errors can break the gene so it no longer works. That’s why NHEJ is useful when we want to turn off or knock out a gene.
+	HDR (Homology Directed Repair) is a slower but smarter way the cell can fix DNA. Instead of just gluing the ends, it uses a “template” — like a copy or instruction manual — to fix or replace the damaged part. This method is very accurate and allows scientists to correct gene mutations or even insert new genes. However, HDR only works well under certain conditions, usually when the cell is dividing. Because of this, HDR is harder to use, but it’s great for precise gene editing.
+12. The gRNA (guide RNA) acts like a GPS, directing the Cas9 protein to the specific DNA sequence that needs to be cut. However, Cas9 can’t cut just anywhere—it needs to see a small tag next to the target site called the PAM (Protospacer Adjacent Motif). PAM isn’t part of the guidance system but acts like a "cut here" signal or a permission slip; without it, Cas9 won’t make the cut, even if the gRNA is correct. So, the gRNA shows where to go, and the PAM confirms whether it’s allowed to cut there.
+13. Vectors: To get Cas9 and gRNA into the cell, we need a carrier (like a box) to deliver them. These carriers are called vectors
+14. OFFTARGETS: Off-targets are accidental edits in the wrong place
