@@ -1,6 +1,5 @@
 SOURCE: Chapter 2 of The Book, "Machine Learning for Brain Disorders" by Johann Faouzi, Olivier Colliot
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[14/03/2025]
-IMG_URL @https://nationalzoo.si.edu/sites/default/files/styles/wide/public/animals/20140925-40974ja.jpg
 1. Nearest Neighbor: Intuition
  - Training Samples are converted into feature vectors
  - Clusters Observed
