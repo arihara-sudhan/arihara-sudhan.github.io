@@ -9,6 +9,7 @@ async function loadLearnings(fileName) {
             throw new Error(`HTTP Error! Status: ${response.status}`);
         }
         const text = await response.text();
+        console.log(text);
         const sections = text.split(/-+\s*\[(\d{2}\/\d{2}\/\d{4})\]/).filter(section => section.trim());
         const source = sections[0].replace(/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -/g, "");
         const contentDiv = document.getElementById("content");
@@ -16,7 +17,20 @@ async function loadLearnings(fileName) {
 
         for (let i = 1; i < sections.length; i += 2) {
             const date = sections[i];
-            const content = sections[i + 1] ? sections[i + 1].replace(/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -/g, "").trim() : "";
+            let content = sections[i + 1] ? sections[i + 1].replace(/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -/g, "").trim() : "";
+
+            content = content.split('\n').map(line => {
+                const imgMatch = line.match(/^IMG_URL\s*@?(.+)$/);
+                if (imgMatch) {
+                    const imgValue = imgMatch[1].trim();
+                    let url = imgValue;
+                    if (!/^https?:\/\//.test(imgValue) && !imgValue.includes('/')) {
+                        url = `images/${fileName}/${imgValue}`;
+                    }
+                    return `<img src=\"${url}\" style=\"border-radius:0.5rem;margin-top:0.2rem;margin-bottom:0.2rem;margin-left:auto;margin-right:auto;max-width:100%;display:block;border:1px solid lightgreen;\" />`;
+                }
+                return line;
+            }).join('\n');
 
             htmlContent += `
                 <div class="section">
