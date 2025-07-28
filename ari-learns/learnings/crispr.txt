@@ -91,4 +91,22 @@ So:
     Together → targets "GAATGCCCT"
 51. Limitations of ZFNs: Difficult to design and expensive: Required expertise in protein engineering | Unpredictable performance: some ZFNs failed to cut or were too random. Because of these issues, ZFNs were not widely adopted despite their promise
 52. Next: TALENs (Transcription Activator-Like Effector Nucleases) | TALENs came from plant pathogens (Xanthomonas). Like ZFNs, they had repeatable parts that could be customized. Key advantage: Each TALE segment recognized 1 letter of DNA, making them easier to design. Scientists could easily assemble custom DNA-binding proteins. TALENs were better than ZFNs: easier to design and build. Worked well in gene editing applications
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[28/07/2025]
+53. Chromatin: Package in which the DNA is stored inside a cell nucleus; Packed
+54. Types of Chromatin: 
+	Euchromatin	-> Loosely packed: Genes are active, easy to access
+	Heterochromatin	-> Tightly packed: Genes are inactive, hard to access
+If a gene or region is tightly wrapped in chromatin, the CRISPR machinery (Cas9 + gRNA) can’t easily reach it. This is why the same gRNA might work in vitro (where DNA is open) but fail in vivo, where chromatin blocks it
+55. CRISPR Discovery Context: Discovered as a DNA region in bacteria; acronym stands for Clustered Regularly Interspaced Short Palindromic Repeats.
+56. CRISPR Structure: 
+Repeats: Identical ~30-base sequences (palindromes).
+Spacers: Unique sequences in between each repeat.
+Clustered: These repeat-spacer arrays are found in one region, not scattered across the genome
+57. Function of Spacers: Spacers are derived from viral DNA—function as a “memory” of past infections in bacteria
+58. CRISPR System Role: A bacterial immune system that defends against viruses by storing viral DNA snippets as spacers
+59. Jill Banfield's Role: Geomicrobiologist who first approached Jennifer Doudna about CRISPR after detecting it in microbial data
+60. Early Scientific Context: At the time (2006), CRISPR was obscure—few papers existed compared to RNA interference, which was already well-studied
+61. Doudna’s Initial Impression: Intrigued by the precision and uniformity of CRISPR repeats; palindromic nature stood out
+62. Comparison with Other Repeats: Other bacterial DNA repeats (like REP and BIME) exist but lacked CRISPR’s regularity and defined structure.
+63. Significance of Repeats: CRISPR repeats are palindromic, i.e., they read nearly the same forwards and backwards, which aids in forming secondary structures in RNA.
+64. Why It Mattered: This structured and uniform DNA region hinted at a functional role, not just junk DNA prompting further research
