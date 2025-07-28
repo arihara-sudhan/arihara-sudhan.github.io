@@ -1,5 +1,6 @@
 SOURCE: A CRACK IN CREATION : Gene Editing And The Unthinkable Power To Control Evolution by JENNIFER A. DOUDNA SAMUEL H. STERNBERG
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[12/07/2025]
+IMG_URL dna-structure.png
 1. Zinc Finger Protein: Recognizer of DNA Bases: Adenine, Cytosine, Guanine, and Thymine
 2. Nuclease: Cutting Protein
 3. ZFNs: Zinc Finger Protein + Nuclease: Kandupidi + Cut Pannu
