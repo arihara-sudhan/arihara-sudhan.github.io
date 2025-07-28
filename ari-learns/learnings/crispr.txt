@@ -1,6 +1,5 @@
 SOURCE: A CRACK IN CREATION : Gene Editing And The Unthinkable Power To Control Evolution by JENNIFER A. DOUDNA SAMUEL H. STERNBERG
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[12/07/2025]
-IMG_URL crispr.png
 1. Zinc Finger Protein: Recognizer of DNA Bases: Adenine, Cytosine, Guanine, and Thymine
 2. Nuclease: Cutting Protein
 3. ZFNs: Zinc Finger Protein + Nuclease: Kandupidi + Cut Pannu
@@ -98,6 +97,7 @@ So:
 	Heterochromatin	-> Tightly packed: Genes are inactive, hard to access
 If a gene or region is tightly wrapped in chromatin, the CRISPR machinery (Cas9 + gRNA) can’t easily reach it. This is why the same gRNA might work in vitro (where DNA is open) but fail in vivo, where chromatin blocks it
 55. CRISPR Discovery Context: Discovered as a DNA region in bacteria; acronym stands for Clustered Regularly Interspaced Short Palindromic Repeats.
+IMG_URL crispr.png
 56. CRISPR Structure: 
 Repeats: Identical ~30-base sequences (palindromes).
 Spacers: Unique sequences in between each repeat.
