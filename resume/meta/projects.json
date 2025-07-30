@@ -1,5 +1,11 @@
 [
   {
+    "title": "Account Overlap Detection and Management System",
+    "dept": "Moative",
+    "description": "I developed a full-stack AI-powered system to detect and manage account overlaps between our company and partners. The platform helps sales and partnership teams identify, score, escalate, and resolve high-value opportunities. It is built using Python, FastAPI, SQLAlchemy, and a modern vanilla JavaScript frontend. The system enables customizable overlap scoring logic, team hierarchy-based Slack escalations, and LLM-powered (Gemini) generation of professional emails and Slack messages through prompt engineering. I designed a responsive UI for configuring scoring weights, managing internal teams, and tracking resolution status. The backend supports persistent state management with automated fallback flows like personalized partner emails, ensuring no opportunity is missed. This solution transformed latent overlaps into revenue-driving actions.",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D560BAQEdTNqddMbAXA/company-logo_200_200/company-logo_200_200/0/1690387288435/getcrossbeam_logo?e=2147483647&v=beta&t=OH8P2bKyLmVaaBCFUxGPGndT8tA8U5zk472TRK7GD8Q"
+  },  
+  {
     "title": "CEQA Permitting - LLM Powered Automation",
     "dept": "Moative",
     "description": "I developed a web-based AI platform that automates CEQA permitting by integrating OCR, advanced NLP, and vector-based document analysis. Leveraging Google’s Gemini API, the system classifies uploaded PDFs into CEQA categories (Exempt, ND, MND, EIR), generates justification reports, and flags environmental concerns. I built a FastAPI backend with Gemini-powered classification, real-time caching, and PDF generation, alongside an interactive frontend with traffic-light status indicators, map-based location analysis, and a chatbot assistant. The platform significantly accelerates environmental compliance review for consultants, agencies, and developers.",
