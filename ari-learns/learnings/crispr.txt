@@ -25,6 +25,7 @@ Cas13	Cuts RNA instead of DNA	RNA editing and diagnostics
 11. Cut will be HEALED: REPAIRED AUTOMATICALLY
 	NHEJ (Non-Homologous End Joining) is the cell’s quick and easy way of fixing broken DNA. When CRISPR cuts the DNA, the cell rushes to glue the ends back together. This method is fast and happens in most cells, but it’s not very careful — it often makes small mistakes by adding or removing a few letters (called insertions or deletions). These little errors can break the gene so it no longer works. That’s why NHEJ is useful when we want to turn off or knock out a gene.
 	HDR (Homology Directed Repair) is a slower but smarter way the cell can fix DNA. Instead of just gluing the ends, it uses a “template” — like a copy or instruction manual — to fix or replace the damaged part. This method is very accurate and allows scientists to correct gene mutations or even insert new genes. However, HDR only works well under certain conditions, usually when the cell is dividing. Because of this, HDR is harder to use, but it’s great for precise gene editing.
+IMG_URL crispr-sgrna.png
 12. The gRNA (guide RNA) acts like a GPS, directing the Cas9 protein to the specific DNA sequence that needs to be cut. However, Cas9 can’t cut just anywhere—it needs to see a small tag next to the target site called the PAM (Protospacer Adjacent Motif). PAM isn’t part of the guidance system but acts like a "cut here" signal or a permission slip; without it, Cas9 won’t make the cut, even if the gRNA is correct. So, the gRNA shows where to go, and the PAM confirms whether it’s allowed to cut there.
 13. Vectors: To get Cas9 and gRNA into the cell, we need a carrier (like a box) to deliver them. These carriers are called vectors
 14. OFFTARGETS: Off-targets are accidental edits in the wrong place
@@ -116,6 +117,7 @@ Clustered: These repeat-spacer arrays are found in one region, not scattered acr
 63. Significance of Repeats: CRISPR repeats are palindromic, i.e., they read nearly the same forwards and backwards, which aids in forming secondary structures in RNA.
 64. Why It Mattered: This structured and uniform DNA region hinted at a functional role, not just junk DNA prompting further research
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[29/07/2025]
+IMG_URL phage.png
 65. CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) spacers are snippets of DNA located between repeating sequences.
 66. These spacers have DNA sequences that match those of known bacterial viruses.
 67. An inverse correlation exists between the number of viral DNA sequences in a bacterium's CRISPR array and its susceptibility to viral infection. More matches correspond to a lower threat of infection.
@@ -135,6 +137,7 @@ Clustered: These repeat-spacer arrays are found in one region, not scattered acr
 76. Computational analysis identified a separate set of genes, known as CRISPR-associated (cas) genes, that are typically located near CRISPR regions in bacterial chromosomes.
 77. Cas genes are thought to code for enzymes with functions such as unwinding DNA or slicing RNA and DNA molecules.
 78. The discovery of cas genes suggests they may be a source of new enzymes with potential for biotechnology, similar to how restriction endonucleases were used in recombinant DNA technology.
+IMG_URL phage2.png
 79. An early study on the milk-fermenting bacterium Streptococcus thermophilus showed that CRISPR is an effective bacterial immune system.
 80. S. thermophilus is a probiotic used in the dairy industry, and its cultures are under constant threat from phage infection, which causes significant production losses.
 81. Strains of Streptococcus thermophilus with more phage DNA-matching spacers in their CRISPR regions are more resistant to phage infections.
@@ -155,6 +158,7 @@ Clustered: These repeat-spacer arrays are found in one region, not scattered acr
 94. In the Type I CRISPR-Cas system (e.g., in E. coli and P. aeruginosa), viral DNA destruction is a multi-protein process.
      The Cascade complex (made of Cas proteins and CRISPR RNA) recognizes and binds to matching viral DNA. It has a helical structure and can discriminate between viral and host DNA.
      The Cas3 enzyme, a nuclease, is recruited by the Cascade complex and chews up the targeted viral DNA into many pieces at a high rate.
+IMG_URL phage3.png
 95. In the Type II CRISPR-Cas system (e.g., in S. thermophilus), the DNA destruction is more precise, with the enzyme acting like a pair of scissors to cut the DNA at a specific site.
 96. The enzyme responsible for cutting DNA in the Type II system was, at that point, still unknown. The mechanisms for targeting were also a mystery.
 97. The programmable DNA-cutting ability of the Type II system drew comparisons to existing gene-editing tools like ZFNs and TALENs, highlighting its potential for future applications.
@@ -164,6 +168,7 @@ Clustered: These repeat-spacer arrays are found in one region, not scattered acr
 100. S. pyogenes is a pathogen responsible for numerous human illnesses and over half a million deaths annually, making research into its CRISPR system medically significant.
 101. The Cas9 protein, encoded by the cas9 gene, was identified as a key player in the DNA destruction phase of the immune response in Type II CRISPR systems.
 102. Collaboration between research groups in Sweden, Austria, and California was established to biochemically determine the function of the Cas9 protein.
+IMG_URL crispr-attaks-viral-dna.png
 103. Researchers successfully purified the Cas9 protein from S. pyogenes using E. coli as a host, allowing for in vitro (test-tube) experiments on its function.
 104. The initial biochemical experiment, which combined Cas9 with CRISPR RNA and matching DNA, failed to show any DNA cutting.
 105. A subsequent experiment, which added the newly discovered tracrRNA to the mix, successfully demonstrated that Cas9 could precisely cut DNA.
@@ -178,10 +183,13 @@ Clustered: These repeat-spacer arrays are found in one region, not scattered acr
 114. Kiran Musunuru's lab used CRISPR to correct the genetic mutation that causes sickle cell disease in human cells in a lab setting. They targeted and cut the mutated beta-globin gene and used a synthetic DNA replacement to repair the faulty sequence.
 115. A number of biotechnology companies were founded to commercialize CRISPR-based therapies, including Editas Medicine (2013), CRISPR Therapeutics (2014), and Intellia Therapeutics (2014), raising hundreds of millions of dollars for research and development.
 116. In our 2012 Science article, we reengineered the two natural RNA molecules (CRISPR RNA and tracrRNA) into a single-guide RNA, which simplified the CRISPR system for potential use as a gene-editing tool.
+IMG_URL crispr-clta.png
 117. We demonstrated that CRISPR could be used to edit human DNA in a line of embryonic kidney cells (HEK 293) by targeting and altering the CLTA gene.
 118. The Cas9 protein was "humanized" and fused with a nuclear localization signal to ensure it was directed to the cell's nucleus, where the DNA is located. It was also fused with green fluorescent protein (GFP) to visualize which cells successfully produced the CRISPR components.
+IMG_URL crispr-rnas.png
 119. In human cells, CRISPR-induced double-strand breaks in DNA are often repaired by the cell's own nonhomologous end joining (NHEJ) pathway. This repair process is error-prone, frequently resulting in small insertions or deletions (indels) at the site of the break, which can be used to detect successful gene editing.
 120. Over a dozen genes in various cell types and organisms were successfully edited with CRISPR in early 2013, including human leukemia cells, mouse neuroblastoma cells, and zebrafish embryos.
+IMG_URL crispr-mice.png
 121. In May 2013, Rudolf Jaenisch's lab used CRISPR to generate gene-edited mice in just one month, a process that previously took several months and extensive backcrossing.
 122. Jaenisch's team showed that multiplex gene editing could be performed in mice by injecting multiple single-guide RNAs into a single-cell embryo, allowing several DNA sequences to be edited simultaneously.
 123. The use of CRISPR for gene editing rapidly expanded to a wide range of species across the animal and plant kingdoms. By 2016, the list included rice, wheat, corn, mice, rats, pigs, goats, monkeys, and more.
@@ -201,8 +209,11 @@ Clustered: These repeat-spacer arrays are found in one region, not scattered acr
      Translation: The mRNA is read by a ribosome to create a protein.
 131. The genetic code is a cipher where every three-letter RNA combination, called a codon, specifies a single amino acid.
 132. Ribosomes must maintain the correct three-letter reading frame during translation. A single insertion or deletion of a letter can disrupt this frame, leading to a scrambled and non-functional protein.
+IMG_URL indel.png
 133. This disruption of the reading frame is the basis of a gene knockout (KO), where the CRISPR-induced indels prevent a gene from producing a functional protein, effectively "knocking it out."
+IMG_URL crispr-knockout.png
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[31/07/2025]
+IMG_URL crispr-knockout-removal.png
 134. Gene knockouts are a useful application of CRISPR, as demonstrated by an experiment where targeting the TYR gene (involved in melanin synthesis) in mice resulted in albino pups.
 135. Homologous recombination (also known as homology-directed repair) is a more precise DNA repair mechanism than nonhomologous end joining. It uses a provided repair template that is similar in sequence to the broken chromosome ends to accurately fix the DNA, allowing for the correction of specific genetic mutations.
 136. CRISPR can be programmed with two different RNA guides to make two cuts on a chromosome, enabling the deletion or inversion of large segments of DNA.
