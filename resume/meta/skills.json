@@ -118,6 +118,11 @@
       "image": "./statics/skillset/gitlab.webp",
       "alt": "Just A Skill",
       "skill": "GitLab"
+    },
+    {
+        "image": "https://images.seeklogo.com/logo-png/31/1/amazon-web-services-aws-logo-png_seeklogo-319188.png",
+        "alt": "AWS Skill",
+        "skill": "AWS"
     }
 ]
   
