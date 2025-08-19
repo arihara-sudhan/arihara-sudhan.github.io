@@ -1,5 +1,11 @@
 [
     {
+      "image": "../statics/win.png",
+      "title": "InnovateX: Participated in a Workshop of PWA, Flutter and Agentic AI, SciFlare Technologies, Chennai",
+      "subtitle": "Industrial people shared their insights and I was mostly asking questions.",
+      "year": "AUG25"
+    },
+    {
         "image": "../statics/win.png",
         "title": "Educating Peers at Zoho Desk on Client Technology",
         "subtitle": "I mentor my team on JavaScript internals, the functional programming paradigm, ReactJS, and TypeScript.",
