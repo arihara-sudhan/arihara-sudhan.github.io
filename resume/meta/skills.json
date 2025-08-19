@@ -15,6 +15,11 @@
       "skill": "OpenCv"
     },
     {
+      "image": "https://api.nuget.org/v3-flatcontainer/langchain.core/0.17.0/icon",
+      "alt": "Just A Skill",
+      "skill": "LangChain"
+    },
+    {
       "image": "./statics/skillset/c.webp",
       "alt": "Just A Skill",
       "skill": "C Programming"
@@ -88,6 +93,11 @@
       "image": "./statics/skillset/flask.png",
       "alt": "Just A Skill",
       "skill": "Flask"
+    },
+    {
+      "image": "https://www.svgrepo.com/show/353657/django-icon.svg",
+      "alt": "Just A Skill",
+      "skill": "Django"
     },
     {
       "image": "./statics/skillset/docker.webp",
