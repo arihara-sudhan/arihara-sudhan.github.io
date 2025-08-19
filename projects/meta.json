@@ -92,7 +92,7 @@
     {
         "title": "CLIP: Text to Image",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7110589582114492416?collapsed=1",
-        "logo": "clip.webp"
+        "logo": "./statics/clip.webp"
     },
     {
         "title": "Modeling - Kangaroo: Blender",
