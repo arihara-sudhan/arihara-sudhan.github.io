@@ -1,5 +1,15 @@
 [
     {
+        "title": "Frog Catcher - RL Algorithm",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7357760375796191232",
+        "logo": "./statics/frog.jpeg"
+    },
+    {
+        "title": "Arachnid LLM",
+        "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7360606276617191424",
+        "logo": "./statics/spidy.jpeg"
+    },
+    {
         "title": "Modeling - Angel Fish: Blender",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7330121255318093824",
         "logo": "./statics/angel-fish-3d.jpeg"
