@@ -1,5 +1,11 @@
 [
   {
+    "title": "CRISPR In Silico: LLM",
+    "dept": "Synthetic Biology | Computational Genomics",
+    "description": "I developed an LLM-powered platform that addresses the major safety concern in CRISPR-Cas9 gene editing: unintended off-target cuts across the genome. The system analyzes DNA sequence similarity to proactively flag risky genomic regions and simulates Cas9 cutting activity in silico to predict potential biological outcomes of edits. By modeling both the likelihood of a cut and its downstream biological impact, the tool improves on existing off-target detection methods. This foundation enables integration of synthetic simulations into real-time gene editing workflows, providing safer and more reliable CRISPR design pipelines.",
+    "imageUrl": "https://atlas-content-cdn.pixelsquid.com/stock-images/logo-dna-J337n86-600.jpg"
+  },
+  {
     "title": "Account Overlap Detection and Management System",
     "dept": "Moative",
     "description": "I developed a full-stack AI-powered system to detect and manage account overlaps between our company and partners. The platform helps sales and partnership teams identify, score, escalate, and resolve high-value opportunities. It is built using Python, FastAPI, SQLAlchemy, and a modern vanilla JavaScript frontend. The system enables customizable overlap scoring logic, team hierarchy-based Slack escalations, and LLM-powered (Gemini) generation of professional emails and Slack messages through prompt engineering. I designed a responsive UI for configuring scoring weights, managing internal teams, and tracking resolution status. The backend supports persistent state management with automated fallback flows like personalized partner emails, ensuring no opportunity is missed. This solution transformed latent overlaps into revenue-driving actions.",
