@@ -2,12 +2,12 @@
     {
         "title": "Genie-Phenie: An LLM for Gene Screening",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7374132905410772992",
-        "logo": "./statics/genie-phenie.jpeg"
+        "logo": "./statics/genie-phenie.jpg"
     },
     {
         "title": "Arachnid LLM: My Very First LLM",
         "embedLink": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7360606276617191424",
-        "logo": "./statics/arachnid-llm.jpeg"
+        "logo": "./statics/arachnid-llm.jpg"
     },
     {
         "title": "Frog Catcher - RL Algorithm",
