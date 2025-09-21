@@ -117,19 +117,19 @@
          
              buttonsContainer.addEventListener('click', (event) => {
                  if (event.target.tagName === 'BUTTON') {
-                     const pageRoutes = {
-                         'res-but': '',
-                         'digital-but': './resume/',
-                         'pdf-but': './resume/resume.pdf',
-                         'books-but': './books/',
-                         'aiwaken-but': 'https://www.linkedin.com/company/aiwaken',
-                         'guest-lects': './glectures/',
-                         'proj-but': './projects/',
-                         'blog-but': 'https://arihara-sudhan.github.io/blog/',
-                         'hobs-but': './hobbies/',
-                         'learn-but': './ari-learns/',
-                         'tam-but': './tamizh'
-                     };
+					const pageRoutes = {
+					    'res-but': '',
+					    'digital-but': './resume/',
+					    'pdf-but': 'https://raw.githubusercontent.com/arihara-sudhan/resume/main/resume.pdf',
+					    'books-but': './books/',
+					    'aiwaken-but': 'https://www.linkedin.com/company/aiwaken',
+					    'guest-lects': './glectures/',
+					    'proj-but': './projects/',
+					    'blog-but': 'https://arihara-sudhan.github.io/blog/',
+					    'hobs-but': './hobbies/',
+					    'learn-but': './ari-learns/',
+					    'tam-but': './tamizh'
+					};
          
                      const targetId = event.target.id;
                      const route = pageRoutes[targetId];
@@ -154,3 +154,4 @@
       </script>
    </body>
 </html>
+
