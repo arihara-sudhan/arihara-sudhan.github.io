@@ -1,0 +1,156 @@
+SOURCE: Elmasri & Navathe – Fundamentals of Database Systems; Silberschatz, Korth & Sudarshan – Database System Concepts; Ceri & Pelagatti – Distributed Databases: Principles and Systems; Ramakrishnan & Gehrke – Database Management Systems
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[24/09/2025]
+1. Database
+A database is an organized collection of data, generally stored electronically, that can be easily accessed, managed, and updated.
+Examples:
+- Bank database: stores information about customers, accounts, transactions, loans.
+- Library database: stores books, members, borrowing records.
+
+2. Why Databases Exist
+- To manage large volumes of data efficiently.
+- Avoid redundancy and inconsistency from storing data in separate files.
+
+3. Database Users
+- Casual Users: Access occasionally (e.g., checking bank balance).
+- Naive/Parametric Users: Regular users using standard operations without internal knowledge (e.g., bank teller app).
+- Sophisticated Users: Write complex queries and use database functions (e.g., business analysts).
+- Database Administrators (DBAs): Manage database, security, integrity, performance.
+
+4. Without DBMS vs With DBMS
+- Without DBMS: Data in separate files → redundancy, inconsistency, hard to update.
+- With DBMS: Centralized tables, organized data, easy retrieval, consistent queries.
+
+5. Characteristics of a Database
+- Self-describing: Contains metadata about structure, constraints.
+- Insulation between programs and data: Changes in structure don’t affect applications.
+- Support multiple views: Different users see different perspectives of same data.
+- Sharing & multi-user transactions: Multiple users access simultaneously; consistency ensured with transactions.
+
+6. Components of Database
+- DBMS Engine: Core for storage, retrieval, updates.
+- Query Processor: Converts queries into executable operations.
+- Transaction Manager: Ensures ACID properties.
+- Storage Manager: Manages disk storage and access.
+- Buffer Manager: Holds data in memory for fast access.
+
+7. Data Models
+- Define how data is organized and relationships.
+- Types:
+  - Hierarchical Model: Tree (parent-child), e.g., organization chart.
+  - Network Model: Graph (nodes & links), e.g., airline routes.
+  - Relational Model: Tables (rows & columns), e.g., Customer & Orders.
+  - Entity-Relationship Model (ER): Conceptual, describes entities & relationships.
+
+8. Schemas and Instances
+- Schema: Database structure (tables, fields, types), like a blueprint.
+- Instance: Actual stored data at a point in time, like the building built from blueprint.
+
+9. Three-Schema Architecture
+- Internal Schema (Physical): How data is stored on disk (efficient, indexed, paged).
+- Conceptual Schema (Logical): Data stored & relationships, independent of storage.
+- External Schema (View): User-specific views, only relevant data.
+
+10. Data Independence
+- Logical: Changes in conceptual schema don’t affect user views.
+- Physical: Changes in physical storage don’t affect conceptual schema.
+
+11. Database Languages
+- DDL: Define structure (e.g., CREATE TABLE).
+- DML: Retrieve/modify data (e.g., SELECT, INSERT).
+- DCL: Access control (e.g., GRANT, REVOKE).
+- TCL: Transaction control (COMMIT, ROLLBACK).
+
+12. Centralized vs Client/Server DBMS
+- Centralized: All on one machine → simple, but single point of failure.
+- Client/Server: Clients request data from server → scalable, multi-user support.
+
+13. File Systems vs DBMS
+Feature: Data Redundancy
+ File System: High
+ DBMS: Low (centralized storage)
+Feature: Data Consistency
+ File System: Hard to maintain
+ DBMS: Ensured automatically
+Feature: Data Access
+ File System: Limited, sequential
+ DBMS: Efficient querying, multiple views
+Feature: Security
+ File System: Minimal
+ DBMS: Strong access control
+Feature: Data Integrity
+ File System: Manual enforcement
+ DBMS: Automatic via constraints
+Feature: Concurrent Access
+ File System: Difficult
+ DBMS: Supported via transactions
+
+14. Advantages of DBMS
+- Data sharing
+- Security
+- Integrity
+- Backup & recovery
+- Reduced redundancy
+- Efficient queries
+
+15. Storing & Describing Data
+- Schemas describe structure
+- Storage managers handle physical storage
+- Metadata maintained for self-description
+- Indexes support fast retrieval
+
+16. Relational Model
+- Tables (relations), rows (tuples), columns (attributes)
+- Primary Key: uniquely identifies row
+- Foreign Key: links tables
+- Example:
+  Student(ID, Name, Dept)
+  Course(CourseID, Name, Credits)
+  Enrollment(StudentID, CourseID, Grade)
+
+17. ACID Properties
+- Atomicity: All or nothing
+- Consistency: Integrity maintained
+- Isolation: Transactions independent
+- Durability: Persistent after crash
+- Example: Money transfer
+
+18. Concurrency Control
+- Handles simultaneous access.
+1. Locking: Shared (read), Exclusive (write)
+2. Timestamp Ordering: Older transactions prioritized
+3. MVCC: Multiple data versions, readers/writers don’t block
+
+19. Recovery Handling
+1. Incomplete Transactions: Crash or errors → inconsistent data
+2. Rollback & Recovery: Undo incomplete, redo committed
+3. Checkpointing: Periodically save database state → faster recovery
+4. Summary: Detect crash → Undo/Redo → Resume
+
+20. ER Model
+- ER Diagram: visual representation of entities, attributes, relationships.
+- Components:
+  - Entity: rectangle, e.g., Student, College
+  - Weak Entity: double rectangle, depends on strong entity
+  - Attribute: oval; types: key, composite, multivalued (double oval), derived (dashed oval)
+  - Relationship: diamond, defines association
+- Cardinality: One-to-One, One-to-Many, Many-to-One, Many-to-Many
+- Total Participation: Every entity involved in at least one relationship
+
+21. Steps to Create ERD
+1. Identify Entities: e.g., Student, Course, Professor
+2. Identify Relationships: e.g., Student assigned course, Professor delivers course
+3. Cardinality: e.g., student multiple courses, professor single course
+4. Identify Attributes & Primary Keys
+5. Draw ERD → modern visual representation
+
+22. DBMS Generalization
+- Bottom-up: combine common attributes into higher-level entity
+- Example: Student & Teacher → generalized Person (Name, Address), specialized attributes remain
+
+23. DBMS Specialization
+- Top-down: divide entity into sub-entities
+- Example: Employee → Technician, Engineer, Accountant
+
+24. DBMS Aggregation
+- Treat relationship of multiple entities as single entity when needed
+- Example: Manager manages both Employee & Project → relationship “Works-On” aggregated as “Manages” with Manager
