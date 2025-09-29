@@ -1,0 +1,99 @@
+[
+    {
+      "image": "../statics/win.png",
+      "title": "InnovateX: Participated in a Workshop of PWA, Flutter and Agentic AI, SciFlare Technologies, Chennai",
+      "subtitle": "Industrial people shared their insights and I was mostly asking questions.",
+      "year": "AUG25"
+    },
+    {
+        "image": "../statics/win.png",
+        "title": "Educating Peers at Zoho Desk on Client Technology",
+        "subtitle": "I mentor my team on JavaScript internals, the functional programming paradigm, ReactJS, and TypeScript.",
+        "year": "SEP24"
+    },
+    {
+        "image": "../statics/win.png",
+        "title": "Taught Basic Machine Learning to Students",
+        "subtitle": "To a group of expert students from colleges in Coimbatore, Tirunelveli, and Madurai, I taught Multi Layer Perceptron and CNN, through Google Meet",
+        "year": "OCT24"
+    },
+    {
+        "image": "../statics/win.png",
+        "title": "Taught MERN Stack Development to Students",
+        "subtitle": "To a group of expert students from Einstein College of Engineering, I taught MERN Stack Development, visiting the college every weekend",
+        "year": "DEC24"
+    },
+    {
+        "image": "../statics/win.png",
+        "title": "Session on \"Meet AI\" at Kamaraj College of Engineering and Technology, Virudhunagar",
+        "subtitle": "I had the privilege of teaching the fundamentals of AI to my people, fostering curiosity and learning. It was a truly rewarding experience, and I look forward to contributing to an AI-powered South.",
+        "year": "JAN25"
+    },
+    {
+        "image": "../statics/win.png",
+        "title": "Session on \"On Technology and Rural Development\" at AKY Polytechnic College, Nellai",
+        "subtitle": "I had the privilege of speaking with my brothers at AKY Polytechnic College, Tirunelveli, about technology’s role in rural development, education, societal changes, and self-improvement.",
+        "year": "SEP24"
+    },
+    {
+        "image": "../statics/win.png",
+        "title": "Qualified for the final round of Medecro.ai's Hackathon",
+        "subtitle": "Proposed and Built AI-powered MediKit, a bundle AI Solutions for various Medical Problems such as Heartbeat Analysis, Tumor Detection, Cell Classification and so on.",
+        "year": "AUG24"
+    },
+    {
+        "image": "../statics/win.png",
+        "title": "Qualified for the final round of the Atheneum Hackathon, conducted by IGDTUW at New Delhi",
+        "subtitle": "Proposed Smart Education System, which includes OCR based Test Evaluation, Virtual Pen, Virtual Quiz, Face Recognition based Attendance and so on.",
+        "year": "AUG22"
+    },
+    {
+      "image": "../statics/win.png",
+      "title": "Talent Search Examination, JP College of Engineering, Tenkasi.",
+      "subtitle": "Secured I Prize for exposing skills in Maths and Science",
+      "year": "FEB17"
+    },
+    {
+      "image": "../statics/win.png",
+      "title": "Yuva Shri Kala Bharathi Award, Bharathi Yuva Kenthra, Madurai.",
+      "subtitle": "Appreciated with Award for good performance in Proficiency and Arts",
+      "year": "JAN18"
+    },
+    {
+        "image": "../statics/win.png",
+        "title": "Thirukkural Literature Explanations",
+        "subtitle": "I am dedicating my evenings to writing detailed explanations for each Thirukkural.",
+        "year": "OCT24"
+    },
+    {
+      "image": "../statics/win.png",
+      "title": "Aladi Aruna Merit Scholarship, Einstein College of Engineering, Tirunelveli.",
+      "subtitle": "Recognized by my college with Scholarship for being a Rank holder",
+      "year": "FEB17"
+    },
+    {
+      "image": "../statics/win.png",
+      "title": "I Prizes in Paper Presentation, Web Designing, Code Debugging",
+      "subtitle": "Rohini College of Engineering, Kanyakumari, National Level Technical Symposium",
+      "year": "MAR22"
+    },
+    {
+      "image": "../statics/win.png",
+      "title": "I Prizes in Paper Presentation and Web Designing Competitions",
+      "subtitle": "PSN College of Engineering, Tirunelveli, National Level Technical Symposium",
+      "year": "APR22"
+    },
+    {
+      "image": "../statics/win.png",
+      "title": "I Prizes in Paper Presentation, Web Designing, Technical Quiz",
+      "subtitle": "Thamirabarani Engineering College, Tirunelveli, National Level Technical Symposium",
+      "year": "MAY22"
+    },
+    {
+      "image": "../statics/win.png",
+      "title": "Best Project Presentation in Mini Project Expo for III years",
+      "subtitle": "Created AI BASED STUDENT SERVICE SYSTEM, Einstein College of Engineering",
+      "year": "MAY22"
+    }
+]
+  

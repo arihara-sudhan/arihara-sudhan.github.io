@@ -1,0 +1,55 @@
+#hobbies {
+    display: flex;
+    width: 94%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hobby {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #42414d;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    width: 30%;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+}
+
+.hobby img {
+    width: 30%;
+    margin-right: 0.3rem;
+}
+
+.hobby:hover {
+    background-color: lightgreen;
+    color: black;
+    border-right: 3px solid green;
+    border-bottom: 3px solid green;
+    cursor: pointer;
+}
+
+.hobby h2 {
+    font-size: 2vw;
+}
+
+@media (max-width: 1000px) {
+    #hobbies {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+    }
+    .hobby {
+        width: 90%;
+        font-size: 3vw;
+        justify-content: left;
+        margin: 0.4rem;
+        border-radius: 0.4rem;
+    }
+    .hobby img {
+        width: 20%;
+    }
+}

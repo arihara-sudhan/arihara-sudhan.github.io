@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+body {
+	background-image: url("statics/bg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cover {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 2rem;
+	margin: 5vh 0vh 5vh 0vh;
+	background-color: rgba(255, 255, 255, 0.22);
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cover img {
+	width: 25%;
+	border-radius: 50%;
+	border: 0.4vw solid rgba(255, 255, 255, 0.52);
+}
+
+#name {
+	font-size: 5vw;
+	font-weight: bolder;
+	color: rgba(255, 255, 255, 0.9);
+	text-align: center;
+	letter-spacing: 0.01vw;
+}
+
+#bio {
+	font-size: 2vw;
+	color: rgba(255, 255, 255, 0.9);
+	text-align: center;
+	letter-spacing: 0.8vw;
+}
+
+.first {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 8%;
+	margin-bottom: 0;
+}
+
+.options {
+	margin: 5% 0% 5% 0%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.options button {
+	margin: 2% 0% 2% 0%;
+	background-color: rgba(0, 0, 0, 0.2);
+	border: 0;
+	color: white;
+	font-size: 2.8vw;
+	padding: 2%;
+	transition: 0.3s;
+}
+
+.options button:hover {
+	background-color: rgba(0, 0, 0, 0.4);
+	transform: scale(1.023);
+}
+
+.contact {
+	padding: 1%;
+	display: flex;
+	justify-content: space-around;
+	font-size: 3vw;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+#tig {
+	border: 0;
+	border-radius: 0;
+	animation-name: move;
+	animation-duration: 10s;
+	position: fixed;
+	bottom: -6%;
+	left: 0;
+	transform: translateX(-150%);
+}
+
+@keyframes move {
+	100% {
+		transform: translateX(250%);
+	}
+}
+
+@media (max-width: 1000px) {
+	.cover {
+		width: 90%;
+	}
+
+	#tig {
+		width: 100rem;
+	}
+
+	.options button {
+		font-size: 4vw;
+		font-weight: 2vw;
+		padding: 1rem;
+	}
+
+	#name {
+		font-size: 7vw;
+	}
+}
+
+i {
+	transition: 0.3s;
+}
+
+i:hover {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.options button:hover {
+	cursor: pointer;
+}
+
+.split-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2% 0%;
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: none;
+}
+
+.split-buttons button {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0;
+    color: white;
+    font-size: 2.8vw;
+    padding: 2%;
+    transition: none;
+    flex: 1;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    cursor: pointer;
+}
+
+.split-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.options button#res-but {
+    opacity: 0;
+    animation: fadeIn 0.03s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .split-buttons button {
+        font-size: 4vw;
+        padding: 1rem;
+    }
+    .split-buttons {
+        gap: 0.5rem;
+    }
+}

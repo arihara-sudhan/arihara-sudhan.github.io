@@ -1,0 +1,68 @@
+{
+    "META": [
+      {
+        "head": "உயிர்க்குறள்",
+        "type": "narticle",
+        "description": "வள்ளுவம் போற்றுதும்! வான்தமிழ் போற்றுதும்! தை ஒன்றில் ஆரம்பித்து, இன்றும் நாளுக்கு ஒன்றென ஒவ்வொரு குறளுக்கும் விளக்கவுரை எழுதிக்கொண்டிருக்கிறேன்! என் நண்பர்களில் சிலர், Zoology வகுப்பில் வரும் குறிப்பிட்ட பகுதிக்கு ஒரு காலத்தில் நாம் ஏங்கியதுபோல, முன் பின் நான் அமைத்தெழுதும் எதுகை மோனையை இரசித்து, மூன்றாம் பால் எப்போது என முந்துகின்றனர். மனமோ, எப்படி எழுதப்போகிறோம் என பிந்துகிறது! 🤧 கால மாற்றத்தோடு, கலாச்சார காரணிகளையும் சீர்தூக்கவேண்டியது, ஒவ்வொரு கலாச்சாரதாரிகளுக்கும், கட்டாய கடமை! வரலாறு முக்கியம்! இலக்கியங்கள், எத்தகு தொழில்நுட்பயுகங்களிலும், புதுவுருவுடன் வளர்ச்சியுறட்டும்! காப்பியங்கள், மின்னுரு கொண்டு மின்னட்டும்!<br><center>எம் குரல், குறளுக்காக!<br>உரியோருக்கு பகிருங்கள்!</center>",
+        "imgUrl": "./statics/uyirkural_banner.png",
+        "onClick": "https://arihara-sudhan.github.io/uyir-kural"
+      },
+      {
+        "head": "PuthuWords",
+        "type": "narticle",
+        "description": "பழகினிய ஆங்கில பதங்களை புலனத்திலுள்ள என் தொடர்புகளுக்கு பகிர்ந்துள்ளேன்! இது முடியா கற்றல் பயணம்! Oxford Dictionary-ஐ மூலமாக்கொண்டு, இவை ஆவலுடன் உருவாக்கப்படுகின்றன. ஆவல் இருப்பதனால், சிரத்தைக்கும், அயர்வுக்கும் மனம் இடமளிப்பதில்லை! இவற்றை, இன்னமும் எழிலுற, அயர்த்திடாமல் அனுதினமும் காண, இந்த தளத்தை உருவாக்கியுள்ளேன்… இத்தளம் நாள்தோறும், புதுமையடையும்… Lingua Franca-வை, இன்தமிழில் கற்பது இனிமை மற்றும் நல்லது! சில சொல்சேட்டைகளையும் உதாரணங்களில் காணலாம்… (என் நண்பர்கள் தாக்கப்படுவார்கள்!) இது ஓர் எளிய வழி! மொத்தமாய் ஒருநாளில், சுத்தமாய் முடியாது! <center>நித்தமாய் கற்போம்! புத்தமாய் கற்போம்!<br>கற்போம்…</center>",
+        "imgUrl": "./statics/puthuwords_banner.png",
+        "onClick": "https://arihara-sudhan.github.io/puthu-words"
+      },
+      {
+        "head": "Ariyin Kavithaigal",
+        "type": "narticle",
+        "description": "சிறு வயதில், \"காதல் கவிதை\" என்ற பெயரில் கண் கண்ட புது வார்த்தைகளையெல்லாம் சேர்த்து, கோர்த்து மற்றோரிடம் காட்டும் வாடிக்கை கொண்டிருந்தேன். கல்லூரியில் முதலாமாண்டு படிக்கையில் நடந்த கவிதை போட்டியில், நான் கோர்த்த வார்த்தைகள், ஆசிரியர்களால், \"திருவள்ளுவரை போல் கவிதை எழுதுபவன்\" என பேசப்பட்டு, பெரும் ஊக்கத்தை நிறைத்தது.  இன்று, மற்றோர் கவிஞன் என ஏற்று கொள்ளும் அளவிற்கு, என் வார்த்தை விளையாட்டை வளர்த்துள்ளேன். என் நண்பர்கள், அவ்வப்போது என்னிடம் தலைப்பை தந்து கவிதையை பெறுவதும் வாடிக்கை. தமிழில் உள்ள, மிகப்பெரிய அம்மானை இலக்கியமான அகிலத்திரட்டு அம்மானையின் செய்யுள் நடை நயமே, எம் கவி நயத்திலும் கண்படும். எம் கவிதைகளை வாசிப்பீர்! உங்கள் பின்னூட்டங்கள் எம் கவிதைகளுக்கு முதலீடு.",
+        "imgUrl": "./statics/ariyinkavithaigal_banner.png",
+        "onClick": "https://arihara-sudhan.github.io/ariyin-kavithaigal"
+      },
+      {
+        "head": "கூப்பனிப்பு",
+        "type": "article",
+        "description": "தெற்கே வார்த்தைகள் புதுமையானவை. அதுவும், நெல்லை, நாகர்கோயில் வட்டார சொற்கள் எனில், சிறுவயது தொட்டு நாவில் புரண்டதாலோ என்னவோ, எனக்கு அளப்பரிய பிரியம். அவ்வாறு பல நாட்கள் எம் நாவில் புழங்கிய சொல் தான், கூப்பனிப்பு. அதன் வேர்ச்சொல் தரும் இனிமையே இக்கட்டுரை!",
+        "imgUrl": "./statics/kooppanippu_banner.jpg",
+        "onClick": "https://arihara-sudhan.github.io/blog/%E0%AE%95%E0%AF%82%E0%AE%AA-%E0%AE%AA%E0%AE%A9%E0%AE%BF%E0%AE%AA-%E0%AE%AA%E0%AF%81"
+      },
+      {
+        "head": "El and Al",
+        "type": "article",
+        "description": "Etymological research has always fascinated me. El and Al are two religiously significant words, and here is my research on them. Interestingly, there are similar words in Tamil that influence the meanings of these terms.",
+        "imgUrl": "https://arihara-sudhan.github.io/blog/img/covers/El%20And%20Al.jpg",
+        "onClick": "https://arihara-sudhan.github.io/blog/El-And-Al"
+      },
+      {
+        "head": "Bermuda Grass",
+        "type": "article",
+        "description": "This article explores the cultural, religious, and etymological significance of Bermuda Grass (<i>Cynodon dactylon</i>), particularly in Southern India. It discusses its connections to mythology, and the linguistic origins of its scientific name.",
+        "imgUrl": "https://arihara-sudhan.github.io/blog/img/covers/Bermuda%20Grass.jpg",
+        "onClick": "https://arihara-sudhan.github.io/blog/Bermuda-Grass"
+      },
+      {
+        "head": "Bamboo Etymology",
+        "type": "article",
+        "description": "The article provides an exploration of the cultural, linguistic, and symbolic aspects of bamboo and its connections to Tamil traditions and language, blending personal experiences with etymological insights.",
+        "imgUrl": "https://arihara-sudhan.github.io/blog/img/covers/Etymology%20Of%20Bamboo.jpg",
+        "onClick": "https://arihara-sudhan.github.io/blog/Etymology-of-Bamboo"
+      },
+      {
+        "head": "Marsupial",
+        "type": "article",
+        "description": "Whenever I hear words, I often relate them to ancient Tamil words. If I take one more step to research, I usually uncover the potential origin of the word. For instance, marsupial is a word I am researching in this article.",
+        "imgUrl": "https://arihara-sudhan.github.io/blog/img/covers/Marsupial.jpg",
+        "onClick": "https://arihara-sudhan.github.io/blog/Marsupial"
+      },
+      {
+        "head": "ஜெயன் விஜயன்",
+        "type": "article",
+        "description": "தமிழர் வழிபாட்டு தலங்களில், மிகவும் பிரம்மிப்பூட்டும் சிற்பங்கள் அமையப்பெற்றிருக்கும். உதாரணமாக, திருநெல்வேலியிலுள்ள, நெல்லையப்பர் கோயில் வளாகத்தை ரசனை மனத்துடன் சுற்றினால், வாய்திறந்து விழிக்கும் வண்ணம், வாகான.......... மேலும் வாசியுங்கள்",
+        "imgUrl": "https://arihara-sudhan.github.io/blog/img/covers/%E0%AE%9C%E0%AF%86%E0%AE%AF%E0%AE%A9%E0%AF%8D%20%E0%AE%B5%E0%AE%BF%E0%AE%9C%E0%AE%AF%E0%AE%A9%E0%AF%8D.jpg",
+        "onClick": "https://arihara-sudhan.github.io/blog/%E0%AE%9C%E0%AF%86%E0%AE%AF%E0%AE%A9-%E0%AE%B5%E0%AE%BF%E0%AE%9C%E0%AE%AF%E0%AE%A9"
+      }
+    ]
+  }
+  

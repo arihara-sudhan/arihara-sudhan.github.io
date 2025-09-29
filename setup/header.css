@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #42414d;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    width: 90%;
+}
+
+header img {
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+header h2 {
+    font-size: 5vw;
+    margin: 0;
+    margin-left: 0.9rem;
+}
+
+@media (max-width:  1000px) {
+    header img {
+        width: 17%;
+    }
+
+    header h2{
+        font-size: calc(1rem + 4vw);
+    }
+}

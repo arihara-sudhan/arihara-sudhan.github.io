@@ -1,0 +1,368 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+}
+
+.header img {
+    border-radius: 50%;
+    border: 5px solid white;
+    margin: 10px;
+}
+.header-detail {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#name {
+    margin: 0;
+    letter-spacing: 10px;
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+#role {
+    letter-spacing: 9px;	
+    margin: 0;
+}
+i {
+    font-size: 1.5em;
+    color: white;
+}
+
+i:hover {
+    color: black;
+}
+
+.contact {
+    padding-top: 1.2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.a1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.desc {
+    padding-left: 2vw;
+}
+.me3 .a1 h2, .me3 .a1 h3, .me3 .a1 b {
+    color: rgba(0,0,0,0.8);
+}
+
+.me3 .a2 h2, .me3 .a2 h3, .me3 .a2 b {
+    color: white;
+}
+
+.year {
+    padding-right: 2vw;
+}
+
+.bi-trophy-fill {
+    padding-right: 5px;
+    color: yellow;
+}
+
+.aaa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgg {
+    padding-right: 10px;
+}
+
+.a1 {
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.desc1 {
+    width: 100%;
+    padding-left: 2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.desc1212 {
+    width: 55%;
+    padding-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.lang  {
+    padding-right: 3vw;
+}
+
+.desc4 {
+    width: 100%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.hob-draw {
+    color: violet;
+    padding-right: 1vw;
+    font-size: 30px;
+}
+
+.hob-poem {
+    color: indigo;
+    padding-right: 1vw;
+    font-size: 30px;
+}
+
+.hob-clay {
+    color: blue;
+    padding-right: 1vw;
+    font-size: 30px;
+}
+
+.hob-tailor {
+    color: green;
+    padding-right: 1vw;
+    font-size: 30px;
+}
+
+.hob-3d {
+    color: yellow;
+    padding-right: 1vw;
+    font-size: 30px;
+}
+
+.hob-game {
+    color: orange;
+    padding-right: 1vw;
+    font-size: 30px;
+}
+
+.hob-learn {
+    color: red;
+    padding-right: 1vw;
+    font-size: 30px;
+}
+
+.aaa1 {
+    display: flex;
+    align-items: center;
+}
+.me3 .a1 .desc4 .aaa1 h2 b {
+    font-size: 1.2vw;
+}
+
+.aaa12 img {
+    padding-top: 2.5vh;
+}
+a {
+    text-decoration: none;
+}
+
+
+
+/*
+    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW
+    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW
+    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW
+    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW
+    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW
+    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW    NEW
+*/
+
+.heading {
+    font-size: 1vw;
+    margin: 0;
+    text-align: center;
+    color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.2);
+}
+
+.heading h1 {
+    margin: 0;
+    padding: 0.4rem;
+}
+
+/* LANGUAGES LANGUAGES LANGUAGES LANGUAGES LANGUAGES LANGUAGES LANGUAGES LANGUAGES LANGUAGES LANGUAGES */
+.languages {
+    display: flex;
+    justify-content: space-around;
+}
+
+.lang {
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    width: 33.34%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.lang img {
+    width: 100px;
+}
+
+/* ACADEMICS ACADEMICS ACADEMICS ACADEMICS ACADEMICS ACADEMICS ACADEMICS ACADEMICS ACADEMICS ACADEMICS */
+.academics {
+    display: flex;
+    justify-content: space-around;
+}
+.school * {
+    margin: 0.2rem;
+}
+.school {
+    width: 33.34%;
+    display: flex;
+    padding: 0.3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+    border: 1px solid rgba(0,0,0,0.1);    
+}
+
+.school img {
+    width: 200px;
+    height: 250px;
+}
+
+/* SKILLSET SKILLSET SKILLSET SKILLSET SKILLSET SKILLSET SKILLSET SKILLSET SKILLSET SKILLSET SKILLSET*/
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.skill {
+    font-size: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    width: 10%;
+    padding: 0.61rem;
+    border: 0.91px solid rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    margin: 0.41rem;
+}
+
+.skill img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+/* ACTIVITY ACTIVITY ACTIVITY ACTIVITY ACTIVITY ACTIVITY ACTIVITY ACTIVITY ACTIVITY ACTIVITY ACTIVITY */
+.activities {
+    width: 100%;
+}
+.activity {
+    font-size: 1vw;
+    display: flex;
+    justify-content: space-between;
+    border: 0.51px solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+.activity .description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.activity .description * {
+    margin: 0;
+}
+.year {
+    margin-left: 1rem;
+}
+.subtitle {
+    font-size: 1.3vw;
+}
+/* PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS */
+.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.projects h2 {
+    font-size: 1.5vw;
+}
+
+.projects .project {
+    padding: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.projects .project .primary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projects .project .primary .secondary {
+    display: flex;
+    align-items: center;
+}
+
+.projects .project .description {
+    text-align: justify;
+}
+
+.projects .project img {
+    width: 10%;
+}
+.projects .dept {
+    width: 60%;
+    text-align: right;
+}
+
+@media (max-width: 1000px) {
+    .skill {
+        width: 10%;
+        margin: 0.1rem;
+    }
+    .activity-title {
+        font-size: 3vw;
+    }
+    .subtitle {
+        font-size: 3vw;
+    }
+    .projects h2 {
+        font-size: 4vw;
+        margin: 0;
+    }
+    .projects .project .primary { 
+        flex-direction: column;
+        justify-content: left;
+    }
+    .projects .dept {
+        font-size: 3vw;
+        text-align: left;
+        width: 100%;
+    }
+    .description {
+        font-size: 3vw;
+    }
+}
+
