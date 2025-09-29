@@ -27,5 +27,20 @@
             "shot2.jpg",
             "shot3.jpeg"
         ]
+    },
+    {
+        "title": "Prompt Engineering and Generative AI",
+        "date": "22-08-2025",
+        "college": "Sri Sairam Engineering College, Chennai",
+        "about": "Some things give me extreme happiness, and for me, one of the greatest sources of joy is teaching, sharing knowledge, educating, and channeling happiness through it, something I discovered years ago as a purpose of my life, where every session or workshop unleashes my untamed mind to explore and present, turning what I know into what others know in fresh ways that excite them, and today’s journey through Neural Networks, RAG, and Agentic AI was exactly that, made blissful thanks to R.V Shakthi Dharan for setting up the session, Ulaganathan MohanaSundaram sir for always bringing me such joy, Suresh Thangakrishnan sir for the wonderful surprise of his presence, and everyone who came to listen, thank you all! 🙏",
+        "folder-path": "/sri-sairam-28-08-2025/",
+        "images": [
+            "poster.jpg",
+            "shot1.jpg",
+            "shot2.jpg",
+            "shot3.jpeg",
+            "shot4.jpeg",
+            "shot5.jpeg"
+        ]
     }
 ]
