@@ -97,6 +97,9 @@ body {
     .katturai h1 {
         text-align: center;
     }
+    .katturai p {
+        font-size: 2vw;
+    }
     .katturai img {
         width: 90%;
     }
