@@ -152,113 +152,292 @@
     gap: 1rem;
 }
 
+/* =========================
+   Base Styling (Desktop)
+========================= */
+#hobbies {
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    align-items: center;
+}
+
+/* Main Section: Portrait Video + Regular Hobbies */
+.hobbies-main-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+/* Portrait Video Container */
+.portrait-video-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-hobby.portrait {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #42414d;
+    border-radius: 0.8rem;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    flex-shrink: 0;
+}
+
+.portrait .video-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+}
+
+.portrait .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.video-hobby:hover {
+    background-color: #42414d;
+    cursor: default;
+}
+
+/* Hobbies Grid */
+.hobbies-grid {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 1rem;
+    height: 85vh;
+}
+
+.hobbies-row {
+    display: flex;
+    gap: 0.8rem;
+    height: 19vh;
+}
+
+.hobby {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #42414d;
+    padding: 0.6rem;
+    border-radius: 0.8rem;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    flex: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hobby img {
+    width: 30%;
+    margin-right: 0.3rem;
+}
+
+.hobby h3 {
+    font-size: 1.8vw;
+    margin: 0;
+    color: white;
+}
+
+.hobby:hover {
+    background-color: lightgreen;
+    color: black;
+    border-right: 3px solid green;
+    border-bottom: 3px solid green;
+}
+
+.hobby:hover h3 {
+    color: black;
+}
+
+/* Bottom Section */
+.hobbies-bottom-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    gap: 2rem;
+    height: 40vh;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Landscape Video Container */
+.landscape-video-container {
+    width: 60%;
+}
+
+.video-hobby.landscape {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #42414d;
+    padding: 0.4rem;
+    border-radius: 0.8rem;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+}
+
+.landscape .video-container {
+    position: relative;
+    width: 100%;
+    height: 47vh;
+    margin-top: 0.5rem;
+}
+
+.landscape .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.singing-stage-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 1rem;
+}
+
+
+/* =========================
+   Responsive Styling
+========================= */
+
+/* Tablet screens */
 @media (max-width: 1000px) {
-    h3 {
-        font-size: 5vw !important;
-    }
-
-    #hobbies {
-        display: flex;
-        width: 90%;
-    }
-
     .hobbies-main-section {
-        display: flex;
         flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
+        gap: 1.5rem;
     }
 
-    .portrait-video-container {
-        display: flex;
+    .portrait-video-container,
+    .hobbies-grid {
         width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .video-hobby.portrait {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
+        height: auto;
     }
 
     .portrait .video-container {
-        height: 50vh;
-    }
-
-    .hobbies-grid {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        align-items: center;
-        justify-content: center;
+        height: 60vh;
     }
 
     .hobbies-row {
-        display: flex;
-        flex-direction: column;
         height: auto;
-        align-items: center;
-        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .hobby {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .hobby img {
-        width: 50%;
-        margin-right: 1.5rem;
+    .hobby h3 {
+        font-size: 3vw;
     }
 
     .hobbies-bottom-section {
-        display: flex;
         flex-direction: column;
         height: auto;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
     }
 
-    .landscape-video-container {
-        display: flex;
+    .landscape-video-container,
+    .singing-stage-container {
         width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .video-hobby.landscape {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
     }
 
     .landscape .video-container {
         height: 40vh;
     }
+}
 
-    .singing-stage-container {
-        display: flex;
-        flex-direction: column;
+/* Mobile screens */
+@media (max-width: 600px) {
+    #hobbies {
         width: 100%;
+        gap: 0.5rem;
         align-items: center;
-        justify-content: center;
     }
 
-    .hobby.singing,
-    .hobby.stage-speech {
+    .video-hobby {
+        width: 90%;
+        margin: 0.3rem auto;
         display: flex;
-        height: 18vh;
-        font-size: 5.5vw;
         justify-content: center;
         align-items: center;
+        max-width: 90vw;
+    }
+
+    .video-hobby.portrait {
+        width: 90%;
+        max-width: 90vw;
+    }
+
+    .video-hobby.landscape {
+        width: 90%;
+        max-width: 90vw;
+    }
+
+    .video-container {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .portrait .video-container {
+        height: 40vh;
+        max-height: 40vh;
+    }
+
+    .landscape .video-container {
+        height: 30vh;
+        max-height: 30vh;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5rem;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .hobby {
+        width: 90%;
+        max-width: 90vw;
+        margin: 0.3rem auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.8rem;
+        font-size: 4vw;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .hobby img {
+        width: 20%;
+        margin-right: 0.8rem;
+    }
+
+    .hobby h3 {
+        font-size: 4vw;
         text-align: center;
+    }
+
+    .hobbies-row {
+        flex-direction: column;
+        gap: 0.3rem;
+        align-items: center;
     }
 }
