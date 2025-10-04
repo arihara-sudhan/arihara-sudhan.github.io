@@ -1,8 +1,12 @@
 [
     {
+        "url": "https://www.youtube.com/embed/CXd4P4M8lPA?si=vprfszhbUQfRpiAf",
+        "isVideo": true
+    },
+    {
         "title": "Blogging",
         "url": "https://arihara-sudhan.github.io/blog",
-        "imgURL": "https://arihara-sudhan.github.io/blog/img/logo.png"
+        "imgURL": "https://arihara-sudhan.github.io/blog/static/clover-1.png"
     },
     {
         "title": "LinkedIning",
@@ -38,5 +42,20 @@
         "title": "Binomial Names",
         "url": "https://youtu.be/CXd4P4M8lPA?si=VAjLUD-pHkJQejFA",
         "imgURL": "./static/hibiscus.png"
+    },
+    {
+        "url": "https://www.youtube.com/embed/1-qctj4rSG4?si=5BKpOTaiWy1yEmja",
+        "isVideo": true,
+        "isLandscape": true
+    },
+    {
+        "title": "Singing",
+        "url": "https://youtu.be/ulGfscwn6jA?si=22lr8Ckh0QpiUjXv",
+        "imgURL": "https://png.pngtree.com/png-vector/20230324/ourmid/pngtree-hand-draw-young-man-singer-icon-vector-png-image_6667321.png"
+    },
+    {
+        "title": "Stage speech",
+        "url": "https://youtu.be/t8MWH2EMrbo?si=2lOSlpRBm-xOHYVG",
+        "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ5bu33Z6wMz8hTxkcbPhYZQ4eFnuObJfrOA&s"
     }
 ]
