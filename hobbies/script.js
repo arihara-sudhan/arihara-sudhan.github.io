@@ -35,6 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
     
+    function createHeroSection() {
+        return `
+            <div class="hero-section">
+                <img src="./static/hero.jpg" alt="Ari's Ikigai" class="hero-image">
+            </div>
+        `;
+    }
+    
     function renderContent() {
         const hobbies = [
             { title: "Blogging", url: "https://arihara-sudhan.github.io/blog", imgURL: "https://arihara-sudhan.github.io/blog/static/clover-1.png" },
@@ -54,11 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
             { url: "https://www.youtube.com/embed/1-qctj4rSG4?si=5BKpOTaiWy1yEmja", isLandscape: true }
         ];
         
-        let htmlContent = '';
+        let htmlContent = createHeroSection();
         
         if (isMobile()) {
             // Mobile: Simple vertical stack
-            htmlContent = `
+            htmlContent += `
                 ${createVideoCard(videos[0])}
                 ${hobbies.slice(0, 8).map(createHobbyCard).join('')}
                 ${createVideoCard(videos[1])}
@@ -66,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         } else if (isTablet()) {
             // Tablet: Simplified layout
-            htmlContent = `
+            htmlContent += `
                 <div class="hobbies-main-section">
                     <div class="portrait-video-container">${createVideoCard(videos[0])}</div>
                     <div class="hobbies-grid">
@@ -82,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         } else {
             // Desktop: Full layout
-            htmlContent = `
+            htmlContent += `
                 <div class="hobbies-main-section">
                     <div class="portrait-video-container">${createVideoCard(videos[0])}</div>
                     <div class="hobbies-grid">

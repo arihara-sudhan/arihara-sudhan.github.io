@@ -158,8 +158,35 @@
 #hobbies {
     display: flex;
     flex-direction: column;
-    width: 94%;
+    width: 100%;
     align-items: center;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero-title {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Main Section: Portrait Video + Regular Hobbies */
@@ -365,23 +392,36 @@
         align-items: center;
     }
 
+    .hero-section {
+        margin: 0;
+        padding: 0;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .hero-title {
+        font-size: 6vw;
+        bottom: 0.8rem;
+    }
+
     .video-hobby {
-        width: 90%;
+        width: 95%;
         margin: 0.3rem auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 90vw;
     }
 
     .video-hobby.portrait {
-        width: 90%;
-        max-width: 90vw;
+        width: 98%;
     }
 
     .video-hobby.landscape {
-        width: 90%;
-        max-width: 90vw;
+        width: 94%;
     }
 
     .video-container {
