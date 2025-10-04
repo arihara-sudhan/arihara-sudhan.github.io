@@ -60,8 +60,18 @@
     height: 85vh;
 }
 
+.hobbies-row {
+    display: flex;
+    gap: 0.8rem;
+    height: 19vh;
+}
+
 .hobby {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #42414d;
+    padding: 0.6rem;
     border-radius: 0.8rem;
     border-right: 3px solid lightgreen;
     border-bottom: 3px solid lightgreen;
@@ -72,10 +82,11 @@
 
 .hobby img {
     width: 30%;
+    margin-right: 0.3rem;
 }
 
 .hobby h3 {
-    font-size: 3vw;
+    font-size: 1.8vw;
     margin: 0;
     color: white;
 }
@@ -96,6 +107,7 @@
     flex-direction: row;
     width: 100%;
     align-items: flex-start;
+    gap: 2rem;
     height: 40vh;
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -201,6 +213,7 @@
         display: flex;
         height: 25vh;
         padding: 1rem;
+        font-size: 4.5vw;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -257,6 +270,7 @@
         display: flex;
         height: 25vh;
         padding: 1rem;
+        font-size: 4.5vw;
         justify-content: center;
         align-items: center;
         text-align: center;
