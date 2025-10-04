@@ -152,6 +152,12 @@
     gap: 1rem;
 }
 
+/* Tamil Font */
+@font-face {
+    font-family: 'Tamil';
+    src: url('../setup/tamil.TTF') format('truetype');
+}
+
 /* =========================
    Base Styling (Desktop)
 ========================= */
@@ -480,4 +486,12 @@
         gap: 0.3rem;
         align-items: center;
     }
+}
+
+/* Tamil text styling */
+.hobby h3:contains("Tamil"),
+.hobby h3:contains("தமிழ்"),
+.hobby h3:contains("Poem Writing"),
+.hobby h3:contains("Contributing to Tamil") {
+    font-family: 'Tamil', sans-serif;
 }
