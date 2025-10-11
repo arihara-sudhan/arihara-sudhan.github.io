@@ -7,20 +7,23 @@
     <style>
         .tags {
             display: flex;
+            flex-wrap: wrap;
             font-size: 0.8vw;
             justify-content: center;
             align-items: center;
             border-radius: 0.4vw;
             padding: 0.4vw;
             margin: 0;
+            gap: 0.5rem;
         }
         .tags h2 {
-            margin: 0.2vw;
-            margin-top: 0;
+            margin: 0;
             padding: 0.4vw;
             border-radius: 0.4vw;
             background-color: black;
             color: lightgreen;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
         .tags h2:hover {
             cursor: pointer;
@@ -36,13 +39,20 @@
             margin-bottom: 1rem;
         }
         @media (max-width: 600px) {
+            .tags {
+                gap: 0.3rem;
+                padding: 0.5rem;
+            }
             .tags h2 {
-                font-size: 3vw;
-                margin: 0.9vw;
-                padding: 1.5vw;
+                font-size: 3.5vw;
+                margin: 0;
+                padding: 1rem;
                 border-radius: 1.5vw;
                 background-color: black;
                 color: lightgreen;
+                flex: 1 1 auto;
+                min-width: 0;
+                text-align: center;
             }
             #source {
                 font-size: 3vw;
