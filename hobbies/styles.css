@@ -189,12 +189,15 @@
     margin: 0;
     margin-bottom: 1rem;
     padding: 0;
+    border-radius: 0.8rem;
+    overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
     height: auto;
     object-fit: contain;
+    border-radius: 0.8rem;
 }
 
 .hero-title {
