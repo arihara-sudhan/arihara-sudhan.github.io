@@ -133,6 +133,11 @@
         "image": "https://images.seeklogo.com/logo-png/31/1/amazon-web-services-aws-logo-png_seeklogo-319188.png",
         "alt": "AWS Skill",
         "skill": "AWS"
+    },
+    {
+        "image": "https://img.icons8.com/color/512/uipath.png",
+        "alt": "UIPath Skill",
+        "skill": "UIPath"
     }
 ]
   
