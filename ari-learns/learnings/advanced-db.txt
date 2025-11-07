@@ -270,8 +270,18 @@ SOURCE: Elmasri & Navathe – “Database System Concepts” by Abraham Silbersc
    • GPA calculation systems.
    • Payroll processing systems.
 𖦹 To send DML statements from the host program to the database, application program interfaces are used.
-𖦹 ODBC standard provides interfaces for C and other languages.
+𖦹 ODBC standard provides interfaces for C and other languages. (Remember pyodbc for Python)
 𖦹 JDBC standard provides interfaces for Java.
+𖦹 JDBC standard provides interfaces for Java.
+𖦹 An Example using SQLAlchemy as well,
+   from sqlalchemy import create_engine
+   # Create an engine to a SQLite database
+   engine = create_engine('sqlite:///school.db')
+   # Using the engine to execute SQL
+   with engine.connect() as conn:
+       result = conn.execute("SELECT * FROM students")
+       for row in result:
+           print(row)
 
 21. Database Design
 𖦹 Databases manage large bodies of information used in an enterprise.
