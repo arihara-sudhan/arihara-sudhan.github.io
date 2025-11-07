@@ -212,8 +212,23 @@ SOURCE: Elmasri & Navathe – “Database System Concepts” by Abraham Silbersc
 𖦹 Types of DML:
    • Procedural DML:
      - User specifies what data are needed and how to retrieve them.
+      -- Step 1: Find employees in 'Sales' department
+      OPEN cursor FOR
+      SELECT * FROM Employees WHERE Department = 'Sales';
+      -- Step 2: Fetch each row and process it
+      FETCH NEXT FROM cursor INTO @EmpID, @Name, @Salary;
+      WHILE @@FETCH_STATUS = 0
+      BEGIN
+          PRINT @Name + ' earns ' + CAST(@Salary AS VARCHAR);
+          FETCH NEXT FROM cursor INTO @EmpID, @Name, @Salary;
+      END
+      CLOSE cursor;
    • Declarative (Nonprocedural) DML:
      - User specifies what data are needed without specifying how to retrieve them.
+      SELECT Name, Salary
+      FROM Employees
+      WHERE Department = 'Sales';
+
 𖦹 Declarative DMLs are easier to learn and use compared to procedural DMLs.
 𖦹 Since declarative DML does not specify how to get the data, the database system must decide the efficient access method.
 𖦹 A query is a statement requesting retrieval of information.
