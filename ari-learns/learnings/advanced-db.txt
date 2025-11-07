@@ -119,6 +119,53 @@ SOURCE: Elmasri & Navathe – “Database System Concepts” by Abraham Silbersc
    • These details define how data is stored internally and are hidden from end users.
 𖦹 DDL allows specification of consistency constraints that must be satisfied by database values.
    • These constraints are checked whenever updates occur.
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢤⠤⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⣀⣀⡜⠻⠿⢾⣷⠹⠀⠀⠀⠀⣀⣤⣤⡀⠀⠀⠀⠀
+⠀⠀⠀⢠⡎⠁⠀⠀⠃⠀⠀⠀⠉⠀⠀⠀⡠⠞⠛⠛⠻⢽⠀⠀⠀⠀
+⠀⠀⠀⠸⣷⡀⠀⢀⠀⢂⠀⡀⠀⠀⠀⠜⠀⠀⠀⠀⡀⠸⠀⠤⢄⠀
+⠀⠀⠀⠀⠙⣗⣄⠀⠠⡀⢢⠃⠀⢸⠌⠀⡠⢊⠀⠊⠀⠀⠀⠀⠀⡇
+⠀⠀⠀⣀⣀⣈⣲⣕⣦⡈⠢⣻⡀⡎⢀⣴⡢⠑⠂⠁⠀⠀⠀⠀⡠⠃
+⠀⣴⠿⠽⠏⠀⠀⠀⠈⠉⢒⣺⣷⣗⣉⣁⣀⣀⣀⠀⠠⠤⠐⠈⠀⠀
+⢸⠀⠀⠀⠀⠀⠀⠀⢀⠠⡖⠁⣿⢳⡬⡁⠒⠒⠤⢄⡀⠀⠀⠀⠀⠀
+⠈⢦⡀⠀⠀⡀⠄⠂⠁⠊⠀⢰⣯⡏⠎⢌⠑⠀⠀⠀⠈⠑⢄⠀⠀⠀
+⠀⠀⠉⡻⠀⠀⠀⠀⠀⠀⣲⡟⡟⠀⠀⠀⠢⡀⠀⠀⠀⠀⢸⠀⠀⠀
+⠀⠀⠀⢧⣤⡄⡀⠀⢀⡔⣽⠃⢧⡄⠀⠀⠀⠰⣀⠀⠀⣀⠞⠀⠀⠀
+⠀⠀⠀⠈⠳⠬⠥⠔⠋⡜⡌⠀⠘⣿⣦⣀⠀⡀⡇⠉⠉⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⠜⡰⠀⠀⠀⠈⠛⠯⠥⠒⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡠⠊⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣛⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+⭐ DSDL
+𖦹 SQL is widely known as DDL (data definition language), DML (data manipulation language), and VDL (view definition language), but it has also been described as SDL (storage definition language).
+𖦹 SDL defines how data is physically stored, not the data itself.
+𖦹 Examples of SDL include vendor-specific commands like `SET storage_engine=MYISAM;` in MySQL.
+𖦹 SDL is not part of the SQL standard; it deals with physical storage, indexing, and data placement.
+𖦹 SQL focuses on conceptual and external schemas, while SDL handles internal schemas for storage optimization.
+𖦹 Early SQL versions included SDL commands, but these were removed to keep SQL at conceptual and external levels.
+𖦹 In practice, DBAs use functions, parameters, and storage specifications to control file storage and indexing.
+𖦹 Modern SQL integrates DDL, DML, and VDL into a comprehensive language, but storage definitions remain separate.
+𖦹 Three-schema architecture (1970s) inspired the distinction between DDL, VDL, and SDL.
+𖦹 Historical references include "Database Sublanguage Faculty" and "View Translation Layer" (1980).
+𖦹 Example: CREATE TABLE f (x int, y varchar(25));
+   • SDL defines how x and y are stored.
+   • DDL defines the table schema: f(x,y) as a relational tuple.
+   • VDL defines the view, usually the table name itself.
+𖦹 Many databases extend SDL to include indexes and storage backends, which are separate from the conceptual model.
+𖦹 Other terms and systems related to SDL: DSDL (Data Storage Definition Language), CODASYL, RDL, NDL, IRDIS.
+
+⭐ Summary of Database Languages
+𖦹 DDL defines the structure of the database: tables, columns, constraints, and indexes.
+𖦹 VDL defines how data is presented via views without affecting physical storage.
+𖦹 SDL defines physical storage details, including tablespaces, filegroups, and storage allocation.
+𖦹 Each language serves a distinct purpose but may overlap in commands or functionality in modern DBMSs.
+𖦹 DDL and VDL are usually visible to end users through queries, while SDL is managed by DBAs for performance and storage optimization.
+𖦹 Examples:
+   • DDL: CREATE TABLE Employees (EmpID INT PRIMARY KEY, Name VARCHAR(50), Department VARCHAR(30), Salary DECIMAL(10,2));
+   • VDL: CREATE VIEW DeptSalary AS SELECT Department, AVG(Salary) AS AvgSalary FROM Employees GROUP BY Department;
+   • SDL (Oracle): CREATE TABLE Employees (...) TABLESPACE Users STORAGE (INITIAL 5M NEXT 5M MAXEXTENTS UNLIMITED);
+   • SDL (SQL Server): CREATE TABLE Employees (...) ON [Primary];
+   • SDL (PostgreSQL): CREATE TABLE Employees (...) TABLESPACE pg_default;
+
 
 15. Integrity Constraints in DDL
 𖦹 Domain Constraints
