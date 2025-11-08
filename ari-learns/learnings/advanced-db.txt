@@ -383,6 +383,54 @@ SOURCE: Elmasri & Navathe – “Database System Concepts” by Abraham Silbersc
 𖦹 The model has evolved with features like object-relational data types, stored procedures, and support for XML and semi-structured data.
 𖦹 Its independence from low-level storage allows it to remain relevant despite new storage systems like column stores.
 
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣄⡆⡦⢔⢔⢴⡤⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣔⡪⢟⢗⢕⢅⣜⣌⣬⣼⣼⣴⣥⣀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢙⢻⡶⣕⢵⣫⣿⣷⡿⣿⠟⣿⡿⢿⣿⣿⣶⣄⠀⠀⠀⠀
+⢀⣀⡀⠀⠀⠀⠀⠀⠿⣯⢝⣵⡟⣿⠃⡯⠀⡿⢁⣿⢁⣿⣏⠙⠿⠛⣧⡀⠀⠀
+⢿⣿⠿⣿⣿⣶⣶⣴⣾⣿⠛⣿⠀⡿⢸⡇⢸⡇⢸⡇⢸⢿⠿⠀⠠⠀⣽⡿⣄⠀
+⢀⣽⣭⣽⣿⡏⠟⠉⡇⢸⠀⣿⠀⠙⠭⠽⢛⣳⣽⣧⣿⡏⡆⠀⣇⠀⠉⢁⠝⡃
+⢼⣵⠟⠉⠁⠁⠀⣴⣟⠢⠀⠘⠀⠇⢔⣒⣛⠿⡿⠟⠃⠀⠈⠢⡀⠀⠀⢀⠩⠃
+⠈⠁⠀⠀⠀⠀⢸⣟⢿⣣⣕⠄⡀⠀⠀⢀⣀⣀⣤⣤⣤⠤⠤⠤⠴⠛⠋⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣵⣥⠦⠏⠉⠉⠀⣠⣾⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠸⡛⠻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+⭐ Column Store Storage
+𖦹 Data is stored column-by-column instead of row-by-row
+• Example layout:
+  - ID: 1, 2, 3
+  - Name: Rani, Arjun, Kavi
+  - Age: 21, 24, 22
+  - City: Chennai, Madurai, Trichy
+
+⭐ Row Store Storage
+𖦹 Data is stored row-by-row
+• Example layout:
+  - 1, Rani, 21, Chennai
+  - 2, Arjun, 24, Madurai
+  - 3, Kavi, 22, Trichy
+
+⭐ Why Column Store
+𖦹 Faster analytical queries
+• Only required columns are read (e.g., AVG(Age) reads only Age column)
+𖦹 Better compression
+• Similar data within a column compresses efficiently
+𖦹 Suitable for large data warehouses
+• Used for OLAP, analytics, and business intelligence
+
+⭐ When Column Store Is Not Good
+𖦹 Frequent row updates or inserts are slow
+- Reconstructing full rows becomes costly
+𖦹 Not ideal for OLTP transactional systems
+
+⭐ Examples of Column-Store Databases
+• Amazon Redshift
+• Google BigQuery
+• Snowflake
+• ClickHouse
+• Apache Cassandra (wide-column model)
+• SAP HANA
+• PostgreSQL via cstore_fdw extension
+
 30. Structure of Relational Databases
 𖦹 A relational database is a collection of tables, each with a unique name.
 𖦹 Each table contains rows (tuples) and columns (attributes).
