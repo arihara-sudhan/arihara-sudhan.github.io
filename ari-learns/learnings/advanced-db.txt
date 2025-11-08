@@ -493,7 +493,8 @@ SOURCE: Elmasri & Navathe – “Database System Concepts” by Abraham Silbersc
 𖦹 A two-headed arrow indicates a referential integrity constraint that is not a foreign key constraint.
 𖦹 Example: In the diagram, section.time slot id links to time slot.time slot id with a two-headed arrow to show referential integrity.
 𖦹 Many database systems provide graphical tools to create such diagrams.
-𖦹 Schema diagrams should not be confused with entity-relationship diagrams, which are different and will be discussed later.
+𖦹 Schema diagrams should not be confused with entity-relationship diagrams.
+IMG_URL schema-diagram.png
 
 38. Relational Query Languages
 𖦹 A query language allows users to request information from a database.
