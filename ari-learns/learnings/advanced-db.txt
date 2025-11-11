@@ -2142,3 +2142,332 @@ IMG_URL cardinality.png
 𖦹 Some many-to-one relationships can be specified.
 • Example: In a project, a student can have at most one instructor as a guide.
 𖦹 Only one arrow out of a nonbinary relationship set is allowed to avoid ambiguity.
+
+197. Primary Key
+𖦹 A primary key uniquely distinguishes entities within an entity set and relationships within a relationship set.
+
+198. Entity Sets
+𖦹 Individual entities are conceptually distinct and must be uniquely identified using their attributes.
+𖦹 No two entities can have identical values for all attributes.
+𖦹 Keys for entity sets include superkey, candidate key, and primary key, similar to relation schemas.
+𖦹 Keys also help to identify relationships uniquely.
+
+199. Relationship Sets
+𖦹 To distinguish relationships in a relationship set R involving entity sets E1, E2, …, En, use the primary keys of the participating entity sets.
+• If R has no attributes: primary-key(E1) ∪ primary-key(E2) ∪ … ∪ primary-key(En) forms a superkey.
+• If R has attributes a1, a2, …, am: primary-key(E1) ∪ … ∪ primary-key(En) ∪ {a1, …, am} forms a superkey.
+𖦹 If primary key attribute names are not unique, rename using entity set name or role name.
+𖦹 For binary relationships:
+• Many-to-many: union of primary keys from both sides forms primary key.
+• One-to-many or many-to-one: primary key of the "many" side is used.
+• One-to-one: primary key of either entity set can be used.
+𖦹 For nonbinary relationships: only one arrow out is allowed to avoid ambiguity.
+• Primary key = union of primary keys of entity sets without incoming arrow.
+• If multiple-arrow situations exist, convert nonbinary relationship to entity set or use functional dependencies.
+
+200. Weak Entity Sets
+𖦹 Weak entity sets depend on another entity set called the identifying entity set.
+𖦹 A weak entity cannot have a primary key alone; use the primary key of the identifying entity set plus discriminator attributes.
+𖦹 Every weak entity must be associated with an identifying entity (existence dependent).
+𖦹 The identifying relationship is many-to-one from the weak entity set to the identifying entity set and has total participation.
+𖦹 Example: section entity is weak, depends on course entity.
+• Primary key of section = {course id, sec id, year, semester}.
+𖦹 In E-R diagrams:
+• Weak entity = double rectangle, discriminator underlined with dashed line.
+• Identifying relationship = double diamond.
+• Total participation = double lines.
+• Arrow points from weak entity to identifying entity.
+𖦹 Weak entities can participate in other relationships and can have multiple identifying entity sets.
+• Primary key in that case = union of primary keys of identifying entity sets + discriminator.
+IMG_URL weak-entity.png
+
+201. Removing Redundant Attributes in Entity Sets
+𖦹 In E-R design, after selecting entity sets, choose attributes that capture required values.
+𖦹 Redundant attributes occur when attributes in entity sets are repeated in relationship sets.
+𖦹 Example: instructor and department
+• instructor attributes: ID (primary key), name, dept name, salary
+• department attributes: dept name (primary key), building, budget
+• Relationship: inst dept relates instructor to department
+- dept name is redundant in instructor and should be removed.
+𖦹 Removing redundant attributes avoids incorrect assumptions about relationships (e.g., one instructor having only one department).
+𖦹 student entity set also does not need dept name, since relationship student dept exists.
+𖦹 Example: section and time slot
+• section attributes: course id, sec id, semester, year, building, room number, time slot id; primary key = (course id, sec id, year, semester)
+• time slot attributes: time slot id (primary key), multivalued composite attribute {(day, start time, end time)}
+• Relationship: sec time slot
+- time slot id is redundant in section and should be removed.
+𖦹 Example: section and classroom
+• classroom attributes: building, room number, capacity; primary key = (building, room number)
+• Relationship: sec class
+- {building, room number} are redundant in section and should be removed.
+𖦹 A good E-R design has no redundant attributes.
+
+202. University Example: Entity Sets and Attributes
+𖦹 classroom: building, room number, capacity
+𖦹 department: dept name, building, budget
+𖦹 course: course id, title, credits
+𖦹 instructor: ID, name, salary
+𖦹 section: course id, sec id, semester, year
+𖦹 student: ID, name, tot cred
+𖦹 time slot: time slot id, {(day, start time, end time)}
+
+203. University Example: Relationship Sets
+𖦹 inst dept: relates instructors to departments
+𖦹 stud dept: relates students to departments
+𖦹 teaches: relates instructors to sections
+𖦹 takes: relates students to sections, with descriptive attribute grade
+𖦹 course dept: relates courses to departments
+𖦹 sec course: relates sections to courses
+𖦹 sec class: relates sections to classrooms
+𖦹 sec time slot: relates sections to time slots
+𖦹 advisor: relates students to instructors
+𖦹 prereq: relates courses to prerequisite courses
+𖦹 No entity set has attributes made redundant by relationships.
+
+204. E-R Diagram for University
+𖦹 Each instructor must have exactly one department (total participation): double line from instructor to inst dept; arrow to department.
+𖦹 Every course must be in some department: double line from course to course dept; arrow to department.
+𖦹 Every student must be majoring in a department: double line from student to stud dept; arrow to department.
+𖦹 Relationship takes has descriptive attribute grade.
+𖦹 Each student has at most one advisor.
+𖦹 section is a weak entity set, with sec id, semester, year as discriminator; sec course is identifying relationship linking section to course.
+IMG_URL er-university.png
+
+205. Reducing E-R Diagrams to Relational Schemas
+𖦹 E-R and relational models are abstract representations of real-world enterprises.
+𖦹 Each entity set and relationship set in E-R design corresponds to a unique relation schema.
+𖦹 Constraints in E-R design map to constraints in relational schemas.
+
+206. Representation of Strong Entity Sets
+𖦹 A strong entity set with simple attributes a1, a2, …, an is represented as a relation schema with n attributes.
+𖦹 The primary key of the entity set becomes the primary key of the relation schema.
+𖦹 Example: student(ID, name, tot_cred); ID is primary key.
+𖦹 Instructor, student, and course schemas differ from previous chapters since dept name is excluded.
+
+207. Representation of Strong Entity Sets with Complex Attributes
+𖦹 Composite attributes are split into component attributes; no separate attribute for the composite itself.
+• Example: instructor name → first name, middle initial, last name; address → street number, street name, apt number, city, state, postal code.
+𖦹 Multivalued attributes require a separate relation schema.
+𖦹 Derived attributes are not represented directly but can be implemented as functions or methods.
+𖦹 Example: instructor(ID, first name, middle initial, last name, street number, street name, apt number, city, state, postal code, date of birth).
+𖦹 Multivalued attribute example: phone number
+• instructor phone(ID, phone number)
+- Primary key = (ID, phone number); ID references instructor as foreign key.
+𖦹 If entity set has only primary key B and multivalued attribute M, relation schema contains B and attribute A corresponding to M.
+• Example: time slot(time slot id, day, start time, end time)
+- end time may be omitted from primary key for uniqueness.
+
+208. Representation of Weak Entity Sets
+𖦹 Weak entity set A with attributes a1, a2, …, am depends on strong entity set B with primary key b1, b2, …, bn.
+𖦹 Relation schema for A: {a1, a2, …, am} ∪ {b1, b2, …, bn}.
+𖦹 Primary key = combination of discriminator of A and primary key of B.
+𖦹 Foreign key: attributes b1, b2, …, bn reference B's primary key.
+𖦹 Example: section(course id, sec id, semester, year); course id references course.
+
+209. Representation of Relationship Sets
+𖦹 Relationship set R with entity primary keys {a1, …, am} and descriptive attributes {b1, …, bn} is represented by schema {a1, …, am} ∪ {b1, …, bn}.
+𖦹 Primary key selection follows binary relationship rules.
+𖦹 Foreign-key constraints: attributes from entity sets reference their respective schemas.
+𖦹 Example: advisor relationship between instructor(ID) and student(ID)
+• Schema: advisor(s ID, i ID)
+• Primary key = s ID; foreign keys: s ID → student, i ID → instructor
+𖦹 Role indicators used as attribute names when entity sets repeat, e.g., prereq(course id, prereq id).
+𖦹 Many-to-one relationships: primary key from one related entity set used.
+
+210. Redundancy of Schemas
+𖦹 Relationship sets linking weak entity sets to strong entity sets often produce redundant schemas.
+𖦹 Example: sec course schema duplicates section schema attributes; can be eliminated.
+
+211. Combination of Schemas
+𖦹 Many-to-one relationship AB with total participation of A allows combining A and AB schemas.
+• Example: inst dept → combine with instructor → instructor(ID, name, dept name, salary)
+• stud dept → combine with student → student(ID, name, dept name, tot cred)
+• course dept → combine with course → course(course id, title, dept name, credits)
+• sec class → combine with section → section(course id, sec id, semester, year, building, room number)
+• sec time slot → combine with section → section(course id, sec id, semester, year, building, room number, time slot id)
+𖦹 One-to-one relationships can combine with either entity set.
+𖦹 Partial participation uses nulls for missing attributes.
+𖦹 Foreign-key constraints referencing the merged entity set are enforced implicitly; others remain in combined schema.
+
+212. Extended E-R Features  
+𖦹 Some database aspects are better expressed using extended E-R features: specialization, generalization, higher- and lower-level entity sets, attribute inheritance, and aggregation.  
+𖦹 Example: A university database defines a person entity set with attributes ID, name, street, and city.
+
+213. Specialization  
+𖦹 Specialization designates subgroupings within an entity set based on distinctive features.  
+• Example: person can be specialized into employee and student.  
+- Employee may have salary, student may have tot cred.  
+𖦹 Specialization can be applied repeatedly.  
+• Example: student can be specialized into graduate (office number) and undergraduate (residential college).  
+• Example: employee can be specialized into instructor (rank) and secretary (hours per week).  
+𖦹 An entity may belong to multiple specializations.  
+• Example: a temporary employee who is a secretary.  
+𖦹 Depicted in E-R diagram using hollow arrow-head (ISA relationship).  
+𖦹 Specialization types:  
+• Overlapping: entity may belong to multiple specialized sets.  
+• Disjoint: entity may belong to at most one specialized set.  
+
+214. Generalization  
+𖦹 Generalization synthesizes multiple lower-level entity sets into a higher-level entity set based on common features.  
+• Example: instructor and secretary share common attributes (ID, name, salary) → generalized into employee.  
+𖦹 Generalization is the inverse of specialization.  
+𖦹 Higher-level entity set is called superclass; lower-level sets are subclasses.  
+𖦹 Emphasizes similarities among lower-level sets and reduces attribute repetition.
+IMG_URL spec-gen.png
+
+215. Attribute Inheritance  
+𖦹 Lower-level entity sets inherit attributes of higher-level sets.  
+• Example: student and employee inherit ID, name, street, city from person.  
+• Example: instructor and secretary inherit attributes from employee and person.  
+𖦹 Lower-level entity sets also inherit participation in relationships of higher-level sets.  
+• Example: if person participates in person dept with department, all subclasses also participate.  
+𖦹 Outcome:  
+• Higher-level set has common attributes and relationships.  
+• Lower-level sets have distinctive features.  
+𖦹 Single inheritance: entity set is a lower-level in only one ISA relationship.  
+𖦹 Multiple inheritance: entity set is a lower-level in multiple ISA relationships → forms a lattice.
+IMG_URL spec-gen.png
+
+216. Constraints on Specializations  
+𖦹 Specializations may have disjointness and completeness constraints.  
+• Total specialization: each higher-level entity belongs to at least one lower-level set.  
+• Partial specialization: some higher-level entities may not belong to any lower-level set.  
+𖦹 Partial specialization is default.  
+𖦹 Total specialization represented in E-R diagram using keyword “total” and dashed line to hollow arrowhead.  
+𖦹 Constraints affect insertions/deletions:  
+• In total specialization, inserting an entity in higher-level set requires insertion in a lower-level set.  
+• Deleting from higher-level set requires deletion from all associated lower-level sets.  
+
+217. Aggregation  
+𖦹 Aggregation treats relationships as higher-level entities to express relationships among relationships.  
+• Example: proj guide (instructor, student, project) → evaluation entity related via eval for relationship.  
+IMG_URL wo-aggregation.png
+𖦹 Avoid combining proj guide and eval for into single relationship due to possible missing evaluations.  
+𖦹 Aggregation allows modeling eval for as a relationship between proj guide (as higher-level entity) and evaluation.
+IMG_URL w-aggregation.png
+
+218. Reduction to Relation Schemas - Generalization  
+𖦹 Method 1: Create schema for higher-level set and each lower-level set.  
+• Include lower-level attributes plus primary key attributes of higher-level set.  
+• Create foreign-key constraints from lower-level sets to higher-level set.  
+• Example:  
+person (ID, name, street, city)  
+employee (ID, salary)  
+student (ID, tot cred)  
+𖦹 Method 2: If generalization is disjoint and complete, do not create schema for higher-level set.  
+• Include higher-level attributes in each lower-level schema.  
+• Example:  
+employee (ID, name, street, city, salary)  
+student (ID, name, street, city, tot cred)  
+𖦹 Method 2 drawbacks:  
+• Foreign-key constraints on higher-level set become difficult.  
+• Overlapping generalizations may store duplicate values.  
+• Incomplete generalization requires extra higher-level schema.
+
+219. Reduction to Relation Schemas - Aggregation  
+𖦹 Create schema for relationship set involving aggregation.  
+• Include primary key attributes from aggregated relationship and related entity sets.  
+• Include any descriptive attributes.  
+𖦹 Treat aggregation as any other entity set.  
+𖦹 Primary key of aggregation is primary key of defining relationship set.  
+𖦹 No separate relation is required; use relation created from defining relationship.
+
+220. Entity-Relationship Design Issues
+𖦹 Entity sets and relationship sets are not precisely defined.
+𖦹 Multiple ways exist to define entities and relationships.
+IMG_URL erroneous.png
+
+221. Common Mistakes in E-R Diagrams
+𖦹 Using primary key of one entity as an attribute in another entity instead of a relationship.
+• Example: dept_name as an attribute of student is incorrect; use stud_dept relationship instead.
+- Avoids duplication and keeps relationships explicit.
+𖦹 Using primary-key attributes of related entities as attributes of the relationship set.
+• Example: ID of student and instructor should not be attributes of advisor relationship.
+𖦹 Using single-valued attributes in relationships requiring multivalued attributes.
+• Example: Adding assignment and marks to takes relationship only allows one assignment per student-section pair.
+- Correct alternatives: model assignment as weak entity with marks relationship or use multivalued composite attribute {assignment_marks} in takes.
+𖦹 Break large E-R diagrams into pieces; show attributes of entity set only in first occurrence.
+IMG_URL correct-one.png
+
+222. Use of Entity Sets versus Attributes
+𖦹 Consider instructor with phone_number attribute.
+𖦹 Phone can be modeled as:
+• Attribute phone_number of instructor (one phone per instructor).
+• Entity set phone with attributes phone_number and location.
+• Relationship inst_phone between instructor and phone.
+𖦹 Treating phone as entity allows multiple phones and extra information (type, location, shared users).
+𖦹 Attribute like name should remain an attribute, not an entity.
+𖦹 Decision depends on real-world semantics.
+IMG_URL entity-sets-vs-attributes.png
+
+223. Use of Entity Sets versus Relationship Sets
+𖦹 Decide whether to model as entity set or relationship set.
+• Example: replaces takes relationship by registration entity set with section_reg and student_reg relationships.
+𖦹 Use relationship set to describe actions between entities.
+𖦹 Some attributes may be better expressed as relationships.
+IMG_URL entity-sets-vs-relationship-sets.png
+
+224. Binary versus n-ary Relationship Sets
+𖦹 Binary relationships are common; n-ary can often be replaced by multiple binary relationships.
+• Example: ternary parent relationship can be split into mother and father binary relationships.
+𖦹 For abstract n-ary relationship R between A, B, C:
+• Create entity set E representing R.
+• Create binary relationships RA, RB, RC from E to A, B, C.
+• Assign any attributes of R to E.
+𖦹 This increases complexity and storage.
+𖦹 N-ary relationships show participation more clearly.
+𖦹 Some constraints may not translate to binary relationships.
+• Example: proj_guide cannot be split naturally without losing pairing information.
+IMG_URL binary-vs-nary.png
+
+225. Alternative Notations for Modeling Data
+𖦹 Diagrammatic representation helps communication between data modelers and domain experts.
+𖦹 Common notations: E-R diagrams and UML class diagrams.
+𖦹 No universal standard; different books and tools use different notations.
+𖦹 Symbols used: entity set, relationship set, weak entity, primary key, cardinality, attributes (simple, composite, multivalued, derived), ISA generalization, total/disjoint participation, role indicator.
+IMG_URL symbols-in-er.png
+
+226. Alternative E-R Notations
+𖦹 Attributes can be shown in ovals; primary keys underlined.
+𖦹 Relationship attributes connected to diamonds.
+𖦹 Cardinality: ∗ and 1, or crow’s-foot notation; total participation with vertical bar, partial with circle.
+𖦹 Generalization represented with triangles.
+𖦹 Chen’s notation uses ovals and diamonds.
+𖦹 IDEF1X standard (1993) uses crow’s-foot, vertical bars for total participation, hollow circles for partial.
+𖦹 Modern notation aligns with UML class diagrams; compact and tool-friendly.
+𖦹 Some tools allow entity view (without relationship attributes) or relational view (with attributes).
+IMG_URL alternative-notations.png
+
+227. The Unified Modeling Language (UML)
+𖦹 UML models various software components beyond data: user interactions, functional modules.
+𖦹 Key diagrams:
+• Class diagram: similar to E-R diagrams, shows attributes and methods.
+• Use case diagram: user-system interactions.
+• Activity diagram: flow of tasks.
+• Implementation diagram: system components and interconnections.
+𖦹 UML objects have attributes and methods; access: + public, - private, # protected.
+𖦹 Binary relationships shown as lines; nonbinary relationships via diamond notation.
+𖦹 Cardinality constraints l..h; placement reversed from E-R diagrams.
+𖦹 Supports generalization, disjoint/overlapping, composition (existence dependent) and aggregation (may exist independently).
+𖦹 UML does not support composite/multivalued attributes; derived attributes map to methods.
+𖦹 Interfaces and object-oriented features represented in UML class diagrams.
+IMG_URL er-uml.png
+
+228. Other Aspects of Database Design
+𖦹 Database design is not only schema design.
+𖦹 Functional requirements:
+• Define transactions and queries.
+• Plan user interfaces.
+• Implement authorization at database or application level.
+𖦹 Data flow and workflow:
+• Workflows combine tasks and data.
+• Interact with database; track tasks and routing.
+• Helps understand business processes for database design.
+𖦹 Schema evolution:
+• Database needs evolve over time; schema may require updates.
+• Distinguish fundamental constraints (permanent) vs. changeable constraints.
+• Good design anticipates future changes to minimize modifications.
+𖦹 Database design is human-oriented:
+• End users are people.
+• Designers interact with domain experts to understand requirements.
+
