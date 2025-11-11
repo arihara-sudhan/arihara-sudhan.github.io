@@ -1,4 +1,4 @@
-SOURCE: Ramakrishnan & Gehrke – “Database Management Systems” by Raghu Ramakrishnan and Johannes Gehrke, McGraw-Hill
+SOURCE: “Database Management Systems” by Raghu Ramakrishnan and Johannes Gehrke, McGraw-Hill
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[12/11/2025]
 1. File organization and basic data access
 𖦹 A collection of records is stored in files, and each file consists of pages.
