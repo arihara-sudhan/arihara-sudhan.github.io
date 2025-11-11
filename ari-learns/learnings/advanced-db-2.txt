@@ -1,0 +1,33 @@
+SOURCE: Ramakrishnan & Gehrke – “Database Management Systems” by Raghu Ramakrishnan and Johannes Gehrke, McGraw-Hill
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[12/11/2025]
+1. File organization and basic data access
+𖦹 A collection of records is stored in files, and each file consists of pages.
+𖦹 The file layer arranges data to support fast access to needed records.
+𖦹 A file organization is a way of arranging records on disk.
+• Each organization makes some operations efficient and others slower.
+𖦹 Example: Sorting employee records by age makes age-based retrieval fast.
+• But maintaining sorted order is expensive when records change.
+𖦹 If we want to retrieve employees with salary > 5000, we must scan the whole file.
+𖦹 Indexing helps support multiple query types efficiently.
+𖦹 Choosing the right file organization affects performance.
+𖦹 Choosing good indexes is one of the most effective performance improvements.
+
+2. Data on external storage
+𖦹 Database data must persist across program executions, so it is stored on external storage.
+𖦹 Data is stored on disks or tapes and brought into memory when needed.
+𖦹 A page is the unit of data transfer between disk and memory, often 4KB or 8KB.
+𖦹 Page I/O cost dominates the total cost of operations, so DBMS optimizes to reduce it.
+𖦹 Disks allow random page access at a roughly fixed cost.
+• Reading pages sequentially is faster than reading them in random order.
+𖦹 Tapes allow only sequential access and are mainly used for archival storage.
+𖦹 Every record has a unique record id (rid).
+• Using rid, the system can locate the disk page containing the record.
+
+3. Buffer manager and disk space manager
+𖦹 The buffer manager handles moving pages between disk and memory.
+• When a page is needed, the file layer requests it from the buffer manager.
+𖦹 The disk space manager allocates and tracks disk pages.
+• When new space is needed, it allocates pages.
+• When pages are no longer needed, it marks them free and reuses them later.
+𖦹 The files and access methods layer relies on these managers for storage and retrieval.
+
