@@ -1989,3 +1989,156 @@ courses_fall ∩ courses_spring
 𖦹 Distinguish rollup/cube-generated nulls using <pink>grouping()</pink> function:  
 • <pink>case</pink> <pink>when</pink> <pink>grouping</pink><yellow>(item_name)=1</yellow> <pink>then</pink> <yellow>'all'</yellow> <pink>else</pink> <yellow>item_name</yellow> <pink>end</pink>  
 𖦹 <pink>coalesce</pink> cannot differentiate rollup/cube nulls from normal nulls.
+
+180. Overview of the Design Process
+𖦹 Creating a database application involves designing the database schema, programs that access/update data, and a security scheme.
+𖦹 User needs are central to the design process.
+𖦹 Focus here is on designing the database schema; other design tasks are briefly outlined.
+
+181. Design Phases
+𖦹 Small applications may allow direct design of relations, attributes, and constraints.
+𖦹 Real-world applications are complex; no one person may understand all data needs.
+𖦹 Database designer must interact with users, represent needs in a high-level model, and translate to lower-level design.
+• High-level data model provides a conceptual framework to specify data requirements and structure.
+𖦹 Initial phase: characterize fully the data needs of users.
+• Interact extensively with domain experts.
+• Outcome: specification of user requirements, usually textual.
+𖦹 Next: choose a data model and translate requirements into a conceptual schema.
+• Conceptual schema gives a detailed overview of the enterprise.
+• E-R model represents entities, attributes, relationships, and constraints.
+• Usually results in an entity-relationship diagram (ERD).
+𖦹 Review schema to confirm all data requirements are satisfied and remove redundancy.
+𖦹 Conceptual schema also indicates functional requirements, such as operations on data (update, search, delete).
+𖦹 Moving from abstract model to implementation:
+• Logical-design phase: map conceptual schema to implementation data model (usually relational).
+• Physical-design phase: specify physical features like file organization and indexes.
+𖦹 Physical schema can change easily; logical schema changes are harder and affect queries and updates.
+
+182. Design Alternatives
+𖦹 Database design requires deciding how to represent entities like people, places, products.
+• Entity: distinctly identifiable item (e.g., instructors, students, courses, course offerings/sections).
+𖦹 Entities are related in various ways (e.g., student takes course, instructor teaches course).
+𖦹 Avoid two major pitfalls:
+1. Redundancy:
+• Repeating information unnecessarily (e.g., storing course title with each section).
+- Can lead to inconsistencies when updates occur.
+2. Incompleteness:
+• Difficult or impossible to model certain aspects if design lacks entities (e.g., course entity missing).
+- Workarounds like nulls are unattractive and may conflict with primary key constraints.
+𖦹 Multiple good designs exist; choices affect modeling quality.
+• Example: representing a sale as a relationship or an entity.
+
+183. The Entity-Relationship Model
+𖦹 E-R model helps specify an enterprise schema representing the logical structure of a database.
+𖦹 Useful for mapping real-world enterprises to a conceptual schema.
+𖦹 Three basic concepts: entity sets, relationship sets, attributes.
+𖦹 E-R diagram provides a clear graphical representation of the schema.
+𖦹 Tools exist for creating E-R diagrams.
+IMG_URL er-diagram.png
+
+184. Entity Sets
+𖦹 Entity: distinguishable real-world object (e.g., person, course).
+𖦹 Each entity has properties; some values uniquely identify it (e.g., person id, course id).
+𖦹 Entity set: collection of entities of the same type sharing attributes (e.g., all instructors, all students).
+𖦹 Extension: actual collection of entities in an entity set.
+𖦹 Entity sets may overlap (e.g., a person may be both student and instructor).
+𖦹 Attributes describe each entity; values can differ per entity (e.g., ID, name, dept name, salary).
+𖦹 Simple attributes considered here; composite/multivalued discussed later.
+𖦹 Primary key attribute uniquely identifies each entity (underlined in ERD).
+𖦹 Entity sets represented in ERD as rectangles with entity name and attributes.
+IMG_URL entity-set.png
+
+185. Relationship Sets
+𖦹 Relationship: association among entities (e.g., advisor associates instructor Katz with student Shankar).
+𖦹 Relationship set: collection of relationships of the same type.
+IMG_URL relationship-set.png
+𖦹 Relationship instance: specific association between named entities.
+𖦹 Represented in ERD as diamonds linked to entity sets (rectangles).
+𖦹 Relationships may involve more than two entity sets.
+𖦹 Participation: entity sets involved in a relationship set.
+𖦹 Role: function an entity plays in a relationship; explicit role names needed in recursive relationships.
+• Example: prereq relationship between courses C1 and C2.
+IMG_URL role-indicators.png
+𖦹 Relationship sets can have descriptive attributes (e.g., grade in takes relationship).
+• Attributes represented by undivided rectangles linked with dashed lines to diamonds.
+IMG_URL er-with-attribute.png
+𖦹 Complex ER designs may require multiple diagrams; entity sets may repeat without attributes to avoid redundancy.
+𖦹 Nonbinary relationship sets exist; degree = number of entity sets involved.
+• Example: ternary relationship proj guide among instructor, student, and project.
+• Instance indicates which student is guided by which instructor on which project.
+
+186. Complex Attributes
+𖦹 Each attribute has a set of permitted values called the domain or value set.
+• Example: course id domain = all text strings of certain length; semester domain = {Fall, Winter, Spring, Summer}.
+𖦹 Attributes can be classified into different types.
+IMG_URL complex-attributes.png
+
+187. Simple and Composite Attributes
+𖦹 Simple attributes are indivisible and not divided into subparts.
+𖦹 Composite attributes can be divided into subparts (component attributes).
+• Example: name = first name + middle initial + last name.
+• Example: address = street + city + state + postal code; street can be further divided into street number, street name, apartment number.
+- Composite attributes help group related attributes and make modeling cleaner.
+
+188. Single-valued and Multivalued Attributes
+𖦹 Single-valued attributes have only one value per entity.
+• Example: student ID.
+𖦹 Multivalued attributes have multiple values for an entity.
+• Example: phone number for instructors; dependent names listing all dependents.
+
+189. Derived Attributes
+𖦹 Derived attributes can be computed from other attributes or entities.
+• Example: students advised = count of students linked to an instructor.
+• Example: age = current date - date of birth.
+- Derived attributes are not stored; base attributes are stored.
+IMG_URL derived-complex.png
+
+190. Null Values
+𖦹 An attribute can take a null value when an entity has no value for it.
+• Null may indicate "not applicable", "missing", or "unknown".
+• Example: middle initial null if person has no middle name.
+• Example: apartment number null if not applicable, missing, or unknown.
+
+191. Mapping Cardinalities
+𖦹 Mapping cardinalities describe the number of entities associated via a relationship set.
+• Most useful for binary relationship sets but can apply to relationships with more than two entity sets.
+
+192. Types of Mapping Cardinalities
+𖦹 One-to-one: Each entity in A associates with at most one entity in B, and vice versa.
+𖦹 One-to-many: Each entity in A associates with zero or more entities in B; each entity in B associates with at most one entity in A.
+IMG_URL one-to-many.png
+𖦹 Many-to-one: Each entity in A associates with at most one entity in B; each entity in B associates with zero or more entities in A.
+𖦹 Many-to-many: Each entity in A associates with zero or more entities in B; each entity in B associates with zero or more entities in A.
+IMG_URL one-to-many-many.png
+- The choice depends on the real-world scenario being modeled.
+• Example: Advisor relationship set:
+- Many-to-many if students have multiple instructors.
+- One-to-many if each student has only one instructor, and instructors advise multiple students.
+
+193. Representation in E-R Diagrams
+𖦹 One-to-one: Draw directed lines from the relationship set to both entity sets.
+𖦹 One-to-many: Draw directed line to the "one" side; undirected line to the "many" side.
+𖦹 Many-to-one: Draw directed line to the "one" side; undirected line to the "many" side.
+𖦹 Many-to-many: Draw undirected lines to both entity sets.
+IMG_URL one-to-many-to-many-to-one.png
+
+194. Participation Constraints
+𖦹 Total participation: Every entity in an entity set must participate in at least one relationship.
+𖦹 Partial participation: Some entities may not participate in any relationship.
+• Example: Student must have an advisor (total participation); an instructor may have zero or more students (partial participation).
+𖦹 Indicated using double lines for total participation in E-R diagrams.
+IMG_URL strong-participation.png
+
+195. Cardinality Limits
+𖦹 Lines may have minimum and maximum cardinalities in the form l..h.
+• Minimum 1 indicates total participation.
+• Maximum 1 indicates at most one relationship; maximum ∗ indicates no limit.
+• Example: advisor-student line 1..1 = each student has exactly one advisor; advisor-instructor line 0..* = instructor can have zero or more students.
+𖦹 Misinterpretation caution: 0..* does not mean many-to-one; it allows multiple relationships on that side.
+𖦹 One-to-one occurs if both edges have maximum value 1; 1..* on the left edge implies instructor must advise at least one student.
+IMG_URL cardinality.png
+
+196. Nonbinary Relationship Sets
+𖦹 Some many-to-one relationships can be specified.
+• Example: In a project, a student can have at most one instructor as a guide.
+𖦹 Only one arrow out of a nonbinary relationship set is allowed to avoid ambiguity.
