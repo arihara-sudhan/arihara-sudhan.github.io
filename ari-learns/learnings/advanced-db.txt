@@ -1235,45 +1235,56 @@ courses_fall ∩ courses_spring
 𖦹 Not all users should see full data in all relations  
 𖦹 Views allow showing only selected attributes  
 • Example: Clerk can see ID, name, dept_name but not salary  
+
 93. Personalized Virtual Relations  
 𖦹 Views help present data in a more intuitive structure for specific users  
 • Example: List Physics department course sections in Fall 2017 with building and room info  
+
 94. Virtual Relation Behavior  
 𖦹 Results of a view are not stored permanently  
 𖦹 Data is computed whenever the view is used  
 - Prevents outdated or inconsistent data  
+
 95. View Definition  
 𖦹 Defined using <pink>create view</pink> command  
 • Syntax: <pink>create view</pink> <yellow>v as <query expression></yellow>;  
 • Example: <pink>create view</pink> <yellow>faculty as</yellow> <pink>select</pink> <yellow>ID, name, dept_name</yellow> <pink>from</pink> <yellow>instructor</yellow>;  
+
 96. Example of Course Section View  
 𖦹 Can define view for Physics Fall 2017 sections  
 • View stores query definition, not results  
 • Recomputed when accessed  
+
 97. Persistence of Views  
 𖦹 Views remain available until explicitly dropped  
 𖦹 Unlike <pink>with</pink> clause which is local to a single query  
+
 98. Using Views in Queries  
 𖦹 View name used like a table name  
 • Example: <pink>select</pink> <yellow>course_id</yellow> <pink>from</pink> <yellow>physics_fall_2017</yellow> <pink>where</pink> <yellow>building = 'Watson'</yellow>;  
 𖦹 Attribute names can be explicitly set in view definition  
+
 99. Views Recomputed Automatically  
 𖦹 View content is conceptually the result of the defining query  
 𖦹 When used in a query, the view definition replaces the view name  
 𖦹 Views can be defined based on other views  
+
 100. Materialized Views  
 𖦹 Some systems allow storing view results physically  
 𖦹 View is kept updated when base data changes  
 - Called materialized view maintenance  
 • Can improve performance for frequent queries  
 • May become stale if maintenance is delayed  
+
 101. Updating Views Issues  
 𖦹 Updates through views must translate to actual base table updates  
 𖦹 Some updates may fail or cause missing required data  
 • Example: inserting into view without salary leads to null salary or rejection  
+
 102. Complex View Update Problems  
 𖦹 Joins in view can make updates ambiguous  
 𖦹 Some desired updates cannot be correctly performed through the view  
+
 103. Conditions for Updatable Views (with examples)  
 𖦹 <pink>FROM</pink> clause references only one base relation  
 • Example (Updatable):  
@@ -1326,58 +1337,73 @@ courses_fall ∩ courses_spring
   <pink>where</pink> <yellow>instructor.dept_name = department.dept_name</yellow>  
   <pink>group by</pink> <yellow>building</yellow>;  
 - <pink>GROUP BY</pink> used, view is not updatable  
+
 104. With Check Option  
 𖦹 Ensures inserted/updated tuples still satisfy view conditions  
 𖦹 If not satisfied, modification is rejected  
+
 105. Alternative: Using Triggers  
 𖦹 <pink>Instead of</pink> clause in triggers can handle custom update actions on views  
 𖦹 Allows more controlled and logical view-based modifications  
+
 106. Definition of a Transaction  
 𖦹 A transaction is a sequence of SQL query and/or update statements  
 𖦹 A transaction starts automatically when an SQL statement runs  
 𖦹 The transaction ends only when <pink>commit</pink> or <pink>rollback</pink> is issued  
+
 107. Commit Work  
 𖦹 <pink>commit work</pink> makes all updates permanent  
 𖦹 After <pink>commit</pink>, a new transaction starts automatically  
 • Similar to saving changes in a document  
+
 108. Rollback Work  
 𖦹 <pink>rollback work</pink> cancels all updates done in the current transaction  
 𖦹 Restores the database to state before transaction began  
 • Similar to closing a document without saving  
+
 109. Transaction Safety on Failures  
 𖦹 If a failure occurs before <pink>commit</pink>, the system rolls back the transaction  
 𖦹 Failures may include power loss, errors, or crashes  
 • Ensures database does not remain in a partial or inconsistent state  
+
 110. Banking Example of Atomicity  
 𖦹 Money transfer updates two accounts: subtract from source, add to destination  
 • If system crashes midway, balances may become inconsistent  
 - Transactions ensure either both updates happen or none happen  
+
 111. University Application Example  
 𖦹 Updating takes and student.tot_cred must occur together  
 • If one update happens and the other fails, student data becomes inconsistent  
 - Performing both inside a transaction prevents partial updates  
+
 112. Atomicity Concept  
 𖦹 A transaction is atomic (indivisible)  
 𖦹 Either all changes of a transaction are applied or none  
 • Prevents database from being left in a partially updated state  
+
 113. Program Ending Without Commit or Rollback  
 𖦹 Behavior depends on implementation  
 𖦹 Some systems <pink>commit</pink>, some <pink>roll back</pink>  
 • Not standardized in SQL  
+
 114. Autocommit Behavior  
 𖦹 Many systems (e.g., MySQL, PostgreSQL) automatically <pink>commit</pink> each statement  
 𖦹 Must turn autocommit off to group multiple statements into a transaction  
 • Command often: <pink>set autocommit off</pink>  
+
 115. SQL:1999 Transaction Block Syntax  
 𖦹 <pink>begin atomic</pink> … <pink>end</pink> encloses multiple statements as one transaction  
 𖦹 Only some databases (e.g., SQL Server) support this syntax  
+
 116. Alternative Transaction Control Syntax  
 𖦹 Some systems support <pink>begin</pink> to start a transaction  
 𖦹 Must explicitly end with <pink>commit work</pink> or <pink>rollback work</pink>  
+
 117. Oracle Commit Behavior  
 𖦹 Oracle does not autocommit DML statements by default  
 𖦹 If <pink>commit</pink> is not issued, changes are rolled back when disconnecting  
 • Local configuration may override default behavior  
+
 118. Integrity Constraints  
 𖦹 Integrity constraints ensure data consistency when authorized users modify the database.  
 𖦹 They prevent accidental damage to data, unlike security constraints which prevent unauthorized access.  
@@ -1390,6 +1416,7 @@ courses_fall ∩ courses_spring
 𖦹 Integrity constraints are usually defined during schema design and included in <pink>create table</pink> statements.  
 𖦹 Constraints can be added later using: <pink>alter table</pink> <yellow>table-name add constraint constraint-definition</yellow>.  
 - The DBMS checks whether current data satisfies the constraint before adding.  
+
 119. Constraints on a Single Relation  
 𖦹 <pink>create table</pink> can include integrity-constraint statements alongside attribute definitions.  
 𖦹 Common constraints available:  
@@ -1397,6 +1424,7 @@ courses_fall ∩ courses_spring
 • <pink>unique</pink>  
 • <pink>check</pink><yellow>(predicate)</yellow>  
 𖦹 These constraints restrict allowed values for attributes and maintain correctness.  
+
 120. Not Null Constraint  
 𖦹 By default, SQL allows null for any attribute unless restricted.  
 𖦹 <pink>not null</pink> disallows null values for an attribute.  
@@ -1404,10 +1432,12 @@ courses_fall ∩ courses_spring
 • Example: <yellow>budget numeric(12,2) not null</yellow>  
 𖦹 Attempting to insert null into such attributes results in an error.  
 𖦹 Primary keys automatically disallow null values; they need not be explicitly marked <pink>not null</pink>.  
+
 121. Unique Constraint  
 𖦹 <pink>unique</pink><yellow>(A1, A2, ..., Am)</yellow> specifies that these attributes together must form a superkey.  
 𖦹 No two tuples can have the same combination of values for the listed attributes.  
 𖦹 Attributes under <pink>unique</pink> may still contain null unless also declared <pink>not null</pink>.  
+
 122. Check Clause  
 𖦹 <pink>check</pink><yellow>(predicate)</yellow> ensures that every tuple satisfies the given logical condition.  
 • Example: <pink>check</pink><yellow>(budget > 0)</yellow> ensures department budgets are positive.  
@@ -1415,6 +1445,7 @@ courses_fall ∩ courses_spring
   <yellow>semester varchar(6)</yellow> <pink>check</pink> <yellow>(semester in ('Fall', 'Winter', 'Spring', 'Summer'))</yellow>  
 𖦹 If a <pink>check</pink> expression evaluates to unknown due to null values, the tuple is allowed.  
 𖦹 Constraints applying to single attributes are usually placed beside attribute declarations; complex ones appear at the end of <pink>create table</pink>.  
+
 123. Referential Integrity  
 𖦹 Ensures that a value in one relation (referencing relation) must exist in another relation (referenced relation).  
 𖦹 Declared using <pink>foreign key</pink> clauses.  
@@ -1425,15 +1456,18 @@ courses_fall ∩ courses_spring
 • <pink>on update cascade</pink>: updates propagate to referencing relations.  
 • <pink>set null</pink> or <pink>set default</pink> may be used instead of cascade.  
 𖦹 Foreign key attributes may be null unless explicitly forbidden.  
+
 124. Assigning Names to Constraints  
 𖦹 Constraints can be named using <pink>constraint</pink> <yellow>constraint-name</yellow> before the constraint definition.  
 • Example: <pink>constraint</pink> <yellow>minsalary</yellow> <pink>check</pink><yellow>(salary > 29000)</yellow>  
 𖦹 Named constraints can later be dropped using:  
 • <pink>alter table</pink> <yellow>table-name drop constraint constraint-name</yellow>  
+
 125. Constraint Checking During Transactions  
 𖦹 Some transactions temporarily violate constraints before later steps restore correctness.  
 𖦹 Constraints may be declared initially deferred so they are checked only at the end of the transaction.  
 𖦹 Constraints may also be deferrable, meaning they can be switched between immediate and deferred checking using <pink>set constraints</pink>.  
+
 126. Complex Check Conditions and Assertions  
 𖦹 <pink>check</pink> predicates can theoretically contain subqueries, but most systems do not support this.  
 𖦹 Assertions express global database conditions:  
@@ -1441,9 +1475,11 @@ courses_fall ∩ courses_spring
 𖦹 Assertions are tested at creation and on all updates.  
 𖦹 Assertions may impose high performance costs, so few systems support them.  
 𖦹 Equivalent behavior can be implemented using triggers.  
+
 127. SQL Data Types and Schemas  
 𖦹 SQL supports various built-in and user-defined data types.  
 𖦹 Additional date/time types, type conversion, default values, large objects, user-defined types, and key generation are included.  
+
 128. Date and Time Types in SQL  
 𖦹 <yellow>date</yellow> stores year, month, and day.  
 𖦹 <yellow>time</yellow> stores hour, minute, and second.  
@@ -1467,6 +1503,7 @@ courses_fall ∩ courses_spring
 𖦹 <yellow>interval</yellow> type supports calculations like:  
  • <yellow>x - y</yellow> returns days between dates.  
  • Adding/subtracting interval modifies date or time.  
+
 129. Type Conversion and Formatting Functions  
 𖦹 Automatic type conversion sometimes occurs; explicit conversion uses <pink>cast</pink><yellow>(e as t)</yellow>.  
 𖦹 Casting helps achieve correct ordering or calculations.  
@@ -1479,11 +1516,13 @@ courses_fall ∩ courses_spring
  • Example: <pink>coalesce</pink><yellow>(salary, 0)</yellow> displays 0 instead of null.  
 𖦹 <pink>decode</pink> (Oracle) replaces values based on matching patterns.  
  • Can replace null with 'N/A' when needed.  
+
 130. Default Values  
 𖦹 Attributes can have default values in table definitions.  
 𖦹 Example:  
  • <yellow>tot cred numeric(3,0) default 0</yellow>  
 𖦹 Inserting without specifying tot cred assigns default value automatically.  
+
 131. Large-Object Types  
 𖦹 <yellow>clob</yellow> stores large character data.  
 𖦹 <yellow>blob</yellow> stores large binary data (images, video, etc.).  
@@ -1492,6 +1531,7 @@ courses_fall ∩ courses_spring
  • <yellow>image blob(10MB)</yellow>  
  • <yellow>movie blob(2GB)</yellow>  
 𖦹 Large objects are usually accessed through locators rather than loading all data at once.  
+
 132. User-Defined Types (Distinct Types)  
 𖦹 <pink>create type</pink> defines custom types separate from built-in types.  
 𖦹 Example:  
@@ -1499,6 +1539,7 @@ courses_fall ∩ courses_spring
 𖦹 Used to prevent errors, such as mixing currency types.  
 𖦹 Operations between different distinct types require explicit <pink>cast</pink>.  
 𖦹 <pink>drop type</pink> and <pink>alter type</pink> modify or remove user-defined types.  
+
 133. Domains  
 𖦹 <pink>create domain</pink> defines new domains with constraints.  
 𖦹 Example:  
@@ -1509,6 +1550,7 @@ courses_fall ∩ courses_spring
  • <pink>create domain</pink> <yellow>YearlySalary numeric(8,2)</yellow>  
    <pink>check</pink><yellow>(value >= 29000.00)</yellow>;  
 𖦹 Domains can also restrict values using <pink>in</pink> clause.  
+
 134. Generating Unique Key Values  
 𖦹 Automatically assigns unique numeric identifiers.  
 𖦹 Example syntax:  
@@ -1520,6 +1562,7 @@ courses_fall ∩ courses_spring
  • MySQL: <yellow>auto increment</yellow>  
  • SQL Server: <yellow>identity</yellow>  
 𖦹 <pink>create sequence</pink> generates unique values for multiple tables.  
+
 135. Create Table Extensions  
 𖦹 <pink>create table</pink> ... <pink>like</pink> duplicates schema.  
  • Example: <pink>create table</pink> <yellow>temp instructor like instructor</yellow>;  
@@ -1531,6 +1574,7 @@ courses_fall ∩ courses_spring
 𖦹 SQL uses a hierarchy: catalogs contain schemas, schemas contain tables and objects.  
 𖦹 Similar to folders and subfolders in file systems.  
 𖦹 Users connect to a specific catalog before performing operations.  
+
 137. Authorization  
 𖦹 Users can be given specific rights called privileges.  
 𖦹 Data privileges include:  
@@ -1543,6 +1587,7 @@ courses_fall ∩ courses_spring
 𖦹 Users may also be granted schema permissions to create, modify, or drop relations.  
 𖦹 Some users may further grant or revoke privileges from others.  
 𖦹 The database administrator has full authority over all users and schema objects.  
+
 138. Granting and Revoking of Privileges  
 𖦹 SQL privileges include <pink>select</pink>, <pink>insert</pink>, <pink>update</pink>, and <pink>delete</pink>.  
 𖦹 <pink>all privileges</pink> can be used to grant all allowed privileges at once.  
@@ -1558,6 +1603,7 @@ courses_fall ∩ courses_spring
 𖦹 <yellow>public</yellow> refers to all users.  
 𖦹 To revoke privileges:  
 • <pink>revoke</pink> <yellow><privileges> on <relation/view> from <user/role list></yellow>;  
+
 139. Roles  
 𖦹 Roles allow grouping privileges and assigning them to multiple users.  
 𖦹 Suitable where many users need the same permissions.  
@@ -1573,6 +1619,7 @@ courses_fall ∩ courses_spring
 𖦹 A user’s effective privileges include:  
 • Privileges granted directly  
 • Privileges from assigned roles (including indirectly inherited roles)  
+
 140. Authorization on Views  
 𖦹 Users may be given privileges on views to restrict which parts of a relation they can see.  
 𖦹 The system checks authorization before expanding a view into its underlying relations.  
@@ -1582,17 +1629,20 @@ courses_fall ∩ courses_spring
 𖦹 If the user lacks <pink>select</pink> on <yellow>instructor</yellow>, the system denies creation of such a view.  
 𖦹 Functions and procedures can also have <pink>execute</pink> privilege.  
 𖦹 <pink>sql security invoker</pink> causes a function to run under the caller’s privileges instead of the creator’s.  
+
 141. Authorization on Schema  
 𖦹 Schema modifications such as creating or deleting relations are allowed only by the schema owner.  
 𖦹 <pink>references</pink> privilege is required to declare foreign keys referencing another relation.  
 • Example:  
 <pink>grant references</pink><yellow>(dept_name)</yellow> <pink>on</pink> <yellow>department to Mariano</yellow>;  
 𖦹 Foreign keys and <pink>check</pink> constraints referencing another relation may limit updates, so <pink>references</pink> privilege is needed.  
+
 142. Transfer of Privileges  
 𖦹 A user granted a privilege may or may not be allowed to grant it further.  
 𖦹 To allow granting to others, use <pink>with grant option</pink>:  
 • <pink>grant select on</pink> <yellow>department to Amit with grant option</yellow>;  
 𖦹 Privileges can be represented as an authorization graph showing who granted privileges to whom.  
+
 143. Revoking of Privileges  
 𖦹 Revocation may cause others to lose privileges if those privileges were passed on.  
 𖦹 This behavior is called cascading revocation.  
@@ -1601,6 +1651,7 @@ courses_fall ∩ courses_spring
 𖦹 If <pink>restrict</pink> is specified, <pink>revoke</pink> fails if cascading is required:  
 • <pink>revoke select on</pink> <yellow>department from Amit restrict</yellow>;  
 𖦹 <pink>grant option</pink> can be revoked without removing the privilege itself.  
+
 144. Row-Level Authorization  
 𖦹 Some systems allow controlling access to specific tuples.  
 𖦹 Oracle VPD attaches a predicate to a relation so only permitted rows are returned.  
@@ -1608,6 +1659,7 @@ courses_fall ∩ courses_spring
 • <yellow>ID = sys_context('USERENV','SESSION_USER')</yellow>  
 𖦹 This ensures users see only their own rows.  
 𖦹 May change meaning of queries if not carefully designed (for example, aggregates apply only to visible rows).  
+
 145. Accessing SQL from a Programming Language  
 𖦹 SQL is a powerful declarative query language, easier than general-purpose languages.  
 𖦹 General-purpose languages are needed because:  
@@ -1618,11 +1670,13 @@ courses_fall ∩ courses_spring
 𖦹 Two approaches to access SQL from a programming language:  
 • Dynamic SQL: Queries constructed at runtime as strings, executed, and results retrieved.  
 • Embedded SQL: SQL statements identified at compile time, translated by a preprocessor.  
+
 146. Standards for Connecting to SQL  
 𖦹 JDBC: Java API for connecting to databases.  
 𖦹 ODBC: Originally for C, extended to many languages like C++, C#, Ruby, Go, PHP.  
 𖦹 Python Database API: Allows Python programs to connect to databases.  
 𖦹 ADO.NET: For Visual Basic .NET and C#, similar to JDBC, can access non-relational sources.  
+
 147. JDBC Overview  
 𖦹 JDBC allows Java programs to connect to database servers.  
 𖦹 Requires importing <yellow>java.sql.*</yellow>.  
@@ -1631,6 +1685,7 @@ courses_fall ∩ courses_spring
 • Use <yellow>Statement</yellow> object to send SQL statements.  
 • Retrieve results via <yellow>ResultSet</yellow>.  
 • Handle exceptions and manage resources.  
+
 148. Connecting to the Database  
 𖦹 <yellow>getConnection()</yellow> parameters:  
 • URL of the server, protocol, port, and database name.  
@@ -1638,19 +1693,23 @@ courses_fall ∩ courses_spring
 • Password (string).  
 𖦹 <yellow>Connection</yellow> object handle is created for interaction.  
 𖦹 JDBC driver must be loaded to translate JDBC calls to database-specific calls.  
+
 149. Shipping SQL Statements  
 𖦹 Use <yellow>Statement</yellow> object to execute SQL.  
 • <yellow>executeQuery()</yellow> for queries returning <yellow>ResultSet</yellow>.  
 • <yellow>executeUpdate()</yellow> for <pink>insert</pink>, <pink>update</pink>, <pink>delete</pink>, <pink>create table</pink>; returns number of affected tuples.  
 𖦹 DDL statements return zero.  
+
 150. Exceptions and Resource Management  
 𖦹 Use <yellow>try-catch</yellow> to handle <yellow>SQLExceptions</yellow> and general <yellow>Exceptions</yellow>.  
 𖦹 Resources like connections and statements must be closed to avoid exhaustion.  
 𖦹 Prefer <yellow>try-with-resources</yellow> in Java to automatically close resources.  
+
 151. Retrieving Query Results  
 𖦹 <yellow>ResultSet</yellow> fetches tuples one at a time.  
 • <yellow>next()</yellow> method checks and retrieves next tuple.  
 • <yellow>getString()</yellow>, <yellow>getFloat()</yellow>, etc., retrieve attribute values by name or position.  
+
 152. Prepared Statements  
 𖦹 <yellow>PreparedStatement</yellow> allows parameterized queries with “?” placeholders.  
 𖦹 Parameters set using methods like <yellow>setString()</yellow> and <yellow>setInt()</yellow>.  
@@ -1658,6 +1717,7 @@ courses_fall ∩ courses_spring
 • Efficient execution of repeated queries.  
 • Prevents SQL injection by escaping user input.  
 𖦹 Never concatenate user input directly into SQL statements.  
+
 153. Callable Statements  
 𖦹 <yellow>CallableStatement</yellow> invokes SQL stored procedures and functions.  
 𖦹 <yellow>registerOutParameter()</yellow> registers return types and out parameters.  
@@ -1668,6 +1728,7 @@ courses_fall ∩ courses_spring
 𖦹 <yellow>DatabaseMetaData</yellow> provides info about database and system:  
 • Tables, columns, primary keys, foreign keys, authorizations, limits.  
 𖦹 Metadata allows writing generic programs without hard-coded schema.  
+
 155. Other JDBC Features  
 𖦹 Updatable result sets allow updating tuples in database via result sets.  
 𖦹 Transaction control:  
@@ -1677,6 +1738,7 @@ courses_fall ∩ courses_spring
 • <yellow>getBlob()</yellow>, <yellow>getClob()</yellow> fetch locators to large objects.  
 • <yellow>setBlob()</yellow>, <yellow>setClob()</yellow> store data from streams.  
 𖦹 Row sets can be collected, shipped, scanned, and modified.  
+
 156. Database Access from Python  
 𖦹 Python can access databases using drivers like <yellow>psycopg2</yellow> for PostgreSQL.  
 𖦹 Prepared statements in Python use <yellow>"%s"</yellow> for parameters and require <yellow>commit()</yellow> to save updates.  
@@ -1688,6 +1750,7 @@ courses_fall ∩ courses_spring
 • Individual row attributes can be accessed via indexing.  
 𖦹 Different drivers exist for different databases: <yellow>MySQLdb</yellow> for MySQL, <yellow>cx_Oracle</yellow> for Oracle, <yellow>pyodbc</yellow> for ODBC.  
 • Minor differences exist across drivers in the <yellow>connect()</yellow> function parameters.  
+
 157. ODBC  
 𖦹 ODBC defines an API to connect to databases, send queries, and receive results.  
 𖦹 Each database provides a library that communicates with the server when API calls are made.  
@@ -1708,6 +1771,7 @@ courses_fall ∩ courses_spring
 • Level 1: fetch catalog info like relations and attribute types.  
 • Level 2: advanced features like arrays of parameter values and detailed catalog info.  
 𖦹 SQL Call Level Interface (CLI) is similar to ODBC.  
+
 158. Embedded SQL  
 𖦹 SQL can be embedded in host languages like C, C++, Java, COBOL, Pascal, PL/I, and Fortran.  
 𖦹 A preprocessor converts embedded SQL into host-language code before compilation.  
@@ -1723,6 +1787,7 @@ courses_fall ∩ courses_spring
 • Syntax clashes with host language may occur in future versions.  
 𖦹 Most modern systems prefer dynamic SQL.  
 • Microsoft LINQ is an exception, integrating queries into the host language.  
+
 159. Embedded Databases  
 𖦹 Embedded databases exist entirely within an application.  
 • Accessible only through the application.  
@@ -1730,6 +1795,7 @@ courses_fall ∩ courses_spring
 𖦹 They lack full server features but are suitable for small databases or internal applications.  
 𖦹 Embedded databases are different from embedded SQL.  
 • Embedded SQL connects to server-based databases, not internal-only databases.  
+
 160. Functions and Procedures  
 𖦹 SQL allows developers to write their own functions and procedures and store them in the database.  
 𖦹 Functions are useful with specialized data types like images or geometric objects.  
@@ -1740,6 +1806,7 @@ courses_fall ∩ courses_spring
 𖦹 SQL allows definitions in SQL or external languages like Java, C, or C++.  
 𖦹 Most databases implement nonstandard syntax, e.g., Oracle PL/SQL, SQL Server T-SQL, PostgreSQL PL/pgSQL.  
 - Concepts remain applicable despite syntax differences.  
+
 161. Declaring and Invoking SQL Functions and Procedures  
 𖦹 Functions can return values or tables and be used in SQL queries.  
 • Example: <yellow>dept_count</yellow> function returns the number of instructors in a department.  
@@ -1749,6 +1816,7 @@ courses_fall ∩ courses_spring
 • <pink>IN</pink>: input values; <pink>OUT</pink>: values returned by the procedure.  
 𖦹 Procedures can be called from SQL, embedded SQL, or dynamic SQL (e.g., JDBC).  
 𖦹 SQL supports multiple procedures/functions with the same name if argument number or types differ.  
+
 162. Language Constructs for Procedures and Functions  
 𖦹 SQL supports general-purpose programming constructs in procedures/functions.  
 𖦹 Variables declared using <pink>declare</pink>, assigned with <pink>set</pink>.  
@@ -1761,6 +1829,7 @@ courses_fall ∩ courses_spring
 • <pink>signal</pink> raises exceptions; handlers specify actions (<pink>exit</pink> or <pink>continue</pink>).  
 • Predefined conditions: <pink>sqlexception</pink>, <pink>sqlwarning</pink>, <pink>not found</pink>.  
 𖦹 Example: <yellow>registerStudent</yellow> function registers a student in a course section, checks capacity, returns success/error codes.  
+
 163. External Language Routines  
 𖦹 SQL procedural features vary across databases; syntax is not standardized.  
 𖦹 Alternative: define procedures/functions in an external language (Java, C#, C, C++).  
@@ -1777,12 +1846,14 @@ courses_fall ∩ courses_spring
 • Oracle, IBM DB2: Java functions within database process.  
 • SQL Server CLR: C# or VB procedures.  
 • PostgreSQL: functions in Perl, Python, Tcl.  
+
 164. Triggers  
 𖦹 A trigger is a statement executed automatically as a side effect of a database modification.  
 𖦹 To define a trigger:  
 • Specify the event and condition for execution.  
 • Specify the actions to be taken when executed.  
 𖦹 Once entered, the database executes the trigger whenever the event occurs and condition is satisfied.  
+
 165. Need for Triggers  
 𖦹 Triggers implement integrity constraints not possible with standard SQL constraints.  
 𖦹 Useful for alerting humans or starting tasks automatically.  
@@ -1790,6 +1861,7 @@ courses_fall ∩ courses_spring
 • Example: reorder inventory automatically when it falls below minimum.  
 𖦹 Triggers cannot usually perform external updates; separate processes handle actions outside the database.  
 • Some systems support sending emails from SQL queries or triggers.  
+
 166. Triggers in SQL  
 𖦹 SQL standard defines triggers; most databases have nonstandard syntax.  
 𖦹 Triggers ensure referential integrity using <pink>after insert</pink>, <pink>delete</pink>, or <pink>update</pink> events.  
@@ -1804,27 +1876,32 @@ courses_fall ∩ courses_spring
 • Example: replace blank grades with null using <pink>set</pink> statement.  
 𖦹 Statement-level triggers operate once per SQL statement; row-level triggers operate for each affected row.  
 𖦹 Triggers can be enabled, disabled, or dropped.  
+
 167. Inventory Replenishment Example  
 𖦹 Relations: <yellow>inventory(item, level)</yellow>, <yellow>minlevel(item, level)</yellow>, <yellow>reorder(item, amount)</yellow>, <yellow>orders(item, amount)</yellow>.  
 𖦹 Trigger placed to reorder when inventory falls below minimum level.  
 • Ensures order placed only when level falls from above minimum to below minimum.  
 𖦹 SQL-based systems widely use triggers; standard syntax varies across systems (pre-SQL:1999 triggers were not standard).  
+
 168. When Not to Use Triggers  
 𖦹 Some tasks are better handled by other techniques than triggers.  
 • Example: <pink>on delete cascade</pink> feature is simpler with foreign-key cascade than with triggers.  
 𖦹 Materialized views can be maintained automatically by the database, reducing need for triggers.  
 𖦹 Triggers can be used for database replication, but modern systems provide built-in replication features.  
+
 169. Special Considerations for Triggers  
 𖦹 Triggers may cause unintended execution during data loading or replication.  
 • Can be disabled during backup load or use <yellow>"not for replication"</yellow> options.  
 𖦹 Triggers must be written carefully to avoid runtime errors and infinite chains of triggers.  
 • Some databases limit chain length (e.g., 16 or 32 triggers) or flag errors when a trigger references its own table.  
 𖦹 Triggers are useful but should be avoided when alternatives exist.  
+
 170. Recursive Queries  
 𖦹 Recursive queries find all direct and indirect prerequisites for a course.  
 • Example: CS-347 has CS-319 as direct prerequisite; CS-315 and CS-101 are prerequisites for CS-319; CS-190 is prerequisite for CS-315; CS-101 already listed.  
 𖦹 Transitive closure contains all pairs (course, prerequisite) for direct or indirect prerequisites.  
 • Useful for hierarchies like organizational units or machine parts.  
+
 171. Transitive Closure Using Iteration  
 𖦹 Iterative approach finds direct prerequisites, then prerequisites of those courses, until no new courses are added.  
 𖦹 Function <yellow>findAllPrereqs(cid)</yellow> computes all prerequisites for a given course.  
@@ -1836,6 +1913,7 @@ courses_fall ∩ courses_spring
 • Loop ends when <yellow>new_c_prereq</yellow> is empty.  
 𖦹 The <pink>except</pink> clause prevents duplicates and handles cycles in prerequisites.  
 • Applicable to other recursive relationships like flight reachability.  
+
 172. Recursion in SQL  
 𖦹 Recursive views define direct and indirect prerequisites in a single query.  
 • Example: <pink>with recursive</pink> <yellow>rec_prereq(course_id, prereq_id) as (base query union recursive query)</yellow> <pink>select</pink> <yellow>*</yellow> <pink>from</pink> <yellow>rec_prereq</yellow>.  
@@ -1843,6 +1921,7 @@ courses_fall ∩ courses_spring
 𖦹 Recursive view iteratively adds tuples until a fixed point is reached (no new tuples).  
 𖦹 To find prerequisites of a specific course, add a <pink>where</pink> clause to filter <yellow>course_id</yellow>.  
 𖦹 Database systems may optimize execution without computing full <yellow>rec_prereq</yellow> first.  
+
 173. Restrictions on Recursive Queries  
 𖦹 Recursive queries must be monotonic.  
 • Result on a larger view instance must include all results from a smaller instance.  
@@ -1851,13 +1930,16 @@ courses_fall ∩ courses_spring
 • <pink>not exists</pink> on a subquery using recursive view.  
 • Set difference (<pink>except</pink>) with right-hand side using recursive view.  
 𖦹 Nonmonotonic queries make the meaning of the view hard to define; SQL requires monotonic queries.  
+
 174. Additional Notes on Recursive Queries  
 𖦹 SQL supports permanent recursively defined views using <pink>create recursive view</pink>.  
 𖦹 Some databases use alternative syntax for recursion (e.g., Oracle <pink>start with</pink> / <pink>connect by prior</pink> for hierarchical queries).  
 • Oracle 12.c supports standard syntax with <pink>union all</pink> and <pink>recursive</pink> keyword omitted.  
+
 175. Advanced Aggregation Features  
 𖦹 SQL aggregation is powerful but basic features can be inefficient for some tasks.  
 𖦹 Advanced features help handle ranking, windowing, pivoting, rollup, and cube operations efficiently.  
+
 176. Ranking  
 𖦹 Ranking finds the position of a value within a set, e.g., student GPA ranks.  
 • <pink>rank()</pink> assigns the same rank to equal values and skips ranks for ties.  
@@ -1873,6 +1955,7 @@ courses_fall ∩ courses_spring
 • <pink>cume_dist</pink> = <yellow>p/n</yellow> (cumulative distribution)  
 • <pink>row_number</pink> = unique number for each row  
 𖦹 <pink>ntile(n)</pink> divides tuples into n equal buckets.  
+
 177. Windowing  
 𖦹 Window queries compute aggregates over ranges of tuples.  
 • Useful for trend analysis and moving averages.  
@@ -1885,6 +1968,7 @@ courses_fall ∩ courses_spring
 𖦹 Partitioning allows separate windows for each group:  
 • <pink>select</pink> <yellow>dept_name, year, avg(num_credits)</yellow> <pink>over (partition by dept_name order by year rows between 3 preceding and current row)</pink> <pink>as</pink> <yellow>avg_total_credits</yellow> <pink>from</pink> <yellow>tot_credits_dept</yellow>;  
 𖦹 <pink>range</pink> keyword covers all tuples with a specific sort attribute value.  
+
 178. Pivoting  
 𖦹 Pivoting transforms rows into columns (cross-tabulation).  
 • Example: <yellow>sales(item_name, color, clothes_size, quantity)</yellow> → pivot on color.  
@@ -1892,6 +1976,7 @@ courses_fall ∩ courses_spring
 • <pink>select</pink> <yellow>*</yellow> <pink>from</pink> <yellow>sales</yellow> <pink>pivot</pink> <yellow>(sum(quantity) for color in ('dark','pastel','white'))</yellow>;  
 𖦹 Pivot attributes are renamed to values of another attribute.  
 𖦹 Aggregate functions handle multiple tuples per cell (e.g., <pink>sum</pink>).  
+
 179. Rollup and Cube  
 𖦹 Rollup generates hierarchical aggregates for multiple groupings.  
 • Example: <pink>group by</pink> <yellow>rollup(item_name, color)</yellow> → groupings: (item_name,color), (item_name), ()  
