@@ -1,6 +1,14 @@
 const BASE_URL = "https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/ari-learns/learnings/";
 let activeButton = null;
 
+// Function to replace color tags with span + inline style
+function colorizeText(text) {
+    // Replace <color>...</color> with <span style="color:color">...</span>
+    return text.replace(/<(\w+)>(.*?)<\/\1>/g, (match, color, innerText) => {
+        return `<span style="color:${color}">${innerText}</span>`;
+    });
+}
+
 async function loadLearnings(fileName) {
     const fileUrl = `${BASE_URL}${fileName}.txt`;
     try {
@@ -8,18 +16,26 @@ async function loadLearnings(fileName) {
         if (!response.ok) {
             throw new Error(`HTTP Error! Status: ${response.status}`);
         }
+
         const text = await response.text();
         console.log(text);
+
+        // Split by date sections
         const sections = text.split(/-+\s*\[(\d{2}\/\d{2}\/\d{4})\]/).filter(section => section.trim());
-        const source = sections[0].replace(/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -/g, "");
+
+        // First section is the source/title
+        const source = sections[0].replace(/-+/, "").trim();
+
         const contentDiv = document.getElementById("content");
         let htmlContent = `<h2 id="source">${source}</h2>`;
 
+        // Loop through the sections (date + content)
         for (let i = 1; i < sections.length; i += 2) {
             const date = sections[i];
-            let content = sections[i + 1] ? sections[i + 1].replace(/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -/g, "").trim() : "";
+            let content = sections[i + 1] ? sections[i + 1].replace(/-+/, "").trim() : "";
 
             content = content.split('\n').map(line => {
+                // Check for image lines
                 const imgMatch = line.match(/^IMG_URL\s*@?(.+)$/);
                 if (imgMatch) {
                     const imgValue = imgMatch[1].trim();
@@ -27,9 +43,10 @@ async function loadLearnings(fileName) {
                     if (!/^https?:\/\//.test(imgValue) && !imgValue.includes('/')) {
                         url = `images/${fileName}/${imgValue}`;
                     }
-                    return `<img src=\"${url}\" style=\"border-radius:0.5rem;margin-top:0.2rem;margin-bottom:0.2rem;margin-left:auto;margin-right:auto;max-width:100%;display:block;border:1px solid lightgreen;\" />`;
+                    return `<img src="${url}" style="border-radius:0.5rem;margin-top:0.2rem;margin-bottom:0.2rem;margin-left:auto;margin-right:auto;max-width:100%;display:block;border:1px solid lightgreen;" />`;
                 }
-                return line;
+                // Colorize any text tags
+                return colorizeText(line);
             }).join('\n');
 
             htmlContent += `
@@ -39,10 +56,13 @@ async function loadLearnings(fileName) {
                 </div>
             `;
         }
+
         contentDiv.innerHTML = htmlContent;
         updateActiveButton(fileName);
+
     } catch (error) {
-        alert("AN ERROR OCCURED!")
+        alert("AN ERROR OCCURRED: " + error.message);
+        console.error(error);
     }
 }
 
