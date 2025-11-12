@@ -1,0 +1,668 @@
+SOURCE: "FUNDAMENTALS OF DATABASE SYSTEMS" by Elmasri and Navathe
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[12/11/2025]
+
+1. Object and Object-Relational Databases
+𖦹 Object-oriented data models have features now incorporated in relational databases and SQL standards.
+𖦹 Some features are also in NoSQL and XML models.
+𖦹 Object databases (ODBs) were originally called object-oriented databases (OODBs).
+𖦹 Traditional models like network, hierarchical, and relational work well for business applications but have limitations for complex applications (CAD/CAM, biology, GIS, multimedia).
+𖦹 ODBs allow specifying complex object structures and operations.
+𖦹 Growth of object-oriented programming languages (C++, Java) increased the need for ODBs.
+𖦹 Object-relational databases (ORDBMS) combine relational systems with object database features.
+𖦹 SQL:2008 includes many object features originally proposed for SQL/Object.
+𖦹 Many experimental and commercial ODB systems were created but did not gain widespread use due to relational and object-relational popularity.
+𖦹 ODMG 3.0 standard was proposed to provide a standard model and language for ODBs.
+𖦹 Key ODB concepts include object identity, structure, encapsulation, methods, persistence, and inheritance.
+𖦹 SQL standards incorporated these concepts, with object features in SQL:1999 and SQL:2008.
+
+2. Introduction to Object-Oriented Concepts
+𖦹 OO concepts originated in OO programming languages (OOPLs) like SIMULA and Smalltalk.
+𖦹 Pure OO languages explicitly designed for OO, e.g., Smalltalk.
+𖦹 Hybrid OO languages integrate OO features into existing languages, e.g., C++.
+𖦹 Objects have state (value) and behavior (operations).
+𖦹 In OOPLs, objects are transient; OO databases store objects persistently.
+𖦹 Persistent objects can be shared among multiple programs.
+𖦹 Internal structure includes instance variables (attributes) and operations (methods).
+𖦹 Complete encapsulation can be relaxed to allow attribute access for queries.
+𖦹 Operations have a signature (interface) and a method (implementation).
+𖦹 Type and class hierarchies allow inheritance, reusing definitions.
+𖦹 Relationships among objects can be explicitly represented with inverse references.
+𖦹 Operator overloading (polymorphism) allows operations on different object types, often requiring late binding.
+
+3. Object Identity and Literals
+𖦹 Each object in an ODB has a unique object identifier (OID).
+• OID is immutable and system-generated.
+• OID must not depend on attribute values.
+• Early ODBs used physical addresses as OIDs.
+𖦹 ODBs distinguish between objects (with OID) and literals (without OID).
+𖦹 Literals cannot be referenced from other objects but can be part of objects.
+
+4. Complex Type Structures
+𖦹 Objects and literals can have complex types.
+𖦹 Three main type constructors:
+• Atom: basic types (integer, string, boolean) - atomic values.
+• Struct/Tuple: structured types made of multiple components.
+• Collection: multivalued types (set, list, bag, array, dictionary) containing elements of the same type.
+𖦹 Struct constructor generates multiple structured types.
+𖦹 Collection types allow ordered or unordered groups of elements.
+𖦹 Dictionary constructor creates key-value pairs.
+𖦹 Type constructors define data structures for OO database schemas.
+
+5. Encapsulation of Operations and Persistence
+𖦹 Encapsulation defines the interface and hides implementation of object operations.
+𖦹 Operations can create, destroy, update, or retrieve object state.
+𖦹 Interface (signature) is visible; method (implementation) is hidden.
+𖦹 Objects can have visible and hidden attributes.
+𖦹 Operations are applied using dot notation (e.g., d.no_of_emps).
+𖦹 Persistence mechanisms:
+• Naming: assign a unique persistent name to an object.
+• Reachability: objects reachable from a persistent object also become persistent.
+𖦹 Extent is a named collection of objects of a class that are persistent.
+𖦹 Multiple persistent collections can exist for the same class.
+
+6. Type Hierarchies and Inheritance
+𖦹 ODBs support subtypes and supertypes forming type hierarchies.
+𖦹 Subtypes inherit attributes and operations from supertypes.
+• Example: PERSON type has Name, Address, Birth_date, Age, Ssn.
+• EMPLOYEE subtype adds Salary, Hire_date, Seniority.
+• STUDENT subtype adds Major, Gpa.
+𖦹 Inheritance allows incremental development and reusability of types.
+𖦹 Area operation for GEOMETRY_OBJECT can have different implementations for RECTANGLE, TRIANGLE, and CIRCLE.
+𖦹 Objects belong to declared types and persistent collections (extents).
+𖦹 Constraint: objects in a subtype extent must also belong to supertype extent.
+𖦹 ROOT or OBJECT class can include all objects in the system.
+
+7. Object Database Extensions to SQL
+𖦹 SQL was first specified by Chamberlin and Boyce (1974) and standardized in 1989 and 1992.
+𖦹 SQL3 (later SQL:99) incorporated object database features; initially called SQL/Object, later part of SQL/Foundation in SQL:2008.
+𖦹 Object-relational model combines relational model with object database enhancements.
+𖦹 Revisions in 2003 and 2006 added XML-related features.
+𖦹 Object database features include:
+• Type constructors for complex objects: row type, array type, set, list, bag (added in SQL:2008)
+• Object identity via reference type
+• Encapsulation via user-defined types (UDTs) with operations; user-defined routines (UDRs)
+• Inheritance using <pink>UNDER</pink> keyword
+
+8. User-Defined Types Using CREATE TYPE and Complex Objects
+𖦹 UDTs allow creation of complex-structured objects and separate type declaration from table creation.
+𖦹 Four collection types: <pink>ARRAY</pink>, <pink>MULTISET</pink>, <pink>LIST</pink>, <pink>SET</pink>.
+𖦹 UDTs can be used as attribute types or table types; nesting allows complex structures.
+𖦹 ROW TYPE allows direct structured attributes without separate UDT.
+𖦹 Collection elements accessed using square brackets; <pink>CARDINALITY</pink> returns current element count.
+𖦹 Dot notation used to access components (e.g., ADDR.CITY).
+𖦹 Code examples:
+<pink>CREATE TYPE</pink> STREET_ADDR_TYPE <pink>AS</pink> (
+ <yellow>NUMBER VARCHAR (5),</yellow>
+ <yellow>STREET_NAME VARCHAR (25),</yellow>
+ <yellow>APT_NO VARCHAR (5),</yellow>
+ <yellow>SUITE_NO VARCHAR (5)</yellow>
+);
+<pink>CREATE TYPE</pink> USA_ADDR_TYPE <pink>AS</pink> (
+ <yellow>STREET_ADDR STREET_ADDR_TYPE,</yellow>
+ <yellow>CITY VARCHAR (25),</yellow>
+ <yellow>ZIP VARCHAR (10)</yellow>
+);
+<pink>CREATE TYPE</pink> USA_PHONE_TYPE <pink>AS</pink> (
+ <yellow>PHONE_TYPE VARCHAR (5),</yellow>
+ <yellow>AREA_CODE CHAR (3),</yellow>
+ <yellow>PHONE_NUM CHAR (7)</yellow>
+);
+<pink>CREATE TYPE</pink> PERSON_TYPE <pink>AS</pink> (
+ <yellow>NAME VARCHAR (35),</yellow>
+ <yellow>SEX CHAR,</yellow>
+ <yellow>BIRTH_DATE DATE,</yellow>
+ <yellow>PHONES USA_PHONE_TYPE ARRAY [4],</yellow>
+ <yellow>ADDR USA_ADDR_TYPE,</yellow>
+ <yellow>INSTANTIABLE,</yellow>
+ <yellow>NOT FINAL,</yellow>
+ <yellow>REF IS SYSTEM GENERATED,</yellow>
+ <pink>INSTANCE METHOD</pink> AGE() <pink>RETURNS</pink> INTEGER;
+ <pink>CREATE INSTANCE METHOD</pink> AGE() <pink>RETURNS</pink> INTEGER
+ <pink>FOR</pink> PERSON_TYPE
+ <pink>BEGIN</pink>
+  <yellow>RETURN /* CODE TO CALCULATE A PERSON’S AGE */</yellow>
+ <pink>END;</pink>
+);
+<pink>CREATE TYPE</pink> GRADE_TYPE <pink>AS</pink> (
+ <yellow>COURSENO CHAR (8),</yellow>
+ <yellow>SEMESTER VARCHAR (8),</yellow>
+ <yellow>YEAR CHAR (4),</yellow>
+ <yellow>GRADE CHAR</yellow>
+);
+<pink>CREATE TYPE</pink> STUDENT_TYPE <pink>UNDER</pink> PERSON_TYPE <pink>AS</pink> (
+ <yellow>MAJOR_CODE CHAR (4),</yellow>
+ <yellow>STUDENT_ID CHAR (12),</yellow>
+ <yellow>DEGREE VARCHAR (5),</yellow>
+ <yellow>TRANSCRIPT GRADE_TYPE ARRAY [100],</yellow>
+ <yellow>INSTANTIABLE,</yellow>
+ <yellow>NOT FINAL,</yellow>
+ <pink>INSTANCE METHOD</pink> GPA() <pink>RETURNS</pink> FLOAT;
+ <pink>CREATE INSTANCE METHOD</pink> GPA() <pink>RETURNS</pink> FLOAT
+ <pink>FOR</pink> STUDENT_TYPE
+ <pink>BEGIN</pink>
+  <yellow>RETURN /* CODE TO CALCULATE GPA */</yellow>
+ <pink>END;</pink>
+);
+<pink>CREATE TYPE</pink> EMPLOYEE_TYPE <pink>UNDER</pink> PERSON_TYPE <pink>AS</pink> (
+ <yellow>JOB_CODE CHAR (4),</yellow>
+ <yellow>SALARY FLOAT,</yellow>
+ <yellow>SSN CHAR (11),</yellow>
+ <yellow>INSTANTIABLE,</yellow>
+ <yellow>NOT FINAL</yellow>
+);
+<pink>CREATE TYPE</pink> MANAGER_TYPE <pink>UNDER</pink> EMPLOYEE_TYPE <pink>AS</pink> (
+ <yellow>DEPT_MANAGED CHAR (20),</yellow>
+ <yellow>INSTANTIABLE</yellow>
+);
+<pink>CREATE TABLE</pink> PERSON <pink>OF</pink> PERSON_TYPE
+ <yellow>REF IS PERSON_ID SYSTEM GENERATED;</yellow>
+<pink>CREATE TABLE</pink> EMPLOYEE <pink>OF</pink> EMPLOYEE_TYPE
+ <pink>UNDER</pink> PERSON;
+<pink>CREATE TABLE</pink> MANAGER <pink>OF</pink> MANAGER_TYPE
+ <pink>UNDER</pink> EMPLOYEE;
+<pink>CREATE TABLE</pink> STUDENT <pink>OF</pink> STUDENT_TYPE
+ <pink>UNDER</pink> PERSON;
+<pink>CREATE TYPE</pink> COMPANY_TYPE <pink>AS</pink> (
+ <yellow>COMP_NAME VARCHAR (20),</yellow>
+ <yellow>LOCATION VARCHAR (20)</yellow>
+);
+<pink>CREATE TYPE</pink> EMPLOYMENT_TYPE <pink>AS</pink> (
+ <yellow>Employee REF (EMPLOYEE_TYPE) SCOPE (EMPLOYEE),</yellow>
+ <yellow>Company REF (COMPANY_TYPE) SCOPE (COMPANY)</yellow>
+);
+<pink>CREATE TABLE</pink> COMPANY <pink>OF</pink> COMPANY_TYPE (
+ <yellow>REF IS COMP_ID SYSTEM GENERATED,</yellow>
+ <yellow>PRIMARY KEY (COMP_NAME)</yellow>
+);
+<pink>CREATE TABLE</pink> EMPLOYMENT <pink>OF</pink> EMPLOYMENT_TYPE;
+
+9. Object Identifiers Using Reference Types
+𖦹 Unique object identifiers created using <pink>REF</pink>.
+𖦹 Syntax: <pink>REF IS SYSTEM GENERATED</pink> creates system-generated ID.
+𖦹 User can specify <pink>REF IS <OID_ATTRIBUTE> <VALUE_GENERATION_METHOD></pink> with SYSTEM GENERATED or DERIVED.
+
+10. Creating Tables Based on the UDTs
+𖦹 INSTANTIABLE UDTs can be used to create tables.
+𖦹 Noninstantiable UDTs only serve as attribute types.
+𖦹 Attributes like PERSON_ID hold system-generated object IDs for table rows.
+
+11. Encapsulation of Operations
+𖦹 UDTs can have methods along with attributes.
+𖦹 Syntax: <pink>CREATE TYPE</pink> TYPE_NAME (<attributes>, <methods>)
+𖦹 Constructor TYPE_T() returns new object with default values.
+𖦹 Observer function reads attribute; mutator updates it.
+𖦹 Functions may require <pink>EXECUTE</pink> privilege.
+𖦹 Functions can be internal (SQL PSM) or external (host language signature only).
+𖦹 Attributes/functions categories: PUBLIC, PRIVATE, PROTECTED.
+𖦹 Virtual attributes computed via functions.
+
+12. Specifying Inheritance and Overloading of Functions
+𖦹 Inheritance applied using <pink>UNDER</pink> for types or tables.
+𖦹 <pink>NOT FINAL</pink> allows creation of subtypes.
+𖦹 Rules:
+• All attributes inherited
+• Supertype order sets hierarchy
+• Subtype instance usable where supertype instance is used
+• Subtype can redefine functions with same signature
+• Function calls resolve best match based on argument types
+• Dynamic linking considers parameter types at runtime
+𖦹 Table inheritance: INSERT, DELETE, UPDATE in subtable propagate to supertable; tuples in subtable must exist in supertable.
+
+13. Specifying Relationships via Reference
+𖦹 Component attribute can reference tuple of another table using <pink>REF</pink>.
+𖦹 <pink>SCOPE</pink> specifies table whose tuples can be referenced.
+𖦹 Dot notation accesses components; <pink>–></pink> used for dereferencing REF attributes.
+𖦹 Example:
+<pink>SELECT</pink> E.Employee–>NAME
+<pink>FROM</pink> EMPLOYMENT AS E
+<pink>WHERE</pink> E.Company–>COMP_NAME = ‘ABCXYZ’;
+𖦹 <pink>–></pink> works like in C: r–>a returns attribute a of referenced tuple.
+𖦹 <pink>SCOPE</pink> allows reference to tuples within a specific table of same type.
+
+14. ODMG Object Model and Object Definition Language ODL
+𖦹 ODMG-93 (1.0) standard created by ODMG consortium; revised to 2.0 and 3.0.
+𖦹 Standard includes object model, object definition language (ODL), object query language (OQL), and bindings to OOP languages.
+𖦹 ODMG 3.0 based on decades of research in conceptual modeling and object databases.
+𖦹 Object-relational technology incorporates object concepts into SQL.
+
+15. Overview of ODMG Object Model
+𖦹 Provides standard data model for object databases, similar to SQL for relational DBs.
+𖦹 Establishes standard terminology in the field.
+𖦹 Basic building blocks: objects and literals.
+• Objects have identifier and state; literals have state only.
+𖦹 Object aspects: identifier, name, lifetime, structure, creation.
+- Identifier: unique Object_id.
+- Name: optional, unique within ODB; used to locate object.
+- Lifetime: persistent or transient; independent of class/type.
+- Structure: atomic (single user-defined object) or non-atomic (collection of objects).
+- Creation: via <pink>new</pink> operation in Object_Factory interface.
+
+16. Types of Literals
+𖦹 Atomic literals: predefined basic data types (long, short, unsigned, float, double, boolean, char, string, enum).
+𖦹 Structured literals: user-defined using <pink>STRUCT</pink>, include Date, Interval, Time, Timestamp.
+𖦹 Collection literals: collections of objects or values without Object_id; type generators include set<T>, bag<T>, list<T>, array<T>, dictionary<K,V>.
+
+17. Object Interfaces and Classes
+𖦹 Interface: defines behavior only, non-instantiable.
+𖦹 Class: defines both state and behavior, instantiable.
+𖦹 Literal declaration: defines state only, no behavior or Object_id.
+𖦹 All objects inherit Object interface operations: <pink>copy()</pink>, <pink>delete()</pink>, <pink>same_as()</pink>.
+- Dot notation example: O.<pink>same_as</pink>(P), P = O.<pink>copy</pink>().
+- Arrow notation alternative: O–><pink>same_as</pink>(P), O–><pink>copy</pink>().
+
+18. Inheritance in ODMG
+𖦹 Behavior-only inheritance: interface inheritance (ISA), uses colon (:), supertype must be interface, subtype can be class or interface.
+𖦹 EXTENDS inheritance: inherits state + behavior among classes, uses <pink>extends</pink>, only single inheritance allowed.
+𖦹 Classes can inherit behavior from multiple interfaces via colon.
+
+19. Built-in Interfaces and Classes
+𖦹 All inherit Object interface.
+𖦹 Collection objects include set, list, bag, array, dictionary; provide operations like <pink>cardinality()</pink>, <pink>is_empty()</pink>, <pink>insert_element(E)</pink>, <pink>remove_element(E)</pink>, <pink>contains_element(E)</pink>, <pink>create_iterator()</pink>.
+𖦹 Iterator interface: <pink>reset()</pink>, <pink>next_position()</pink>, <pink>get_element()</pink>.
+𖦹 Exceptions: ElementNotFound, NoMoreElements.
+𖦹 Specialized operations for set<T>: <pink>create_union(S)</pink>, <pink>is_subset_of(S)</pink>.
+𖦹 List<T> operations: <pink>insert_element_first(E)</pink>, <pink>insert_element_after(E,I)</pink>, <pink>remove_first_element()</pink>, <pink>concat(I)</pink>, <pink>append(I)</pink>.
+𖦹 Array<T> operations: <pink>replace_element_at(I,E)</pink>, <pink>remove_element_at(I)</pink>, <pink>retrieve_element_at(I)</pink>, <pink>resize(N)</pink>.
+𖦹 Dictionary<K,V> operations: <pink>bind(K,V)</pink>, <pink>unbind(K)</pink>, <pink>lookup(K)</pink>, <pink>contains_key(K)</pink>.
+
+20. Atomic (User-Defined) Objects
+𖦹 Defined using <pink>class</pink> in ODL; not collections.
+𖦹 Example: STUDENT, EMPLOYEE, DEPARTMENT.
+𖦹 Components:
+• Attributes: simple or complex literals, or Object_ids.
+• Relationships: binary, use <pink>relationship</pink> keyword with <pink>inverse</pink> for bidirectional mapping.
+• Operations: define behavior, can include exceptions.
+
+21. Extents, Keys, and Factory Objects
+𖦹 Extent: declared with <pink>extent</pink>, contains all persistent objects of a class.
+𖦹 Keys: unique attributes or relationships per extent; composite keys in parentheses.
+𖦹 Factory objects: create individual objects using <pink>new()</pink>.
+• Examples: ObjectFactory, SetFactory, ListFactory, ArrayFactory, DictionaryFactory, DateFactory.
+𖦹 Database interfaces: DatabaseFactory and Database.
+- Operations: <pink>open(name)</pink>, <pink>close()</pink>, <pink>bind(object,name)</pink>, <pink>unbind(name)</pink>, <pink>lookup(name)</pink>.
+
+22. Object Definition Language (ODL)
+𖦹 ODL used to create object specifications (classes, interfaces) for object database schema.
+𖦹 Independent of programming language; can be mapped via language bindings (C++, Java, Smalltalk).
+𖦹 Example: UNIVERSITY database schema.
+• Entity types mapped to ODL classes.
+• Inheritance via <pink>extends</pink>; no direct mapping for union types or multiple inheritance.
+• Classes: PERSON, FACULTY, STUDENT, GRAD_STUDENT.
+• Extents: PERSONS, FACULTY, STUDENTS, GRAD_STUDENTS.
+• Subsets: STUDENTS ⊆ PERSONS, GRAD_STUDENTS ⊆ STUDENTS.
+• Individual objects inherit properties and operations of supertypes.
+
+23. Class Hierarchy and Inheritance
+𖦹 GRAD_STUDENTs are a subset of STUDENTs.
+𖦹 STUDENT and FACULTY inherit properties and operations from PERSON.
+𖦹 GRAD_STUDENT inherits properties and operations from STUDENT.
+𖦹 Classes DEPARTMENT, COURSE, SECTION, CURR_SECTION map directly to entity types.
+
+24. PERSON Class
+𖦹 <pink>class</pink> PERSON
+• <pink>extent</pink> PERSONS
+• <pink>key</pink> Ssn
+𖦹 Attributes
+• <pink>attribute struct</pink> Pname { string Fname, string Mname, string Lname } Name
+• <pink>attribute string</pink> Ssn
+• <pink>attribute date</pink> Birth_date
+• <pink>attribute enum</pink> Gender{M, F} Sex
+• <pink>attribute struct</pink> Address { short No, string Street, short Apt_no, string City, string State, short Zip } Address
+𖦹 Methods
+• short Age()
+
+25. FACULTY Class
+𖦹 <pink>class</pink> FACULTY <pink>extends</pink> PERSON
+• <pink>extent</pink> FACULTY
+𖦹 Attributes
+• <pink>attribute string</pink> Rank
+• <pink>attribute float</pink> Salary
+• <pink>attribute string</pink> Office
+• <pink>attribute string</pink> Phone
+𖦹 Relationships
+• DEPARTMENT Works_in inverse DEPARTMENT::Has_faculty
+• set<GRAD_STUDENT> Advises inverse GRAD_STUDENT::Advisor
+• set<GRAD_STUDENT> On_committee_of inverse GRAD_STUDENT::Committee
+𖦹 Methods
+• void give_raise(in float raise)
+• void promote(in string new_rank)
+
+26. GRADE Class
+𖦹 <pink>class</pink> GRADE
+• <pink>extent</pink> GRADES
+𖦹 Attributes
+• <pink>attribute enum</pink> GradeValues{A,B,C,D,F,I,P} Grade
+𖦹 Relationships
+• SECTION Section inverse SECTION::Students
+• STUDENT Student inverse STUDENT::Completed_sections
+
+27. STUDENT Class
+𖦹 <pink>class</pink> STUDENT <pink>extends</pink> PERSON
+• <pink>extent</pink> STUDENTS
+𖦹 Attributes
+• <pink>attribute string</pink> Class
+• <pink>attribute Department</pink> Minors_in
+𖦹 Relationships
+• Department Majors_in inverse DEPARTMENT::Has_majors
+• set<GRADE> Completed_sections inverse GRADE::Student
+• set<CURR_SECTION> Registered_in inverse CURR_SECTION::Registered_students
+𖦹 Methods
+• void change_major(in string dname) raises(dname_not_valid)
+• float gpa()
+• void register(in short secno) raises(section_not_valid)
+• void assign_grade(in short secno; IN GradeValue grade) raises(section_not_valid, grade_not_valid)
+
+28. DEGREE Class
+𖦹 <pink>class</pink> DEGREE
+𖦹 Attributes
+• <pink>attribute string</pink> College
+• <pink>attribute string</pink> Degree
+• <pink>attribute string</pink> Year
+
+29. GRAD_STUDENT Class
+𖦹 <pink>class</pink> GRAD_STUDENT <pink>extends</pink> STUDENT
+• <pink>extent</pink> GRAD_STUDENTS
+𖦹 Attributes
+• <pink>attribute set</pink><Degree> Degrees
+𖦹 Relationships
+• Faculty advisor inverse FACULTY::Advises
+• set<FACULTY> Committee inverse FACULTY::On_committee_of
+𖦹 Methods
+• void assign_advisor(in string Lname; in string Fname) raises(faculty_not_valid)
+• void assign_committee_member(in string Lname; in string Fname) raises(faculty_not_valid)
+
+30. DEPARTMENT Class
+𖦹 <pink>class</pink> DEPARTMENT
+• <pink>extent</pink> DEPARTMENTS
+• <pink>key</pink> Dname
+𖦹 Attributes
+• <pink>attribute string</pink> Dname
+• <pink>attribute string</pink> Dphone
+• <pink>attribute string</pink> Doffice
+• <pink>attribute string</pink> College
+• <pink>attribute FACULTY</pink> Chair
+𖦹 Relationships
+• set<FACULTY> Has_faculty inverse FACULTY::Works_in
+• set<STUDENT> Has_majors inverse STUDENT::Majors_in
+• set<COURSE> Offers inverse COURSE::Offered_by
+
+31. COURSE Class
+𖦹 <pink>class</pink> COURSE
+• <pink>extent</pink> COURSES
+• <pink>key</pink> Cno
+𖦹 Attributes
+• <pink>attribute string</pink> Cname
+• <pink>attribute string</pink> Cno
+• <pink>attribute string</pink> Description
+𖦹 Relationships
+• set<SECTION> Has_sections inverse SECTION::Of_course
+• <DEPARTMENT> Offered_by inverse DEPARTMENT::Offers
+
+32. SECTION Class
+𖦹 <pink>class</pink> SECTION
+• <pink>extent</pink> SECTIONS
+𖦹 Attributes
+• <pink>attribute short</pink> Sec_no
+• <pink>attribute string</pink> Year
+• <pink>attribute enum</pink> Quarter{Fall, Winter, Spring, Summer} Qtr
+𖦹 Relationships
+• set<Grade> Students inverse Grade::Section
+• COURSE Of_course inverse COURSE::Has_sections
+
+33. CURR_SECTION Class
+𖦹 <pink>class</pink> CURR_SECTION <pink>extends</pink> SECTION
+• <pink>extent</pink> CURRENT_SECTIONS
+𖦹 Relationships
+• set<STUDENT> Registered_students inverse STUDENT::Registered_in
+𖦹 Methods
+• void register_student(in string Ssn) raises(student_not_valid, section_full)
+
+34. GRADE Explanation
+𖦹 Represents M:N relationship between STUDENT and SECTION
+• Made a separate class because it has the relationship attribute Grade
+• Relationships: Completed_sections of STUDENT, Section and Student of GRADE, Students of SECTION
+
+35. DEGREE Explanation
+𖦹 Represents composite multivalued attribute Degrees of GRAD_STUDENT
+
+36. Interface Example
+𖦹 interface GeometryObject
+• Attributes
+- <pink>attribute enum</pink> Shape{RECTANGLE, TRIANGLE, CIRCLE, …} Shape
+- <pink>attribute struct</pink> Point {short x, short y} Reference_point
+• Methods
+- float perimeter()
+- float area()
+- void translate(in short x_translation; in short y_translation)
+- void rotate(in float angle_of_rotation)
+𖦹 Classes implementing GeometryObject: RECTANGLE, TRIANGLE, CIRCLE
+• Inherit all operations from interface
+• Attributes must be repeated if needed
+• Methods can have different implementations in each class
+
+37. Inheritance Rules
+𖦹 Interface inheritance allows multiple inheritance
+𖦹 Class <pink>extends</pink> inheritance allows only single inheritance
+• A class can extend at most one class and implement multiple interfaces
+
+38. Differences between ODB and RDB Design
+𖦹 ODB handles relationships using relationship properties or reference attributes containing OID(s) of related objects.
+• Single references and collections of references are allowed.
+• References can be declared in one or both directions; inverses enforce referential integrity.
+𖦹 RDB handles relationships using attributes with matching values (foreign keys).
+• Foreign keys are single-valued.
+• M:N relationships require separate tables.
+𖦹 Mapping binary relationships with attributes in ODB is complex.
+• Including attributes in both directions causes redundancy and possible inconsistencies.
+• Separate classes may be used for relationships, especially for n-ary relationships (n > 2).
+𖦹 Inheritance is built into ODB using constructs like derived (:) and extends.
+• RDB has no built-in inheritance; options must be chosen manually.
+𖦹 Operations must be specified early in ODB design as part of class definitions.
+• RDB can delay operation specifications until implementation.
+𖦹 Philosophical difference: ODB requires predefined behaviors, while RDB allows ad hoc queries.
+
+39. Mapping EER Schema to ODB Schema Overview
+𖦹 Type declarations of object classes are straightforward for EER schemas without categories or n-ary relationships (n > 2).
+𖦹 Class operations are not in the EER diagram and must be added after structural mapping.
+
+40. Step 1: Create ODL Classes
+𖦹 Create an ODL class for each EER entity type or subclass.
+• Include all attributes from the EER class.
+• Multivalued attributes use set, bag, or list constructors.
+- list: ordered values, bag: allows duplicates, set: unique values.
+• Composite attributes use struct (tuple) constructor.
+• Declare extent and specify key attributes.
+
+41. Step 2: Add Relationship Properties
+𖦹 Add relationship properties or reference attributes for each binary relationship.
+• Can be created in one or both directions.
+• Inverse references can be declared if supported.
+𖦹 Single-valued for 1:1 or N:1 relationships; collection types for 1:N or M:N.
+𖦹 Relationship attributes can use struct<reference, attributes>.
+- Using both directions may cause redundancy.
+- Some ODBMS may not support inverse relationships; programmers must maintain relationships in code.
+
+42. Step 3: Include Operations
+𖦹 Add operations for each class based on requirements.
+• Constructor checks constraints when creating objects.
+• Destructor checks constraints when deleting objects.
+• Other methods include additional constraint checks.
+- Program code should enforce these checks.
+
+43. Step 4: Subclass Mapping
+𖦹 ODL class corresponding to a subclass inherits attributes, relationships, and methods from its superclass using extends.
+𖦹 Local attributes, relationships, and operations are added as in steps 1, 2, and 3.
+
+44. Step 5: Weak Entity Types
+𖦹 Map weak entity types like regular entities.
+• Alternative: map weak entities with only identifying relationship as composite multivalued attributes using set<struct<…>> or list<struct<…>>.
+• Attributes included in struct correspond to tuple constructor.
+
+45. Step 6: Categories (Union Types)
+𖦹 Mapping categories is difficult.
+• Create a class for the category.
+• Define 1:1 relationships between the category and each superclass, similar to EER-to-relational mapping.
+
+46. Step 7: N-ary Relationships and M:N
+𖦹 N-ary relationships (n > 2) are mapped into a separate class.
+• Include references to each participating class using 1:N mapping.
+𖦹 M:N binary relationships with attributes may also be mapped as separate classes if desired.
+
+47. Practical Application
+𖦹 The mapping algorithm is applied to a subset of the UNIVERSITY database.
+𖦹 The resulting ODL object schema follows the ODMG standard.
+
+48. The Object Query Language OQL Overview
+𖦹 OQL is the query language for the ODMG object model.
+• Works with programming languages like C++, Smalltalk, and Java via ODMG bindings.
+• Queries return objects matching the language's type system.
+• Class operations can have code in these programming languages.
+𖦹 OQL syntax is similar to SQL but includes features for object identity, complex objects, operations, inheritance, polymorphism, and relationships.
+𖦹 Examples use the UNIVERSITY database schema.
+
+49. Simple OQL Queries, Entry Points, and Iterator Variables
+𖦹 Basic OQL query syntax: select … from … where …
+• Example: 
+Q0: <pink>select</pink> D.Dname
+<pink>from</pink> D <pink>in</pink> DEPARTMENTS
+<pink>where</pink> D.College = 'Engineering';
+𖦹 Database entry points can be any named persistent object or extent.
+• Extent names refer to persistent collections (set of objects), e.g., DEPARTMENTS: set<DEPARTMENT>.
+𖦹 Iterator variables range over each object in the collection.
+• Example: D in DEPARTMENTS.
+𖦹 Result type: bag for select, set for select distinct (removes duplicates).
+𖦹 Iterator variable syntax options:
+• D in DEPARTMENTS
+• DEPARTMENTS D
+• DEPARTMENTS AS D
+
+50. Query Results and Path Expressions
+𖦹 Query results can be any ODMG object model type.
+• Single persistent name returns a reference to that object or collection.
+• Example: Q1: DEPARTMENTS; returns set<DEPARTMENT>.
+𖦹 Path expressions traverse relationships/attributes starting from a persistent name or iterator variable.
+• Dot notation connects attributes or relationships.
+• Example: 
+Q2: CS_DEPARTMENT.Chair; returns FACULTY object.
+Q2A: CS_DEPARTMENT.Chair.Rank; returns string.
+Q2B: CS_DEPARTMENT.Has_faculty; returns set<FACULTY>.
+𖦹 Collections must use iterator variables for operations on attributes of multiple objects.
+• Example:
+Q3A: <pink>select</pink> F.Rank <pink>from</pink> F <pink>in</pink> CS_DEPARTMENT.Has_faculty;
+Q3B: <pink>select distinct</pink> F.Rank <pink>from</pink> F <pink>in</pink> CS_DEPARTMENT.Has_faculty;
+
+51. Structs in Query Results
+𖦹 OQL can return complex structured results using struct.
+• Example:
+Q4A: <pink>select struct</pink>(name: struct(last_name: S.name.Lname, first_name: S.name.Fname),
+degrees: (<pink>select struct</pink>(deg: D.Degree, yr: D.Year, college: D.College)
+<pink>from</pink> D <pink>in</pink> S.Degrees)) 
+<pink>from</pink> S <pink>in</pink> CS_DEPARTMENT.Chair.Advises;
+𖦹 Nested structs allow hierarchical data: first-level structs with name and degrees components, degrees is a collection of second-level structs.
+
+52. Orthogonality of Path Expressions
+𖦹 Attributes, relationships, and operations can be used interchangeably in path expressions.
+• Example: retrieving GPA of senior CS students ordered by GPA, last and first names:
+Q5A: <pink>select struct</pink>(last_name: S.name.Lname, first_name: S.name.Fname, gpa: S.gpa)
+<pink>from</pink> S <pink>in</pink> CS_DEPARTMENT.Has_majors
+<pink>where</pink> S.Class = 'senior'
+<pink>order by</pink> gpa desc, last_name asc, first_name asc;
+
+53. Views as Named Queries
+𖦹 Views use named queries via define keyword; unique identifier required.
+• Example:
+V1: <pink>define</pink> Has_minors(Dept_name) <pink>as</pink>
+<pink>select</pink> S <pink>from</pink> S <pink>in</pink> STUDENTS
+<pink>where</pink> S.Minors_in.Dname = Dept_name;
+𖦹 Views can have parameters and represent infrequently used inverse relationships.
+𖦹 Example query using view: Has_minors('Computer Science');
+
+54. Extracting Single Elements
+𖦹 element operator extracts a single element from a singleton collection.
+• Raises exception if collection is empty or has multiple elements.
+• Example:
+Q6: <pink>element</pink>(<pink>select</pink> D <pink>from</pink> D <pink>in</pink> DEPARTMENTS
+<pink>where</pink> D.Dname = 'Computer Science');
+
+55. Collection Operators (Aggregates and Quantifiers)
+𖦹 Aggregate operators: min, max, count, sum, avg.
+• count returns integer; others return type of operand collection.
+• Examples:
+Q7: <pink>count</pink>(S <pink>in</pink> Has_minors('Computer Science'));
+Q8: <pink>avg</pink>(<pink>select</pink> S.Gpa <pink>from</pink> S <pink>in</pink> STUDENTS
+<pink>where</pink> S.Majors_in.Dname = 'Computer Science' <pink>and</pink> S.Class = 'Senior');
+𖦹 Membership and quantifiers:
+• (E in C): true if E in collection C.
+• (for all V in C : B): true if all elements satisfy B.
+• (exists V in C : B): true if at least one element satisfies B.
+• Examples:
+Q10: <pink>select</pink> S.name.Lname, S.name.Fname <pink>from</pink> S <pink>in</pink> STUDENTS
+<pink>where</pink> 'Database Systems I' <pink>in</pink> (<pink>select</pink> C.Section.Of_course.Cname <pink>from</pink> C <pink>in</pink> S.Completed_sections);
+Q11: JEREMY <pink>in</pink> Has_minors('Computer Science');
+Q12: <pink>for all</pink> G <pink>in</pink> (<pink>select</pink> S <pink>from</pink> S <pink>in</pink> GRAD_STUDENTS
+<pink>where</pink> S.Majors_in.Dname = 'Computer Science') : G.Advisor <pink>in</pink> CS_DEPARTMENT.Has_faculty;
+Q13: <pink>exists</pink> G <pink>in</pink> (<pink>select</pink> S <pink>from</pink> S <pink>in</pink> GRAD_STUDENTS
+<pink>where</pink> S.Majors_in.Dname = 'Computer Science') : G.Gpa = 4;
+
+56. Ordered (Indexed) Collection Expressions
+𖦹 Lists and arrays support first, last, ith element, sub-collection, concatenation.
+• Example for highest salary:
+Q14: <pink>first</pink>(<pink>select struct</pink>(facname: F.name.Lname, salary: F.Salary)
+<pink>from</pink> F <pink>in</pink> FACULTY
+<pink>order by</pink> salary desc);
+• Example for top 3 GPAs:
+Q15: (<pink>select struct</pink>(last_name: S.name.Lname, first_name: S.name.Fname, gpa: S.Gpa)
+<pink>from</pink> S <pink>in</pink> CS_DEPARTMENT.Has_majors
+<pink>order by</pink> gpa desc)[0:2];
+
+57. Grouping Operator
+𖦹 group by partitions objects with same attribute values; returns set of structs with partition data.
+• Example: count majors per department:
+Q16: (<pink>select struct</pink>(dept_name, number_of_majors: <pink>count</pink>(partition))
+<pink>from</pink> S <pink>in</pink> STUDENTS
+<pink>group by</pink> dept_name: S.Majors_in.Dname);
+𖦹 Result type: set<struct(dept_name: string, partition: bag<struct(S: STUDENT)>)>
+𖦹 having clause filters groups based on conditions.
+• Example: average GPA for departments with >100 students:
+Q17: <pink>select</pink> dept_name, avg_gpa: <pink>avg</pink>(<pink>select</pink> P.gpa <pink>from</pink> P <pink>in</pink> partition)
+<pink>from</pink> S <pink>in</pink> STUDENTS
+<pink>group by</pink> dept_name: S.Majors_in.Dname
+<pink>having</pink> <pink>count</pink>(partition) > 100;
+
+58. Overview of the C++ Language Binding in ODMG
+𖦹 C++ language binding maps ODL constructs to C++ constructs using a class library.
+• Object Manipulation Language (OML) specifies how database objects are retrieved and manipulated in C++.
+• Physical pragmas provide control over storage, clustering, indexes, and memory.
+
+59. Database Class Library in C++
+𖦹 Classes for database concepts use the prefix d_.
+• D_Ref<T> allows program variables to refer to both persistent and transient objects of class T.
+• Abstract class D_Object<T> specifies operations for all objects.
+• Abstract class D_Collection<T> specifies operations for collections (not instantiable).
+𖦹 Template classes for collections include:
+• D_Set<T>, D_List<T>, D_Bag<T>, D_Varray<T>, D_Dictionary<T>
+- Example: D_Set<D_Ref<STUDENT>> is a set of references to STUDENT objects; D_Set<string> is a set of strings.
+• d_Iterator corresponds to the Iterator class in the object model.
+
+60. Specifying Classes and Attributes
+𖦹 C++ ODL allows database schema classes using C++ and object database library constructs.
+𖦹 Basic attribute types: d_Short, d_Ushort, d_Long, d_Float.
+𖦹 Structured literal types: d_String, d_Interval, d_Date, d_Time, d_Timestamp.
+
+61. Relationships in C++ Binding
+𖦹 Relationships use prefix rel_ in type names.
+• Example for 1:N binary relationship between DEPARTMENT and STUDENT:
+<pink>d_Rel_Ref</pink><<yellow>DEPARTMENT, Has_majors</yellow>> Majors_in; 
+<pink>d_Rel_Set</pink><<yellow>STUDENT, Majors_in</yellow>> Has_majors;
+
+62. Creating and Modifying Objects
+𖦹 OML overloads <pink>new</pink> to create persistent or transient objects.
+• Example: D_Ref<STUDENT> S = <pink>new</pink>(DB1, 'John_Smith') STUDENT; creates a persistent STUDENT in DB1.
+𖦹 Objects can be deleted using delete_object().
+𖦹 Object modification is done through class-defined operations (methods).
+
+63. Extents in C++ Binding
+𖦹 Use d_Extent to create named collection objects (extents) in database.
+• Example: D_Extent<PERSON> ALL_PERSONS(DB1); creates a named collection ALL_PERSONS of type D_Set<PERSON>.
+𖦹 Key constraints are not supported; programmer must implement key checks in class methods.
+𖦹 Persistence via reachability is not supported; objects must be declared persistent when created.
