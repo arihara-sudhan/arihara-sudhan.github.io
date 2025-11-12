@@ -291,6 +291,7 @@ SOURCE: "FUNDAMENTALS OF DATABASE SYSTEMS" by Elmasri and Navathe
 • Extents: PERSONS, FACULTY, STUDENTS, GRAD_STUDENTS.
 • Subsets: STUDENTS ⊆ PERSONS, GRAD_STUDENTS ⊆ STUDENTS.
 • Individual objects inherit properties and operations of supertypes.
+IMG_URL odl.png
 
 23. Class Hierarchy and Inheritance
 𖦹 GRAD_STUDENTs are a subset of STUDENTs.
