@@ -135,7 +135,7 @@
 					    'proj-but': './projects/',
 					    'blog-but': 'https://arihara-sudhan.github.io/blog/',
 					    'hobs-but': './hobbies/',
-					    'learn-but': './ari-learns/',
+					    'learn-but': 'https://arihara-sudhan.github.io/learn-with-ari',
 					    'tam-but': './tamizh'
 					};
          
@@ -143,7 +143,7 @@
                      const route = pageRoutes[targetId];
          
                      if (route) {
-                         if (targetId === 'blog-but' || targetId === 'tam-but' || targetId === 'words-but' || targetId === 'pdf-but') {
+                         if (targetId === 'learn-but' || targetId === 'blog-but' || targetId === 'tam-but' || targetId === 'words-but' || targetId === 'pdf-but') {
                              window.open(route, '_blank');
                          } else {
                              location.href = route;
