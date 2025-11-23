@@ -41,5 +41,15 @@
             "shot4.jpg",
             "shot5.jpg"
         ]
+    },
+    {
+        "title": "Deep Learning and Gen AI",
+        "date": "15-11-2025",
+        "college": "Kongu Engineering College",
+        "about": "I had a wonderful experience visiting Kongu Engineering College where I had the opportunity to interact with a group of energetic and curious young innovators. Even though I had a bit of seasonal fever and cough, the joy of teaching completely lifted my spirit. In the morning session we explored the foundations of deep learning by understanding biological neurons artificial neurons activation functions perceptrons and the idea of linearly separable and non-separable problems. In the afternoon we shifted into the world of LLMs and learned how to build simple and clear RAG systems by breaking concepts into smaller meaningful parts. The students were highly interactive and their positive feedback made the entire day special. My heartfelt thanks to the faculty members and organizers at Kongu Engineering College for creating such a warm learning environment and making this experience truly memorable.",
+        "folder-path": "/kongu-15-11-2025/",
+        "images": [
+            "image-1.jpg"
+        ]
     }
 ]
