@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    font-family: "Open Sans", serif;
+}
+
+p {
+    text-align: justify;
+}
+
+body {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
+
+.pettagam * {
+    margin: 0;
+    padding: 0;
+}
+.pettagam {
+    width: 100%;
+    border-radius: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tharavu {
+    width: 28%;
+    font-size: 1vw;
+    margin: 0.5rem;
+    background-color: lightgreen;
+    border-radius: 1rem;
+    border-right: 0.2rem solid yellow;
+    border-bottom: 0.3rem solid yellow;
+    padding: 1rem;
+}
+
+.katturai {
+    width: 92%;
+    display: flex;
+    font-size: 1.23vw;
+    background-color: lightgreen;
+    border-radius: 1rem;
+    border-right: 0.2rem solid yellow;
+    border-bottom: 0.3rem solid yellow;
+    padding: 1rem;    
+    margin: 0.5rem;
+}
+
+.katturai img {
+    width: 10%;
+    border-radius: 1rem;
+    margin: 0.5rem;
+}
+
+.pettagam:hover {
+    cursor: pointer;
+}
+
+.katturai:hover {
+    cursor: pointer;
+}
+
+.tharavu img {
+    width: 60%;
+    border-radius: 1rem;
+    margin: 0.5rem;
+}
+
+
+@media (max-width: 1000px) {
+    .pettagam {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 99%;
+        align-items: center;
+    }
+    .tharavu {
+        font-size: 1.5vw;
+        width: 90%;
+        margin: 1rem;
+    }
+    .tharavu img {
+        width: 90%;
+    }
+    .katturai {
+        font-size: 1.5vw;
+        width: 90%;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .katturai h1 {
+        text-align: center;
+    }
+    .katturai p {
+        font-size: 2vw;
+    }
+    .katturai img {
+        width: 90%;
+    }
+    
+}

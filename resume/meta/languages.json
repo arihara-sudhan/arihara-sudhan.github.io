@@ -1,0 +1,24 @@
+[
+    {
+      "name": "Tamizh",
+      "image": {
+        "src": "./statics/languages/tamizh.png",
+        "alt": ""
+      }
+    },
+    {
+      "name": "Malayalam (Written)",
+      "image": {
+        "src": "./statics/languages/malayalam.png",
+        "alt": ""
+      }
+    },
+    {
+      "name": "English",
+      "image": {
+        "src": "./statics/languages/eng.png",
+        "alt": ""
+      }
+    }
+  ]
+  

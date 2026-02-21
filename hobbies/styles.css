@@ -1,0 +1,635 @@
+#hobbies {
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    align-items: center;
+}
+
+/* Main Section: Portrait Video + Regular Hobbies */
+.hobbies-main-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: stretch;
+    gap: 0.8rem;
+}
+
+/* Portrait Video Container (left side, spans 4 rows) */
+.portrait-video-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-hobby.portrait {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #42414d;
+    border-radius: 0.8rem;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    flex-shrink: 0;
+}
+
+.portrait .video-container {
+    position: relative;
+    width: 100%;
+    flex: 1;
+}
+
+.portrait .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.video-hobby:hover {
+    background-color: #42414d;
+    cursor: default;
+}
+
+.hobbies-grid {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 1rem;
+}
+
+.hobbies-row {
+    display: flex;
+    gap: 0.8rem;
+    height: 19vh;
+}
+
+.hobby {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #42414d;
+    padding: 0.6rem;
+    border-radius: 0.8rem;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    flex: 1 1 0;
+    min-width: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hobby img {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.hobby h3 {
+    font-size: 1.8vw;
+    margin: 0;
+    color: white;
+    flex: 1;
+    min-width: 0;
+    word-wrap: break-word;
+}
+
+.hobby:hover {
+    background-color: lightgreen;
+    color: black;
+    border-right: 3px solid green;
+    border-bottom: 3px solid green;
+}
+
+.hobby:hover h3 {
+    color: black;
+}
+
+.hobbies-bottom-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: stretch;
+    gap: 0.51rem;
+    height: 50vh;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Landscape Video Container (left side) */
+.landscape-video-container {
+    width: 60%;
+    height: 100%;
+}
+
+.video-hobby.landscape {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #42414d;
+    border-radius: 0.8rem;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+}
+
+.landscape .video-container {
+    position: relative;
+    width: 100%;
+    flex: 1;
+}
+
+.landscape .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.singing-stage-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 1rem;
+    height: 100%;
+}
+
+.singing-stage-container .hobby {
+    flex: 1;
+    min-height: 0;
+}
+
+/* Tamil Font */
+@font-face {
+    font-family: 'Tamil';
+    src: url('../setup/tamil.TTF') format('truetype');
+}
+
+/* =========================
+   Base Styling (Desktop)
+========================= */
+#hobbies {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.8rem;
+}
+
+.hero-title {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Main Section: Portrait Video + Regular Hobbies */
+.hobbies-main-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: stretch;
+    gap: 0.8rem;
+}
+
+/* Portrait Video Container */
+.portrait-video-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-hobby.portrait {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #42414d;
+    border-radius: 0.8rem;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    flex-shrink: 0;
+}
+
+.portrait .video-container {
+    position: relative;
+    width: 100%;
+    flex: 1;
+}
+
+.portrait .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.video-hobby:hover {
+    background-color: #42414d;
+    cursor: default;
+}
+
+/* Hobbies Grid */
+.hobbies-grid {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 1rem;
+}
+
+.hobbies-row {
+    display: flex;
+    gap: 0.8rem;
+    height: 19vh;
+}
+
+.hobby {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #42414d;
+    padding: 0.6rem;
+    border-radius: 0.8rem;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+    flex: 1 1 0;
+    min-width: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hobby img {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.hobby h3 {
+    font-size: 1.8vw;
+    margin: 0;
+    color: white;
+    flex: 1;
+    min-width: 0;
+    word-wrap: break-word;
+}
+
+.hobby:hover {
+    background-color: lightgreen;
+    color: black;
+    border-right: 3px solid green;
+    border-bottom: 3px solid green;
+}
+
+.hobby:hover h3 {
+    color: black;
+}
+
+/* Bottom Section */
+.hobbies-bottom-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: stretch;
+    gap: 1.5rem;
+    height: 50vh;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+.landscape-video-container {
+    width: 60%;
+    height: 100%;
+}
+
+.video-hobby.landscape {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #42414d;
+    border-radius: 0.8rem;
+    border-right: 3px solid lightgreen;
+    border-bottom: 3px solid lightgreen;
+}
+
+.landscape .video-container {
+    position: relative;
+    width: 100%;
+    flex: 1;
+}
+
+.landscape .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.singing-stage-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+
+.singing-stage-container .hobby {
+    flex: 1;
+    min-height: 0;
+}
+
+/* =========================
+   Tablet Styling (768px–1024px)
+========================= */
+@media (max-width: 1024px) and (min-width: 768px) {
+
+    #hobbies {
+        width: 92%;
+    }
+
+    .hero-section {
+        width: 90%;
+        margin: 0 auto 1rem;
+    }
+
+    .hero-title {
+        font-size: 4vw;
+    }
+
+    /* Main Section: Portrait + Grid */
+    .hobbies-main-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    .portrait-video-container {
+        width: 90%;
+        height: 45vh;
+    }
+
+    .hobbies-grid {
+        width: 90%;
+        gap: 0.8rem;
+    }
+
+    .hobbies-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        gap: 0.8rem;
+    }
+
+    .hobby {
+        flex: 1 1 45%;
+        height: 16vh;
+        font-size: 1.2rem;
+        border-right: 2px solid lightgreen;
+        border-bottom: 2px solid lightgreen;
+    }
+
+    .hobby img {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-right: 0.4rem;
+        object-fit: contain;
+    }
+
+    .hobby h3 {
+        font-size: 2.5vw;
+    }
+
+    /* Bottom Section */
+    .hobbies-bottom-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        height: auto;
+        margin-bottom: 3rem;
+    }
+
+    .landscape-video-container {
+        width: 90%;
+        height: 45vh;
+    }
+
+    .singing-stage-container {
+        width: 90%;
+        flex-direction: row;
+        gap: 0.8rem;
+        height: 25vh;
+    }
+
+    .singing-stage-container .hobby {
+        flex: 1;
+        height: 100%;
+        font-size: 1rem;
+    }
+
+    /* Font Tweaks */
+    h3 {
+        font-size: 2.4vw;
+    }
+
+    /* Reduce borders slightly for cleaner look */
+    .video-hobby.portrait,
+    .video-hobby.landscape,
+    .hobby {
+        border-right: 2px solid lightgreen;
+        border-bottom: 2px solid lightgreen;
+    }
+}
+
+
+/* =========================
+   Mobile Styling (<768px)
+========================= */
+@media (max-width: 767px) {
+
+    #hobbies {
+        width: 95%;
+    }
+
+    .hero-section {
+        width: 100%;
+        margin: 0 auto 1rem;
+    }
+
+    .hero-title {
+        font-size: 5vw;
+    }
+
+    /* Video Styling for Mobile */
+    .video-hobby.portrait,
+    .video-hobby.landscape {
+        width: 100%;
+        margin: 0.5rem 0;
+        height: auto;
+        box-sizing: border-box;
+        display: flex !important;
+        flex-direction: column !important;
+        border-radius: 0.8rem;
+        overflow: hidden;
+    }
+
+    .portrait .video-container {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        min-height: 50vh;
+        overflow: hidden;
+        background-color: #42414d;
+        border-radius: 0.8rem;
+    }
+
+    .landscape .video-container {
+        position: relative;
+        width: 100%;
+        height: 30vh;
+        min-height: 30vh;
+        overflow: hidden;
+        background-color: #42414d;
+        border-radius: 0.8rem;
+    }
+
+    .portrait .video-container iframe,
+    .landscape .video-container iframe {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 0.8rem;
+        border: none;
+        display: block;
+    }
+
+    /* Main Section: Portrait + Grid */
+    .hobbies-main-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+    }
+
+    .portrait-video-container {
+        width: 100%;
+        height: 45vh;
+    }
+
+    .hobbies-grid {
+        width: 100%;
+        gap: 0;
+    }
+
+    .hobbies-row {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        gap: 0;
+        width: 100%;
+    }
+
+    .hobby {
+        width: 100%;
+        flex: none;
+        height: 12vh;
+        font-size: 1.2rem;
+        border-right: 2px solid lightgreen;
+        border-bottom: 2px solid lightgreen;
+        justify-content: flex-start;
+        padding: 0.8rem;
+        box-sizing: border-box;
+        margin: 0.5rem 0;
+    }
+
+    .hobby img {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 0.6rem;
+        object-fit: contain;
+    }
+
+    .hobby h3 {
+        font-size: 3.5vw;
+        text-align: left;
+    }
+
+    /* Bottom Section */
+    .hobbies-bottom-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        height: auto;
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+
+    .landscape-video-container {
+        width: 100%;
+        height: 35vh;
+    }
+
+    .singing-stage-container {
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+    }
+
+    .singing-stage-container .hobby {
+        flex: none;
+        width: 100%;
+        height: 12vh;
+        font-size: 1rem;
+        box-sizing: border-box;
+        margin: 0.5rem 0;
+    }
+
+    /* Font Tweaks */
+    h3 {
+        font-size: 3.2vw;
+    }
+
+    /* Borders slightly lighter for small screens */
+    .video-hobby.portrait,
+    .video-hobby.landscape,
+    .hobby {
+        border-right: 2px solid lightgreen;
+        border-bottom: 2px solid lightgreen;
+    }
+}

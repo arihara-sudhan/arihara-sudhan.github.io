@@ -1,0 +1,61 @@
+[
+    {
+        "url": "https://www.youtube.com/embed/CXd4P4M8lPA?si=vprfszhbUQfRpiAf",
+        "isVideo": true
+    },
+    {
+        "title": "Blogging",
+        "url": "https://arihara-sudhan.github.io/blog",
+        "imgURL": "https://arihara-sudhan.github.io/blog/static/clover-1.png"
+    },
+    {
+        "title": "LinkedIning",
+        "url": "https://www.linkedin.com/in/arihara-sudhan/",
+        "imgURL": "./static/linkedin.gif"
+    },
+     {
+        "title": "Tech Teaching",
+        "url": "https://www.youtube.com/@clever_clover_7",
+        "imgURL": "./static/clever_clover.png"
+    },
+    {
+        "title": "Contributing to Tamil",
+        "url": "https://arihara-sudhan.github.io/tamizh",
+        "imgURL": "https://arihara-sudhan.github.io/resume/statics/languages/tamizh.png"
+    },    
+    {
+        "title": "Poem Writing (Tamil)",
+        "url": "https://arihara-sudhan.github.io/ariyin-kavithaigal",
+        "imgURL": "./static/pen.png"
+    },
+    {
+        "title": "Clay Art",
+        "url": "https://www.instagram.com/stories/highlights/17885298282028761/",
+        "imgURL": "./static/clayArt.png"
+    },
+    {
+        "title": "Flora & Fauna",
+        "url": "https://www.youtube.com/@ferns-and-friends/shorts",
+        "imgURL": "./static/flora_and_fauna.webp"
+    },
+    {
+        "title": "Binomial Names",
+        "url": "https://youtu.be/CXd4P4M8lPA?si=VAjLUD-pHkJQejFA",
+        "imgURL": "./static/hibiscus.png"
+    },
+    {
+        "url": "https://www.youtube.com/embed/1-qctj4rSG4?si=5BKpOTaiWy1yEmja",
+        "isVideo": true,
+        "isLandscape": true
+    },
+    {
+        "title": "Singing",
+        "url": "https://youtu.be/ulGfscwn6jA?si=22lr8Ckh0QpiUjXv",
+        "imgURL": "https://png.pngtree.com/png-vector/20230324/ourmid/pngtree-hand-draw-young-man-singer-icon-vector-png-image_6667321.png"
+    },
+    {
+        "title": "Stage speech",
+        "url": "https://youtu.be/t8MWH2EMrbo?si=2lOSlpRBm-xOHYVG",
+        "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ5bu33Z6wMz8hTxkcbPhYZQ4eFnuObJfrOA&s"
+    }
+]

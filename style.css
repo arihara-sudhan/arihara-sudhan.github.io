@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+body {
+    background-image: url("statics/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 2rem;
+    margin: 5vh 0vh 5vh 0vh;
+    background-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cover img {
+    width: 25%;
+    border-radius: 50%;
+    border: 0.4vw solid rgba(255, 255, 255, 0.52);
+}
+
+#name {
+    font-size: 5vw;
+    font-weight: bolder;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    letter-spacing: 0.01vw;
+}
+
+#bio {
+    font-size: 2vw;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    letter-spacing: 0.8vw;
+}
+
+.first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+    margin-bottom: 0;
+}
+
+.options {
+    margin: 5% 0% 5% 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.options button {
+    margin: 2% 0% 2% 0%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0;
+    color: white;
+    font-size: 2.8vw;
+    padding: 2%;
+    transition: 0.3s;
+}
+
+.options button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: scale(1.023);
+}
+
+.contact {
+    padding: 1%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 3vw;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#tig {
+    border: 0;
+    border-radius: 0;
+    animation-name: move;
+    animation-duration: 10s;
+    position: fixed;
+    bottom: -6%;
+    left: 0;
+    transform: translateX(-150%);
+}
+
+@keyframes move {
+    100% {
+        transform: translateX(250%);
+    }
+}
+
+@media (max-width: 1000px) {
+    .cover {
+        width: 90%;
+    }
+
+    #tig {
+        width: 100rem;
+    }
+
+    .options button {
+        font-size: 4vw;
+        font-weight: 2vw;
+        padding: 1rem;
+    }
+
+    #name {
+        font-size: 7vw;
+    }
+}
+
+i {
+    transition: 0.3s;
+}
+
+i:hover {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.options button:hover {
+    cursor: pointer;
+}
+
+.split-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2% 0%;
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: none;
+}
+
+.split-buttons button {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0;
+    color: white;
+    font-size: 2.8vw;
+    padding: 2%;
+    transition: none;
+    flex: 1;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    cursor: pointer;
+}
+
+.split-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.options button#res-but {
+    opacity: 0;
+    animation: fadeIn 0.03s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .split-buttons button {
+        font-size: 4vw;
+        padding: 1rem;
+    }
+
+    .split-buttons {
+        gap: 0.5rem;
+    }
+}
+
+/* ---- Contact Modal ---- */
+.contact-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.contact-modal-box {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    animation: modalSlideUp 0.4s ease;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(30px) scale(0.97);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Left Panel — White with icon */
+.contact-left {
+    flex: 0 0 42%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 1.8rem;
+    text-align: center;
+}
+
+.contact-modal-icon {
+    width: 140px;
+    height: 140px;
+    border: none !important;
+    border-radius: 0 !important;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+    margin-bottom: 1.2rem;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.contact-modal-title {
+    margin: 0 0 0.4rem;
+    color: #1a1a2e;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.contact-modal-subtitle {
+    margin: 0;
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Right Panel — Green watercolor */
+.contact-right {
+    flex: 1;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(40, 100, 50, 0.6) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 70%, rgba(30, 80, 40, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 10%, rgba(50, 110, 55, 0.4) 0%, transparent 45%),
+        radial-gradient(ellipse at 70% 40%, rgba(35, 90, 45, 0.35) 0%, transparent 60%),
+        linear-gradient(135deg, #1a4a2a 0%, #1e5c30 30%, #245a35 60%, #2d6b3a 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Close button */
+.contact-modal-close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.9rem;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.2s;
+    line-height: 1;
+    z-index: 10;
+}
+
+.contact-modal-close:hover {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+/* Form fields */
+.contact-field {
+    margin-bottom: 1.1rem;
+}
+
+.contact-field label {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.contact-field textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.contact-send-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: #fff;
+    color: #1a1a2e;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.contact-send-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+.contact-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.contact-status {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+    min-height: 1.2em;
+}
+
+.contact-status.success {
+    color: #6ee7b7;
+}
+
+.contact-status.error {
+    color: #fca5a5;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .contact-modal-box {
+        max-width: 600px;
+        border-radius: 1.4rem;
+    }
+
+    .contact-left {
+        flex: 0 0 38%;
+        padding: 2rem 1.4rem;
+    }
+
+    .contact-modal-icon {
+        width: 110px;
+        height: 110px;
+    }
+
+    .contact-modal-title {
+        font-size: 1.35rem;
+    }
+
+    .contact-right {
+        padding: 2rem 1.6rem;
+    }
+}
+
+/* Mobile — stack vertically */
+@media (max-width: 600px) {
+    .contact-modal-box {
+        flex-direction: column;
+        max-width: 92%;
+        border-radius: 1.2rem;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .contact-left {
+        flex: none;
+        padding: 1.5rem 1.2rem 1rem;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        text-align: left;
+    }
+
+    .contact-modal-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .contact-modal-title {
+        font-size: 1.15rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .contact-modal-subtitle {
+        font-size: 0.78rem;
+    }
+
+    .contact-right {
+        padding: 1.3rem 1.2rem 1.5rem;
+    }
+
+    .contact-field {
+        margin-bottom: 0.9rem;
+    }
+
+    .contact-field label {
+        font-size: 0.72rem;
+    }
+
+    .contact-field input,
+    .contact-field textarea {
+        padding: 0.55rem 0.7rem;
+        font-size: 0.88rem;
+    }
+
+    .contact-field textarea {
+        min-height: 70px;
+    }
+
+    .contact-send-btn {
+        padding: 0.65rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-modal-close {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .contact-left {
+        padding: 1.2rem 1rem 0.8rem;
+    }
+
+    .contact-modal-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .contact-right {
+        padding: 1rem;
+    }
+}

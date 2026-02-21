@@ -1,0 +1,55 @@
+[
+    {
+        "title": "Meet AI",
+        "date": "25-01-2025",
+        "college": "Kamaraj College of Engineering, Virudhunagar",
+        "about": "I had the pleasure of visiting Kamaraj College of Engineering Virudhunagar where I conducted a guest lecture as part of the event titled MEET AI. I was greeted with a warm and poetic welcome that set a beautiful tone for the day. The students had the opportunity to meet ARI and I guided them through the fundamentals of Artificial Intelligence starting from the theory of biological neurons activation functions perceptrons and artificial neurons to exploring concepts like linearly separable and non-separable problems the XOR and OR problems convolutional neural networks backpropagation and weight updation. The session received wonderful feedback from the students and I genuinely enjoyed every moment of the experience. A heartfelt thank you to Raj Sir the HoD ma'am and all the faculty members who supported and made this session truly memorable.",
+        "folder-path": "/kcet-25-01-2025/",
+        "recorded-session": "https://youtu.be/ZCDAivDpmIk?si=dqtw1Gq-ODsJ_7m_",
+        "images": [
+            "poster.jpeg",
+            "shot0.jpg",
+            "shot1.jpg",
+            "shot2.jpg",
+            "shot3.jpeg",
+            "shot4.jpeg"
+        ]
+    },
+    {
+        "title": "Deep Learning with TensorFlow",
+        "date": "02-05-2025",
+        "college": "Sri Sairam Engineering College, Chennai",
+        "about": "I had a wonderful experience visiting Sri Sairam Engineering College, Chennai, where I conducted a session titled Deep Learning with TensorFlow: From Tensors to Neural Network Training. We explored core concepts such as tensors, PyTorch basics, biological neurons, activation functions, perceptrons, artificial neurons, linearly separable and non-separable problems, the XOR and OR problems, convolutional neural networks, backpropagation, and weight updation. The session was well-received, and I truly appreciated the enthusiastic participation and positive feedback from the students. I also had the opportunity to visit the Startup Incubation Centre at Sri Sairam and explore exciting AR and VR technologies, which was an inspiring experience. One of the highlights was seeing the beautiful Caduceus statue in front of the Siddha College, a symbol that truly stood out. A heartfelt thank you to Ulaganathan Sir, HoD Ma'am, and all the staff members who supported and made this enriching day possible.",
+        "folder-path": "/sri-sairam-02-05-2025/",
+        "images": [
+            "poster.jpeg",
+            "shot1.jpg",
+            "shot2.jpg"
+        ]
+    },
+    {
+        "title": "Prompt Engineering and Generative AI",
+        "date": "22-08-2025",
+        "college": "Sri Sairam Engineering College, Chennai",
+        "about": "Some things give me extreme happiness, and for me, one of the greatest sources of joy is teaching, sharing knowledge, educating, and channeling happiness through it, something I discovered years ago as a purpose of my life, where every session or workshop unleashes my untamed mind to explore and present, turning what I know into what others know in fresh ways that excite them, and today’s journey through Neural Networks, RAG, and Agentic AI was exactly that, made blissful thanks to R.V Shakthi Dharan for setting up the session, Ulaganathan MohanaSundaram sir for always bringing me such joy, Suresh Thangakrishnan sir for the wonderful surprise of his presence, and everyone who came to listen, thank you all! 🙏",
+        "folder-path": "/sri-sairam-28-08-2025/",
+        "images": [
+            "poster.jpg",
+            "shot1.jpg",
+            "shot2.jpg",
+            "shot3.jpg",
+            "shot4.jpg",
+            "shot5.jpg"
+        ]
+    },
+    {
+        "title": "Deep Learning and Gen AI",
+        "date": "15-11-2025",
+        "college": "Kongu Engineering College",
+        "about": "I had a wonderful experience visiting Kongu Engineering College where I had the opportunity to interact with a group of energetic and curious young innovators. Even though I had a bit of seasonal fever and cough, the joy of teaching completely lifted my spirit. In the morning session we explored the foundations of deep learning by understanding biological neurons artificial neurons activation functions perceptrons and the idea of linearly separable and non-separable problems. In the afternoon we shifted into the world of LLMs and learned how to build simple and clear RAG systems by breaking concepts into smaller meaningful parts. The students were highly interactive and their positive feedback made the entire day special. My heartfelt thanks to the faculty members and organizers at Kongu Engineering College for creating such a warm learning environment and making this experience truly memorable.",
+        "folder-path": "/kongu-15-11-2025/",
+        "images": [
+            "image-1.jpg"
+        ]
+    }
+]

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: #263238;
+}
+
+.carousel {
+    margin: 1rem;
+    background-color: #B0BEC5;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    overflow: hidden;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.carousel img {
+    width: 50%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 1rem;
+}
+
+.carousel-content {
+    margin: 0.51rem;
+    margin-left: 1rem;
+}
+
+.carousel-content h1 {
+    font-size: 2.3vw;
+}
+
+.carousel-content .carousel-title {
+    color: darkblue;
+}
+
+.carousel-content p {
+    text-align: justify;
+    font-size: 1.5vw;
+}
+
+.youtube-logo {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+@media (max-width:  1000px) {
+    .carousel {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+    .carousel-content p {
+        font-size: 1.4vw;
+    }
+    .carousel img {
+        width: 100%;
+    }
+}

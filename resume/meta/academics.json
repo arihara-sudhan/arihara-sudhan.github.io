@@ -1,0 +1,30 @@
+[
+    {
+      "institution": "Government High School",
+      "location": "Ayothiyapuripattanam, Tenkasi",
+      "image": {
+        "src": "./statics/academics/trophy.png",
+        "alt": ""
+      },
+      "achievement": "Secured I Rank in School with 95.2%"
+    },
+    {
+      "institution": "Government Higher Secondary School",
+      "location": "Poolangulam, Tenkasi",
+      "image": {
+        "src": "./statics/academics/trophy.png",
+        "alt": ""
+      },
+      "achievement": "Studied Maths Biology and Secured II Rank in School with 87%"
+    },
+    {
+      "institution": "Einstein College of Engineering",
+      "location": "Seethaparpanallur, Tirunelveli",
+      "image": {
+        "src": "./statics/academics/trophy.png",
+        "alt": ""
+      },
+      "achievement": "Studied Computer Science and Engineering with 97% of CGPA"
+    }
+  ]
+  

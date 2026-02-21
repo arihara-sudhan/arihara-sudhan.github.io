@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tamizh</title>
+        <link href="./styles.css" rel="stylesheet"/>
+	</head>
+	<body>
+        <div class="pettagam"></div>
+        <script>
+            const pettagam = document.querySelector(".pettagam");
+            let html = "";
+
+            fetch('https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/tamizh/meta.json')
+            .then(response => response.json())
+            .then(data => {
+                const META = data.META;
+                for(const meta of META) {
+                if(meta.type==="article") {
+                    html += `
+                        <div class="katturai" onclick="window.location.href = '${meta.onClick}'">
+                            <img src="${meta.imgUrl}" alt="metaImg"/>
+                            <div>
+                                <h1>${meta.head}</h1>
+                                <p>${meta.description}</p>
+                            </div>
+                        </div>
+                `
+                } else {
+                    html += `
+                        <div class="tharavu" onclick="window.location.href = '${meta.onClick}'">
+                            <center>
+                                <img src="${meta.imgUrl}" alt="metaImg"/>
+                                <h1>${meta.head}</h1>
+                            </center>
+                            <p>${meta.description}</p>
+                        </div>
+                `
+                }}
+                pettagam.innerHTML = html;
+            })
+        </script>        
+    </body>
+</html>

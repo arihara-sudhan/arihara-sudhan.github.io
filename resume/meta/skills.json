@@ -1,0 +1,143 @@
+[
+    {
+      "image": "./statics/skillset/python.jpg",
+      "alt": "Just A Skill",
+      "skill": "Python Core"
+    },
+    {
+      "image": "./statics/skillset/torch.jpg",
+      "alt": "Just A Skill",
+      "skill": "PyTorch"
+    },
+    {
+      "image": "./statics/skillset/opencv.webp",
+      "alt": "Just A Skill",
+      "skill": "OpenCv"
+    },
+    {
+      "image": "https://api.nuget.org/v3-flatcontainer/langchain.core/0.17.0/icon",
+      "alt": "Just A Skill",
+      "skill": "LangChain"
+    },
+    {
+      "image": "./statics/skillset/c.webp",
+      "alt": "Just A Skill",
+      "skill": "C Programming"
+    },
+    {
+      "image": "./statics/skillset/java.jpg",
+      "alt": "Just A Skill",
+      "skill": "Core Java"
+    },
+    {
+      "image": "./statics/skillset/js.webp",
+      "alt": "Just A Skill",
+      "skill": "Vanilla JS"
+    },
+    {
+      "image": "./statics/skillset/ts.png",
+      "alt": "Just A Skill",
+      "skill": "TypeScript"
+    },
+    {
+      "image": "./statics/skillset/html.webp",
+      "alt": "Just A Skill",
+      "skill": "HTML"
+    },
+    {
+      "image": "./statics/skillset/css.webp",
+      "alt": "Just A Skill",
+      "skill": "CSS"
+    },
+    {
+      "image": "./statics/skillset/bootstrap.png",
+      "alt": "Just A Skill",
+      "skill": "Bootstrap"
+    },
+    {
+      "image": "./statics/skillset/react.png",
+      "alt": "Just A Skill",
+      "skill": "ReactJS"
+    },
+    {
+      "image": "./statics/skillset/redux.webp",
+      "alt": "Just A Skill",
+      "skill": "Redux"
+    },
+    {
+      "image": "./statics/skillset/node.png",
+      "alt": "Just A Skill",
+      "skill": "Node JS"
+    },
+    {
+      "image": "./statics/skillset/sql.jpg",
+      "alt": "Just A Skill",
+      "skill": "MySQL"
+    },
+    {
+      "image": "./statics/skillset/mongodb.svg",
+      "alt": "Just A Skill",
+      "skill": "MongoDB"
+    },
+    {
+      "image": "./statics/skillset/express.png",
+      "alt": "Just A Skill",
+      "skill": "ExpressJS"
+    },
+    {
+      "image": "./statics/skillset/fastapi.png",
+      "alt": "Just A Skill",
+      "skill": "FastAPI"
+    },
+    {
+      "image": "./statics/skillset/flask.png",
+      "alt": "Just A Skill",
+      "skill": "Flask"
+    },
+    {
+      "image": "https://www.svgrepo.com/show/353657/django-icon.svg",
+      "alt": "Just A Skill",
+      "skill": "Django"
+    },
+    {
+      "image": "./statics/skillset/docker.webp",
+      "alt": "Just A Skill",
+      "skill": "Docker"
+    },
+    {
+      "image": "./statics/skillset/blender.png",
+      "alt": "Just A Skill",
+      "skill": "Blender"
+    },
+    {
+      "image": "./statics/skillset/davinci.png",
+      "alt": "Just A Skill",
+      "skill": "Davinci Resolve"
+    },
+    {
+      "image": "./statics/skillset/git.png",
+      "alt": "Just A Skill",
+      "skill": "Git"
+    },
+    {
+      "image": "./statics/skillset/github.png",
+      "alt": "Just A Skill",
+      "skill": "GitHub"
+    },
+    {
+      "image": "./statics/skillset/gitlab.webp",
+      "alt": "Just A Skill",
+      "skill": "GitLab"
+    },
+    {
+        "image": "https://ezerus.com.au/wp-content/uploads/2019/05/aws-logo-aws-new-logo-album-on-imgur-ideas.png",
+        "alt": "AWS Skill",
+        "skill": "AWS"
+    },
+    {
+        "image": "https://img.icons8.com/color/512/uipath.png",
+        "alt": "UIPath Skill",
+        "skill": "UIPath"
+    }
+]
+  

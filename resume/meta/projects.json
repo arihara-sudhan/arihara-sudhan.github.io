@@ -1,0 +1,68 @@
+[
+  {
+    "title": "CRISPR In Silico: LLM",
+    "dept": "Synthetic Biology | Computational Genomics",
+    "description": "I developed an LLM-powered platform that addresses the major safety concern in CRISPR-Cas9 gene editing: unintended off-target cuts across the genome. The system analyzes DNA sequence similarity to proactively flag risky genomic regions and simulates Cas9 cutting activity in silico to predict potential biological outcomes of edits. By modeling both the likelihood of a cut and its downstream biological impact, the tool improves on existing off-target detection methods. This foundation enables integration of synthetic simulations into real-time gene editing workflows, providing safer and more reliable CRISPR design pipelines.",
+    "imageUrl": "https://atlas-content-cdn.pixelsquid.com/stock-images/logo-dna-J337n86-600.jpg"
+  },
+  {
+    "title": "Account Overlap Detection and Management System",
+    "dept": "Moative",
+    "description": "I developed a full-stack AI-powered system to detect and manage account overlaps between our company and partners. The platform helps sales and partnership teams identify, score, escalate, and resolve high-value opportunities. It is built using Python, FastAPI, SQLAlchemy, and a modern vanilla JavaScript frontend. The system enables customizable overlap scoring logic, team hierarchy-based Slack escalations, and LLM-powered (Gemini) generation of professional emails and Slack messages through prompt engineering. I designed a responsive UI for configuring scoring weights, managing internal teams, and tracking resolution status. The backend supports persistent state management with automated fallback flows like personalized partner emails, ensuring no opportunity is missed. This solution transformed latent overlaps into revenue-driving actions.",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D560BAQEdTNqddMbAXA/company-logo_200_200/company-logo_200_200/0/1690387288435/getcrossbeam_logo?e=2147483647&v=beta&t=OH8P2bKyLmVaaBCFUxGPGndT8tA8U5zk472TRK7GD8Q"
+  },  
+  {
+    "title": "CEQA Permitting - LLM Powered Automation",
+    "dept": "Moative",
+    "description": "I developed a web-based AI platform that automates CEQA permitting by integrating OCR, advanced NLP, and vector-based document analysis. Leveraging Google’s Gemini API, the system classifies uploaded PDFs into CEQA categories (Exempt, ND, MND, EIR), generates justification reports, and flags environmental concerns. I built a FastAPI backend with Gemini-powered classification, real-time caching, and PDF generation, alongside an interactive frontend with traffic-light status indicators, map-based location analysis, and a chatbot assistant. The platform significantly accelerates environmental compliance review for consultants, agencies, and developers.",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjE6hjlDtm_8E6773fhc--IcwoazPm1uyj8A&s"
+  },
+  {
+    "title": "Natural Language Clinical Trial Analytics for ADCs",
+    "dept": "Moative",
+    "description": "I engineered a graph-based clinical trial analysis platform focused on Antibody-Drug Conjugates (ADC), integrating Neo4j, FastAPI, and Google Gemini AI to enable natural language querying over pharmacokinetic and safety datasets. The system dynamically generates Cypher queries from plain-English questions, visualizes clinical parameters (AUC, Cmax, AE grades) via interactive dashboards, and provides AI-generated insights. I deployed it into AWS.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Star_of_life2.svg/800px-Star_of_life2.svg.png"
+  },
+  {
+    "title": "FewShot Doc2Vec",
+    "dept": "Intelligent Document Processing | Computer Vision | ZLABS | Zoho",
+    "description": "The goal of this research was to develop a method for few-shot classification of documents with high intra-class variance. Initially, Triplet Loss was used for few-shot training, and experiments began with ResNet-50, whose convolution-based embeddings captured simple patterns, achieving 74% similarity search accuracy using FAISS. To enhance performance, I explored Google ViT's last hidden state for embeddings, but it performed poorly. Transitioning to DiT (Document Image Transformer), pretrained on the RVL-CDIP dataset with masking as the pretext task, yielded 96% accuracy. Interestingly, I observed classification models exhibiting few-shot behavior and vice versa. Hierarchical classification was introduced, where a superclass like 'Advertisement' included subclasses such as 'Toothpaste Advertisement' and 'Mobile Advertisement'. Through careful dataset annotation, we achieved 100% accuracy, though generalization remained limited. To address this, I extracted textual features via OCR using Tesseract and BERT, combined them with visual features from DiT, and performed multimodal training, significantly improving generalization capabilities.",
+    "imageUrl": "./statics/projects/doc.jpg"
+  },
+  {
+    "title": "Audio Processing",
+    "dept": "Speech Profiling | Audio Processing | ZLABS | Zoho",
+    "description": "As part of the Speech Profiling team, I was tasked with handling varying sampling rates. Using the librosa package, I resampled input audio to a standard frequency, accommodating various input formats such as audio files or raw samples. Additionally, I classified audio using a CNN, converting audio files into Mel Spectrograms and employing a ResNet architecture for classification, achieving an accuracy of 95.2%. Beyond this, I gained deeper insights into the underlying processes, learning tools like Poetry and Docker. I also experimented with Fourier Transformations to decompose audio into frequency components and explored audio data across different sampling rates.",
+    "imageUrl": "./statics/projects/audio.avif"
+  },
+  {
+    "title": "MindKural - RAG System",
+    "dept": "RAG System - LLM | Taking Literature to Technolgy",
+    "description": "Using LangChain, I have developed a conversational AI bot that answers queries based on Thirukkural, the timeless Tamil literary masterpiece. To enable efficient retrieval, I employed FAISS for vector embeddings and similarity search. The system is further enhanced using Retrieval-Augmented Generation (RAG) with the Falcon LLM, ensuring insightful responses rooted in Thirukkural's wisdom. Since Thirukkural offers profound solutions to life's challenges, this system transforms its curative literary essence into a RAG-powered knowledge framework—one that not only informs but also heals.",
+    "imageUrl": "https://tamilandvedas.com/wp-content/uploads/2014/12/thiruvalluvar-logo.jpg"
+  },
+  {
+    "title": "Agent Bulk Invite",
+    "dept": "Client Technology | User Feature Engineering | ZOHO DESK | Zoho",
+    "description": "At Zoho Desk, I undertook an enhancement project to enable Multiple Agent Invitation in a single go using ReactJS. This complex UI project involved managing intricate criteria, where adding a criterion dynamically adjusted the count of Agents or Light Agents. The implementation required addressing meticulously defined cases and handling delicate dependencies to ensure seamless functionality. The project was successfully completed, passing all UAT cases.",
+    "imageUrl": "./statics/projects/agents.avif"
+  },
+  {
+    "title": "Desk - Client Bug Fixes",
+    "dept": "Client Technology | User Feature Engineering | ZOHO DESK | Zoho",
+    "description": "The client-side code encountered several bugs, which I successfully resolved. These included issues like missing validation for agent names, inconsistent behavior of the agent detail page across different tabs, and a bug bounty case that involved preventing the reinvitation of agents when the primary contact was unconfirmed. Each issue was addressed with precision, ensuring a robust and seamless user experience.",
+    "imageUrl": "./statics/projects/bugfix.jpg"
+  },
+  {
+    "title": "AI Powered MediKit",
+    "dept": "Medical Track | AI Hackathon | Medecro.AI",
+    "description": "The AI-Powered MediKit is a revolutionary advancement in healthcare diagnostics, leveraging cutting-edge Vision Transformers (ViTs) for precise medical image analysis. Unlike traditional CNNs, which excel at detecting simple patterns but struggle with intricate medical features, ViTs capture fine-grained details with superior accuracy. The MediKit also features Heartbeat Analysis using Mel-Frequency Cepstral Coefficients (MFCC) to classify heartbeats and identify abnormalities, offering a proactive approach to cardiovascular health. Its few-shot classification capability for tablets minimizes retraining requirements, enhancing adaptability to new data. Additionally, the MediKit includes a Herbal Solution feature, enabling users to explore natural remedies and holistic treatments, bridging traditional and modern medicine. Combining precision, innovation, and accessibility, it sets a new benchmark in AI-driven medical solutions.",
+    "imageUrl": "./statics/projects/caduceus.avif"
+  },
+  {
+    "title": "Grouped Detection",
+    "dept": "Boost-up Project | Computer Vision",
+    "description": "The Grouped Detection of Objects utilizes the YOLO algorithm to perform accurate object detection in images. After detecting the objects, I crop specific regions of interest and feed them into a Swin Transformer-backboned few-shot network, which helps in performing efficient few-shot classification. To determine the optimal number of clusters, I incorporate the Elbow Method along with K-means clustering, ensuring the model is well-tuned. For seamless deployment, I use FastAPI to create a robust microservice that handles real-time predictions and can be easily scaled for various use cases.",
+    "imageUrl": "https://png.pngtree.com/png-vector/20220622/ourmid/pngtree-object-detection-app-color-icon-png-image_5255164.png"
+  }
+]
