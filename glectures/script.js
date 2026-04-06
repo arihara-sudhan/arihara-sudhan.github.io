@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         metaData = await response.json();
     } catch (err) {
         console.error("Failed to load meta.json:", err);
+        window.pageLoader?.markReady();
         return;
     }
 
@@ -107,4 +108,5 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     carousels.forEach(c => observer.observe(c.el));
+    window.pageLoader?.markReady();
 });

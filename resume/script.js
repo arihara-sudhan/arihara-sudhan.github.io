@@ -1,12 +1,21 @@
-const PROJECTS_API = 'https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/resume/meta/projects.json';
+const PROJECTS_API = './meta/projects.json';
+const LANGUAGES_API = './meta/languages.json';
+const SKILLS_API = './meta/skills.json';
+const ACADEMICS_API = './meta/academics.json';
+const ACTIVITIES_API = './meta/activities.json';
+
+async function fetchJson(path) {
+  const response = await fetch(path);
+  if (!response.ok) {
+    throw new Error(`${path}: ${response.status}`);
+  }
+
+  return response.json();
+}
 
 async function createProjects() {
   try {
-    const response = await fetch(PROJECTS_API);
-    if (!response.ok) {
-      throw new Error(`${response.status}`);
-    }
-    const projects = await response.json();
+    const projects = await fetchJson(PROJECTS_API);
     const projectsContainer = document.querySelector('.projects');
     let htmlContent = '';
     projects.forEach(project => {
@@ -27,20 +36,13 @@ async function createProjects() {
     });
     projectsContainer.innerHTML = htmlContent;
   } catch (error) {
-    console.log(error, "ERROR CREATING PROJECTS ARI! 🥴");
+    console.log(error, "ERROR CREATING PROJECTS ARI! ðŸ¥´");
   }
 }
 
-
-const LANGUAGES_API = 'https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/resume/meta/languages.json';
-
 async function createLanguages() {
   try {
-    const response = await fetch(LANGUAGES_API);
-    if (!response.ok) {
-      throw new Error(`${response.status}`);
-    }
-    const languages = await response.json();
+    const languages = await fetchJson(LANGUAGES_API);
     const languagesContainer = document.querySelector('.languages');
     let htmlContent = '';
     languages.forEach(language => {
@@ -53,19 +55,13 @@ async function createLanguages() {
     });
     languagesContainer.innerHTML = htmlContent;
   } catch (error) {
-    console.log(error, "ERROR CREATING LANGUAGES ARI! 🥴");
+    console.log(error, "ERROR CREATING LANGUAGES ARI! ðŸ¥´");
   }
 }
 
-const SKILLS_API = 'https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/resume/meta/skills.json';
-
 async function createSkills() {
   try {
-    const response = await fetch(SKILLS_API);
-    if (!response.ok) {
-      throw new Error(`${response.status}`);
-    }
-    const skills = await response.json();
+    const skills = await fetchJson(SKILLS_API);
     const skillsContainer = document.querySelector('.skills');
     let htmlContent = '';
     
@@ -80,20 +76,13 @@ async function createSkills() {
     
     skillsContainer.innerHTML = htmlContent;
   } catch (error) {
-    console.log(error, "ERROR CREATING SKILLS ARI! 🥴");
+    console.log(error, "ERROR CREATING SKILLS ARI! ðŸ¥´");
   }
 }
 
-
-const ACADEMICS_API = 'https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/resume/meta/academics.json';
-
 async function createAcademics() {
   try {
-    const response = await fetch(ACADEMICS_API);
-    if (!response.ok) {
-      throw new Error(`${response.status}`);
-    }
-    const academics = await response.json();
+    const academics = await fetchJson(ACADEMICS_API);
    
     const academicsContainer = document.querySelector('.academics');
     let htmlContent = '';
@@ -109,20 +98,13 @@ async function createAcademics() {
     });
     academicsContainer.innerHTML = htmlContent;
   } catch (error) {
-    console.log(error, "ERROR CREATING ACADEMICS ARI! 🥴");
+    console.log(error, "ERROR CREATING ACADEMICS ARI! ðŸ¥´");
   }
 }
 
-
-const ACTIVITIES_API = 'https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/resume/meta/activities.json';
-
 async function createActivities() {
   try {
-    const response = await fetch(ACTIVITIES_API);
-    if (!response.ok) {
-      throw new Error(`${response.status}`);
-    }
-    const activities = await response.json();
+    const activities = await fetchJson(ACTIVITIES_API);
     const activitiesContainer = document.querySelector('.activities');
     let htmlContent = '';
     activities.forEach(activity => {
@@ -141,13 +123,18 @@ async function createActivities() {
     });
     activitiesContainer.innerHTML = htmlContent;
   } catch (error) {
-    console.log(error, "ERROR CREATING ACTIVITIES ARI! 🥴");
+    console.log(error, "ERROR CREATING ACTIVITIES ARI! ðŸ¥´");
   }
 }
 
-
-createLanguages();
-createAcademics();
-createSkills();
-createProjects();
-createActivities();
+Promise.all([
+  createLanguages(),
+  createAcademics(),
+  createSkills(),
+  createProjects(),
+  createActivities()
+]).catch((error) => {
+  console.error("Failed to initialize resume page:", error);
+}).finally(() => {
+  window.pageLoader?.markReady();
+});

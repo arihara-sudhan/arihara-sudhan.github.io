@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateContent() {
-        fetch("https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/main/books/meta.json")
+        fetch("./meta.json")
             .then(resp => resp.json())
             .then(data => {
                 let innerContents = '';
@@ -42,8 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 div.innerHTML = innerContents;
                 createTagBanner(tags, tagsElement, data);
+                window.pageLoader?.markReady();
             })
-            .catch(error => console.error('Error fetching the JSON file:', error));
+            .catch(error => {
+                console.error('Error fetching the JSON file:', error);
+                window.pageLoader?.markReady();
+            });
     }
 
     const tags = ["web", "machine-learning", "tamizh", "general", "biology", "python"];

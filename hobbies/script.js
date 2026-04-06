@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initial render
     renderContent();
+    window.pageLoader?.markReady();
     
     // Re-render on resize
     window.addEventListener('resize', renderContent);

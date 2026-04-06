@@ -1,4 +1,4 @@
-const PROJECTS_API = 'https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/projects/meta.json';
+const PROJECTS_API = './meta.json';
 
 async function createProjects() {
     try {
@@ -14,6 +14,7 @@ async function createProjects() {
 
         if (!projectsContainer) {
             console.error("Error: #projects-container not found in the DOM.");
+            window.pageLoader?.markReady();
             return;
         }
 
@@ -29,7 +30,6 @@ async function createProjects() {
 
         projectsContainer.innerHTML = htmlContent;
 
-        // Function to close the fullscreen
         function closeFullscreen() {
             fullscreenContainer.classList.remove("active");
             setTimeout(() => {
@@ -38,20 +38,20 @@ async function createProjects() {
             }, 300);
         }
 
-        // Event listener for the close button
         closeButton.addEventListener("click", closeFullscreen);
 
-        // Event listener for the Escape key
         document.addEventListener("keydown", function(event) {
-            if (event.key === "Escape" || event.key === "Esc") { // Check for both "Escape" and "Esc" for broader compatibility
-                if (fullscreenContainer.classList.contains("active")) { // Only close if the fullscreen is active
+            if (event.key === "Escape" || event.key === "Esc") {
+                if (fullscreenContainer.classList.contains("active")) {
                     closeFullscreen();
                 }
             }
         });
 
+        window.pageLoader?.markReady();
     } catch (error) {
-        console.log(error, "ERROR CREATING PROJECTS, ARI! 🥴");
+        console.log(error, "ERROR CREATING PROJECTS, ARI!");
+        window.pageLoader?.markReady();
     }
 }
 

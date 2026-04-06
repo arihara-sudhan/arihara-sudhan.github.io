@@ -2,15 +2,17 @@
 <html>
 	<head>
 		<title>Tamizh</title>
+        <link href="../setup/page-loader.css" rel="stylesheet"/>
         <link href="./styles.css" rel="stylesheet"/>
 	</head>
 	<body>
         <div class="pettagam"></div>
+        <script src="../setup/page-loader.js"></script>
         <script>
             const pettagam = document.querySelector(".pettagam");
             let html = "";
 
-            fetch('https://raw.githubusercontent.com/arihara-sudhan/arihara-sudhan.github.io/refs/heads/main/tamizh/meta.json')
+            fetch('./meta.json')
             .then(response => response.json())
             .then(data => {
                 const META = data.META;
@@ -37,7 +39,9 @@
                 `
                 }}
                 pettagam.innerHTML = html;
+                window.pageLoader?.markReady();
             })
+            .catch(() => window.pageLoader?.markReady());
         </script>        
     </body>
 </html>
